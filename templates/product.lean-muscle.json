@@ -1,1 +1,1497 @@
-{"sections":{"main":{"type":"main-product","blocks":{"okendo_star_rating_XckRMV":{"type":"shopify:\/\/apps\/okendo\/blocks\/star-rating\/bb689e69-ea70-4661-8fb7-ad24a2e23c29","settings":{"product":"{{ section.settings.old_product }}"}},"custom_reviews_yRiyrR":{"type":"custom_reviews","disabled":true,"settings":{}},"title":{"type":"title","settings":{"badge_text":"{{ product.metafields.happy_aging.title_tag.value }}"}},"vendor":{"type":"text","settings":{"text":"STRENGTH THAT FUELS LONGEVITY","text_style":"uppercase","text_size":"text-xs","text_align":"text-left"}},"ingredients_block_GRVpYH":{"type":"ingredients_block","settings":{"text1":"<h1>20g<\/h1>","text2":"<p>ORGANIC VEGAN<br\/>PROTEIN<\/p>","text3":"<h1>5g<\/h1>","text4":"<p>CREATINE<br\/>MONOHYDRATE<\/p>","text5":"<h1>0g<\/h1>","text6":"<p>SUGAR<\/p>"}},"description":{"type":"description","settings":{}},"text_jqa4hh":{"type":"text","settings":{"text":"SELECT YOUR FLAVOR","text_style":"uppercase","text_size":"text-xs","text_align":"text-left"}},"variant_picker_VnBabq":{"type":"variant_picker","settings":{"picker_type":"button","swatch_shape":"circle"}},"frontrow_WcpwRH":{"type":"frontrow","settings":{}},"buy_buttons_W9PKFR":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false,"show_gift_card_recipient":true,"default_info_sub_1":"Ships every month","default_info_sub_2":"Free shipping on all orders","default_info_sub_3":"Cancel your subscription anytime","default_info_sub_4":"Ships in 12 hours","default_info_one_1":"Free shipping on all orders","default_info_one_2":"Ships in 12 hours","product_content_text_default_kit":""}},"quantity_block_XPNgFV":{"type":"quantity_block","settings":{"qty":1,"onetime_price":54,"plan_id":"693107163456","title":"20 servings","sub_title":"","num_bottles":"30","badge":"","product_content_text":"20 servings","subs_info_1":"Ships every month","subs_info_2":"Free shipping on all orders","subs_info_3":"Cancel your subscription anytime","subs_info_4":"Ships in 12 hours","subs_info_5":"","subs_info_6":"Ships in 12 hours"}},"quantity_block_PnUVUc":{"type":"quantity_block","settings":{"qty":2,"onetime_price":108,"plan_id":"693109719360","title":"40 servings","sub_title":"","num_bottles":"60","badge":"","product_content_text":"40 servings","subs_info_1":"Ships every month","subs_info_2":"Free shipping on all orders","subs_info_3":"Cancel your subscription anytime","subs_info_4":"Ships in 12 hours","subs_info_5":"","subs_info_6":"Ships in 12 hours"}},"text_RB6DBe":{"type":"text","settings":{"text":"30 Day Money Back Guarantee","text_style":"bold","text_size":"text-xs","text_align":"text-center"}},"text_h9imWD":{"type":"text","settings":{"text":"If you're unsatisfied with your shots, for any reason, we'll give you a full refund–no return necessary!","text_style":"body","text_size":"text-[10px]","text_align":"text-center"}},"aside_content_TPcz4K":{"type":"aside_content","settings":{"title":"Ingredients","text":"<h6><strong>Organic Pea Protein, Organic cocoa Powder, Organic Monk Fruit, Organic Pumpkin Seed Powder, Organic Chia Seed, Organic Natural Vanilla Flavor<\/strong><\/h6>","image":"shopify:\/\/shop_images\/Lean_Muscle_Table.png"}},"aside_content_rBPMby":{"type":"aside_content","settings":{"title":"How to use","text":"<p><strong>How to Use<\/strong><\/p><p>Mix one scoop (36g) to 8-12 oz, per day with water, almond milk, or your favorite smoothie.<\/p><p>Ideal after workouts or anytime you need a clean, plant-based energy boost<\/p><p><strong>Organic, Powerful, and Purposeful<\/strong><\/p><p>At Happy Aging, we don’t just make supplements. We create wellness rituals that support your energy, focus, and long-term strength. It’s not about perfection. It’s about progress that feels real.<\/p><p>This is your daily strength ritual, crafted with real ingredients and backed by science. It gives your body exactly what it needs, and nothing it doesn’t.<\/p><p><strong>Make It a Ritual<\/strong><\/p><p>Subscribe and save with every order.<\/p><p>Be the first to explore our latest wellness innovations and exclusive formulas.<\/p><p><strong> Product Details<\/strong><\/p><ul><li>Format: Powder (20 servings)<\/li><li>Sweetener: Monk Fruit<\/li><li>Free from: Dairy, soy, gluten, and artificial additives<\/li><li>Certified Organic and Non-GMO<\/li><li>Made in the USA in a GMP-certified facility<\/li><\/ul>"}},"essential_upsell_app_block_XLXFkq":{"type":"shopify:\/\/apps\/essential-upsell\/blocks\/app-block\/50627fd9-24fd-4250-8614-accc12826d80","settings":{}}},"block_order":["okendo_star_rating_XckRMV","custom_reviews_yRiyrR","title","vendor","ingredients_block_GRVpYH","description","text_jqa4hh","variant_picker_VnBabq","frontrow_WcpwRH","buy_buttons_W9PKFR","quantity_block_XPNgFV","quantity_block_PnUVUc","text_RB6DBe","text_h9imWD","aside_content_TPcz4K","aside_content_rBPMby","essential_upsell_app_block_XLXFkq"],"custom_css":["@media screen and (max-width: 500px) {.grid-product-title {display: flex; align-items: center; gap: 15px; } span.main-tag-product {display: flex; margin-top: 0; }}"],"settings":{"old_product":"hydroburn","enable_sticky_info":true,"color_scheme":"scheme-1","highlight_color":"#de4845","media_size":"medium","constrain_to_viewport":true,"media_fit":"cover","gallery_layout":"thumbnail_slider","media_position":"left","image_zoom":"none","mobile_thumbnails":"show","hide_variants":true,"enable_video_looping":false,"padding_top":12,"padding_bottom":12}},"marquee_pMqq4Y":{"type":"marquee","blocks":{"text_F9fHWN":{"type":"text","settings":{"text":"Supports metabolic efficiency & sustained energy"}},"text_z7tkeC":{"type":"text","settings":{"text":"Helps regulate oxidative stress & inflammation"}},"text_8c4bkD":{"type":"text","settings":{"text":"Enhances recovery & endurance"}},"text_LhF6BY":{"type":"text","settings":{"text":"100% stimulant-free, clean, and science-backed"}}},"block_order":["text_F9fHWN","text_z7tkeC","text_8c4bkD","text_LhF6BY"],"settings":{}},"benefits_TnXkPb":{"type":"benefits","blocks":{"benefit_item_kPmN3R":{"type":"benefit-item","settings":{"title":"Fast, Visible Results","text":"In as little as 4 weeks, you'll notice softer, smoother skin. By 12 weeks, expect firmer, more resilient skin, strengthened nails, and an overall revitalized appearance."}},"benefit_item_aEgn8V":{"type":"benefit-item","settings":{"title":"Hydrated, Radiant Skin","text":"Glow Shot delivers deep hydration, improving skin texture, reducing dryness, and restoring a luminous, healthy glow from within."}},"benefit_item_qbW6JR":{"type":"benefit-item","settings":{"title":"Protection Against Environmental Stress","text":"The antioxidant power of hibiscus extract helps combat oxidative damage from pollution and UV exposure, keeping your skin healthier for longer."}},"benefit_item_gUamQp":{"type":"benefit-item","settings":{"title":"Enhanced Skin Firmness and Elasticity","text":"Thanks to its potent 10,000 mg dose of marine collagen, Glow Shot supports your skin's structure by rebuilding collagen density, improving elasticity, and reducing sagging."}},"benefit_item_ndzfAW":{"type":"benefit-item","settings":{"title":"Holistic Beauty Support","text":"Beyond skin hydration, Glow Shot supports stronger nails and improved hair resilience, giving you a comprehensive beauty boost."}}},"block_order":["benefit_item_kPmN3R","benefit_item_aEgn8V","benefit_item_qbW6JR","benefit_item_gUamQp","benefit_item_ndzfAW"],"disabled":true,"settings":{"title":"<p>THE MAIN BENEFITS OF <em>glow shot<\/em><\/p>","text":"Empowering beauty and vitality.","video_url":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d59e99138e964a2b80860f18acb30caa.mp4","show_border_top":true}},"image_with_text_blocks_AriX9t":{"type":"image-with-text-blocks","blocks":{"text_RT9jGJ":{"type":"text","settings":{"text":"<p>5g CREATINE.<br\/>20g ORGANIC PROTEIN.<br\/>0g SUGAR.<br\/><br\/><\/p>","text_style":"heading","has_border":false,"center_mobile":false}},"spacing_WUiEkU":{"type":"spacing","settings":{"spacing_desktop":50,"spacing_mobile":0,"fill_all_desktop":false}},"spacing_pHxRxG":{"type":"spacing","settings":{"spacing_desktop":20,"spacing_mobile":20,"fill_all_desktop":false}},"text_VDenjw":{"type":"text","settings":{"text":"<p>When it comes to building strength, energy, and performance, creatine makes all the difference. Yet most vegan protein powders leave it out.<br\/><br\/>Happy Aging Vegan Protein + Creatine includes 5g of creatine monohydrate, the most researched and trusted form, blended directly into your daily shake. You get real results with no need for extra supplements, no artificial fillers, and no compromises.<br\/><br\/>This certified organic formula is sugar free, stevia free, and delivers a rich flavor you'll look forward to enjoying every single day.<\/p>","text_style":"body","has_border":false,"center_mobile":false}}},"block_order":["text_RT9jGJ","spacing_WUiEkU","spacing_pHxRxG","text_VDenjw"],"custom_css":[".text-xs {font-size: 1.5rem;}"],"settings":{"title":"","text":"","image_desk":"shopify:\/\/shop_images\/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-13.jpg","image_height_desk":"adapt","image_mob":"shopify:\/\/shop_images\/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-13.jpg","image_height_mob":"adapt","width":"full","width_mobile":"full","image_first":false,"image_first_mob":true,"image_large":false,"show_border":false,"show_border_top":true,"hide_border_mobile":false,"remove_py_content":false,"small_content":false,"wrap_image_mobile":false,"wrap_content_mobile":true,"spacing_desktop":"lg:py-0","spacing_mobile":"py-0"}},"image_with_text_blocks_H7NErY":{"type":"image-with-text-blocks","blocks":{"text_gBUiKM":{"type":"text","settings":{"text":"<p>5g Creatine Monohydrate<\/p>","text_style":"heading_small","has_border":false,"center_mobile":false}},"text_yKaky3":{"type":"text","settings":{"text":"<p>The clinically validated dose that supports muscle strength, endurance, cognitive health, and cellular energy<\/p>","text_style":"body","has_border":true,"center_mobile":false}},"text_cpneWt":{"type":"text","settings":{"text":"<p>20g Organic Pea and Pumpkin Seed Protein<\/p>","text_style":"heading_small","has_border":false,"center_mobile":false}},"text_h7cjWT":{"type":"text","settings":{"text":"<p>A complete plant-based protein that promotes muscle gain, lean mass, and effective post-workout recovery<\/p>","text_style":"body","has_border":true,"center_mobile":false}},"text_RhRm8r":{"type":"text","settings":{"text":"<p>Monk Fruit Sweetener<\/p>","text_style":"heading_small","has_border":false,"center_mobile":false}},"text_fFLFkF":{"type":"text","settings":{"text":"<p>A clean, gut-friendly alternative to sugar and stevia<\/p>","text_style":"body","has_border":true,"center_mobile":false}}},"block_order":["text_gBUiKM","text_yKaky3","text_cpneWt","text_h7cjWT","text_RhRm8r","text_fFLFkF"],"name":"Image with text blocks","settings":{"title":"<p>WHAT YOU’LL GET IN <em>every scoop<\/em><\/p>","text":"","image_desk":"shopify:\/\/shop_images\/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-35.jpg","image_height_desk":"fit","image_mob":"shopify:\/\/shop_images\/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-35.jpg","image_height_mob":"square","width":"container","width_mobile":"full","image_first":true,"image_first_mob":true,"image_large":false,"show_border":false,"show_border_top":true,"hide_border_mobile":false,"remove_py_content":false,"small_content":true,"wrap_image_mobile":false,"wrap_content_mobile":true,"spacing_desktop":"lg:py-20","spacing_mobile":"py-10"}},"steps_blocks_list_DDUtiT":{"type":"steps-blocks-list","blocks":{"result_item_edMKrk":{"type":"result_item","settings":{"image":"shopify:\/\/shop_images\/image.png","step_title":"","title":"Builds Muscle and Strength","text":"<p>Supports protein synthesis and recovery with 20g of clean vegan protein and 5g of creatine monohydrate<\/p>"}},"result_item_HBjtUY":{"type":"result_item","settings":{"image":"shopify:\/\/shop_images\/ChatGPT_Image_Apr_29_2025_10_17_13_PM.png","step_title":"","title":"Boosts Brain and Body Energy","text":"<p>Enhances focus, memory, and physical performance by improving cellular energy production<\/p>"}},"result_item_HrqwVd":{"type":"result_item","settings":{"image":"shopify:\/\/shop_images\/ChatGPT_Image_Apr_29_2025_09_58_14_PM.png","step_title":"","title":"All in One Simplicity","text":"<p>Combines your daily creatine and protein needs in a single scoop with no compromise<\/p>"}},"result_item_PwY7gx":{"type":"result_item","settings":{"image":"shopify:\/\/shop_images\/original_cc433f731d6bff1f7a959c47a9409a0a_7_1.png","step_title":"","title":"Clean and Easy to Digest","text":"<p>No sugar, no stevia, no gums. Just pure, functional ingredients<\/p>"}}},"block_order":["result_item_edMKrk","result_item_HBjtUY","result_item_HrqwVd","result_item_PwY7gx"],"custom_css":[".step_name {display: none;}"],"settings":{"title":"KEY BENEFITS OF VEGAN PROTEIN <em>and creatine<\/em>"}},"image_with_text_blocks_MAjmBn":{"type":"image-with-text-blocks","blocks":{"text_iyPHHg":{"type":"text","settings":{"text":"<p>WHY CREATINE MATTERS<br\/><em>for everyone<br\/><\/em><\/p>","text_style":"heading","has_border":false,"center_mobile":false}},"text_PGDaGb":{"type":"text","settings":{"text":"<p>Creatine is one of the most researched and effective performance nutrients available today. It supports:<br\/><br\/><\/p>","text_style":"body","has_border":true,"center_mobile":false}},"text_fgNRyh":{"type":"text","settings":{"text":"<p>Muscle strength and lean mass<\/p>","text_style":"heading_small","has_border":true,"center_mobile":false}},"text_gDiG8x":{"type":"text","settings":{"text":"<p>Recovery after physical activity<\/p>","text_style":"heading_small","has_border":true,"center_mobile":false}},"text_rYPf9U":{"type":"text","settings":{"text":"<p>Mental clarity and memory<\/p>","text_style":"heading_small","has_border":true,"center_mobile":false}},"text_93wfP8":{"type":"text","settings":{"text":"<p>Cellular energy and long-term vitality<\/p>","text_style":"heading_small","has_border":true,"center_mobile":false}},"spacing_9jtD8F":{"type":"spacing","disabled":true,"settings":{"spacing_desktop":50,"spacing_mobile":50,"fill_all_desktop":false}},"spacing_34dxqX":{"type":"spacing","settings":{"spacing_desktop":20,"spacing_mobile":20,"fill_all_desktop":false}},"text_3B7nbk":{"type":"text","settings":{"text":"<p>It also benefits cardiovascular health. Studies suggest that creatine may support heart function by enhancing energy availability in cardiac muscle and reducing oxidative stress. That makes it a powerful ally not just for performance, but for overall well-being.<br\/><br\/>And yes, it’s completely plant-based. Our formula uses pure creatine monohydrate blended into a plant-powered base designed for real results.<\/p>","text_style":"body","has_border":false,"center_mobile":false}}},"block_order":["text_iyPHHg","text_PGDaGb","text_fgNRyh","text_gDiG8x","text_rYPf9U","text_93wfP8","spacing_9jtD8F","spacing_34dxqX","text_3B7nbk"],"settings":{"title":"","text":"","image_desk":"shopify:\/\/shop_images\/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-1.jpg","image_height_desk":"fit","image_mob":"shopify:\/\/shop_images\/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-1.jpg","image_height_mob":"adapt","width":"full","width_mobile":"full","image_first":false,"image_first_mob":true,"image_large":false,"show_border":false,"show_border_top":true,"hide_border_mobile":false,"remove_py_content":false,"small_content":false,"wrap_image_mobile":false,"wrap_content_mobile":true,"spacing_desktop":"lg:py-0","spacing_mobile":"py-0"}},"timeline_section_hBBi6r":{"type":"timeline-section","blocks":{"title_ERxH8J":{"type":"title","settings":{"title":"<p>WHAT MAKES IT THE BEST<br\/><em>vegan protein powder<\/em><\/p>"}},"step_zxLdV4":{"type":"step","settings":{"number":"","step_title":"Creatine Monohydrate 5g","step_text":"Included in every serving"}},"step_QnBzQa":{"type":"step","settings":{"number":"","step_title":"CERTIFIED organic","step_text":"Fully Certified"}},"step_ykbgV9":{"type":"step","settings":{"number":"","step_title":"FREE FROM common allergies","step_text":"No dairy, soy and gluten"}},"step_qMPH6L":{"type":"step","settings":{"number":"","step_title":"SUGAR-FREE, stevia-free","step_text":"Sweetened only with monk fruit"}}},"block_order":["title_ERxH8J","step_zxLdV4","step_QnBzQa","step_ykbgV9","step_qMPH6L"],"name":"Timeline Section","settings":{"show_border_top":true,"first_image":"shopify:\/\/shop_images\/ChatGPT_Image_Apr_29_2025_08_00_28_PM.png","second_image":"shopify:\/\/shop_images\/a-photograph-capturing-a-dramatic-high-s_dw8nDd1YSB--CwmlMVBU2A_Mpbpi2n9Sra5AXbSv8czTg.png"}},"diagram_hCYJXq":{"type":"diagram","blocks":{"timeline_TJpK7B":{"type":"timeline","settings":{"week_text":"Weeks 1-4","text":"<h3>Noticeable Energy Improvements<\/h3><p>Better endurance, and less oxidative stress​.<\/p>"}},"timeline_pEVJXF":{"type":"timeline","settings":{"week_text":"Weeks 5-8","text":"<h3>EImproved Metabolic Function<\/h3><p>Better recovery, and increased energy stability​.<\/p>"}},"timeline_wfQr3q":{"type":"timeline","settings":{"week_text":"Weeks 9+","text":"<h3> Long-Term Metabolic Efficiency<\/h3><p>Mitochondrial resilience, and sustained vitality​.<\/p>"}}},"block_order":["timeline_TJpK7B","timeline_pEVJXF","timeline_wfQr3q"],"disabled":true,"settings":{"title":"WHAT TO EXPECT over time","text":"The longer you use HydroBurn, the better your metabolic efficiency becomes."}},"wines":{"type":"wines","disabled":true,"settings":{"title_section":"AGE LIKE <em>fine wine<\/em>","text_section":"Forget “a glass of wine”—elevate to an antioxidant celebration, without the alcohol. Each shot delivers 220 mg of 98% purity Resveratrol, equal to 43 bottles of red wine. Toast to vibrant health and longevity with every sip."}},"landing_section_nqCRrp":{"type":"landing-section","blocks":{"section_inner_jaGitq":{"type":"section-inner","name":"Grid (wrapper)","settings":{"desktop_grid_columns":"2","horizontal_alignment":"start","vertical_alignment":"start","desktop_grid_column_gap":50,"desktop_grid_row_gap":0,"top_spacing_desktop":70,"bottom_spacing_desktop":70,"left_spacing_desktop":70,"right_spacing_desktop":70,"mobile_grid_columns":"1","mobile_horizontal_alignment":"start","mobile_vertical_alignment":"start","mobile_grid_column_gap":0,"mobile_grid_row_gap":0,"top_spacing_mobile":0,"bottom_spacing_mobile":0,"left_spacing_mobile":0,"right_spacing_mobile":0},"blocks":{"grid_list_8NRiw8":{"type":"grid-list","name":"Grid (simple)","settings":{"desktop_grid_columns":"1","column_gap_desktop":40,"row_gap_desktop":40,"mobile_grid_columns":"1","column_gap_mobile":30,"row_gap_mobile":30},"blocks":{"image_block_4rVcUP":{"type":"image-block","name":"Image block","settings":{"image":"shopify:\/\/shop_images\/ChatGPT_Image_Apr_29_2025_09_08_14_PM.png","different_mobile_image":false,"show_on_mobile":true,"show_on_desktop":true},"blocks":{}}},"block_order":["image_block_4rVcUP"]},"section_inner_edEAQq":{"type":"section-inner","name":"Grid (wrapper)","settings":{"desktop_grid_columns":"1","horizontal_alignment":"start","vertical_alignment":"flex-between","desktop_grid_column_gap":0,"desktop_grid_row_gap":0,"top_spacing_desktop":0,"bottom_spacing_desktop":0,"left_spacing_desktop":0,"right_spacing_desktop":70,"mobile_grid_columns":"1","mobile_horizontal_alignment":"start","mobile_vertical_alignment":"center","mobile_grid_column_gap":0,"mobile_grid_row_gap":50,"top_spacing_mobile":20,"bottom_spacing_mobile":20,"left_spacing_mobile":0,"right_spacing_mobile":0},"blocks":{"grid_list_39DAGw":{"type":"grid-list","name":"Grid (simple)","settings":{"desktop_grid_columns":"1","column_gap_desktop":40,"row_gap_desktop":40,"mobile_grid_columns":"1","column_gap_mobile":30,"row_gap_mobile":30},"blocks":{"heading_block_h8V6Bc":{"type":"heading-block","name":"Heading block","settings":{"subheading":"","text":"<p>HOW TO USE<\/p>","tag_select":"h2","text_color":"","text_alignment_desktop":"left","text_alignment_mobile":"left"},"blocks":{}}},"block_order":["heading_block_h8V6Bc"]},"grid_list_eF7r7e":{"type":"grid-list","name":"Grid (simple)","settings":{"desktop_grid_columns":"1","column_gap_desktop":40,"row_gap_desktop":0,"mobile_grid_columns":"1","column_gap_mobile":0,"row_gap_mobile":15},"blocks":{"text_block_EnVxEh":{"type":"text-block","name":"Text block","settings":{"text":"<p>HOW TO MAKE <br\/><br\/>Mix one scoop per day with water, almond milk, or your favorite smoothie.<\/p>","text_color":"","text_weight":"normal","border-top":true,"top_spacing_desktop":10,"text_alignment_desktop":"left","top_spacing_mobile":10,"text_alignment_mobile":"left"},"blocks":{}},"heading_block_wAMPBM":{"type":"heading-block","name":"Heading block","settings":{"subheading":"","text":"","tag_select":"h2","text_color":"","desktop_line_height":0,"top_spacing_desktop":40,"text_alignment_desktop":"left","text_alignment_mobile":"left"},"blocks":{}},"text_block_JCM36W":{"type":"text-block","name":"Text block","settings":{"text":"<p>WHEN TO USE<br\/><br\/>Ideal after workouts or anytime you need a clean, plant-based energy boost<\/p>","text_color":"","text_weight":"normal","border-top":true,"desktop_line_height":0,"top_spacing_desktop":10,"text_alignment_desktop":"left","top_spacing_mobile":10,"text_alignment_mobile":"left"},"blocks":{}}},"block_order":["text_block_EnVxEh","heading_block_wAMPBM","text_block_JCM36W"]}},"block_order":["grid_list_39DAGw","grid_list_eF7r7e"]}},"block_order":["grid_list_8NRiw8","section_inner_edEAQq"]}},"block_order":["section_inner_jaGitq"],"name":"Landing Section","settings":{"background_color":"#e5dbcc","full_width":true,"top_spacing":0,"bottom_spacing":0,"use_top_border":false,"use_bottom_border":false,"full_width_mobile":false,"top_spacing_mobile":20,"bottom_spacing_mobile":20,"use_top_border_mobile":true,"use_bottom_border_mobile":false}},"landing_section_GdHXgh":{"type":"landing-section","blocks":{"section_inner_YmreYw":{"type":"section-inner","name":"Grid (wrapper)","settings":{"desktop_grid_columns":"1","horizontal_alignment":"center","vertical_alignment":"center","desktop_grid_column_gap":0,"desktop_grid_row_gap":0,"top_spacing_desktop":30,"bottom_spacing_desktop":0,"left_spacing_desktop":30,"right_spacing_desktop":30,"mobile_grid_columns":"1","mobile_horizontal_alignment":"start","mobile_vertical_alignment":"start","mobile_grid_column_gap":0,"mobile_grid_row_gap":0,"top_spacing_mobile":0,"bottom_spacing_mobile":0,"left_spacing_mobile":0,"right_spacing_mobile":0},"blocks":{"grid_list_Pf4yHh":{"type":"grid-list","name":"Grid (simple)","settings":{"desktop_grid_columns":"1","column_gap_desktop":0,"row_gap_desktop":0,"mobile_grid_columns":"1","column_gap_mobile":0,"row_gap_mobile":0},"blocks":{"highlight_image_item_6wWHKq":{"type":"highlight-image-item","name":"Highlight image item","settings":{"image_max_width_desktop":0,"title":"","title_size":30,"title_line_height":42,"title_color":"","text":"","text_alignment_desktop":"left","text_alignment_mobile":"center","flex_direction":"row","justify_content":"start","align_items":"start","row_gap":20,"column_gap":20,"flex_direction_mobile":"column","justify_content_mobile":"center","align_items_mobile":"center","row_gap_mobile":20,"column_gap_mobile":20},"blocks":{}}},"block_order":["highlight_image_item_6wWHKq"]},"section_inner_qAQ6QY":{"type":"section-inner","name":"Grid (wrapper)","settings":{"desktop_grid_columns":"2","horizontal_alignment":"start","vertical_alignment":"start","desktop_grid_column_gap":0,"desktop_grid_row_gap":0,"top_spacing_desktop":30,"bottom_spacing_desktop":30,"left_spacing_desktop":0,"right_spacing_desktop":0,"mobile_grid_columns":"1","mobile_horizontal_alignment":"start","mobile_vertical_alignment":"start","mobile_grid_column_gap":0,"mobile_grid_row_gap":0,"top_spacing_mobile":0,"bottom_spacing_mobile":30,"left_spacing_mobile":20,"right_spacing_mobile":20},"blocks":{"grid_list_aTxT4k":{"type":"grid-list","name":"Grid (simple)","settings":{"desktop_grid_columns":"1","column_gap_desktop":40,"row_gap_desktop":40,"mobile_grid_columns":"1","column_gap_mobile":30,"row_gap_mobile":30},"blocks":{"heading_block_gbkbFr":{"type":"heading-block","name":"Heading block","settings":{"subheading":"","text":"<p>ORGANIC, POWERFUL <em>purposeful<\/em><\/p>","tag_select":"h2","text_color":"","text_alignment_desktop":"left","top_spacing_mobile":20,"lr_spacing_mobile":0,"text_alignment_mobile":"left"},"blocks":{}}},"block_order":["heading_block_gbkbFr"]},"grid_list_UKGRj3":{"type":"grid-list","name":"Grid (simple)","settings":{"desktop_grid_columns":"1","column_gap_desktop":40,"row_gap_desktop":40,"mobile_grid_columns":"1","column_gap_mobile":30,"row_gap_mobile":40},"blocks":{"text_block_EJp8ft":{"type":"text-block","name":"Text block","settings":{"text":"<p>At Happy Aging, we don’t just make supplements. We create wellness rituals that support your energy, focus, and long-term strength. It’s not about perfection. It’s about progress that feels real.<br\/><br\/>This is your daily strength ritual, crafted with real.<br\/>ingredients and backed by science. It gives your body exactly what it needs, and nothing it doesn’t.<\/p>","text_color":"","text_weight":"normal","border-top":false,"max_width":0,"text_alignment_desktop":"left","top_spacing_mobile":20,"text_alignment_mobile":"left"},"blocks":{}}},"block_order":["text_block_EJp8ft"]}},"block_order":["grid_list_aTxT4k","grid_list_UKGRj3"]}},"block_order":["grid_list_Pf4yHh","section_inner_qAQ6QY"]}},"block_order":["section_inner_YmreYw"],"name":"Landing Section","settings":{"background_color":"","full_width":true,"top_spacing":0,"bottom_spacing":0,"use_top_border":false,"use_bottom_border":false,"full_width_mobile":true,"top_spacing_mobile":0,"bottom_spacing_mobile":0,"use_top_border_mobile":false,"use_bottom_border_mobile":false}},"landing_section_QVQ6xa":{"type":"landing-section","blocks":{"section_inner_JXkn3J":{"type":"section-inner","name":"Grid (wrapper)","settings":{"desktop_max_width":0,"desktop_grid_columns":"2","horizontal_alignment":"start","vertical_alignment":"start","desktop_grid_column_gap":0,"desktop_grid_row_gap":0,"top_spacing_desktop":0,"bottom_spacing_desktop":0,"left_spacing_desktop":30,"right_spacing_desktop":30,"mobile_grid_columns":"1","mobile_horizontal_alignment":"start","mobile_vertical_alignment":"start","mobile_grid_column_gap":0,"mobile_grid_row_gap":0,"top_spacing_mobile":0,"bottom_spacing_mobile":0,"left_spacing_mobile":0,"right_spacing_mobile":0},"blocks":{"grid_list_qxg7xP":{"type":"grid-list","name":"Grid (simple)","settings":{"desktop_grid_columns":"1","column_gap_desktop":0,"row_gap_desktop":0,"mobile_grid_columns":"1","column_gap_mobile":0,"row_gap_mobile":0},"blocks":{"heading_block_Ht3kT6":{"type":"heading-block","name":"Heading block","settings":{"subheading":"","text":"<p>MAKE IT A <em>ritual<\/em><\/p>","tag_select":"h2","text_color":"","text_alignment_desktop":"left","text_alignment_mobile":"left"},"blocks":{}}},"block_order":["heading_block_Ht3kT6"]},"grid_list_jD7WGn":{"type":"grid-list","name":"Grid (simple)","settings":{"desktop_grid_columns":"1","column_gap_desktop":40,"row_gap_desktop":10,"mobile_grid_columns":"1","column_gap_mobile":30,"row_gap_mobile":30},"blocks":{"text_block_kCWPrW":{"type":"text-block","name":"Text block","settings":{"text":"<p>Subscribe and save with every order. \u2028<br\/><br\/><br\/><br\/><br\/><\/p>","text_color":"","text_weight":"normal","border-top":false,"top_spacing_desktop":0,"text_alignment_desktop":"left","text_alignment_mobile":"left"},"blocks":{}},"newsletter_block_9F7BRy":{"type":"newsletter-block","name":"Newsletter block","settings":{"text":"","text_color":"","text_weight":"normal","border-top":false,"top_spacing_desktop":0,"text_alignment_desktop":"left","text_alignment_mobile":"left"},"blocks":{}},"text_block_4VzPLq":{"type":"text-block","name":"Text block","settings":{"text":"<p>*By signing up, you agree to receive Happy Aging emails.<br\/><br\/><\/p>","text_color":"","text_weight":"normal","border-top":false,"text_alignment_desktop":"left","mobile_font_size":10,"text_alignment_mobile":"left"},"blocks":{}}},"block_order":["text_block_kCWPrW","newsletter_block_9F7BRy","text_block_4VzPLq"]}},"block_order":["grid_list_qxg7xP","grid_list_jD7WGn"]}},"block_order":["section_inner_JXkn3J"],"name":"Landing Section","settings":{"background_color":"","full_width":true,"top_spacing":30,"bottom_spacing":20,"use_top_border":true,"use_bottom_border":true,"full_width_mobile":true,"top_spacing_mobile":30,"bottom_spacing_mobile":20,"use_top_border_mobile":true,"use_bottom_border_mobile":false}},"faqs_9gMU6f":{"type":"faqs","blocks":{"faq_1":{"type":"faq","settings":{"question":"What makes Happy Aging Vegan Protein + Creatine different from other protein powders?","answer":"<p>Happy Aging is the only certified organic vegan protein powder that includes a full clinical dose of creatine monohydrate, 5 grams per serving. It combines 20 grams of clean plant based protein with science backed ingredients to support strength, cognitive function, and longevity. All that with no sugar, no stevia, and no fillers.<\/p>"}},"faq_2":{"type":"faq","settings":{"question":"Is this product suitable for women?","answer":"<p>Yes, absolutely. This formula was created with wellness focused women in mind. The ingredients support strength, muscle recovery, brain clarity, and heart health, which are especially relevant for women who want to age with energy, balance, and confidence.<\/p>"}},"faq_3":{"type":"faq","settings":{"question":"Can I use this protein powder every day?","answer":"<p>Yes. It is designed to be a daily wellness ritual. With clean organic ingredients and a gut friendly formulation, you can enjoy it every day after your workout or as part of your morning routine.<\/p>"}},"faq_4":{"type":"faq","settings":{"question":"Does the product contain sugar or artificial sweeteners?","answer":"<p>No. It is sweetened only with monk fruit, a natural zero calorie sweetener that is easy on digestion and does not spike blood sugar. There is no sugar, no stevia, and no artificial sweeteners in this formula.<\/p>"}},"faq_DDDgNz":{"type":"faq","settings":{"question":"Is the creatine vegan and safe for daily use?","answer":"<p>Yes. We use pure vegan creatine monohydrate, the most researched and effective form. It is safe for daily use and has been shown to support both physical performance and brain health when taken consistently.<\/p>"}},"faq_HYaLwd":{"type":"faq","settings":{"question":"Will this protein powder make me feel bloated?","answer":"<p>No. Our formula does not contain gums, sugar alcohols, dairy, soy, or gluten, which are common causes of digestive discomfort. Most people find it smooth, light, and easy to digest.<\/p>"}},"faq_Jt6UAg":{"type":"faq","settings":{"question":"Is this protein powder third party tested?","answer":"<p>Yes. Happy Aging Vegan Protein with Creatine is made in a GMP certified facility in the United States and is third party tested to ensure purity, potency, and quality.<\/p>"}},"faq_pU9Exc":{"type":"faq","settings":{"question":"How should I use it?","answer":"<p>Mix one scoop with cold water, almond milk, or your favorite smoothie. Use it after your workout or as a clean source of daily energy. <\/p>"}}},"block_order":["faq_1","faq_2","faq_3","faq_4","faq_DDDgNz","faq_HYaLwd","faq_Jt6UAg","faq_pU9Exc"],"settings":{"title":"Frequently Asked Questions","is_padding_top":"yes","is_background_default":"no","is_margin_bottom":"yes","callout_text":"<p>Still Have Questions?<br\/>Our team is here to help! Reach out to us at <a href=\"mailto:hello@happyaging.com\">hello@happyaging.com<\/a> for personalized support.<\/p>"}},"featured_collection_zLaLyW":{"type":"featured-collection","disabled":true,"settings":{"title":"Featured collection","heading_size":"h1","description":"","show_description":false,"description_style":"body","collection":"all","products_to_show":4,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}},"featured_carousel_iaTnPx":{"type":"featured-carousel","blocks":{"article_z9H6JN":{"type":"article","settings":{"article":"news\/molecular-hydrogen-the-smart-antioxidant-redefining-womens-wellness","text":""}},"article_qj3YXj":{"type":"article","settings":{"article":"news\/longevity-science-how-to-support-cellular-health-for-a-vibrant-life","text":""}},"article_kXBBEA":{"type":"article","settings":{"article":"news\/why-your-metabolism-slows-after-30-and-how-to-naturally-reset-it","text":""}}},"block_order":["article_z9H6JN","article_qj3YXj","article_kXBBEA"],"disabled":true,"name":"Featured Carousel","settings":{"title":"Featured Here"}},"17401711251af96b37":{"type":"apps","blocks":{"okendo_reviews_widget_zJJy9k":{"type":"shopify:\/\/apps\/okendo\/blocks\/reviews-widget\/bb689e69-ea70-4661-8fb7-ad24a2e23c29","settings":{"product":"{{ product }}","widget_type":"reviews_widget"}}},"block_order":["okendo_reviews_widget_zJJy9k"],"settings":{"include_margins":true}},"featured_carousel_pzAygh":{"type":"featured-carousel","blocks":{"article_xAMprc":{"type":"article","settings":{"article":"news\/longevity-science-how-to-support-cellular-health-for-a-vibrant-life","text":""}},"article_3tPbYX":{"type":"article","settings":{"article":"news\/antioxidants-in-preventing-aging","text":""}},"article_Fw63df":{"type":"article","settings":{"article":"news\/how-to-reduce-biological-age-with-natural-supplements","text":""}},"article_afhyqr":{"type":"article","settings":{"article":"news\/uncover-the-secrets-to-slow-aging-and-celebrate-radiance-at-every-stage","text":""}},"article_YNNmJq":{"type":"article","settings":{"article":"news\/the-biology-of-aging","text":""}}},"block_order":["article_xAMprc","article_3tPbYX","article_Fw63df","article_afhyqr","article_YNNmJq"],"disabled":true,"settings":{"title":"Featured Here"}}},"order":["main","marquee_pMqq4Y","benefits_TnXkPb","image_with_text_blocks_AriX9t","image_with_text_blocks_H7NErY","steps_blocks_list_DDUtiT","image_with_text_blocks_MAjmBn","timeline_section_hBBi6r","diagram_hCYJXq","wines","landing_section_nqCRrp","landing_section_GdHXgh","landing_section_QVQ6xa","faqs_9gMU6f","featured_collection_zLaLyW","featured_carousel_iaTnPx","17401711251af96b37","featured_carousel_pzAygh"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "okendo_star_rating_XckRMV": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ section.settings.old_product }}"
+          }
+        },
+        "custom_reviews_yRiyrR": {
+          "type": "custom_reviews",
+          "disabled": true,
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "badge_text": "{{ product.metafields.happy_aging.title_tag.value }}"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "STRENGTH THAT FUELS LONGEVITY",
+            "text_style": "uppercase",
+            "text_size": "text-xs",
+            "text_align": "text-left"
+          }
+        },
+        "ingredients_block_GRVpYH": {
+          "type": "ingredients_block",
+          "settings": {
+            "text1": "<h1>20g</h1>",
+            "text2": "<p>ORGANIC VEGAN<br/>PROTEIN</p>",
+            "text3": "<h1>5g</h1>",
+            "text4": "<p>CREATINE<br/>MONOHYDRATE</p>",
+            "text5": "<h1>0g</h1>",
+            "text6": "<p>SUGAR</p>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "text_jqa4hh": {
+          "type": "text",
+          "settings": {
+            "text": "SELECT YOUR FLAVOR",
+            "text_style": "uppercase",
+            "text_size": "text-xs",
+            "text_align": "text-left"
+          }
+        },
+        "variant_picker_VnBabq": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "frontrow_WcpwRH": {
+          "type": "frontrow",
+          "settings": {}
+        },
+        "buy_buttons_W9PKFR": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "default_info_sub_1": "Ships every month",
+            "default_info_sub_2": "Free shipping on all orders",
+            "default_info_sub_3": "Cancel your subscription anytime",
+            "default_info_sub_4": "Ships in 12 hours",
+            "default_info_one_1": "Free shipping on all orders",
+            "default_info_one_2": "Ships in 12 hours",
+            "product_content_text_default_kit": ""
+          }
+        },
+        "quantity_block_XPNgFV": {
+          "type": "quantity_block",
+          "settings": {
+            "qty": 1,
+            "onetime_price": 54,
+            "plan_id": "693107163456",
+            "title": "20 servings",
+            "sub_title": "",
+            "num_bottles": "30",
+            "badge": "",
+            "product_content_text": "20 servings",
+            "subs_info_1": "Ships every month",
+            "subs_info_2": "Free shipping on all orders",
+            "subs_info_3": "Cancel your subscription anytime",
+            "subs_info_4": "Ships in 12 hours",
+            "subs_info_5": "",
+            "subs_info_6": "Ships in 12 hours"
+          }
+        },
+        "quantity_block_PnUVUc": {
+          "type": "quantity_block",
+          "settings": {
+            "qty": 2,
+            "onetime_price": 55,
+            "plan_id": "693109719360",
+            "title": "40 servings",
+            "sub_title": "",
+            "num_bottles": "60",
+            "badge": "",
+            "product_content_text": "40 servings",
+            "subs_info_1": "Ships every month",
+            "subs_info_2": "Free shipping on all orders",
+            "subs_info_3": "Cancel your subscription anytime",
+            "subs_info_4": "Ships in 12 hours",
+            "subs_info_5": "",
+            "subs_info_6": "Ships in 12 hours"
+          }
+        },
+        "text_RB6DBe": {
+          "type": "text",
+          "settings": {
+            "text": "30 Day Money Back Guarantee",
+            "text_style": "bold",
+            "text_size": "text-xs",
+            "text_align": "text-center"
+          }
+        },
+        "text_h9imWD": {
+          "type": "text",
+          "settings": {
+            "text": "If you're unsatisfied with your shots, for any reason, we'll give you a full refund–no return necessary!",
+            "text_style": "body",
+            "text_size": "text-[10px]",
+            "text_align": "text-center"
+          }
+        },
+        "aside_content_TPcz4K": {
+          "type": "aside_content",
+          "settings": {
+            "title": "Ingredients",
+            "text": "<h6><strong>Organic Pea Protein, Organic cocoa Powder, Organic Monk Fruit, Organic Pumpkin Seed Powder, Organic Chia Seed, Organic Natural Vanilla Flavor</strong></h6>",
+            "image": "shopify://shop_images/Lean_Muscle_Table.png"
+          }
+        },
+        "aside_content_rBPMby": {
+          "type": "aside_content",
+          "settings": {
+            "title": "How to use",
+            "text": "<p><strong>How to Use</strong></p><p>Mix one scoop (36g) to 8-12 oz, per day with water, almond milk, or your favorite smoothie.</p><p>Ideal after workouts or anytime you need a clean, plant-based energy boost</p><p><strong>Organic, Powerful, and Purposeful</strong></p><p>At Happy Aging, we don’t just make supplements. We create wellness rituals that support your energy, focus, and long-term strength. It’s not about perfection. It’s about progress that feels real.</p><p>This is your daily strength ritual, crafted with real ingredients and backed by science. It gives your body exactly what it needs, and nothing it doesn’t.</p><p><strong>Make It a Ritual</strong></p><p>Subscribe and save with every order.</p><p>Be the first to explore our latest wellness innovations and exclusive formulas.</p><p><strong> Product Details</strong></p><ul><li>Format: Powder (20 servings)</li><li>Sweetener: Monk Fruit</li><li>Free from: Dairy, soy, gluten, and artificial additives</li><li>Certified Organic and Non-GMO</li><li>Made in the USA in a GMP-certified facility</li></ul>"
+          }
+        },
+        "essential_upsell_app_block_XLXFkq": {
+          "type": "shopify://apps/essential-upsell/blocks/app-block/50627fd9-24fd-4250-8614-accc12826d80",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "okendo_star_rating_XckRMV",
+        "custom_reviews_yRiyrR",
+        "title",
+        "vendor",
+        "ingredients_block_GRVpYH",
+        "description",
+        "text_jqa4hh",
+        "variant_picker_VnBabq",
+        "frontrow_WcpwRH",
+        "buy_buttons_W9PKFR",
+        "quantity_block_XPNgFV",
+        "quantity_block_PnUVUc",
+        "text_RB6DBe",
+        "text_h9imWD",
+        "aside_content_TPcz4K",
+        "aside_content_rBPMby",
+        "essential_upsell_app_block_XLXFkq"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 500px) {.grid-product-title {display: flex; align-items: center; gap: 15px; } span.main-tag-product {display: flex; margin-top: 0; }}"
+      ],
+      "settings": {
+        "old_product": "hydroburn",
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "highlight_color": "#de4845",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "marquee_pMqq4Y": {
+      "type": "marquee",
+      "blocks": {
+        "text_F9fHWN": {
+          "type": "text",
+          "settings": {
+            "text": "Supports metabolic efficiency & sustained energy"
+          }
+        },
+        "text_z7tkeC": {
+          "type": "text",
+          "settings": {
+            "text": "Helps regulate oxidative stress & inflammation"
+          }
+        },
+        "text_8c4bkD": {
+          "type": "text",
+          "settings": {
+            "text": "Enhances recovery & endurance"
+          }
+        },
+        "text_LhF6BY": {
+          "type": "text",
+          "settings": {
+            "text": "100% stimulant-free, clean, and science-backed"
+          }
+        }
+      },
+      "block_order": [
+        "text_F9fHWN",
+        "text_z7tkeC",
+        "text_8c4bkD",
+        "text_LhF6BY"
+      ],
+      "settings": {}
+    },
+    "benefits_TnXkPb": {
+      "type": "benefits",
+      "blocks": {
+        "benefit_item_kPmN3R": {
+          "type": "benefit-item",
+          "settings": {
+            "title": "Fast, Visible Results",
+            "text": "In as little as 4 weeks, you'll notice softer, smoother skin. By 12 weeks, expect firmer, more resilient skin, strengthened nails, and an overall revitalized appearance."
+          }
+        },
+        "benefit_item_aEgn8V": {
+          "type": "benefit-item",
+          "settings": {
+            "title": "Hydrated, Radiant Skin",
+            "text": "Glow Shot delivers deep hydration, improving skin texture, reducing dryness, and restoring a luminous, healthy glow from within."
+          }
+        },
+        "benefit_item_qbW6JR": {
+          "type": "benefit-item",
+          "settings": {
+            "title": "Protection Against Environmental Stress",
+            "text": "The antioxidant power of hibiscus extract helps combat oxidative damage from pollution and UV exposure, keeping your skin healthier for longer."
+          }
+        },
+        "benefit_item_gUamQp": {
+          "type": "benefit-item",
+          "settings": {
+            "title": "Enhanced Skin Firmness and Elasticity",
+            "text": "Thanks to its potent 10,000 mg dose of marine collagen, Glow Shot supports your skin's structure by rebuilding collagen density, improving elasticity, and reducing sagging."
+          }
+        },
+        "benefit_item_ndzfAW": {
+          "type": "benefit-item",
+          "settings": {
+            "title": "Holistic Beauty Support",
+            "text": "Beyond skin hydration, Glow Shot supports stronger nails and improved hair resilience, giving you a comprehensive beauty boost."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_item_kPmN3R",
+        "benefit_item_aEgn8V",
+        "benefit_item_qbW6JR",
+        "benefit_item_gUamQp",
+        "benefit_item_ndzfAW"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "<p>THE MAIN BENEFITS OF <em>glow shot</em></p>",
+        "text": "Empowering beauty and vitality.",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/d59e99138e964a2b80860f18acb30caa.mp4",
+        "show_border_top": true
+      }
+    },
+    "image_with_text_blocks_AriX9t": {
+      "type": "image-with-text-blocks",
+      "blocks": {
+        "text_RT9jGJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>5g CREATINE.<br/>20g ORGANIC PROTEIN.<br/>0g SUGAR.<br/><br/></p>",
+            "text_style": "heading",
+            "has_border": false,
+            "center_mobile": false
+          }
+        },
+        "spacing_WUiEkU": {
+          "type": "spacing",
+          "settings": {
+            "spacing_desktop": 50,
+            "spacing_mobile": 0,
+            "fill_all_desktop": false
+          }
+        },
+        "spacing_pHxRxG": {
+          "type": "spacing",
+          "settings": {
+            "spacing_desktop": 20,
+            "spacing_mobile": 20,
+            "fill_all_desktop": false
+          }
+        },
+        "text_VDenjw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>When it comes to building strength, energy, and performance, creatine makes all the difference. Yet most vegan protein powders leave it out.<br/><br/>Happy Aging Vegan Protein + Creatine includes 5g of creatine monohydrate, the most researched and trusted form, blended directly into your daily shake. You get real results with no need for extra supplements, no artificial fillers, and no compromises.<br/><br/>This certified organic formula is sugar free, stevia free, and delivers a rich flavor you'll look forward to enjoying every single day.</p>",
+            "text_style": "body",
+            "has_border": false,
+            "center_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "text_RT9jGJ",
+        "spacing_WUiEkU",
+        "spacing_pHxRxG",
+        "text_VDenjw"
+      ],
+      "custom_css": [
+        ".text-xs {font-size: 1.5rem;}"
+      ],
+      "settings": {
+        "title": "",
+        "text": "",
+        "image_desk": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-13.jpg",
+        "image_height_desk": "adapt",
+        "image_mob": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-13.jpg",
+        "image_height_mob": "adapt",
+        "width": "full",
+        "width_mobile": "full",
+        "image_first": false,
+        "image_first_mob": true,
+        "image_large": false,
+        "show_border": false,
+        "show_border_top": true,
+        "hide_border_mobile": false,
+        "remove_py_content": false,
+        "small_content": false,
+        "wrap_image_mobile": false,
+        "wrap_content_mobile": true,
+        "spacing_desktop": "lg:py-0",
+        "spacing_mobile": "py-0"
+      }
+    },
+    "image_with_text_blocks_H7NErY": {
+      "type": "image-with-text-blocks",
+      "blocks": {
+        "text_gBUiKM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>5g Creatine Monohydrate</p>",
+            "text_style": "heading_small",
+            "has_border": false,
+            "center_mobile": false
+          }
+        },
+        "text_yKaky3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The clinically validated dose that supports muscle strength, endurance, cognitive health, and cellular energy</p>",
+            "text_style": "body",
+            "has_border": true,
+            "center_mobile": false
+          }
+        },
+        "text_cpneWt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>20g Organic Pea and Pumpkin Seed Protein</p>",
+            "text_style": "heading_small",
+            "has_border": false,
+            "center_mobile": false
+          }
+        },
+        "text_h7cjWT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A complete plant-based protein that promotes muscle gain, lean mass, and effective post-workout recovery</p>",
+            "text_style": "body",
+            "has_border": true,
+            "center_mobile": false
+          }
+        },
+        "text_RhRm8r": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Monk Fruit Sweetener</p>",
+            "text_style": "heading_small",
+            "has_border": false,
+            "center_mobile": false
+          }
+        },
+        "text_fFLFkF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A clean, gut-friendly alternative to sugar and stevia</p>",
+            "text_style": "body",
+            "has_border": true,
+            "center_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "text_gBUiKM",
+        "text_yKaky3",
+        "text_cpneWt",
+        "text_h7cjWT",
+        "text_RhRm8r",
+        "text_fFLFkF"
+      ],
+      "name": "Image with text blocks",
+      "settings": {
+        "title": "<p>WHAT YOU’LL GET IN <em>every scoop</em></p>",
+        "text": "",
+        "image_desk": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-35.jpg",
+        "image_height_desk": "fit",
+        "image_mob": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-35.jpg",
+        "image_height_mob": "square",
+        "width": "container",
+        "width_mobile": "full",
+        "image_first": true,
+        "image_first_mob": true,
+        "image_large": false,
+        "show_border": false,
+        "show_border_top": true,
+        "hide_border_mobile": false,
+        "remove_py_content": false,
+        "small_content": true,
+        "wrap_image_mobile": false,
+        "wrap_content_mobile": true,
+        "spacing_desktop": "lg:py-20",
+        "spacing_mobile": "py-10"
+      }
+    },
+    "steps_blocks_list_DDUtiT": {
+      "type": "steps-blocks-list",
+      "blocks": {
+        "result_item_edMKrk": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify://shop_images/image.png",
+            "step_title": "",
+            "title": "Builds Muscle and Strength",
+            "text": "<p>Supports protein synthesis and recovery with 20g of clean vegan protein and 5g of creatine monohydrate</p>"
+          }
+        },
+        "result_item_HBjtUY": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Apr_29_2025_10_17_13_PM.png",
+            "step_title": "",
+            "title": "Boosts Brain and Body Energy",
+            "text": "<p>Enhances focus, memory, and physical performance by improving cellular energy production</p>"
+          }
+        },
+        "result_item_HrqwVd": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Apr_29_2025_09_58_14_PM.png",
+            "step_title": "",
+            "title": "All in One Simplicity",
+            "text": "<p>Combines your daily creatine and protein needs in a single scoop with no compromise</p>"
+          }
+        },
+        "result_item_PwY7gx": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify://shop_images/original_cc433f731d6bff1f7a959c47a9409a0a_7_1.png",
+            "step_title": "",
+            "title": "Clean and Easy to Digest",
+            "text": "<p>No sugar, no stevia, no gums. Just pure, functional ingredients</p>"
+          }
+        }
+      },
+      "block_order": [
+        "result_item_edMKrk",
+        "result_item_HBjtUY",
+        "result_item_HrqwVd",
+        "result_item_PwY7gx"
+      ],
+      "custom_css": [
+        ".step_name {display: none;}"
+      ],
+      "settings": {
+        "title": "KEY BENEFITS OF VEGAN PROTEIN <em>and creatine</em>"
+      }
+    },
+    "image_with_text_blocks_MAjmBn": {
+      "type": "image-with-text-blocks",
+      "blocks": {
+        "text_iyPHHg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>WHY CREATINE MATTERS<br/><em>for everyone<br/></em></p>",
+            "text_style": "heading",
+            "has_border": false,
+            "center_mobile": false
+          }
+        },
+        "text_PGDaGb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Creatine is one of the most researched and effective performance nutrients available today. It supports:<br/><br/></p>",
+            "text_style": "body",
+            "has_border": true,
+            "center_mobile": false
+          }
+        },
+        "text_fgNRyh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Muscle strength and lean mass</p>",
+            "text_style": "heading_small",
+            "has_border": true,
+            "center_mobile": false
+          }
+        },
+        "text_gDiG8x": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Recovery after physical activity</p>",
+            "text_style": "heading_small",
+            "has_border": true,
+            "center_mobile": false
+          }
+        },
+        "text_rYPf9U": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Mental clarity and memory</p>",
+            "text_style": "heading_small",
+            "has_border": true,
+            "center_mobile": false
+          }
+        },
+        "text_93wfP8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cellular energy and long-term vitality</p>",
+            "text_style": "heading_small",
+            "has_border": true,
+            "center_mobile": false
+          }
+        },
+        "spacing_9jtD8F": {
+          "type": "spacing",
+          "disabled": true,
+          "settings": {
+            "spacing_desktop": 50,
+            "spacing_mobile": 50,
+            "fill_all_desktop": false
+          }
+        },
+        "spacing_34dxqX": {
+          "type": "spacing",
+          "settings": {
+            "spacing_desktop": 20,
+            "spacing_mobile": 20,
+            "fill_all_desktop": false
+          }
+        },
+        "text_3B7nbk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>It also benefits cardiovascular health. Studies suggest that creatine may support heart function by enhancing energy availability in cardiac muscle and reducing oxidative stress. That makes it a powerful ally not just for performance, but for overall well-being.<br/><br/>And yes, it’s completely plant-based. Our formula uses pure creatine monohydrate blended into a plant-powered base designed for real results.</p>",
+            "text_style": "body",
+            "has_border": false,
+            "center_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "text_iyPHHg",
+        "text_PGDaGb",
+        "text_fgNRyh",
+        "text_gDiG8x",
+        "text_rYPf9U",
+        "text_93wfP8",
+        "spacing_9jtD8F",
+        "spacing_34dxqX",
+        "text_3B7nbk"
+      ],
+      "settings": {
+        "title": "",
+        "text": "",
+        "image_desk": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-1.jpg",
+        "image_height_desk": "fit",
+        "image_mob": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-1.jpg",
+        "image_height_mob": "adapt",
+        "width": "full",
+        "width_mobile": "full",
+        "image_first": false,
+        "image_first_mob": true,
+        "image_large": false,
+        "show_border": false,
+        "show_border_top": true,
+        "hide_border_mobile": false,
+        "remove_py_content": false,
+        "small_content": false,
+        "wrap_image_mobile": false,
+        "wrap_content_mobile": true,
+        "spacing_desktop": "lg:py-0",
+        "spacing_mobile": "py-0"
+      }
+    },
+    "timeline_section_hBBi6r": {
+      "type": "timeline-section",
+      "blocks": {
+        "title_ERxH8J": {
+          "type": "title",
+          "settings": {
+            "title": "<p>WHAT MAKES IT THE BEST<br/><em>vegan protein powder</em></p>"
+          }
+        },
+        "step_zxLdV4": {
+          "type": "step",
+          "settings": {
+            "number": "",
+            "step_title": "Creatine Monohydrate 5g",
+            "step_text": "Included in every serving"
+          }
+        },
+        "step_QnBzQa": {
+          "type": "step",
+          "settings": {
+            "number": "",
+            "step_title": "CERTIFIED organic",
+            "step_text": "Fully Certified"
+          }
+        },
+        "step_ykbgV9": {
+          "type": "step",
+          "settings": {
+            "number": "",
+            "step_title": "FREE FROM common allergies",
+            "step_text": "No dairy, soy and gluten"
+          }
+        },
+        "step_qMPH6L": {
+          "type": "step",
+          "settings": {
+            "number": "",
+            "step_title": "SUGAR-FREE, stevia-free",
+            "step_text": "Sweetened only with monk fruit"
+          }
+        }
+      },
+      "block_order": [
+        "title_ERxH8J",
+        "step_zxLdV4",
+        "step_QnBzQa",
+        "step_ykbgV9",
+        "step_qMPH6L"
+      ],
+      "name": "Timeline Section",
+      "settings": {
+        "show_border_top": true,
+        "first_image": "shopify://shop_images/ChatGPT_Image_Apr_29_2025_08_00_28_PM.png",
+        "second_image": "shopify://shop_images/a-photograph-capturing-a-dramatic-high-s_dw8nDd1YSB--CwmlMVBU2A_Mpbpi2n9Sra5AXbSv8czTg.png"
+      }
+    },
+    "diagram_hCYJXq": {
+      "type": "diagram",
+      "blocks": {
+        "timeline_TJpK7B": {
+          "type": "timeline",
+          "settings": {
+            "week_text": "Weeks 1-4",
+            "text": "<h3>Noticeable Energy Improvements</h3><p>Better endurance, and less oxidative stress​.</p>"
+          }
+        },
+        "timeline_pEVJXF": {
+          "type": "timeline",
+          "settings": {
+            "week_text": "Weeks 5-8",
+            "text": "<h3>EImproved Metabolic Function</h3><p>Better recovery, and increased energy stability​.</p>"
+          }
+        },
+        "timeline_wfQr3q": {
+          "type": "timeline",
+          "settings": {
+            "week_text": "Weeks 9+",
+            "text": "<h3> Long-Term Metabolic Efficiency</h3><p>Mitochondrial resilience, and sustained vitality​.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "timeline_TJpK7B",
+        "timeline_pEVJXF",
+        "timeline_wfQr3q"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "WHAT TO EXPECT over time",
+        "text": "The longer you use HydroBurn, the better your metabolic efficiency becomes."
+      }
+    },
+    "wines": {
+      "type": "wines",
+      "disabled": true,
+      "settings": {
+        "title_section": "AGE LIKE <em>fine wine</em>",
+        "text_section": "Forget “a glass of wine”—elevate to an antioxidant celebration, without the alcohol. Each shot delivers 220 mg of 98% purity Resveratrol, equal to 43 bottles of red wine. Toast to vibrant health and longevity with every sip."
+      }
+    },
+    "landing_section_nqCRrp": {
+      "type": "landing-section",
+      "blocks": {
+        "section_inner_jaGitq": {
+          "type": "section-inner",
+          "name": "Grid (wrapper)",
+          "settings": {
+            "desktop_grid_columns": "2",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 50,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 70,
+            "bottom_spacing_desktop": 70,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "grid_list_8NRiw8": {
+              "type": "grid-list",
+              "name": "Grid (simple)",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 40,
+                "row_gap_desktop": 40,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 30,
+                "row_gap_mobile": 30
+              },
+              "blocks": {
+                "image_block_4rVcUP": {
+                  "type": "image-block",
+                  "name": "Image block",
+                  "settings": {
+                    "image": "shopify://shop_images/ChatGPT_Image_Apr_29_2025_09_08_14_PM.png",
+                    "different_mobile_image": false,
+                    "show_on_mobile": true,
+                    "show_on_desktop": true
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "image_block_4rVcUP"
+              ]
+            },
+            "section_inner_edEAQq": {
+              "type": "section-inner",
+              "name": "Grid (wrapper)",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "horizontal_alignment": "start",
+                "vertical_alignment": "flex-between",
+                "desktop_grid_column_gap": 0,
+                "desktop_grid_row_gap": 0,
+                "top_spacing_desktop": 0,
+                "bottom_spacing_desktop": 0,
+                "left_spacing_desktop": 0,
+                "right_spacing_desktop": 70,
+                "mobile_grid_columns": "1",
+                "mobile_horizontal_alignment": "start",
+                "mobile_vertical_alignment": "center",
+                "mobile_grid_column_gap": 0,
+                "mobile_grid_row_gap": 50,
+                "top_spacing_mobile": 20,
+                "bottom_spacing_mobile": 20,
+                "left_spacing_mobile": 0,
+                "right_spacing_mobile": 0
+              },
+              "blocks": {
+                "grid_list_39DAGw": {
+                  "type": "grid-list",
+                  "name": "Grid (simple)",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 40,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 30,
+                    "row_gap_mobile": 30
+                  },
+                  "blocks": {
+                    "heading_block_h8V6Bc": {
+                      "type": "heading-block",
+                      "name": "Heading block",
+                      "settings": {
+                        "subheading": "",
+                        "text": "<p>HOW TO USE</p>",
+                        "tag_select": "h2",
+                        "text_color": "",
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_block_h8V6Bc"
+                  ]
+                },
+                "grid_list_eF7r7e": {
+                  "type": "grid-list",
+                  "name": "Grid (simple)",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 0,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 0,
+                    "row_gap_mobile": 15
+                  },
+                  "blocks": {
+                    "text_block_EnVxEh": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "settings": {
+                        "text": "<p>HOW TO MAKE <br/><br/>Mix one scoop per day with water, almond milk, or your favorite smoothie.</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": true,
+                        "top_spacing_desktop": 10,
+                        "text_alignment_desktop": "left",
+                        "top_spacing_mobile": 10,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "heading_block_wAMPBM": {
+                      "type": "heading-block",
+                      "name": "Heading block",
+                      "settings": {
+                        "subheading": "",
+                        "text": "",
+                        "tag_select": "h2",
+                        "text_color": "",
+                        "desktop_line_height": 0,
+                        "top_spacing_desktop": 40,
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_JCM36W": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "settings": {
+                        "text": "<p>WHEN TO USE<br/><br/>Ideal after workouts or anytime you need a clean, plant-based energy boost</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": true,
+                        "desktop_line_height": 0,
+                        "top_spacing_desktop": 10,
+                        "text_alignment_desktop": "left",
+                        "top_spacing_mobile": 10,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_block_EnVxEh",
+                    "heading_block_wAMPBM",
+                    "text_block_JCM36W"
+                  ]
+                }
+              },
+              "block_order": [
+                "grid_list_39DAGw",
+                "grid_list_eF7r7e"
+              ]
+            }
+          },
+          "block_order": [
+            "grid_list_8NRiw8",
+            "section_inner_edEAQq"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_jaGitq"
+      ],
+      "name": "Landing Section",
+      "settings": {
+        "background_color": "#e5dbcc",
+        "full_width": true,
+        "top_spacing": 0,
+        "bottom_spacing": 0,
+        "use_top_border": false,
+        "use_bottom_border": false,
+        "full_width_mobile": false,
+        "top_spacing_mobile": 20,
+        "bottom_spacing_mobile": 20,
+        "use_top_border_mobile": true,
+        "use_bottom_border_mobile": false
+      }
+    },
+    "landing_section_GdHXgh": {
+      "type": "landing-section",
+      "blocks": {
+        "section_inner_YmreYw": {
+          "type": "section-inner",
+          "name": "Grid (wrapper)",
+          "settings": {
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "center",
+            "vertical_alignment": "center",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 30,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 30,
+            "right_spacing_desktop": 30,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "grid_list_Pf4yHh": {
+              "type": "grid-list",
+              "name": "Grid (simple)",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 0,
+                "row_gap_desktop": 0,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 0,
+                "row_gap_mobile": 0
+              },
+              "blocks": {
+                "highlight_image_item_6wWHKq": {
+                  "type": "highlight-image-item",
+                  "name": "Highlight image item",
+                  "settings": {
+                    "image_max_width_desktop": 0,
+                    "title": "",
+                    "title_size": 30,
+                    "title_line_height": 42,
+                    "title_color": "",
+                    "text": "",
+                    "text_alignment_desktop": "left",
+                    "text_alignment_mobile": "center",
+                    "flex_direction": "row",
+                    "justify_content": "start",
+                    "align_items": "start",
+                    "row_gap": 20,
+                    "column_gap": 20,
+                    "flex_direction_mobile": "column",
+                    "justify_content_mobile": "center",
+                    "align_items_mobile": "center",
+                    "row_gap_mobile": 20,
+                    "column_gap_mobile": 20
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "highlight_image_item_6wWHKq"
+              ]
+            },
+            "section_inner_qAQ6QY": {
+              "type": "section-inner",
+              "name": "Grid (wrapper)",
+              "settings": {
+                "desktop_grid_columns": "2",
+                "horizontal_alignment": "start",
+                "vertical_alignment": "start",
+                "desktop_grid_column_gap": 0,
+                "desktop_grid_row_gap": 0,
+                "top_spacing_desktop": 30,
+                "bottom_spacing_desktop": 30,
+                "left_spacing_desktop": 0,
+                "right_spacing_desktop": 0,
+                "mobile_grid_columns": "1",
+                "mobile_horizontal_alignment": "start",
+                "mobile_vertical_alignment": "start",
+                "mobile_grid_column_gap": 0,
+                "mobile_grid_row_gap": 0,
+                "top_spacing_mobile": 0,
+                "bottom_spacing_mobile": 30,
+                "left_spacing_mobile": 20,
+                "right_spacing_mobile": 20
+              },
+              "blocks": {
+                "grid_list_aTxT4k": {
+                  "type": "grid-list",
+                  "name": "Grid (simple)",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 40,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 30,
+                    "row_gap_mobile": 30
+                  },
+                  "blocks": {
+                    "heading_block_gbkbFr": {
+                      "type": "heading-block",
+                      "name": "Heading block",
+                      "settings": {
+                        "subheading": "",
+                        "text": "<p>ORGANIC, POWERFUL <em>purposeful</em></p>",
+                        "tag_select": "h2",
+                        "text_color": "",
+                        "text_alignment_desktop": "left",
+                        "top_spacing_mobile": 20,
+                        "lr_spacing_mobile": 0,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_block_gbkbFr"
+                  ]
+                },
+                "grid_list_UKGRj3": {
+                  "type": "grid-list",
+                  "name": "Grid (simple)",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 40,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 30,
+                    "row_gap_mobile": 40
+                  },
+                  "blocks": {
+                    "text_block_EJp8ft": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "settings": {
+                        "text": "<p>At Happy Aging, we don’t just make supplements. We create wellness rituals that support your energy, focus, and long-term strength. It’s not about perfection. It’s about progress that feels real.<br/><br/>This is your daily strength ritual, crafted with real.<br/>ingredients and backed by science. It gives your body exactly what it needs, and nothing it doesn’t.</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": false,
+                        "max_width": 0,
+                        "text_alignment_desktop": "left",
+                        "top_spacing_mobile": 20,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_block_EJp8ft"
+                  ]
+                }
+              },
+              "block_order": [
+                "grid_list_aTxT4k",
+                "grid_list_UKGRj3"
+              ]
+            }
+          },
+          "block_order": [
+            "grid_list_Pf4yHh",
+            "section_inner_qAQ6QY"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_YmreYw"
+      ],
+      "name": "Landing Section",
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "top_spacing": 0,
+        "bottom_spacing": 0,
+        "use_top_border": false,
+        "use_bottom_border": false,
+        "full_width_mobile": true,
+        "top_spacing_mobile": 0,
+        "bottom_spacing_mobile": 0,
+        "use_top_border_mobile": false,
+        "use_bottom_border_mobile": false
+      }
+    },
+    "landing_section_QVQ6xa": {
+      "type": "landing-section",
+      "blocks": {
+        "section_inner_JXkn3J": {
+          "type": "section-inner",
+          "name": "Grid (wrapper)",
+          "settings": {
+            "desktop_max_width": 0,
+            "desktop_grid_columns": "2",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 30,
+            "right_spacing_desktop": 30,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "grid_list_qxg7xP": {
+              "type": "grid-list",
+              "name": "Grid (simple)",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 0,
+                "row_gap_desktop": 0,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 0,
+                "row_gap_mobile": 0
+              },
+              "blocks": {
+                "heading_block_Ht3kT6": {
+                  "type": "heading-block",
+                  "name": "Heading block",
+                  "settings": {
+                    "subheading": "",
+                    "text": "<p>MAKE IT A <em>ritual</em></p>",
+                    "tag_select": "h2",
+                    "text_color": "",
+                    "text_alignment_desktop": "left",
+                    "text_alignment_mobile": "left"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "heading_block_Ht3kT6"
+              ]
+            },
+            "grid_list_jD7WGn": {
+              "type": "grid-list",
+              "name": "Grid (simple)",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 40,
+                "row_gap_desktop": 10,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 30,
+                "row_gap_mobile": 30
+              },
+              "blocks": {
+                "text_block_kCWPrW": {
+                  "type": "text-block",
+                  "name": "Text block",
+                  "settings": {
+                    "text": "<p>Subscribe and save with every order.  <br/><br/><br/><br/><br/></p>",
+                    "text_color": "",
+                    "text_weight": "normal",
+                    "border-top": false,
+                    "top_spacing_desktop": 0,
+                    "text_alignment_desktop": "left",
+                    "text_alignment_mobile": "left"
+                  },
+                  "blocks": {}
+                },
+                "newsletter_block_9F7BRy": {
+                  "type": "newsletter-block",
+                  "name": "Newsletter block",
+                  "settings": {
+                    "text": "",
+                    "text_color": "",
+                    "text_weight": "normal",
+                    "border-top": false,
+                    "top_spacing_desktop": 0,
+                    "text_alignment_desktop": "left",
+                    "text_alignment_mobile": "left"
+                  },
+                  "blocks": {}
+                },
+                "text_block_4VzPLq": {
+                  "type": "text-block",
+                  "name": "Text block",
+                  "settings": {
+                    "text": "<p>*By signing up, you agree to receive Happy Aging emails.<br/><br/></p>",
+                    "text_color": "",
+                    "text_weight": "normal",
+                    "border-top": false,
+                    "text_alignment_desktop": "left",
+                    "mobile_font_size": 10,
+                    "text_alignment_mobile": "left"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_block_kCWPrW",
+                "newsletter_block_9F7BRy",
+                "text_block_4VzPLq"
+              ]
+            }
+          },
+          "block_order": [
+            "grid_list_qxg7xP",
+            "grid_list_jD7WGn"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_JXkn3J"
+      ],
+      "name": "Landing Section",
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "top_spacing": 30,
+        "bottom_spacing": 20,
+        "use_top_border": true,
+        "use_bottom_border": true,
+        "full_width_mobile": true,
+        "top_spacing_mobile": 30,
+        "bottom_spacing_mobile": 20,
+        "use_top_border_mobile": true,
+        "use_bottom_border_mobile": false
+      }
+    },
+    "faqs_9gMU6f": {
+      "type": "faqs",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "What makes Happy Aging Vegan Protein + Creatine different from other protein powders?",
+            "answer": "<p>Happy Aging is the only certified organic vegan protein powder that includes a full clinical dose of creatine monohydrate, 5 grams per serving. It combines 20 grams of clean plant based protein with science backed ingredients to support strength, cognitive function, and longevity. All that with no sugar, no stevia, and no fillers.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Is this product suitable for women?",
+            "answer": "<p>Yes, absolutely. This formula was created with wellness focused women in mind. The ingredients support strength, muscle recovery, brain clarity, and heart health, which are especially relevant for women who want to age with energy, balance, and confidence.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I use this protein powder every day?",
+            "answer": "<p>Yes. It is designed to be a daily wellness ritual. With clean organic ingredients and a gut friendly formulation, you can enjoy it every day after your workout or as part of your morning routine.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Does the product contain sugar or artificial sweeteners?",
+            "answer": "<p>No. It is sweetened only with monk fruit, a natural zero calorie sweetener that is easy on digestion and does not spike blood sugar. There is no sugar, no stevia, and no artificial sweeteners in this formula.</p>"
+          }
+        },
+        "faq_DDDgNz": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the creatine vegan and safe for daily use?",
+            "answer": "<p>Yes. We use pure vegan creatine monohydrate, the most researched and effective form. It is safe for daily use and has been shown to support both physical performance and brain health when taken consistently.</p>"
+          }
+        },
+        "faq_HYaLwd": {
+          "type": "faq",
+          "settings": {
+            "question": "Will this protein powder make me feel bloated?",
+            "answer": "<p>No. Our formula does not contain gums, sugar alcohols, dairy, soy, or gluten, which are common causes of digestive discomfort. Most people find it smooth, light, and easy to digest.</p>"
+          }
+        },
+        "faq_Jt6UAg": {
+          "type": "faq",
+          "settings": {
+            "question": "Is this protein powder third party tested?",
+            "answer": "<p>Yes. Happy Aging Vegan Protein with Creatine is made in a GMP certified facility in the United States and is third party tested to ensure purity, potency, and quality.</p>"
+          }
+        },
+        "faq_pU9Exc": {
+          "type": "faq",
+          "settings": {
+            "question": "How should I use it?",
+            "answer": "<p>Mix one scoop with cold water, almond milk, or your favorite smoothie. Use it after your workout or as a clean source of daily energy. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_DDDgNz",
+        "faq_HYaLwd",
+        "faq_Jt6UAg",
+        "faq_pU9Exc"
+      ],
+      "settings": {
+        "title": "Frequently Asked Questions",
+        "is_padding_top": "yes",
+        "is_background_default": "no",
+        "is_margin_bottom": "yes",
+        "callout_text": "<p>Still Have Questions?<br/>Our team is here to help! Reach out to us at <a href=\"mailto:hello@happyaging.com\">hello@happyaging.com</a> for personalized support.</p>"
+      }
+    },
+    "featured_collection_zLaLyW": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_carousel_iaTnPx": {
+      "type": "featured-carousel",
+      "blocks": {
+        "article_z9H6JN": {
+          "type": "article",
+          "settings": {
+            "article": "news/molecular-hydrogen-the-smart-antioxidant-redefining-womens-wellness",
+            "text": ""
+          }
+        },
+        "article_qj3YXj": {
+          "type": "article",
+          "settings": {
+            "article": "news/longevity-science-how-to-support-cellular-health-for-a-vibrant-life",
+            "text": ""
+          }
+        },
+        "article_kXBBEA": {
+          "type": "article",
+          "settings": {
+            "article": "news/why-your-metabolism-slows-after-30-and-how-to-naturally-reset-it",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "article_z9H6JN",
+        "article_qj3YXj",
+        "article_kXBBEA"
+      ],
+      "disabled": true,
+      "name": "Featured Carousel",
+      "settings": {
+        "title": "Featured Here"
+      }
+    },
+    "17401711251af96b37": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_widget_zJJy9k": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_zJJy9k"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "featured_carousel_pzAygh": {
+      "type": "featured-carousel",
+      "blocks": {
+        "article_xAMprc": {
+          "type": "article",
+          "settings": {
+            "article": "news/longevity-science-how-to-support-cellular-health-for-a-vibrant-life",
+            "text": ""
+          }
+        },
+        "article_3tPbYX": {
+          "type": "article",
+          "settings": {
+            "article": "news/antioxidants-in-preventing-aging",
+            "text": ""
+          }
+        },
+        "article_Fw63df": {
+          "type": "article",
+          "settings": {
+            "article": "news/how-to-reduce-biological-age-with-natural-supplements",
+            "text": ""
+          }
+        },
+        "article_afhyqr": {
+          "type": "article",
+          "settings": {
+            "article": "news/uncover-the-secrets-to-slow-aging-and-celebrate-radiance-at-every-stage",
+            "text": ""
+          }
+        },
+        "article_YNNmJq": {
+          "type": "article",
+          "settings": {
+            "article": "news/the-biology-of-aging",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "article_xAMprc",
+        "article_3tPbYX",
+        "article_Fw63df",
+        "article_afhyqr",
+        "article_YNNmJq"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Featured Here"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "marquee_pMqq4Y",
+    "benefits_TnXkPb",
+    "image_with_text_blocks_AriX9t",
+    "image_with_text_blocks_H7NErY",
+    "steps_blocks_list_DDUtiT",
+    "image_with_text_blocks_MAjmBn",
+    "timeline_section_hBBi6r",
+    "diagram_hCYJXq",
+    "wines",
+    "landing_section_nqCRrp",
+    "landing_section_GdHXgh",
+    "landing_section_QVQ6xa",
+    "faqs_9gMU6f",
+    "featured_collection_zLaLyW",
+    "featured_carousel_iaTnPx",
+    "17401711251af96b37",
+    "featured_carousel_pzAygh"
+  ]
+}
