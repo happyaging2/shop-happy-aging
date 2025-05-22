@@ -563,15 +563,6 @@
             "center_mobile": false
           }
         },
-        "spacing_9jtD8F": {
-          "type": "spacing",
-          "disabled": true,
-          "settings": {
-            "spacing_desktop": 50,
-            "spacing_mobile": 50,
-            "fill_all_desktop": false
-          }
-        },
         "spacing_34dxqX": {
           "type": "spacing",
           "settings": {
@@ -597,7 +588,6 @@
         "text_gDiG8x",
         "text_rYPf9U",
         "text_93wfP8",
-        "spacing_9jtD8F",
         "spacing_34dxqX",
         "text_3B7nbk"
       ],
@@ -678,42 +668,6 @@
         "show_border_top": true,
         "first_image": "shopify://shop_images/ChatGPT_Image_Apr_29_2025_08_00_28_PM.png",
         "second_image": "shopify://shop_images/a-photograph-capturing-a-dramatic-high-s_dw8nDd1YSB--CwmlMVBU2A_Mpbpi2n9Sra5AXbSv8czTg.png"
-      }
-    },
-    "diagram_hCYJXq": {
-      "type": "diagram",
-      "blocks": {
-        "timeline_TJpK7B": {
-          "type": "timeline",
-          "settings": {
-            "week_text": "Weeks 1-4",
-            "text": "<h3>Noticeable Energy Improvements</h3><p>Better endurance, and less oxidative stress​.</p>"
-          }
-        },
-        "timeline_pEVJXF": {
-          "type": "timeline",
-          "settings": {
-            "week_text": "Weeks 5-8",
-            "text": "<h3>EImproved Metabolic Function</h3><p>Better recovery, and increased energy stability​.</p>"
-          }
-        },
-        "timeline_wfQr3q": {
-          "type": "timeline",
-          "settings": {
-            "week_text": "Weeks 9+",
-            "text": "<h3> Long-Term Metabolic Efficiency</h3><p>Mitochondrial resilience, and sustained vitality​.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "timeline_TJpK7B",
-        "timeline_pEVJXF",
-        "timeline_wfQr3q"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "WHAT TO EXPECT over time",
-        "text": "The longer you use HydroBurn, the better your metabolic efficiency becomes."
       }
     },
     "wines": {
@@ -1339,71 +1293,6 @@
         "callout_text": "<p>Still Have Questions?<br/>Our team is here to help! Reach out to us at <a href=\"mailto:hello@happyaging.com\">hello@happyaging.com</a> for personalized support.</p>"
       }
     },
-    "featured_collection_zLaLyW": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "title": "Featured collection",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "featured_carousel_iaTnPx": {
-      "type": "featured-carousel",
-      "blocks": {
-        "article_z9H6JN": {
-          "type": "article",
-          "settings": {
-            "article": "news/molecular-hydrogen-the-smart-antioxidant-redefining-womens-wellness",
-            "text": ""
-          }
-        },
-        "article_qj3YXj": {
-          "type": "article",
-          "settings": {
-            "article": "news/longevity-science-how-to-support-cellular-health-for-a-vibrant-life",
-            "text": ""
-          }
-        },
-        "article_kXBBEA": {
-          "type": "article",
-          "settings": {
-            "article": "news/why-your-metabolism-slows-after-30-and-how-to-naturally-reset-it",
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "article_z9H6JN",
-        "article_qj3YXj",
-        "article_kXBBEA"
-      ],
-      "disabled": true,
-      "name": "Featured Carousel",
-      "settings": {
-        "title": "Featured Here"
-      }
-    },
     "17401711251af96b37": {
       "type": "apps",
       "blocks": {
@@ -1421,57 +1310,6 @@
       "settings": {
         "include_margins": true
       }
-    },
-    "featured_carousel_pzAygh": {
-      "type": "featured-carousel",
-      "blocks": {
-        "article_xAMprc": {
-          "type": "article",
-          "settings": {
-            "article": "news/longevity-science-how-to-support-cellular-health-for-a-vibrant-life",
-            "text": ""
-          }
-        },
-        "article_3tPbYX": {
-          "type": "article",
-          "settings": {
-            "article": "news/antioxidants-in-preventing-aging",
-            "text": ""
-          }
-        },
-        "article_Fw63df": {
-          "type": "article",
-          "settings": {
-            "article": "news/how-to-reduce-biological-age-with-natural-supplements",
-            "text": ""
-          }
-        },
-        "article_afhyqr": {
-          "type": "article",
-          "settings": {
-            "article": "news/uncover-the-secrets-to-slow-aging-and-celebrate-radiance-at-every-stage",
-            "text": ""
-          }
-        },
-        "article_YNNmJq": {
-          "type": "article",
-          "settings": {
-            "article": "news/the-biology-of-aging",
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "article_xAMprc",
-        "article_3tPbYX",
-        "article_Fw63df",
-        "article_afhyqr",
-        "article_YNNmJq"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "Featured Here"
-      }
     }
   },
   "order": [
@@ -1483,15 +1321,11 @@
     "steps_blocks_list_DDUtiT",
     "image_with_text_blocks_MAjmBn",
     "timeline_section_hBBi6r",
-    "diagram_hCYJXq",
     "wines",
     "landing_section_nqCRrp",
     "landing_section_GdHXgh",
     "landing_section_QVQ6xa",
     "faqs_9gMU6f",
-    "featured_collection_zLaLyW",
-    "featured_carousel_iaTnPx",
-    "17401711251af96b37",
-    "featured_carousel_pzAygh"
+    "17401711251af96b37"
   ]
 }
