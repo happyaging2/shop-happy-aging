@@ -1,0 +1,150 @@
+{{ 'bio-age-test.css' | asset_url | stylesheet_tag }}
+
+<div class="d-none setting-container" data-setting="bio-age-test">
+  <bio-age-test>
+    <div class="bio-age-test__step">
+      <h3 class="bio-age-test__step-header">Step 01: Register Your Test</h3>
+      <div class="bio-age-test__step-body bio-age-test__step-body--register">
+        <a href="/pages/register-a-kit" target="_blank" class="bio-age-test__btn-register button button--black">Register a Test</a>
+      </div>
+    </div>
+
+    <div class="bio-age-test__step bio-age-test__step--status">
+      <h3 class="bio-age-test__step-header">Step 02: Your Status</h3>
+      <div class="bio-age-test__step-body bio-age-test__step-body--status hidden">
+        <p>Your results are expected by <span class="bio-age-test__step-status-expected m-fr"></span>. Keep in mind processing times may vary and it could take up to <span class="bio-age-test__step-status-expected m-sl"></span> to receive them.</p>
+        <p></p>
+        <p></p>
+        <p style="display: none" class="hide m-status">Current status: <span class="bio-age-test__status"></span></p>
+
+        <ul class="bio-age-test__status-bar">
+          <li class="bio-age-test__status-bar-item">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="7.98242" cy="7.60492" r="6.5" stroke="#000" fill="#F7F5EB" />
+            </svg>
+            <span>Registered</span>
+          </li>
+          <li class="bio-age-test__status-bar-item">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="7.98242" cy="7.60492" r="6.5" stroke="#000" fill="#F7F5EB" />
+            </svg>
+            <span>arrived at lab</span>
+          </li>
+          <li class="bio-age-test__status-bar-item">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="7.98242" cy="7.60492" r="6.5" stroke="#000" fill="#F7F5EB" />
+            </svg>
+            <span>prepped</span>
+          </li>
+          <li class="bio-age-test__status-bar-item">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="7.98242" cy="7.60492" r="6.5" stroke="#000" fill="#F7F5EB" />
+            </svg>
+            <span>extracting dna</span>
+          </li>
+          <li class="bio-age-test__status-bar-item">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="7.98242" cy="7.60492" r="6.5" stroke="#000" fill="#F7F5EB" />
+            </svg>
+            <span>epityping</span>
+          </li>
+          <li class="bio-age-test__status-bar-item">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="7.98242" cy="7.60492" r="6.5" stroke="#000" fill="#F7F5EB" />
+            </svg>
+            <span>review</span>
+          </li>
+          <li class="bio-age-test__status-bar-item">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="7.98242" cy="7.60492" r="6.5" stroke="#000" fill="#F7F5EB" />
+            </svg>
+            <span>computation</span>
+          </li>
+          <li class="bio-age-test__status-bar-item">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="7.98242" cy="7.60492" r="6.5" stroke="#000" fill="#F7F5EB" />
+            </svg>
+            <span>complete</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bio-age-test__step">
+      <h3 class="bio-age-test__step-header">Step 03: Your Results</h3>
+      <div class="bio-age-test__step-body bio-age-test__step-body--no-result hidden">
+        <p>We are awaiting your results. Please check back.</p>
+      </div>
+      <div class="bio-age-test__step-body bio-age-test__step-body--result hidden">
+        <p class="m-results-status">Results not available yet</p>
+        <div class="m-results" style="display: none;">
+        <p>
+          Test Registered <span class="bio-age-test__step-result-date">10/2024</span>: Great news! Your results are ready
+          to view.
+        </p>
+          <div class="bio-age-test__step-results">
+            {% comment %}
+                <div class="bio-age-test__step-result-title">
+                  <span class="bio-age-test__step-result-name"></span>
+                  <span class="bio-age-test__step-result-format"></span>
+                  <span class="bio-age-test__step-result-size"></span>
+                </div>
+
+                <a href="" target="_blank" download="" class="bio-age-test__btn-download button button--black">Download</a>
+            {% endcomment %}
+          </div>   
+        </div>
+      </div>
+    </div>
+  </bio-age-test>
+</div>
+
+<script src="{{ 'web-components-bio-age-test.js' | asset_url }}" defer></script>

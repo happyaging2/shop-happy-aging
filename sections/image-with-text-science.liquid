@@ -1,0 +1,323 @@
+{% style %}
+  {% if section.settings.image_blend %}
+    #shopify-section-{{ section.id }} .media {
+      background-color: var(--gradient-background);
+    }
+    #shopify-section-{{ section.id }} .image-block img {
+      -moz-mix-blend-mode: multiply;
+      mix-blend-mode: multiply;
+    }
+  {% endif %}
+  #shopify-section-{{ section.id }} .content-block > div:last-child {
+    margin-bottom: 0;
+  }
+  #shopify-section-{{ section.id }} .flex-1 {
+    flex: 1;
+  }
+  #shopify-section-{{ section.id }} .content-caption {
+    background-color: #E5DBCC;
+    padding: 5px 15px;
+  }
+  #shopify-section-{{ section.id }} .content-caption .text-sm {
+    font-size: 10px
+  }
+  #shopify-section-{{ section.id }} .image-content {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+  #shopify-section-{{ section.id }} .image-content .eyebrow {
+    font-size: 12px;
+  }
+  #shopify-section-{{ section.id }} .image-content .heading {
+    font-size: 40px;
+    margin-top: 10px;
+  }
+  #shopify-section-{{ section.id }} .image-content-text {
+    margin-top: 10px;
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  #shopify-section-{{ section.id }} .block-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 100px;
+    gap: 30px;
+    display: grid;
+    grid-template-columns: 120px auto;
+  }
+  #shopify-section-{{ section.id }} .small-text {
+    font-size: 14px;
+    line-height: 19px;
+  }
+  #shopify-section-{{ section.id }} .large-text {
+    font-size: 50px;
+  }
+  #shopify-section-{{ section.id }} .large-text img {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  @media screen and (min-width: 1024px) {
+    #shopify-section-{{ section.id }} .image-block {
+      width: 50%;
+    }
+    #shopify-section-{{ section.id }} .large-text {
+      font-size: 72px;
+      font-weight: 500;
+    }
+    #shopify-section-{{ section.id }} .large-text img {
+      height: 62px;
+
+    }
+    #shopify-section-{{ section.id }} .small-text {
+      font-size: 20px;
+      line-height: 26px;
+    }
+    #shopify-section-{{ section.id }} .block-item {
+      min-height: 150px;
+      padding-left: 20px;
+      padding-right: 20px;
+      gap: 20px;
+      grid-template-columns: 170px auto;
+    }
+    #shopify-section-{{ section.id }} .content-caption {
+      padding: 10px 30px;
+    }
+    #shopify-section-{{ section.id }} .content-caption .text-sm {
+    font-size: 14px
+  }
+    #shopify-section-{{ section.id }} .image-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #shopify-section-{{ section.id }} .image-block .image-wrap-desktop {
+      max-width: 500px;
+      width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .image-content .eyebrow {
+      font-size: 14px;
+    }
+    #shopify-section-{{ section.id }} .image-content .heading {
+      font-size: 50px;
+      margin-top: 10px;
+    }
+
+    #shopify-section-{{ section.id }} .image-content-text {
+      margin-top: 15px;
+    }
+
+  }
+{% endstyle %}
+
+<div class="{% if section.settings.show_border_top %}border-t border-black{% endif %}">
+  <div class="site-container py-10 lg:py-20">
+    <div class="-mx-5 lg:mx-0">
+      {% comment %} Image with content {% endcomment %}
+      <div class="flex flex-col lg:flex-row items-center lg:items-end">
+        {%- comment -%} Image Container {%- endcomment -%}
+        <div class="image-block {% unless section.settings.image_first_mob %} order-2 {% else %} order-1 {% endunless %} {% unless section.settings.image_first %} lg:order-2 {% else %} lg:order-1 {% endunless %}">
+          {% comment %} Desktop image {% endcomment %}
+          {%- if section.settings.image_desk -%}
+            <div class="d-none lg:block image-wrap-desktop">
+              <div class="media media--transparent ratio" style="--ratio-percent: {{ 100 | divided_by: section.settings.image_desk.aspect_ratio }}%">
+                {{ section.settings.image_desk | image_url: width: 2000 | image_tag: class: 'object-cover w-full', loading: 'lazy' }}
+              </div>
+            </div>
+          {%- endif -%}
+
+          {% comment %} Mobile image {% endcomment %}
+          {%- if section.settings.image_mob -%}
+            <div class="lg:hidden w-full">
+              <div class="media media--transparent ratio" style="--ratio-percent: {{ 100 | divided_by: section.settings.image_mob.aspect_ratio }}%">
+                {{ section.settings.image_mob | image_url: width: 2000 | image_tag: class: 'object-cover w-full', loading: 'lazy' }}
+              </div>
+            </div>
+          {%- endif -%}
+
+          {% comment %} Image texts {% endcomment %}
+          <div class="image-content">
+            {% if section.settings.image_eyebrow != blank %}
+              <div class="eyebrow">{{ section.settings.image_eyebrow }}</div>
+            {% endif %}
+            {% if section.settings.image_heading != blank %}
+              <h3 class="heading">{{ section.settings.image_heading }}</h3>
+            {% endif %}
+            {% if section.settings.image_text != blank %}
+              <p class="image-content-text">{{ section.settings.image_text }}</p>
+            {% endif %}
+          </div>
+        </div>
+
+        {%- comment -%} Content Container {%- endcomment -%}
+        <div class="flex-1 flex items-center mt-10 lg:mt-0 lg:px-8 {% if section.settings.image_first %} lg:pl-20{% else %} lg:pr-20{% endif %} {% if section.settings.show_border %} lg:{% if section.settings.image_first %}border-l{% else %}border-r{% endif %} lg:border-black{% endif %} order-1">
+          <div class="max-w-[550px] w-full">
+            {% if section.settings.eyebrow != blank %}
+              <div class="content-caption">
+                <div class="text-sm tracking-widest uppercase">{{ section.settings.eyebrow }}</div>
+              </div>
+            {% endif %}
+
+            <div class="content-block w-full flex flex-col justify-center h-full ">
+              {%- for block in section.blocks -%}
+                <div class="px-5 lg:px-0 items-center lg:gap-x-8 lg:py-6 border-b border-black block-item">
+                  {%- case block.type -%}
+                    {%- when 'content' -%}
+                      {% if block.settings.large_text != blank %}
+                        <div class="large-text">{{ block.settings.large_text }}</div>
+                      {% endif %}
+                      {% if block.settings.title != blank %}
+                        <div class="lg:text-[22px] small-text ">{{ block.settings.title }}</div>
+                      {% endif %}
+                    {%- when 'icon_content' -%}
+                      {% if block.settings.icon != blank %}
+                        <div class="icon-container  large-text">
+                          {{ block.settings.icon | image_url: width: 60 | image_tag: class: 'w-[60px] h-auto', loading: 'lazy' }}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.title != blank %}
+                        <div class="lg:text-[22px] small-text ">{{ block.settings.title }}</div>
+                      {% endif %}
+                  {%- endcase -%}
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with text (Science)",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "content",
+      "name": "Content Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "large_text",
+          "label": "Large Text"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    },
+    {
+      "type": "icon_content",
+      "name": "Icon Content Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desk",
+      "label": "Image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mob",
+      "label": "Image mobile"
+    },
+    {
+      "type": "richtext",
+      "id": "image_eyebrow",
+      "label": "Image Eyebrow Text"
+    },
+    {
+      "type": "richtext",
+      "id": "image_heading",
+      "label": "Image Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "image_text",
+      "label": "Image Small Text"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "eyebrow",
+      "label": "Eyebrow Text (with background)"
+    },
+    {
+      "type": "header",
+      "content": "Options"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_blend",
+      "label": "Image blend",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "image_first",
+      "label": "Image first on desktop",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "image_first_mob",
+      "label": "Image first on mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Show border between image and content",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border_top",
+      "label": "Show top border",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text (Science)",
+      "blocks": [
+        {
+          "type": "content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

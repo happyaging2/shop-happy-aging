@@ -1,0 +1,161 @@
+<div class="py-14 lg:py-20 overflow-hidden {{ section.settings.border }}">
+  <div class="site-container">
+    <div class="md:grid md:grid-cols-12 items-center">
+      {% comment %} INFO {% endcomment %}
+      <div
+        class="col-span-2 md:block mb-10 lg:mb-0 md:px-0 md:mt-0"
+      >
+        {% unless section.settings.sub_heading == blank %}
+          <div class="inline-flex gap-x-1 relative mb-2">
+            {%- for i in (1..5) -%}
+              <div class="w-[14px]">{%- render 'empty-star-review' -%}</div>
+            {%- endfor -%}
+            {%- assign rating = section.settings.rating -%}
+            <div
+              class="flex gap-x-1 absolute top-0 left-0 overflow-hidden"
+              style="width: {{ rating | times: 100 | divided_by: 5.0 }}%"
+            >
+              {%- for i in (1..5) -%}
+                <div class="w-[14px]">{%- render 'star-review' -%}</div>
+              {%- endfor -%}
+            </div>
+          </div>
+          <div class="text-sm uppercase tracking-widest mb-6">{{ section.settings.sub_heading }}</div>
+        {% endunless %}
+        {%- if section.settings.title != blank -%}
+          <h2 class="heading heading--1 md:mb-12">{{ section.settings.title }}</h2>
+        {%- endif -%}
+        {%- if section.settings.cta_text != blank -%}
+          <div class="d-none lg:block"><a href="{{ section.settings.cta_link }}" class="cta">{{ section.settings.cta_text }}</a></div>
+        {%- endif -%}
+      </div>
+      {% comment %} / INFO {% endcomment %}
+
+      {% comment %} MEDIA SLIDER {% endcomment %}
+      {%- assign config = '{"slidesPerView": 1.15, "spaceBetween": 8, "breakpoints": {"768": {"slidesPerView": 3},"1024": {"slidesPerView": 3}}}' -%}
+      <site-carousel
+        data-config="{{ config | escape }}"
+        id="{{ section.id }}-2"
+        class="block lg:pl-10 col-span-10 relative opacity-0 transition-all duration-500"
+        data-id="{{ section.id }}-2"
+      >
+        <div class="swiper !overflow-visible lg:!overflow-hidden">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="swiper-slide">
+                <div class="ratio media media--transparent" style="--ratio-percent: 100%">
+                  {%- render 'image', image: block.settings.image -%}
+                </div>
+                <div class="px-2">
+                  {% unless block.settings.title == blank %}
+                    <div class="mt-4 flex items-center gap-2">
+                      <div class="inline-flex gap-x-1 relative">
+                        {%- for i in (1..5) -%}
+                          <div class="w-[14px]">{%- render 'star-review' -%}</div>
+                        {%- endfor -%}
+                      </div>
+                      <h4 class="font-body-regular text-xs tracking-widest uppercase">{{ block.settings.title }}</h4>
+                    </div>
+                  {% endunless %}
+                  {% unless block.settings.text == blank %}
+                    <div class="text-xs mt-2">{{ block.settings.text }}</div>
+                  {% endunless %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </site-carousel>
+      {% comment %} / MEDIA SLIDER {% endcomment %}
+    </div>
+    {%- if section.settings.cta_text != blank -%}
+      <div class="lg:hidden mt-14"><a href="{{ section.settings.cta_link }}" class="cta">{{ section.settings.cta_text }}</a></div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Reviews",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "rating",
+      "min": 0.0,
+      "max": 5.0,
+      "step": 0.1,
+      "label": "Stars",
+      "default": 5.0
+    },
+    {
+      "type": "richtext",
+      "id": "sub_heading",
+      "label": "Sub-Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text"
+    },
+    {
+      "type": "select",
+      "id": "border",
+      "label": "Section Border",
+      "options": [
+        {
+          "value": "border-t border-black",
+          "label": "Top"
+        },
+        {
+          "value": "border-b border-black",
+          "label": "Bottom"
+        },
+        {
+          "value": "",
+          "label": "None"
+        }
+      ],
+      "default": ""
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Reviews"
+    }
+  ]
+}
+{% endschema %}

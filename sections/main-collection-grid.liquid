@@ -1,0 +1,51 @@
+<div class="site-container pt-6 lg:pt-10 pb-24">
+  <div class="pb-10">
+    <div class="d-grid lg:grid-cols-2 items-center gap-6 lg:gap-2">
+      <div class="order-2 lg:order-1 d-grid gap-4 lg:pl-24">
+        {% if section.settings.hero_eyebrow == blank %}
+          <h1 class="eyebrow">{{ collection.title }}</h1>
+        {% else %}
+          <h1 class="eyebrow">{{ section.settings.hero_eyebrow }}</h1>
+        {% endif %}
+        {% unless section.settings.hero_title == blank %}
+          <p class="heading heading--1 max-w-[300px]">{{ section.settings.hero_title }}
+        {% endunless %}
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="aspect-[2.2] relative bg-beige">
+          {% unless section.settings.hero_image == blank %}
+            <img class="absolute top-0 left-0 w-full h-full object-cover object-center" src="{{ section.settings.hero_image | img_url: '1200x' }}">
+          {% endunless %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-grid gap-4 md:grid-cols-2 md:gap-2 lg:grid-cols-4 pt-4 lg:pt-10 items-start">
+    {% for product in collection.products %}
+      {% render 'product-item', product: product, show_atc: false %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Main Collection",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "hero_eyebrow",
+      "label": "Hero Eyebrow"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "hero_title",
+      "label": "Hero Title"
+    }
+  ]
+}
+{% endschema %}

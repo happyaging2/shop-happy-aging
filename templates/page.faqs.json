@@ -1,0 +1,403 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [],
+      "settings": {}
+    },
+    "faqs_DB8xQe": {
+      "type": "faqs",
+      "blocks": {
+        "faq_eAtycF": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the Longevity Shot made of?",
+            "answer": "<p>The Longevity Shot is crafted entirely from all-natural ingredients, with 80% of the ingredients being non-GMO. It is gluten-free, vegan, caffeine-free, soy-free, and dairy-free, with no synthetic ingredients, artificial sweeteners, preservatives, or artificial colors\/flavors. Each shot contains 18 calories per serving.<\/p>"
+          }
+        },
+        "faq_UUPwcd": {
+          "type": "faq",
+          "settings": {
+            "question": "Does the Longevity Shot contain sugar or alcohol?",
+            "answer": "<p>The Longevity Shot contains 2.5 grams of natural sugar from apple and grape juice concentrate. It is also lightly sweetened with steviol glycosides, a natural sweetener derived from the Stevia rebaudiana plant that is sugar and calorie-free. It is alcohol-free.<\/p>"
+          }
+        },
+        "faq_iQyba9": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the Longevity Shot safe for those with allergies or dietary restrictions?",
+            "answer": "<p>Yes, the Longevity Shot is free from common allergens like nuts, soy, dairy, and gluten, making it suitable for most individuals with dietary sensitivities. Additionally, it can fit into most keto diets.<\/p>"
+          }
+        },
+        "faq_HYRCjk": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the Longevity Shots tested on animals?",
+            "answer": "<p>No, the Longevity Shot is not tested on animals.<\/p>"
+          }
+        },
+        "faq_MkqUGq": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I take the Longevity Shot if I’m pregnant or breastfeeding?",
+            "answer": "<p>While the Longevity Shot is made with natural ingredients, we always recommend that pregnant or breastfeeding women consult their healthcare provider to ensure it aligns with their unique health needs during this time.<\/p>"
+          }
+        },
+        "faq_FNWcVw": {
+          "type": "faq",
+          "settings": {
+            "question": "How should I take the Longevity Shot, and when is the best time?",
+            "answer": "<p>For optimal results, we recommend taking two shots per week, at any time of the day. This schedule helps maintain NAD+ levels and activate sirtuins—proteins vital for cellular health, DNA repair, and metabolic function. This intermittent dosing supports long-term vitality and overall longevity, slowing the aging process without overwhelming your body.<\/p>"
+          }
+        },
+        "faq_UCQGNd": {
+          "type": "faq",
+          "settings": {
+            "question": "When will I see results from the Longevity Shot?",
+            "answer": "<p>The timing of results can vary depending on your body and lifestyle. Many women begin to notice positive changes in energy, skin health, and overall well-being within the first 30 days of regular use.<\/p>"
+          }
+        },
+        "faq_n4RMcM": {
+          "type": "faq",
+          "settings": {
+            "question": "How long should I continue taking the Longevity Shot?",
+            "answer": "<p>The long-term benefits of the Longevity Shot—such as cellular health support and slowing the aging process—are best experienced over time with consistent use. <\/p>"
+          }
+        },
+        "faq_c4DUUj": {
+          "type": "faq",
+          "settings": {
+            "question": "Are there any side effects of interactions with medications?",
+            "answer": "<p>The natural ingredients in the Longevity Shot are generally well-tolerated, but everyone is unique. If you’re taking any prescription medications or have a medical condition, particularly autoimmune conditions, we encourage you to consult your healthcare provider before starting the Longevity Shot.<\/p>"
+          }
+        },
+        "faq_iF7YeU": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the Longevity Shot suitable for children or teenagers?",
+            "answer": "<p>The Longevity Shot is formulated with adults in mind. If you’re considering it for children or teenagers, we recommend speaking with a healthcare provider to ensure it’s appropriate for their needs.<\/p>"
+          }
+        },
+        "faq_qNBN8k": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the Longevity Shot Kosher or Halal certified?",
+            "answer": "<p>No, the Longevity Shot is not currently Kosher or Halal certified.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_eAtycF",
+        "faq_UUPwcd",
+        "faq_iQyba9",
+        "faq_HYRCjk",
+        "faq_MkqUGq",
+        "faq_FNWcVw",
+        "faq_UCQGNd",
+        "faq_n4RMcM",
+        "faq_c4DUUj",
+        "faq_iF7YeU",
+        "faq_qNBN8k"
+      ],
+      "settings": {
+        "title": "Longevity Shots",
+        "is_padding_top": "no",
+        "is_background_default": "yes",
+        "is_margin_bottom": "no"
+      }
+    },
+    "faqs_iUQzLx": {
+      "type": "faqs",
+      "blocks": {
+        "faq_XhgfDp": {
+          "type": "faq",
+          "settings": {
+            "question": "What is a biological age test?",
+            "answer": "<p>A biological age test provides insights into the age of your cells and tissues, which may be different from your chronological age. This deeper understanding of your cellular health can help predict your risk for age-related conditions. By regularly tracking your biological age, you'll gain insights into how your lifestyle choices are influencing your health and well-being over time.<\/p>"
+          }
+        },
+        "faq_H7n7UY": {
+          "type": "faq",
+          "settings": {
+            "question": "How is Happy Aging different from other biological age tests?",
+            "answer": "<p>Happy Aging uses the most advanced aging algorithms and analyzes over 75 biomarkers. Powered by TruDiagnostic, our algorithms are developed in collaboration with top academic institutions like Harvard University and Yale University. We’re the only company outside of TruDiagnostic to offer the OMICmAge and SymphonyAge outputs.<\/p>"
+          }
+        },
+        "faq_ReVdDT": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I register my test?",
+            "answer": "<p>To register your biological age test, log in to your account at happyaging.com. Select \"HA Bio Age Test\" from the dashboard and click \"Register a Test.\" Follow the prompts to enter your personal details and the unique barcode from your test kit. This ensures your sample is securely tracked, and you'll receive your results directly in your account.<\/p>"
+          }
+        },
+        "faq_cUt4JC": {
+          "type": "faq",
+          "settings": {
+            "question": "What will this test reveal about my health?",
+            "answer": "<p>Your test will provide a comparison of your biological age to your chronological age (OMICmAge), the ages of 11 key organ systems (SymphonyAge), and the rate at which your body is aging per year (DunedinPace). You'll also receive lifestyle recommendations to help improve your biological age and support your overall health.<\/p>"
+          }
+        },
+        "faq_9rYDBW": {
+          "type": "faq",
+          "settings": {
+            "question": "What organ systems does SYMPHONYAge measure?",
+            "answer": "<p>SYMPHONYAge analyzes the aging of 11 organ systems: brain, heart, liver, lungs, musculoskeletal system, kidneys, immune system, metabolic system, hormones, blood, and inflammation. This algorithm also provides an overall assessment of your whole body, offering a unique SYMPHONYAge biological age that is distinct from your OMICmAge biological age.<\/p>"
+          }
+        },
+        "faq_tzmTVV": {
+          "type": "faq",
+          "settings": {
+            "question": "What should I do with my test results?",
+            "answer": "<p>Your test results offer valuable insights into your cellular health and how your body is aging. However, these results are not intended to diagnose or treat any condition. We recommend discussing your results with your primary care doctor or a healthcare professional to get a full understanding of what they mean for your overall health and well-being.<\/p>"
+          }
+        },
+        "faq_9teWeW": {
+          "type": "faq",
+          "settings": {
+            "question": "What if my results seem to show different information?",
+            "answer": "<p>Each aging output uses a different algorithm to measure specific aspects of your health. For instance, your OMICmAge biological age may differ from your SYMPHONYAge biological age because each output focuses on unique biological markers. These variations are expected and, together, provide a comprehensive view of your health so you can make well-rounded lifestyle adjustments.<\/p>"
+          }
+        },
+        "faq_8NcatE": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I collect my sample?",
+            "answer": "<p>Your test includes everything you need to collect your sample at home, along with straightforward instructions. Use the provided lancet to prick your finger and fully fill the circles on the blood spot card. The process is quick and gentle.<\/p>"
+          }
+        },
+        "faq_ARkDTU": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I send my sample back to the lab?",
+            "answer": "<p>Once you’ve collected your sample, use the prepaid shipping envelope to send it back to our lab. Make sure your sample is securely sealed for a safe return.<\/p>"
+          }
+        },
+        "faq_YDaPtX": {
+          "type": "faq",
+          "settings": {
+            "question": "When will I receive my results?",
+            "answer": "<p>You can expect to receive your personalized report within 2-3 weeks after your sample is received by our lab. In the meantime, you can track the status of your sample in your account dashboard for real-time updates. We’ll notify you by email as soon as your results are ready, and you’ll be available to download your report directly from your online dashboard.<\/p>"
+          }
+        },
+        "faq_Yd893p": {
+          "type": "faq",
+          "settings": {
+            "question": "How accurate are the test results?",
+            "answer": "<p>Our tests leverage cutting-edge science and are developed in collaboration with leading academic institutions. By analyzing nearly 1,000,000 CpG locations on your DNA, we deliver results with a published reliability greater than 98%.<\/p>"
+          }
+        },
+        "faq_dnKXan": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I track changes in my biological age over time?",
+            "answer": "<p>Absolutely! We recommend testing every three or six months to track how lifestyle changes are influencing your biological age. This ongoing insight empowers you to see your progress and make informed changes.<\/p>"
+          }
+        },
+        "faq_9mFN9k": {
+          "type": "faq",
+          "settings": {
+            "question": "Are tests CLIA certified?",
+            "answer": "<p>Yes, our lab services are CLIA certified and HIPAA compliant, ensuring the highest standards for data security and patient confidentiality.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_XhgfDp",
+        "faq_H7n7UY",
+        "faq_ReVdDT",
+        "faq_cUt4JC",
+        "faq_9rYDBW",
+        "faq_tzmTVV",
+        "faq_9teWeW",
+        "faq_8NcatE",
+        "faq_ARkDTU",
+        "faq_YDaPtX",
+        "faq_Yd893p",
+        "faq_dnKXan",
+        "faq_9mFN9k"
+      ],
+      "settings": {
+        "title": "Biological Age Test",
+        "is_padding_top": "no",
+        "is_background_default": "yes",
+        "is_margin_bottom": "no"
+      }
+    },
+    "faqs_Wmae88": {
+      "type": "faqs",
+      "blocks": {
+        "faq_yTG9Gt": {
+          "type": "faq",
+          "settings": {
+            "question": "What payment methods do you accept?",
+            "answer": "<p>We accept Visa, Mastercard, American Express, Discover, Diner’s Club, Amazon Pay, Apple Pay, Meta Pay, Google Pay, and Shop Pay.<\/p>"
+          }
+        },
+        "faq_x6BANi": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I modify or cancel my order after it’s been placed?",
+            "answer": "<p>Once your order is placed, we’re unable to make changes or cancel it. However, if you need assistance, please reach out to us at hello@happyaging.com as soon as possible, and we’ll do our best to help.<\/p>"
+          }
+        },
+        "faq_n4nPGz": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We want you to love your experience with Happy Aging. If for any reason you’re not satisfied, we accept returns within 30 days of purchase. For future purchases, we accept returns of unopened products within 30 days of delivery. For more information, visit our <a href=\"\/pages\/return-policy\" title=\"Return\">Return Policy<\/a>.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_yTG9Gt",
+        "faq_x6BANi",
+        "faq_n4nPGz"
+      ],
+      "settings": {
+        "title": "Orders",
+        "is_padding_top": "no",
+        "is_background_default": "yes",
+        "is_margin_bottom": "no"
+      }
+    },
+    "faqs_YNtjRb": {
+      "type": "faqs",
+      "blocks": {
+        "faq_fJ3FWi": {
+          "type": "faq",
+          "settings": {
+            "question": "Where does Happy Aging ship?",
+            "answer": "<p>Currently, we ship only within the United States. We hope to expand internationally soon.<\/p>"
+          }
+        },
+        "faq_VyKiLi": {
+          "type": "faq",
+          "settings": {
+            "question": "When will my order arrive?",
+            "answer": "<p>Standard shipping typically takes 3-5 business days, while express shipping arrives in 1-3 business days. You’ll receive tracking details to keep an eye on your order's journey.<\/p>"
+          }
+        },
+        "faq_hracWF": {
+          "type": "faq",
+          "settings": {
+            "question": "How can I track the status of my order?",
+            "answer": "<p>We use Route to ensure seamless tracking for all orders. You’ll receive an email with tracking information as soon as your order ships. You can also track your order <a href=\"\/pages\/track-order\" title=\"Track Order\"><span style=\"text-decoration:underline\">here<\/span><\/a>.<\/p>"
+          }
+        },
+        "faq_xnxetL": {
+          "type": "faq",
+          "settings": {
+            "question": "What if my order arrives damaged or is missing?",
+            "answer": "<p>We use Route to protect your package. If your order arrives damaged or is missing, simply file a claim through our <a href=\"https:\/\/claims.route.com\/?_gl=1*1x1czr6*_gcl_aw*R0NMLjE3MjkxMjQ1NjkuQ2owS0NRand5TDI0QmhDdEFSSXNBTG8wZlNEMzYwZEY0M3RZM2F6OEhpaUFxQnRHTHl3bnhtMXJZZ2xYeDRGZWVnWUVSWFBsZlRZM1JUQWFBcGMwRUFMd193Y0I.*_ga_KBN0FSD3J5*MTcyOTEyMzI3My4zLjEuMTcyOTEyNDU3OC40OC4wLjEyNzcwNzE3NTU.\"><span style=\"text-decoration:underline\">Route<\/span><\/a>, and they’ll assist you in resolving the issue.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_fJ3FWi",
+        "faq_VyKiLi",
+        "faq_hracWF",
+        "faq_xnxetL"
+      ],
+      "settings": {
+        "title": "Shipping",
+        "is_padding_top": "no",
+        "is_background_default": "yes",
+        "is_margin_bottom": "no"
+      }
+    },
+    "faqs_mwT7eK": {
+      "type": "faqs",
+      "blocks": {
+        "faq_ViT8mX": {
+          "type": "faq",
+          "settings": {
+            "question": "How does the subscription work?",
+            "answer": "<p>Our subscription options are designed to support your well-being without interruption, with delivery frequencies every 5, 15, or 30 weeks. There’s no minimum commitment, and you can pause or cancel anytime.<\/p>"
+          }
+        },
+        "faq_3A6LzQ": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I add or change a product in my subscription order?",
+            "answer": "<p>To add or change a product in your subscription, log into your account at happyaging.com, click “Subscriptions,” and then “Manage Subscriptions.”<\/p>"
+          }
+        },
+        "faq_HpJcrw": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I update my shipping address?",
+            "answer": "<p>To update your subscription shipping address, log into your account at happyaging.com, click “Subscriptions,” and then “Manage Subscriptions.”<\/p>"
+          }
+        },
+        "faq_DzLaVL": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I update my billing information?",
+            "answer": "<p>To update your subscription billing information, log into your account at happyaging.com, click “Subscriptions,” and then “Manage Subscriptions.”<\/p>"
+          }
+        },
+        "faq_yPGaen": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I update my shipping date?",
+            "answer": "<p>To update your subscription shipping date, log into your account at happyaging.com, click “Subscriptions,” and then “Manage Subscriptions.”<\/p>"
+          }
+        },
+        "faq_KMKVhQ": {
+          "type": "faq",
+          "settings": {
+            "question": "When will my subscription be billed?",
+            "answer": "<p>To view your subscription billing date, log into your account at happyaging.com, click “Subscriptions,” and then “Manage Subscriptions.”<\/p>"
+          }
+        },
+        "faq_qrQgQg": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I pause or cancel my subscription?",
+            "answer": "<p>To manage your subscriptions, log into your account at happyaging.com, click “Subscriptions,” and then “Manage Subscriptions.” <\/p>"
+          }
+        },
+        "faq_6qrkcm": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I restart my subscription?",
+            "answer": "<p>To manage your subscriptions, log into your account at happyaging.com, click “Subscriptions,” and then “Manage Subscriptions.” Once you are in your subscription portal, click “Reactivate Subscription.” <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_ViT8mX",
+        "faq_3A6LzQ",
+        "faq_HpJcrw",
+        "faq_DzLaVL",
+        "faq_yPGaen",
+        "faq_KMKVhQ",
+        "faq_qrQgQg",
+        "faq_6qrkcm"
+      ],
+      "settings": {
+        "title": "Subscriptions",
+        "is_padding_top": "no",
+        "is_background_default": "yes",
+        "is_margin_bottom": "yes"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faqs_DB8xQe",
+    "faqs_iUQzLx",
+    "faqs_Wmae88",
+    "faqs_YNtjRb",
+    "faqs_mwT7eK"
+  ]
+}

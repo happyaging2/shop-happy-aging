@@ -1,0 +1,17 @@
+{% if request.path contains '/products/calm-shot' %}
+  <script async type="text/javascript" src="https://app.thefrontrowhealth.com/api/widgets/script?presentation_type=sticker&product_id=1689"></script>
+  <iframe data-state="max" class="iframe-frontrow-sticker" id="iframe-frontrow-sticker" frameborder="0" src="https://app.thefrontrowhealth.com/api/widgets?presentation_type=sticker&product_id=1689"></iframe>
+  
+{% elsif request.path contains '/products/glow-shot' %}
+  <script async type="text/javascript" src="https://app.thefrontrowhealth.com/api/widgets/script?presentation_type=sticker&product_id=1688"></script>
+  <iframe data-state="max" class="iframe-frontrow-sticker" id="iframe-frontrow-sticker" frameborder="0" src="https://app.thefrontrowhealth.com/api/widgets?presentation_type=sticker&product_id=1688"></iframe>
+
+{% elsif request.path contains 'longevity-shot' and request.path contains 'products' %}
+  <script async type="text/javascript" src="https://app.thefrontrowhealth.com/api/widgets/script?presentation_type=sticker&product_id=1361"></script>
+  <iframe data-state="max" class="iframe-frontrow-sticker" id="iframe-frontrow-sticker" frameborder="0" src="https://app.thefrontrowhealth.com/api/widgets?presentation_type=sticker&product_id=1361"></iframe>
+
+{% endif %}
+
+<style>
+  .iframe-frontrow-sticker{position:absolute;top:10px;left:10px;z-index:3; transform: scale(0.80); transform-origin: 10% 0;}.iframe-frontrow-sticker[data-state=max]{width:198px;height:180px;z-index:100}.iframe-frontrow-sticker[data-state=min]{width:285px;height:36px}.iframe.frontrow{display:none;position:fixed;left:0;top:0;z-index:99999997;right:0;bottom:0;width:100%;height:100%;overflow:hidden}
+</style>

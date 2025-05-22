@@ -1,0 +1,121 @@
+<script src="{{ 'web-components-lp.js' | asset_url }}" defer></script>
+
+{% capture image %}
+  <div class="overflow-hidden xl:overflow-visible">
+    {% assign image = section.settings.image %}
+    {% assign height = image.height | times: 100 %}
+    {% assign width = image.width %}
+    {% assign dims = height | divided_by: width %}
+
+    <div class="max-w-xl xl:max-w-2xl mx-auto">
+      <div class="relative -right-[6%] lg:-right-[10%] xl:-right-[12%]" style="padding-bottom: {{ dims }}%">
+        <img class="absolute top-0 left-0 w-full h-full object-contain object-center" src="{{ section.settings.image | img_url: '1600x' }}" />
+      </div>
+    </div>
+  </div>
+{% endcapture %}
+
+<div class="w-full overflow-hidden">
+  <div class="site-container pt-6 pb-16 md:pt-12 lg:py-20">
+    <div class="pl-4 lg:pl-[28px]">
+      <div class="d-grid lg:grid-cols-2 items-start">
+        <div class="d-grid items-center xl:pl-24">
+          <div class="max-w-xl mx-auto lg:mx-0 d-grid gap-6 pr-4">
+            <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+            <h1 class="heading heading--1">{{ section.settings.title }}</h1>
+            <div class="lg:hidden -my-8 md:my-0">
+              {{ image }}
+            </div>
+            <div class="rte d-none lg:block">{{ section.settings.description}}</div>
+            <lp-subscribe data-klaviyo-list-id="{{ section.settings.klaviyo_list_id }}">
+              <form class="w-full md:max-w-2xl mx-auto" autocomplete="one-time-code">
+                <div class="d-grid md:grid-cols-2 md:gap-8">
+                  <div class="text-input relative">
+                    <input type="text" id="first_name" name="first_name" placeholder=" " autocomplete="one-time-code" required>
+                    <label for="first_name">First Name</label>
+                  </div>
+                  <div>
+                    <phone-input>
+                      <div class="text-input relative">
+                        <input type="tel" id="phone" name="phone" placeholder=" " autocomplete="one-time-code" pattern="^\([1-9]\d{2}\) [1-9]\d{2}-\d{4}$" required>
+                        <label for="phone">Phone Number</label>
+                      </div>
+                    </phone-input>
+                  </div>
+                </div>
+                <div class="text-input relative">
+                  <input type="email" id="email" name="email" placeholder=" " autocomplete="one-time-code" required>
+                  <label for="email">Email Address</label>
+                </div>
+                <div class="my-4 lg:mb-0 flex">
+                  <div class="relative">
+                    <input
+                      type="checkbox"
+                      name="sms-consent"
+                      id="sms-consent"
+                      class="peer opacity-0 absolute top-0 left-0 w-full h-full cursor-pointer">
+                    <span class="block mr-2 mt-1 w-5 h-5 flex items-center justify-center border border-black rounded bg-black text-cream peer-checked:bg-transparent">
+                      <svg width="16" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="m28.998 8.531-2.134-2.134a1.006 1.006 0 0 0-1.423 0L12.646 19.192l-6.086-6.13a1.006 1.006 0 0 0-1.423 0l-2.134 2.134a1.006 1.006 0 0 0 0 1.423l8.924 8.984c.393.393 1.03.393 1.423 0L28.998 9.954a1.006 1.006 0 0 0 0-1.423z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <label for="sms-consent" class="text-xs mt-1">I accept receiving SMS text messages from Happy Aging. Standard rates and data may apply. Reply STOP to opt out. By signing up, you also agree to receive emails from Happy Aging.</label>
+                </div>
+                <button type="submit" class="button button--black !max-w-[unset] !w-auto mt-8">{{ section.settings.cta_text }}</button>
+              </form>
+              <div class="success d-none mt-4 text-base text-center">{{ section.settings.success_text }}</div>
+            </lp-subscribe>
+          </div>
+        </div>
+        <div class="rte lg:hidden mt-8 md:max-w-xl md:mx-auto lg:max-w-[unset] lg:mx-0">{{ section.settings.description}}</div>
+        <div class="d-none lg:block">
+          {{ image }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "LP Hero",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "LP Hero"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    }, {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title"
+    }, {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    }, {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }, {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text"
+    }, {
+      "type": "text",
+      "id": "klaviyo_list_id",
+      "label": "Klaviyo List ID"
+    }, {
+      "type": "text",
+      "id": "success_text",
+      "label": "Success Text"
+    }
+  ]
+}
+{% endschema %}

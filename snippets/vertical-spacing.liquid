@@ -1,0 +1,13 @@
+{%- assign id = "block-" | append: section.id | append: '-' | append: block.id -%}
+{%- style -%}
+  #{{ id }} {
+    height: {{ block.settings.spacing_mobile }}px;
+  }
+  @media screen and (min-width: 1024px) {
+    #{{ id }} {
+      height: {{ block.settings.spacing_desktop }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div id="{{ id }}" class="vertical-spacing">&nbsp;</div>

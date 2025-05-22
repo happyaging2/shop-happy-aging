@@ -1,0 +1,93 @@
+<contact-form data-list-id="{{ settings.klaviyo_newsletter_list_id }}">
+  <div class="flex justify-center px-4 pb-14 lg:pb-24">
+    {% form 'contact', class: 'w-full max-w-[810px]' %}
+      <div class="relative flex flex-col gap-3 lg:gap-4">
+        <!-- Name Field -->
+        <div class="text-input relative">
+          <input
+            class="paragraph !pl-0 paragraph--2"
+            type="text"
+            name="contact[name]"
+            id="name"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="off"
+            placeholder=" "
+            required
+          >
+          <label class="paragraph paragraph--2 !left-0" for="name">Name*</label>
+        </div>
+
+        <!-- Email Field -->
+        <div class="text-input relative">
+          <input
+            class="paragraph !pl-0 paragraph--2"
+            type="email"
+            name="contact[email]"
+            id="email"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="off"
+            placeholder=" "
+            required
+          >
+          <label class="paragraph paragraph--2 !left-0" for="email">Email*</label>
+        </div>
+
+        <!-- Subject Dropdown -->
+        <div class="text-input relative mb-7">
+          <div class="h-full relative -top-[1px] text-sm">
+            <select
+              id="subject"
+              class="absolute top-0 left-0 w-full h-full z-10 cursor-pointer"
+              name="contact[subject]"
+              required
+            >
+              <option value="">--Please choose a subject--</option>
+              <option value="Order Inquiry">Order Inquiry</option>
+              <option value="Product Question">Product Question</option>
+              <option value="Customer Support">Customer Support</option>
+              <option value="Return/Exchange">Return/Exchange</option>
+              <option value="Feedback/Suggestions">Feedback/Suggestions</option>
+              <option value="Collaboration">Collaboration</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="h-full d-grid grid-cols-[1fr_auto] items-center">
+              <div class="h-full relative">
+                <div class="absolute w-full top-0 left-0 h-full d-grid items-center pt-4">
+                  <span class="select-target truncate w-full"></span>
+                </div>
+              </div>
+              <svg width="16" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="m1 1 7 7 7-7" stroke="currentColor"></path>
+              </svg>
+            </div>
+          </div>
+          <label for="subject" class="relative !left-0">Subject*</label>
+        </div>
+
+        <!-- Message Field -->
+        <div class="border mb-6">
+          <textarea
+            required
+            rows="8"
+            id="message"
+            name="contact[message]"
+            placeholder="Your Message*"
+            class="bg-transparent text-sm w-full pt-5 pl-4 outline-0 placeholder:text-black"
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-grid justify-end content-start">
+          <button type="submit" class="button button--black w-full md:w-[263px]">
+            Submit
+          </button>
+        </div>
+      </div>
+      {% if form.posted_successfully? %}
+        <p class="text-center mt-8 text-sm">Thank you for reaching out.<br />Someone from our Customer Service team will be in touch shortly!</p>
+      {% endif %}
+    {% endform %}
+  </div>
+</contact-form>

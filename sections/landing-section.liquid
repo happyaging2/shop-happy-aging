@@ -1,0 +1,166 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+  }
+  #shopify-section-{{ section.id }} .landing-section__container {
+    margin: 0 auto;
+    padding-top: {{ section.settings.top_spacing_mobile }}px;
+    padding-bottom: {{ section.settings.bottom_spacing_mobile }}px;
+  }
+
+  @media (max-width: 1199px) {
+    {% unless section.settings.full_width_mobile %}
+      #shopify-section-{{ section.id }} {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      #shopify-section-{{ section.id }} .landing-section__container {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    {% endunless %}
+    #shopify-section-{{ section.id }} .landing-section__container {
+      {% if section.settings.full_width_mobile %}
+        max-width: 100%;
+      {% elsif section.settings.max_width_mobile > 0 %}
+        max-width: {{ section.settings.max_width_mobile }}px;
+      {% endif %}
+
+      {% if section.settings.use_top_border_mobile %}
+        border-top: 1px solid currentColor;
+      {% endif %}
+  
+      {% if section.settings.use_bottom_border_mobile %}
+        border-bottom: 1px solid currentColor;
+      {% endif %}
+    }
+  }
+  @media (min-width: 1200px) {
+    #shopify-section-{{ section.id }} .landing-section__container {
+      padding-top: {{ section.settings.top_spacing }}px;
+      padding-bottom: {{ section.settings.bottom_spacing }}px;
+      {% if section.settings.full_width %}
+        max-width: 100%;
+      {% elsif section.settings.max_width > 0 %}
+        max-width: {{ section.settings.max_width }}px;
+      {% endif %}
+      {% if section.settings.use_top_border %}
+        border-top: 1px solid currentColor;
+      {% endif %}
+
+        
+      {% if section.settings.use_bottom_border %}
+        border-bottom: 1px solid currentColor;
+      {% endif %}
+    }
+  }
+{% endstyle %}
+
+<div class="landing-section__container {% unless section.settings.full_width %}site-container{% endunless %}">
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "Landing Section",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Landing Section"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "max_width",
+      "label": "Container max width",
+      "info": "This will be the max width if full width is not enabled"
+    },
+    {
+      "type": "number",
+      "id": "top_spacing",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "bottom_spacing",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "use_top_border",
+      "label": "Use top border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "use_bottom_border",
+      "label": "Use bottom border",
+      "default": false
+    },
+
+    {
+      "type": "header",
+      "content": "Mobile settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width_mobile",
+      "label": "Full width",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "max_width_mobile",
+      "label": "Container max width",
+      "info": "This will be the max width if full width is not enabled"
+    },
+    {
+      "type": "number",
+      "id": "top_spacing_mobile",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "bottom_spacing_mobile",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "use_top_border_mobile",
+      "label": "Use top border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "use_bottom_border_mobile",
+      "label": "Use bottom border",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@theme"
+    }
+  ]
+}
+{% endschema %}

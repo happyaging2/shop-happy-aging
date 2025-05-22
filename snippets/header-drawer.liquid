@@ -1,0 +1,42 @@
+{% comment %}
+  Renders a header drawer menu for mobile and desktop.
+
+  Usage:
+  {% render 'header-drawer' %}
+{% endcomment %}
+
+<header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
+  <details id="Details-menu-drawer-container" class="menu-drawer-container">
+    <summary
+      class="lg:hidden hamburger-button-js pointer-events-auto paragraph paragraph--3 uppercase tracking-wider text-left"
+      aria-label="{{ 'sections.header.menu' | t }}"
+    >MENU</summary>
+    <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
+      <div class="menu-drawer__inner-container">
+        <div class="menu-drawer__navigation-container">
+          <nav class="w-full h-full d-grid gap-16 content-center text-center justify-center py-16">
+            {% for link in linklists['hamburger-menu-links'].links %}
+              <div class="lg:hidden">
+                <h4 class="heading heading--1 mb-4">{{ link.title }}</h4>
+                {% for link_item in link.links %}
+                  <div class="pb-3 flex flex-col">
+                    <a
+                      {% if link.title == 'Social' %}
+                        target="_blank"
+                      {% endif %}
+                      class="pointer-events-auto eyebrow focus:underline {% if request.path == link_item.url %} underline {% endif %}"
+                      href="{{ link_item.url }}"
+                    >
+                      {{- link_item.title -}}
+                    </a>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+  </details>
+</header-drawer>

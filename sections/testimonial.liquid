@@ -1,0 +1,59 @@
+<div class="border-t border-black">
+  <div class="flex flex-col pb-10 pt-6 lg:pt-10 md:grid md:grid-cols-12 site-container">
+    <div class="mb-10 md:mb-0 md:col-span-4">
+      <div class="lg:hidden relative pb-[143%] md:pb-[165%] bg-beige">
+        {% unless section.settings.image_mobile == blank %}
+          <img class="site-image" src="{{ section.settings.image_mobile | img_url: '1000x' }}" loading="lazy" />
+        {% endunless %}
+      </div>
+      <div class="d-none lg:block relative pb-[150%] bg-beige">
+        {% unless section.settings.image_desktop == blank %}
+          <img class="site-image" src="{{ section.settings.image_desktop | img_url: '1200x' }}" loading="lazy" />
+        {% endunless %}
+      </div>
+    </div>
+    <div class="px-4 lg:px-0 lg:pl-16 md:col-span-8">
+      {% unless section.settings.eyebrow == blank %}
+        <h2 class="sub-heading mb-2 lg:mb-5">
+          {{ section.settings.eyebrow }}
+        </h2>
+      {% endunless %}
+      {% unless section.settings.text == blank %}
+        <p class="font-heading-light text-[35px] lg:text-[50px] leading-[1.1] lg:leading-none">
+          {{ section.settings.text }}
+        </p>
+      {% endunless %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Testimonial",
+    "tag": "section",
+    "presets": [
+      {
+        "name": "Testimonial"
+      }
+    ],
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image Mobile"
+      }, {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Image"
+      }, {
+        "type": "text",
+        "id": "eyebrow",
+        "label": "Eyebrow"
+      }, {
+        "type": "inline_richtext",
+        "id": "text",
+        "label": "Testimonial Text"
+      }
+    ]
+  }
+{% endschema %}

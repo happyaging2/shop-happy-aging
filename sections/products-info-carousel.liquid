@@ -1,0 +1,179 @@
+<style>
+  .container-{{ section.id }} {
+    padding-left: 3.2rem;
+  }
+  @media screen and (max-width: 767px) {
+    .container-{{ section.id }} {
+      padding: 0 2rem;
+    }
+  } 
+</style>
+
+<div class="py-16 lg:py-20 overflow-hidden {{ section.settings.border }}">
+  <div class="container-{{ section.id }}">
+    <info-media-slider class="block">
+      {% comment %} MEDIA SLIDER {% endcomment %}
+      {%- assign config = '{"slidesPerView": 1.7, "loop": true, "centeredSlides": true, "spaceBetween": 30, "breakpoints": {"768": {"slidesPerView": 2.7, "centeredSlides": false},"1024": {"slidesPerView": 2.7, "centeredSlides": false}}}' -%}
+      <site-carousel
+        data-config="{{ config | escape }}"
+        id="{{ section.id }}-2"
+        class="js-media-slider md:grid md:grid-cols-6 items-center relative opacity-0 transition-all duration-500 block"
+        data-id="{{ section.id }}-2"
+      >
+        <div class="md:col-span-4 md:order-2">
+          <div class="swiper !overflow-visible lg:!overflow-hidden">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                {%- liquid
+                  assign image = block.settings.image
+                  assign video = block.settings.video
+                -%}
+                <div class="swiper-slide" data-slider-index="{{ forloop.index0 }}">
+                  <a href="{{ block.settings.cta_link }}" class="block">
+                    {%- if video -%}
+                      {%- assign poster = image | image_url: width: 500, height: 500 -%}
+                      {{
+                        video
+                        | video_tag:
+                          class: 'block w-full',
+                          autoplay: false,
+                          preload: 'auto',
+                          poster: poster,
+                          loop: false,
+                          controls: false,
+                          muted: true
+                      }}
+                    {%- else -%}
+                      {%- render 'image', image: image -%}
+                    {%- endif -%}
+                  </a>
+
+                  <div class="d-none js-slide-info">
+                    <div class="d-grid gap-4 relative w-full content-center text-start z-10">
+                      {% unless block.settings.sub_heading == blank %}
+                        <p class="sub-heading">{{ block.settings.sub_heading }}</p>
+                      {% endunless %}
+                      {% unless block.settings.title == blank %}
+                        <h2 class="heading heading--1 lg:mb-2">{{ block.settings.title }}</h2>
+                      {% endunless %}
+                      {% unless block.settings.text == blank %}
+                        <div class="paragraph paragraph--2 max-w-[34rem] mb-4 lg:mb-8">{{ block.settings.text }}</div>
+                      {% endunless %}
+                      {% unless block.settings.cta_link == blank or block.settings.cta_text == blank %}
+                        <a
+                          class="button lg:mx-0 button--black"
+                          href="{{ block.settings.cta_link }}"
+                          title="{{ block.settings.cta_text }}"
+                        >
+                          {{ block.settings.cta_text }}
+                        </a>
+                      {% endunless %}
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        {% comment %} INFO SLIDER {% endcomment %}
+        <div
+          class="col-span-2 flex flex-col md:block px-5 mt-6 md:px-0 md:order-1 md:mt-0 max-w-[383px] lg:pt-20"
+        >
+          <div class="js-info-slider order-2"></div>
+          <div class="flex mt-12 justify-between lg:justify-start mb-12 md:mb-0 items-center gap-x-14">
+            <carousel-prev class="">
+              <button class="carousel-nav rotate-180 ">
+                {% render 'carousel-arrow' %}
+              </button>
+            </carousel-prev>
+            <carousel-next class="">
+              <button class="carousel-nav">
+                {% render 'carousel-arrow' %}
+              </button>
+            </carousel-next>
+          </div>
+        </div>
+        {% comment %} / INFO SLIDER {% endcomment %}
+      </site-carousel>
+      {% comment %} / MEDIA SLIDER {% endcomment %}
+    </info-media-slider>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Products Info Carousel",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "border",
+      "label": "Section Border",
+      "options": [
+        {
+          "value": "border-t border-black",
+          "label": "Top"
+        },
+        {
+          "value": "border-b border-black",
+          "label": "Bottom"
+        },
+        {
+          "value": "",
+          "label": "None"
+        }
+      ],
+      "default": ""
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "text",
+          "id": "sub_heading",
+          "label": "Sub-Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA Link"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Products Info Carousel"
+    }
+  ]
+}
+{% endschema %}

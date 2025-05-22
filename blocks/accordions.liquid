@@ -1,0 +1,150 @@
+{% stylesheet %}
+  .accordions-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .accordions-list .accordion {
+    width: 100%;
+
+    padding: 14px 0;
+    border-bottom: 1px solid currentColor;
+    cursor: pointer;
+  }
+  .accordion-button {
+    padding: 5px 0;
+    color: rgba(173, 161, 143, 1);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .accordion.is-active .accordion-button {
+    color: inherit
+  }
+  .accordion.is-active circle {
+    fill: #9CAF88
+  }
+  .accordions-list .accordion-content {
+    height: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: height 0.25s ease-in-out, visibility 0s 0.25s, opacity 0.25s ease-in-out;
+  }
+  .accordion-content__inner {
+    padding: 20px 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .accordions-list .accordion-content.is-active {
+    opacity: 1;
+    visibility: visible;
+    transition: height 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  }
+  .accordion-content__inner ul {
+    margin-top: 40px;
+  }
+  .accordion-content__inner ul li {
+    position: relative;
+    padding-left: 1.5em;
+  }
+  .accordion-content__inner ul li:not(:last-child) {
+    margin-bottom: 1.5em;
+  }
+  .accordion-content__inner ul li:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  @media (min-width: 1200px) {
+    .accordion-button {
+      font-size: 26px;
+    } 
+  }
+
+{% endstylesheet %}
+
+<accordions-list class="accordions-list">
+  {% content_for 'blocks' %}
+</accordions-list>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (!window.customElements.get("accordions-list")) {
+      class AccordionsBlock extends HTMLElement {
+        constructor() {
+          super();
+          this.teleportContent = this.closest(".shopify-section").querySelector(".js-teleport-content");
+          this.accordions = this.querySelectorAll(".js-accordion");
+          this.activeAccordion = this.querySelector(".js-accordion.is-active");
+          console.log(this.teleportContent);
+        }
+
+        connectedCallback() {
+          if (!this.accordions) return;
+          
+          this.accordions.forEach(accordion => {
+            accordion.addEventListener("click", () => {
+              this.accordions.forEach(acc => {
+                acc.classList.remove("is-active");
+                acc.querySelector(".js-accordion-content").classList.remove("is-active");
+                acc.querySelector(".js-accordion-content").style.height = "0px";
+              });
+              accordion.classList.add("is-active");
+              this.refresh(accordion);
+            });
+          });
+          this.refresh(this.activeAccordion);
+        }
+
+        refresh(accordion) {
+          if (!accordion) return;
+
+          const accordionContent = accordion.querySelector(".js-accordion-content");
+          if (!accordionContent) return;
+
+          let shouldUpdateHeight = true;
+
+          if (this.teleportContent && this.teleportContent.dataset.devices !== "none") {
+            if (
+              this.teleportContent.dataset.devices === "both" ||
+              (this.teleportContent.dataset.devices === "desktop" && window.innerWidth > 1200) ||
+              (this.teleportContent.dataset.devices === "mobile" && window.innerWidth <= 1200)
+            ) {
+              console.log("teleport", this.teleportContent);
+              console.log("teleporting", accordionContent.innerHTML);
+              this.teleportContent.innerHTML = accordionContent.innerHTML;
+              shouldUpdateHeight = false;
+            }
+          }
+
+          if (shouldUpdateHeight) {
+            accordionContent.style.height = `${accordionContent.scrollHeight}px`;
+            accordionContent.classList.add("is-active");
+          }
+        }
+      }
+
+      window.customElements.define("accordions-list", AccordionsBlock);
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Accordions",
+  "class": "accordions-block",
+  "blocks": [{ "type": "_accordion" }],
+
+  "presets": [
+    {
+      "name": "Accordions",
+
+    }
+  ]
+}
+{% endschema %}

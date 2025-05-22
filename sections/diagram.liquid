@@ -1,0 +1,286 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --color-text: #1e1e1e;
+    --color-background: #f7f5eb;
+    --color-border: #000000;
+    --spacing-xs: 0.25em;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 3rem;
+    --font-heading: 'Flecha Bronzea M';
+    --font-body: 'AT Surt';
+    --font-size-sm: 12px;
+    --font-size-base: 1em;
+    --font-size-lg: 30px;
+    --marker-size: 14px;
+    --timeline-spacing: 8rem;
+  }
+
+  /* Base styles */
+  #shopify-section-{{ section.id }} li {
+    display: flex;
+    align-items: flex-start;
+    font-size: var(--font-size-base);
+  }
+
+  #shopify-section-{{ section.id }} li:before {
+    content: "○";
+    margin-right: var(--spacing-xs);
+  }
+
+  #shopify-section-{{ section.id }} h3 {
+    font-size: var(--font-size-lg);
+  }
+
+  /* Timeline Container */
+  #shopify-section-{{ section.id }} .timeline-container {
+    width: 100%;
+    max-width: 1110px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* Timeline Header */
+  #shopify-section-{{ section.id }} .timeline-header {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin-top: var(--timeline-spacing);
+    margin-bottom: calc(var(--timeline-spacing) * 0.8);
+    position: relative;
+    padding-bottom: var(--spacing-xl);
+  }
+
+  /* Desktop Timeline Line */
+  #shopify-section-{{ section.id }} .timeline-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: calc(15% + var(--marker-size));
+    right: calc(15% + var(--marker-size));
+    height: 1px;
+    background: var(--color-text);
+  }
+
+  /* Timeline Markers */
+  #shopify-section-{{ section.id }} .timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  /* Desktop Timeline Dots */
+  #shopify-section-{{ section.id }} .timeline-marker::after {
+    content: '';
+    position: absolute;
+    bottom: calc(-1 * var(--spacing-xl));
+    transform: translateY(50%);
+    width: var(--marker-size);
+    height: var(--marker-size);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: var(--color-background);
+    z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} .timeline-marker:first-child::after {
+    background: var(--color-border);
+  }
+
+  /* Desktop Vertical Lines */
+  #shopify-section-{{ section.id }} .timeline-marker::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + var(--spacing-xl));
+    left: 50%;
+    height: calc(var(--timeline-spacing) - var(--marker-size));
+    border-left: 1px solid var(--color-border);
+  }
+
+  /* Timeline Grid */
+  #shopify-section-{{ section.id }} .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  /* Timeline Boxes */
+  #shopify-section-{{ section.id }} .timeline-box {
+    border: 1px solid var(--color-border);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    background: var(--color-background);
+    z-index: 2;
+  }
+
+  /* Benefit Styles */
+  #shopify-section-{{ section.id }} .benefit {
+    font-size: var(--font-size-sm);
+    line-height: 20px;
+  }
+
+  #shopify-section-{{ section.id }} .benefit p {
+    margin-top: 5px;
+  }
+
+  #shopify-section-{{ section.id }} .benefit p + h3 {
+    margin-top: 25px;
+  }
+
+  #shopify-section-{{ section.id }} .benefit h3 + p {
+    margin-top: 0;
+  }
+
+  #shopify-section-{{ section.id }} .benefit-title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  #shopify-section-{{ section.id }} .benefit-text {
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 1023px) {
+    #shopify-section-{{ section.id }} .timeline-grid {
+      grid-template-columns: 1fr;
+    }
+
+    #shopify-section-{{ section.id }} .timeline-marker {
+      text-align: center;
+    }
+
+    #shopify-section-{{ section.id }} .timeline-box {
+      margin: 0;
+      padding: 20px;
+      position: relative;
+    }
+    #shopify-section-{{ section.id }} .timeline-box:after {
+      content: "";
+      border-top: 1px solid #000;
+      position: absolute;
+      width: 20px;
+      right: -21px;
+      top: 50%;
+    }
+    #shopify-section-{{ section.id }} .swiper-slide:last-child .timeline-box:after {
+      display: none;
+    }
+  }
+</style>
+
+<div class="py-16 pb-10 lg:py-20 overflow-hidden border-t border-black">
+  <div class="flex flex-col items-center site-container">
+    <div class="flex flex-col items-center max-w-[260px] lg:max-w-[410px] mb-12 lg:mb-0">
+      {% if section.settings.title != blank %}
+        <h2 class="heading heading--1 mb-3 lg:mb-[10px] text-center em-newline">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <p class="max-w-[490px] text-xs leading-5 text-center mt-4">
+          {{ section.settings.text }}
+        </p>
+      {% endif %}
+    </div>
+
+    {% comment %} DESKTOP {% endcomment %}
+    <div class="d-none lg:block">
+      <div class="timeline-container">
+        <div class="timeline-header d-none lg:grid">
+          {% for block in section.blocks %}
+            <div class="timeline-marker">
+              <h3 class="timeline-title">{{ block.settings.week_text }}</h3>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="timeline-grid">
+          {% for block in section.blocks %}
+            <div class="timeline-box">
+              <div class="benefit">{{ block.settings.text }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {% comment %} MOBILE {% endcomment %}
+    <site-carousel
+      data-config='{"slidesPerView": 1.2, "loop": false, "spaceBetween": 20}'
+      id="{{ section.id }}"
+      class="block lg:hidden w-full relative"
+      data-id="{{ section.id }}"
+    >
+      <div class="swiper w-full">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide h-auto">
+              <div class="h-full flex flex-col">
+                <div class="heading heading--2 text-center mb-5">{{ block.settings.week_text }}</div>
+                <div class="timeline-box" style="flex: 1">
+                  <div class="benefit">{{ block.settings.text }}</div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </site-carousel>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Diagram",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "timeline",
+      "name": "Timeline Block",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "week_text",
+          "label": "Week Text",
+          "default": "After X Weeks"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Diagram",
+      "blocks": [
+        {
+          "type": "timeline"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

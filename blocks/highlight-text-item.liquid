@@ -1,0 +1,94 @@
+{% style %}
+  .grid-block > .highlight-text-item {
+    height: 100%;
+  }
+
+  .highlight-text-item__inner {
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 20px;
+    flex: 1;
+    width: 100%
+  }
+  .item-block__title {
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .item-block__text {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .item-block__icon {
+    margin-bottom: 20px;
+  }
+  .item-block__icon-image {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+  }
+  @media (min-width: 1200px) {
+    .highlight-text-item {
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .highlight-text-item__inner {
+      height: 100%;
+    }
+    .item-block__icon {
+      margin-top: -12px;
+      min-width: 35px;
+      max-width: 35px;
+      margin-bottom: 0;
+    }
+  }
+{% endstyle %}
+{% stylesheet %}
+
+{% endstylesheet %}
+{% if block.settings.icon != blank %}
+  <div class="item-block__icon">
+    {{ block.settings.icon | image_url: width: 100 | image_tag: class: 'item-block__icon-image' }}
+  </div>
+{% endif %}
+<div class="highlight-text-item__inner">
+  {% if block.settings.title != blank %}
+    <div class="item-block__title">{{ block.settings.title }}</div>
+  {% endif %}
+  {% if block.settings.text != blank %}
+    <div class="item-block__text">{{ block.settings.text }}</div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Highlight text item",
+  "class": "highlight-text-item",
+  "blocks": [{ "type": "@theme" }],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Highlight text item"
+    }
+  ]
+}
+{% endschema %}

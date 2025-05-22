@@ -1,0 +1,553 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_reviews_yRiyrR": {
+          "type": "custom_reviews",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "tag": ""
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "Unlock aging insights with the #1 test",
+            "text_style": "uppercase",
+            "text_size": "text-xs",
+            "text_align": "text-left"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "buy_buttons_W9PKFR": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "custom_reviews_yRiyrR",
+        "title",
+        "price",
+        "vendor",
+        "description",
+        "buy_buttons_W9PKFR"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "marquee_pMqq4Y": {
+      "type": "marquee",
+      "blocks": {
+        "text_br8Emn": {
+          "type": "text",
+          "settings": {
+            "text": "Comprehensive Health Insights"
+          }
+        },
+        "text_z7tkeC": {
+          "type": "text",
+          "settings": {
+            "text": "Developed by Top Institutions"
+          }
+        },
+        "text_8c4bkD": {
+          "type": "text",
+          "settings": {
+            "text": "Measures Cellular Aging"
+          }
+        },
+        "text_LhF6BY": {
+          "type": "text",
+          "settings": {
+            "text": "Analyzes 950K+ DNA Markers"
+          }
+        },
+        "text_K6wAUe": {
+          "type": "text",
+          "settings": {
+            "text": "Validated with 98%+ Accuracy"
+          }
+        },
+        "text_fqxdgb": {
+          "type": "text",
+          "settings": {
+            "text": "Gentle, At-Home Test"
+          }
+        }
+      },
+      "block_order": [
+        "text_br8Emn",
+        "text_z7tkeC",
+        "text_8c4bkD",
+        "text_LhF6BY",
+        "text_K6wAUe",
+        "text_fqxdgb"
+      ],
+      "settings": {}
+    },
+    "benefits_TnXkPb": {
+      "type": "benefits",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "text": "",
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4552553829234937b9cf48e51b7741cb.mp4"
+      }
+    },
+    "fifty_fifty_Sneidp": {
+      "type": "fifty-fifty",
+      "blocks": {
+        "text_block_aEgn8V": {
+          "type": "text_block",
+          "settings": {
+            "title": "THE POWER OF <em>epigenetics<\/em>",
+            "text": "<p><\/p><p>Your DNA is not your destiny. While the genes you inherit from your parents provide a blueprint, your lifestyle and environment influence how those genes are expressed—a process called epigenetics.<\/p><p>Every choice you make—from what you eat to how you move and manage stress—shapes the way your body ages. Epigenetic changes act as switches that can turn certain genes on or off, affecting everything from metabolism to skin health, inflammation, and longevity.<\/p><p>Tracking your biological age through epigenetic testing provides powerful insights into how your daily decisions influence your health at the cellular level. By analyzing over 950K DNA markers, this test reveals how factors like nutrition, exercise, sleep, and stress management impact the way you age.<\/p><p>With this knowledge, you can make more informed choices to optimize your well-being and potentially slow the aging process, extending your health span for a vibrant, active life.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_aEgn8V"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DTS_Warm_Up_Daniel_Faro_Photos_ID7078_1.jpg"
+      }
+    },
+    "key_points": {
+      "type": "key-points",
+      "blocks": {
+        "slide_item_JRRBDw": {
+          "type": "slide_item",
+          "settings": {
+            "slide_item_title": "OMICmAge",
+            "slide_item_eyebrow": "Developed With Harvard University",
+            "slide_item_text": "The OMICmAge algorithm, developed with Harvard University, offers the most advanced way to understand your biological age. It analyzes proteins, metabolites, and clinical biomarkers to provide a precise picture of how your body is aging. More than just measuring age, OMICmAge reveals the factors influencing your aging process."
+          }
+        },
+        "slide_item_YYyUKp": {
+          "type": "slide_item",
+          "settings": {
+            "slide_item_title": "SYMPHONYAge",
+            "slide_item_eyebrow": "Developed With Yale University",
+            "slide_item_text": "Developed by Yale University, the SYMPHONYAge algorithm reveals how eleven key organ systems—like the brain, liver, heart, and immune system—are aging, both independently and together. This perspective highlights areas where lifestyle interventions can make the most impact."
+          }
+        },
+        "slide_item_bnUzna": {
+          "type": "slide_item",
+          "settings": {
+            "slide_item_title": "DunedinPACE",
+            "slide_item_eyebrow": "Developed by the Dunedin Study",
+            "slide_item_text": "Discover how quickly or slowly your body is aging with the DunedinPACE algorithm, which compares your rate of aging to a standard calendar year. Based on the renowned ongoing Dunedin Multidisciplinary Health and Development Study, this 3rd generation technology provides the clearest way to track the effectiveness of lifestyle changes over time."
+          }
+        }
+      },
+      "block_order": [
+        "slide_item_JRRBDw",
+        "slide_item_YYyUKp",
+        "slide_item_bnUzna"
+      ],
+      "settings": {
+        "title": "3 WAYS TO MEASURE YOUR AGE <em>powered by<\/em>",
+        "text": "Gain a comprehensive view of your aging journey with the three most advanced aging outputs—all included in your personalized report for a holistic perspective.",
+        "double_nutri_logo": "shopify:\/\/shop_images\/TruDiagnostic_logo_black_small_4a677c51-4c89-4724-9487-573947436e36.png",
+        "mobile_select_label": "Select an algorithm"
+      }
+    },
+    "video-carousel": {
+      "type": "video-carousel",
+      "blocks": {
+        "video_item_3RDbTa": {
+          "type": "video-item",
+          "settings": {}
+        },
+        "video_item_8LNfjf": {
+          "type": "video-item",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/video-placeholder.mp4",
+            "poster": "shopify:\/\/shop_images\/Mask_group_10.jpg"
+          }
+        },
+        "video_item_z3qJEc": {
+          "type": "video-item",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/video-placeholder.mp4",
+            "poster": "shopify:\/\/shop_images\/Mask_group_10.jpg"
+          }
+        },
+        "video_item_U8Nhi6": {
+          "type": "video-item",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/video-placeholder.mp4",
+            "poster": "shopify:\/\/shop_images\/Mask_group_10.jpg"
+          }
+        },
+        "video_item_mYXr9N": {
+          "type": "video-item",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/video-placeholder.mp4",
+            "poster": "shopify:\/\/shop_images\/Mask_group_10.jpg"
+          }
+        },
+        "video_item_kZsK2y": {
+          "type": "video-item",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/video-placeholder.mp4",
+            "poster": "shopify:\/\/shop_images\/Mask_group_10.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "video_item_3RDbTa",
+        "video_item_8LNfjf",
+        "video_item_z3qJEc",
+        "video_item_U8Nhi6",
+        "video_item_mYXr9N",
+        "video_item_kZsK2y"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "VOICES <em>of vitality<\/em>"
+      }
+    },
+    "wines": {
+      "type": "wines",
+      "disabled": true,
+      "settings": {
+        "title_section": "AGE LIKE fine wine",
+        "text_section": "Forget “a glass of wine a day”—elevate to a daily antioxidant celebration. Each shot delivers 220 mg of 98% purity resveratrol, equal to the benefits of 43 bottles of red wine, without the alcohol. Toast to vibrant health and longevity with every sip."
+      }
+    },
+    "results_list_Nwodip": {
+      "type": "results-list",
+      "blocks": {
+        "result_item_hRB7cw": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HappyAgingRegister.jpg",
+            "title": "1. Register",
+            "text": "<p>When your test arrives, log in to your Happy Aging account and register it on your dashboard.<\/p>"
+          }
+        },
+        "result_item_aEgn8V": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pexels-artempodrez-6823478_1.jpg",
+            "title": "2. Test",
+            "text": "<p>Perform a simple, gentle at-home blood draw using the materials and instructions provided.<\/p>"
+          }
+        },
+        "result_item_gUamQp": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pexels-liza-summer-6348101_1_1.jpg",
+            "title": "3. Return",
+            "text": "<p>Send your sample to our lab using the prepaid envelope included in your test kit.<\/p>"
+          }
+        },
+        "result_item_wneopd": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DTS_Micro_Mouthwash_Studios_Photos_ID4053_1.jpg",
+            "title": "4. Analyze",
+            "text": "<p>Our advanced algorithms analyze your sample and deliver your personalized report in 2-3 weeks.<\/p>"
+          }
+        },
+        "result_item_Y73BJq": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_3442_1.jpg",
+            "title": "5. Optimize",
+            "text": "<p>Use your results to make meaningful lifestyle changes that support your health and longevity.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "result_item_hRB7cw",
+        "result_item_aEgn8V",
+        "result_item_gUamQp",
+        "result_item_wneopd",
+        "result_item_Y73BJq"
+      ],
+      "settings": {
+        "title": "YOUR JOURNEY <em>to healthier aging<\/em>"
+      }
+    },
+    "battle_chart_wSpdhi": {
+      "type": "battle-chart",
+      "blocks": {
+        "chart_item_aEgn8V": {
+          "type": "chart_item",
+          "settings": {
+            "title": "Developed by leading academic institutions, Harvard University & Yale University",
+            "others_have": false
+          }
+        },
+        "chart_item_wneopd": {
+          "type": "chart_item",
+          "settings": {
+            "title": "17+ aging insights",
+            "others_have": false
+          }
+        },
+        "chart_item_xMWLKG": {
+          "type": "chart_item",
+          "settings": {
+            "title": "Measures speed of aging",
+            "others_have": true
+          }
+        },
+        "chart_item_3VHTGw": {
+          "type": "chart_item",
+          "settings": {
+            "title": "Assesses key organ health",
+            "others_have": false
+          }
+        },
+        "chart_item_wneopf": {
+          "type": "chart_item",
+          "settings": {
+            "title": "Analyzes 950K+ DNA markers",
+            "others_have": false
+          }
+        },
+        "chart_item_wneope": {
+          "type": "chart_item",
+          "settings": {
+            "title": "High accuracy (98%+)",
+            "others_have": false
+          }
+        },
+        "chart_item_wneoph": {
+          "type": "chart_item",
+          "settings": {
+            "title": "Simple at-home blood test",
+            "others_have": true
+          }
+        }
+      },
+      "block_order": [
+        "chart_item_aEgn8V",
+        "chart_item_wneopd",
+        "chart_item_xMWLKG",
+        "chart_item_3VHTGw",
+        "chart_item_wneopf",
+        "chart_item_wneope",
+        "chart_item_wneoph"
+      ],
+      "settings": {
+        "title": "HAPPY AGING vs <em>other tests<\/em>",
+        "image": "shopify:\/\/shop_images\/Test_2.jpg"
+      }
+    },
+    "specialist": {
+      "type": "specialist-fifty-fifty",
+      "settings": {
+        "eyebrow": "Dr. Daniel Yadegar, MD",
+        "title": "A guiding<em> light<\/em>",
+        "text": "<p>Co-founded by renowned longevity expert Dr. Daniel Yadegar, Happy Aging bridges the worlds of cutting-edge science and holistic wellness. A Harvard-trained physician with advanced fellowship training in age management and regenerative medicine, Dr. Yadegar brings an unmatched depth of expertise to our mission.<\/p><p>Dr. Yadegar’s extensive knowledge and passion for longevity guide our development and innovation. Together, we are dedicated to revolutionizing the way we experience aging.<\/p>",
+        "video_url": "",
+        "image": "shopify:\/\/shop_images\/specialist-image_11zon.jpg",
+        "video_overlay_title": "A passion for <em>Longevity<\/em>",
+        "video_overlay": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e250e26a39b34036918994eb427db595.mp4",
+        "video_overlay_poster": "shopify:\/\/shop_images\/specialist-poster_11zon.jpg"
+      }
+    },
+    "faqs_9gMU6f": {
+      "type": "faqs",
+      "blocks": {
+        "faq_GG6MBM": {
+          "type": "faq",
+          "settings": {
+            "question": "What is a biological age test?",
+            "answer": "<p>A biological age test provides insights into the age of your cells and tissues, which may be different from your chronological age. This deeper understanding of your cellular health can help predict your risk for age-related conditions. By regularly tracking your biological age, you'll gain insights into how your lifestyle choices are influencing your health and well-being over time.<\/p>"
+          }
+        },
+        "faq_aWpXNz": {
+          "type": "faq",
+          "settings": {
+            "question": "How is Happy Aging different from other biological age tests?",
+            "answer": "<p>Happy Aging uses the most advanced aging algorithms and analyzes over 75 biomarkers. Powered by TruDiagnostic, our algorithms are developed in collaboration with top academic institutions like Harvard University and Yale University. We’re the only company outside of TruDiagnostic to offer the OMICmAge and SymphonyAge outputs.<\/p>"
+          }
+        },
+        "faq_NDEajH": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I register my test?",
+            "answer": "<p>To register your biological age test, log in to your account at happyaging.com. Select \"HA Bio Age Test\" from the dashboard and click \"Register a Test.\" Follow the prompts to enter your personal details and the unique barcode from your test kit. This ensures your sample is securely tracked, and you'll receive your results directly in your account.<\/p>"
+          }
+        },
+        "faq_7enJWw": {
+          "type": "faq",
+          "settings": {
+            "question": "What will this test reveal about my health?",
+            "answer": "<p>Your test will provide a comparison of your biological age to your chronological age (OMICmAge), the ages of 11 key organ systems (SymphonyAge), and the rate at which your body is aging per year (DunedinPace). You'll also receive lifestyle recommendations to help improve your biological age and support your overall health.<\/p>"
+          }
+        },
+        "faq_hTnPHJ": {
+          "type": "faq",
+          "settings": {
+            "question": "What organ systems does SYMPHONYAge measure?",
+            "answer": "<p>SYMPHONYAge analyzes the aging of 11 organ systems: brain, heart, liver, lungs, musculoskeletal system, kidneys, immune system, metabolic system, hormones, blood, and inflammation. This algorithm also provides an overall assessment of your whole body, offering a unique SYMPHONYAge biological age that is distinct from your OMICmAge biological age.<\/p>"
+          }
+        },
+        "faq_PyR77t": {
+          "type": "faq",
+          "settings": {
+            "question": "What should I do with my test results?",
+            "answer": "<p>Your test results offer valuable insights into your cellular health and how your body is aging. However, these results are not intended to diagnose or treat any condition. We recommend discussing your results with your primary care doctor or a healthcare professional to get a full understanding of what they mean for your overall health and well-being.<\/p>"
+          }
+        },
+        "faq_bmxqH7": {
+          "type": "faq",
+          "settings": {
+            "question": "What if my results seem to show different information?",
+            "answer": "<p>Each aging output uses a different algorithm to measure specific aspects of your health. For instance, your OMICmAge biological age may differ from your SYMPHONYAge biological age because each output focuses on unique biological markers. These variations are expected and, together, provide a comprehensive view of your health so you can make well-rounded lifestyle adjustments.<\/p>"
+          }
+        },
+        "faq_KjyGxw": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I collect my sample?",
+            "answer": "<p>Your test includes everything you need to collect your sample at home, along with straightforward instructions. Use the provided lancet to prick your finger and fully fill the circles on the blood spot card. The process is quick and gentle.<\/p>"
+          }
+        },
+        "faq_gFdggt": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I send my sample back to the lab?",
+            "answer": "<p>Once you’ve collected your sample, use the prepaid shipping envelope to send it back to our lab. Make sure your sample is securely sealed for a safe return.<\/p>"
+          }
+        },
+        "faq_ExAtfB": {
+          "type": "faq",
+          "settings": {
+            "question": "When will I receive my results?",
+            "answer": "<p>You can expect to receive your personalized report within 2-3 weeks after your sample is received by our lab. In the meantime, you can track the status of your sample in your account dashboard for real-time updates. We’ll notify you by email as soon as your results are ready, and you’ll be available to download your report directly from your online dashboard.<\/p>"
+          }
+        },
+        "faq_yVmAQw": {
+          "type": "faq",
+          "settings": {
+            "question": "How accurate are the test results?",
+            "answer": "<p>Our tests leverage cutting-edge science and are developed in collaboration with leading academic institutions. By analyzing nearly 1,000,000 CpG locations on your DNA, we deliver results with a published reliability greater than 98%.<\/p>"
+          }
+        },
+        "faq_dKCATG": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I track changes in my biological age over time?",
+            "answer": "<p>Absolutely! We recommend testing every three or six months to track how lifestyle changes are influencing your biological age. This ongoing insight empowers you to see your progress and make informed changes.<\/p>"
+          }
+        },
+        "faq_9xUBtr": {
+          "type": "faq",
+          "settings": {
+            "question": "Are tests CLIA certified?",
+            "answer": "<p>Yes, our lab services are CLIA certified and HIPAA compliant, ensuring the highest standards for data security and patient confidentiality.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_GG6MBM",
+        "faq_aWpXNz",
+        "faq_NDEajH",
+        "faq_7enJWw",
+        "faq_hTnPHJ",
+        "faq_PyR77t",
+        "faq_bmxqH7",
+        "faq_KjyGxw",
+        "faq_gFdggt",
+        "faq_ExAtfB",
+        "faq_yVmAQw",
+        "faq_dKCATG",
+        "faq_9xUBtr"
+      ],
+      "settings": {
+        "title": "Frequently Asked Questions",
+        "is_padding_top": "yes",
+        "is_background_default": "no",
+        "is_margin_bottom": "yes"
+      }
+    },
+    "featured_carousel_zDWaQQ": {
+      "type": "featured-carousel",
+      "blocks": {
+        "article_VHAQcG": {
+          "type": "article",
+          "settings": {
+            "article": "news\/the-biology-of-aging"
+          }
+        },
+        "article_hpTmLQ": {
+          "type": "article",
+          "settings": {
+            "article": "news\/20-habits-for-longevity"
+          }
+        },
+        "article_cWrnT3": {
+          "type": "article",
+          "settings": {
+            "article": "news\/harnessing-the-sun-for-healthy-aging"
+          }
+        }
+      },
+      "block_order": [
+        "article_VHAQcG",
+        "article_hpTmLQ",
+        "article_cWrnT3"
+      ],
+      "settings": {
+        "title": "Featured Articles"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "marquee_pMqq4Y",
+    "benefits_TnXkPb",
+    "fifty_fifty_Sneidp",
+    "key_points",
+    "video-carousel",
+    "wines",
+    "results_list_Nwodip",
+    "battle_chart_wSpdhi",
+    "specialist",
+    "faqs_9gMU6f",
+    "featured_carousel_zDWaQQ"
+  ]
+}

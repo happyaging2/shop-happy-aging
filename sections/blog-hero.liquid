@@ -1,0 +1,19 @@
+{% render 'fiftyfifty-article', article: section.settings.article, is_article_hero: false %}
+
+{% schema %}
+{
+  "name": "Blog Hero",
+  "presets": [
+    {
+      "name": "Blog Hero"
+    }
+  ],
+  "settings": [
+    {
+      "type": "article",
+      "id": "article",
+      "label": "Article"
+    }
+  ]
+}
+{% endschema %}

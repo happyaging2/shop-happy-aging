@@ -1,0 +1,490 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign has_plan = false
+  if current_variant.selling_plan_allocations[0]
+    assign has_plan = true
+    assign plan_allocation = current_variant.selling_plan_allocations[0]
+    if quantity_blocks.size > 0
+      assign default_block = quantity_blocks | first
+      for _plan in current_variant.selling_plan_allocations
+        assign plan_id = _plan.selling_plan.id | times: 1
+        assign block_plan_id = default_block.settings.plan_id | times: 1
+        if plan_id == block_plan_id
+          assign plan_allocation = _plan
+        endif
+      endfor
+    endif
+  endif
+
+  # Check for bundle items (up to 3)
+  assign bundle_items_count = 0
+
+  # Check first bundle item
+  assign item_1_handle = product.metafields.custom.bundle_item_1_product | default: null
+  assign item_1_quantity = product.metafields.custom.bundle_item_1_quantity | default: 0 | plus: 0
+  if item_1_handle != null and item_1_quantity > 0
+    assign item_1_product = all_products[item_1_handle]
+    if item_1_product != blank
+      assign bundle_items_count = bundle_items_count | plus: 1
+    endif
+  endif
+
+  # Check second bundle item
+  assign item_2_handle = product.metafields.custom.bundle_item_2_product | default: null
+  assign item_2_quantity = product.metafields.custom.bundle_item_2_quantity | default: 0 | plus: 0
+  if item_2_handle != null and item_2_quantity > 0
+    assign item_2_product = all_products[item_2_handle]
+    if item_2_product != blank
+      assign bundle_items_count = bundle_items_count | plus: 1
+    endif
+  endif
+
+  # Check third bundle item
+  assign item_3_handle = product.metafields.custom.bundle_item_3_product | default: null
+  assign item_3_quantity = product.metafields.custom.bundle_item_3_quantity | default: 0 | plus: 0
+  if item_3_handle != null and item_3_quantity > 0
+    assign item_3_product = all_products[item_3_handle]
+    if item_3_product != blank
+      assign bundle_items_count = bundle_items_count | plus: 1
+    endif
+  endif
+
+  assign total_bottles = 10
+  if bundle_items_count > 0
+    assign total_bottles = 0
+    if item_1_quantity > 0
+      assign item_1_bottles = item_1_quantity | times: 10
+      assign total_bottles = total_bottles | plus: item_1_bottles
+    endif
+    if item_2_quantity > 0
+      assign item_2_bottles = item_2_quantity | times: 10
+      assign total_bottles = total_bottles | plus: item_2_bottles
+    endif
+    if item_3_quantity > 0
+      assign item_3_bottles = item_3_quantity | times: 10
+      assign total_bottles = total_bottles | plus: item_3_bottles
+    endif
+  endif
+
+  # Get the selling plan label
+  assign selling_plan_label = product.title
+  if has_plan and plan_allocation.selling_plan.name != blank
+    assign selling_plan_label = plan_allocation.selling_plan.name
+  endif
+-%}
+
+
+
+
+{%- assign buy_buttons_block = section.blocks | where: 'type', 'buy_buttons' -%}
+{%- assign buy_buttons_true = 0 -%}
+{% if buy_buttons_block.size > 0 %}
+  {%- assign buy_buttons_true = 1 -%}
+  {%- assign buy_buttons_block = buy_buttons_block[0] -%}
+  {%- assign bbb = buy_buttons_block.settings -%}
+{% endif %}
+
+
+
+
+<script src="{{ 'subscription-widget.js' | asset_url }}" defer></script>
+<link rel="stylesheet" href="{{ 'subscription-widget.css' | asset_url }}">
+
+<subscription-widget class="subscription-widget">
+  <script type="application/json" data-widget-config>
+    {
+      "product": {
+        "current_variant": {{ current_variant | json }},
+        "selling_plan_groups": {{ product.selling_plan_groups | json }},
+        "is_bundle": {% if bundle_items_count > 0 %}true{% else %}false{% endif %},
+        "bundle_items": {
+          {% if item_1_product != blank %}
+            "1": {
+              "id": {{ item_1_product.variants[0].id | json }},
+              "quantity": {{ item_1_quantity | json }},
+              "variant": {{ item_1_product.variants[0] | json }},
+              "selling_plan_allocations": {{ item_1_product.variants[0].selling_plan_allocations | json }}
+            }{% if item_2_product != blank or item_3_product != blank %},{% endif %}
+          {% endif %}
+          {% if item_2_product != blank %}
+            "2": {
+              "id": {{ item_2_product.variants[0].id | json }},
+              "quantity": {{ item_2_quantity | json }},
+              "variant": {{ item_2_product.variants[0] | json }},
+              "selling_plan_allocations": {{ item_2_product.variants[0].selling_plan_allocations | json }}
+            }{% if item_3_product != blank %},{% endif %}
+          {% endif %}
+          {% if item_3_product != blank %}
+            "3": {
+              "id": {{ item_3_product.variants[0].id | json }},
+              "quantity": {{ item_3_quantity | json }},
+              "variant": {{ item_3_product.variants[0] | json }},
+              "selling_plan_allocations": {{ item_3_product.variants[0].selling_plan_allocations | json }}
+            }
+          {% endif %}
+        }
+      },
+      "defaults": {
+        "quantity": 1,
+        "cadence": {% if has_plan %}"subscription"{% else %}"one-time-purchase"{% endif %},
+        "plan_id": {% if has_plan %}{{ plan_allocation.selling_plan.id | json }}{% else %}null{% endif %}
+      },
+      "bottles_suffix": {{ settings.bottles_suffix | json }}
+    }
+  </script>
+
+  <div class="widget-inputs">
+    {%- if bundle_items_count == 0 -%}
+      <input type="hidden" name="quantity" value="1">
+      <input type="hidden" name="properties[_discount_kit]" value="1">
+      <input type="hidden" name="properties[Supply]" value="">
+      {%- if has_plan -%}
+        <input type="hidden" name="selling_plan" value="{{ plan_allocation.selling_plan.id }}">
+      {%- endif -%}
+    {%- else -%}
+      {%- # Bundle item inputs -%}
+      {%- if item_1_product != blank -%}
+        <input type="hidden" name="items[0][id]" value="{{ item_1_product.variants[0].id }}">
+        <input type="hidden" name="items[0][quantity]" value="{{ item_1_quantity }}">
+        <input type="hidden" name="items[0][properties][Kit]" value="{{ product.title }}">
+        <input type="hidden" name="items[0][properties][_kit_id]" value="">
+        {%- if has_plan -%}
+          <input type="hidden" name="items[0][selling_plan]" value="{{ plan_allocation.selling_plan.id }}">
+        {%- endif -%}
+      {%- endif -%}
+
+      {%- if item_2_product != blank -%}
+        <input type="hidden" name="items[1][id]" value="{{ item_2_product.variants[0].id }}">
+        <input type="hidden" name="items[1][quantity]" value="{{ item_2_quantity }}">
+        <input type="hidden" name="items[1][properties][Kit]" value="{{ product.title }}">
+        <input type="hidden" name="items[1][properties][_kit_id]" value="">
+        {%- if has_plan -%}
+          <input type="hidden" name="items[1][selling_plan]" value="{{ plan_allocation.selling_plan.id }}">
+        {%- endif -%}
+      {%- endif -%}
+
+      {%- if item_3_product != blank -%}
+        <input type="hidden" name="items[2][id]" value="{{ item_3_product.variants[0].id }}">
+        <input type="hidden" name="items[2][quantity]" value="{{ item_3_quantity }}">
+        <input type="hidden" name="items[2][properties][Kit]" value="{{ product.title }}">
+        <input type="hidden" name="items[2][properties][_kit_id]" value="">
+        {%- if has_plan -%}
+          <input type="hidden" name="items[2][selling_plan]" value="{{ plan_allocation.selling_plan.id }}">
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+    <input type="hidden" name="properties[_ts]" class="js-prop-timestamp" value="">
+  </div>
+
+  {%- if quantity_blocks.size > 0 -%}
+    <div class="quantity-blocks">
+      <quantity-picker class="quantity-picker">
+        {% comment %} desktop {% endcomment %}
+        <div class="quantity-grid">
+          {% for block in quantity_blocks %}
+            {%- liquid
+              assign plan = blank
+              for group in product.selling_plan_groups
+                for _plan in group.selling_plans
+                  assign plan_id = _plan.id | times: 1
+                  assign block_plan_id = block.settings.plan_id | times: 1
+                  if plan_id == block_plan_id
+                    assign plan = _plan
+                  endif
+                endfor
+              endfor
+            -%}
+            <button
+              type="button"
+              class="quantity-block {% if forloop.first %}active{% endif %}"
+              data-qty-block
+              data-plan-id="{{ plan.id }}"
+              data-qty="{{ block.settings.qty }}"
+              data-bottles="{{ block.settings.bottles }}"
+              data-onetime-price="{{ block.settings.onetime_price | times: 100.0 }}"
+              data-supply="{{ block.settings.title }} {{ block.settings.sub_title }}"
+              data-shipsevery="{{ block.settings.ships_every }}"
+              data-subsinfoa="{{ block.settings.subs_info_1 }}"
+              data-subsinfob="{{ block.settings.subs_info_2 }}"
+              data-subsinfoc="{{ block.settings.subs_info_3 }}"
+              data-subsinfod="{{ block.settings.subs_info_4 }}"
+              data-subsinfoe="{{ block.settings.subs_info_5 }}"
+              data-subsinfof="{{ block.settings.subs_info_6 }}"
+              data-subsinfog="{% if block.settings.product_content_text != blank %}{{ block.settings.product_content_text }}{% else %}{{ block.settings.num_bottles }} {{- settings.bottles_suffix  -}}{% endif %}"
+              data-subsinfogbuy="{% if block.settings.product_content_text != blank %}{{ block.settings.product_content_text }}{% elsif buy_buttons_true > 0 %}{{ bbb.product_content_text_default_kit }}{% else %}{{ block.settings.num_bottles }} {{- settings.bottles_suffix  -}}{% endif %}"
+              data-oneinfoa="{% if block.settings.product_content_text != blank %}{{ block.settings.product_content_text }}{% else %}{{ block.settings.num_bottles }} {{- settings.bottles_suffix  -}}{% endif %}"
+            >
+              <div class="quantity-block__inner">
+                {%- if block.settings.image -%}
+                  <div class="quantity-image">
+                    {{ block.settings.image | image_url: width: 500 | image_tag: loading: 'lazy' }}
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.title != blank -%}
+                  <p class="quantity-title">{{ block.settings.title }}</p>
+                {%- endif -%}
+                {%- if block.settings.sub_title != blank -%}
+                  <p class="quantity-subtitle">{{ block.settings.sub_title }}</p>
+                {%- endif -%}
+              </div>
+              {% if block.settings.badge != blank %}
+                <div class="quantity-badge">
+                  {{ block.settings.badge }}
+                </div>
+              {% endif %}
+            </button>
+          {% endfor %}
+        </div>
+
+        {% comment %} mobile {% endcomment %}
+        <div class="quantity-grid-mobile">
+          {% for block in quantity_blocks %}
+            {%- liquid
+              assign plan = blank
+              for group in product.selling_plan_groups
+                for _plan in group.selling_plans
+                  assign plan_id = _plan.id | times: 1
+                  assign block_plan_id = block.settings.plan_id | times: 1
+                  if plan_id == block_plan_id
+                    assign plan = _plan
+                  endif
+                endfor
+              endfor
+            -%}
+            <div
+              class="radio-option {% if forloop.first %}active{% endif %}"
+              data-qty-block
+              data-plan-id="{{ plan.id }}"
+              data-qty="{{ block.settings.qty }}"
+              data-onetime-price="{{ block.settings.onetime_price | times: 100.0 }}"
+              data-supply="{{ block.settings.title }} {{ block.settings.sub_title }}"
+              data-mcustom="testhere-{{ block.settings.product_content_text }}"
+            >
+              <button type="button" class="radio-option__button">
+                <div class="radio-circle">
+                  <div class="radio-dot"></div>
+                </div>
+                <div class="option-content">
+                  <div class="option-header">
+                    <div class="option-label">
+                      <p class="option-label-text">
+                        {{ block.settings.title }}
+                        {{ block.settings.sub_title }}
+                      </p>
+                    </div>
+                    <div class="price-container">
+                      <div class="js-qty-price-compare compare-price" data-qty="{{ block.settings.qty }}"></div>
+                      <div class="js-qty-price current-price cp1" data-qty="{{ block.settings.qty }}"></div>
+                    </div>
+                  </div>
+                  <div class="option-details">
+                    <p class="bottles-text 00 x-{{ quantity_blocks[0].settings.product_content_text }} {% if quantity_blocks[0].settings.product_content_text == blank %}js-bottles{% else %}{% endif %}">
+                      {% if quantity_blocks[0].settings.product_content_text == blank %}
+                          {% comment %}{{ total_bottles | round }}{% endcomment %}
+                          {{ block.settings.num_bottles | round }}
+                          {{- settings.bottles_suffix  -}}
+                        {% else %}
+                          {{ block.settings.product_content_text }}
+                      {% endif %}
+                      
+                    </p>
+                    <p class="save-text js-saving-text js-onetime-saveX js-onetime-save-customX"></p> 
+                  </div>
+                </div>
+              </button>
+              <div class="value-props js-mobile-value-props"></div>
+            </div>
+          {% endfor %}
+        </div>
+      </quantity-picker>
+    </div>
+  {%- else -%}
+    <quantity-picker class="quantity-picker">
+      {% comment %} Only show default block on mobile {% endcomment %}
+      <div class="quantity-grid-mobile">
+        <div
+          class="radio-option active"
+          data-qty-block
+          data-qty="1"
+          data-onetime-price="{{ current_variant.price }}"
+          data-supply="{{ selling_plan_label }}"
+        >
+          <button type="button" class="radio-option__button">
+            <div class="radio-circle">
+              <div class="radio-dot"></div>
+            </div>
+            <div class="option-content">
+              <div class="option-header">
+                <div class="option-label">
+                  <p class="option-label-text">{{ selling_plan_label }}</p>
+                </div>
+                <div class="price-container">
+                  <div class="js-qty-price-compare compare-price" data-qty="1"></div>
+                  <div class="js-qty-price current-price cp2" data-qty="1"></div>
+                </div>
+              </div>
+              <div class="option-details">
+                    <p class="bottles-text 11 x-{{ quantity_blocks[0].settings.product_content_text }} {% if quantity_blocks[0].settings.product_content_text == blank and buy_buttons_true > 0 and bbb.product_content_text_default_kit != blank %}{{ bbb.product_content_text_default_kit }}{% else %}js-bottles{% endif %} {% if quantity_blocks[0].settings.product_content_text == blank %}js-bottlesxy{% endif %}">
+                     {% comment %}
+                      {% if quantity_blocks[0].settings.product_content_text == blank %}
+                          {{ total_bottles | round }}
+                          {{- settings.bottles_suffix -}}
+                        {% else %}
+                          {{ quantity_blocks[0].settings.product_content_text }}
+                      {% endif %}
+                      {% endcomment %}
+      
+
+                      {% if quantity_blocks[0].settings.product_content_text == blank and buy_buttons_true > 0 and bbb.product_content_text_default_kit != blank %}
+                        {{ bbb.product_content_text_default_kit }}
+                      {% elsif quantity_blocks[0].settings.product_content_text != blank %}
+                        {{ block.settings.product_content_text }}
+                      {% else %}
+                        {{ total_bottles | round }}
+                        {{- settings.bottles_suffix -}}
+                      {% endif %}
+                </p>
+                <p class="save-text js-onetime-save js-onetime-save-custom"></p>
+              </div>
+            </div>
+          </button>
+          <div class="value-props js-mobile-value-props"></div>
+        </div>
+      </div>
+    </quantity-picker>
+  {%- endif -%}
+
+  {% comment %} SUBSCRIBE / ONETIME: {% endcomment %}
+  <cadence-selector class="cadence-selector">
+    {% comment %} SUBSCRIBE {% endcomment %}
+    {%- if has_plan -%}
+      <div class="radio-option {% if has_plan %}active{% endif %}">
+        <button type="button" data-cadence="subscription" class="radio-option__button">
+          <div class="radio-circle">
+            <div class="radio-dot"></div>
+          </div>
+          <div class="option-content">
+            <div class="option-header">
+              <div class="option-label">
+                <p class="option-label-text">Subscribe & Save</p>
+              </div>
+              <div class="price-container">
+                <p class="compare-price js-subscription-price-compare hidden">
+                  {{ current_variant.price | money_without_trailing_zeros }}
+                </p>
+                <p class="current-price js-subscription-price">
+                  {{ plan_allocation.price | money_without_trailing_zeros }}
+                </p>
+              </div>
+            </div>
+            <div class="option-details">
+                    <p class="bottles-text js-subs-info-7 33 x-{{ quantity_blocks[0].settings.product_content_text }} {% if quantity_blocks[0].settings.product_content_text == blank and buy_buttons_true > 0 and bbb.product_content_text_default_kit != blank %}{{ bbb.product_content_text_default_kit }}{% else %}js-bottles{% endif %} {% if quantity_blocks[0].settings.product_content_text == blank %}js-bottlesxx{% endif %}" ninfo="{{ buy_buttons_true }} - {% if quantity_blocks[0].settings.product_content_text == blank and buy_buttons_true > 0 and bbb.product_content_text_default_kit != blank %}{{ bbb.product_content_text_default_kit }}{% else %}{{ block.settings.num_bottles }} {{- settings.bottles_suffix  -}}{% endif %}">
+                   {% comment %}
+                      {% if quantity_blocks[0].settings.product_content_text == blank %}
+                          {{ total_bottles | round }}
+                          {{- settings.bottles_suffix -}}
+                        {% else %}
+                          {{ quantity_blocks[0].settings.product_content_text }}
+                      {% endif %}
+                      {% endcomment %}
+      
+
+                      {% if quantity_blocks[0].settings.product_content_text == blank and buy_buttons_true > 0 and bbb.product_content_text_default_kit != blank %}
+                        {{ bbb.product_content_text_default_kit }}
+                      {% elsif quantity_blocks[0].settings.product_content_text != blank %}
+                        {{ quantity_blocks[0].settings.product_content_text }}
+                      {% else %}
+                        {{ total_bottles | round }}
+                        {{- settings.bottles_suffix -}}
+                      {% endif %}
+
+
+              </p>
+              <p class="save-text js-subscription-save"></p>
+              <p class="period-price js-subscription-period-price"></p>
+            </div>
+          </div>
+        </button>
+
+        
+        <div class="value-props">
+          <div class="value-prop">
+            {%- render 'icon-subscription-sync', class: 'value-prop-icon' -%}
+            <p class="value-prop-text js-ships-everyx js-subs-info-1">{{ bbb.default_info_sub_1 }}</p>
+          </div>
+          <div class="value-prop">
+            {%- render 'icon-shipping-box', class: 'value-prop-icon shipping-box' -%}
+            <p class="value-prop-text js-subs-info-2">{{ bbb.default_info_sub_2 }}</p>
+          </div>
+          <div class="value-prop">
+            {%- render 'icon-cancel', class: 'value-prop-icon' -%}
+            <p class="value-prop-text js-subs-info-3">{{ bbb.default_info_sub_3 }}</p>
+          </div>
+          <div class="value-prop">
+            {%- render 'icon-shipping-clock', class: 'value-prop-icon shipping-clock' -%}
+            <p class="value-prop-text js-subs-info-4">{{ bbb.default_info_sub_4 }}</p>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+    {% comment %} / SUBSCRIBE {% endcomment %}
+
+    {% comment %} ONE TIME {% endcomment %}
+    {%- unless product.metafields.custom.subscription_only == true -%}
+      <div class="radio-option {% unless has_plan %}active{% endunless %}">
+        <button type="button" data-cadence="one-time-purchase" class="radio-option__button">
+          <div class="radio-circle">
+            <div class="radio-dot"></div>
+          </div>
+          <div class="option-content">
+            <div class="option-header">
+              <p class="option-label-text">One Time Purchase</p>
+              <div class="price-container">
+                <p class="compare-price js-onetime-price-compare hidden">
+                  {{ current_variant.compare_at_price | money_without_trailing_zeros }}
+                </p>
+                <p class="current-price js-onetime-price">
+                  {{ current_variant.price | money_without_trailing_zeros }}
+                </p>
+              </div>
+            </div>
+            <div class="option-details">
+                    <p class="bottles-text js-one-included-text 444 x-{{- quantity_blocks[0].settings.product_content_text -}} aqui {% if quantity_blocks[0].settings.product_content_text == blank and buy_buttons_true > 0 and bbb.product_content_text_default_kit != blank %}{{ bbb.product_content_text_default_kit }}{% else %}js-bottles{% endif %} {% if quantity_blocks[0].settings.product_content_text == blank %}js-bottlesxz{% endif %}">
+                      {% comment %}
+                      {% if quantity_blocks[0].settings.product_content_text == blank %}
+                          {{ total_bottles | round }}
+                          {{- settings.bottles_suffix -}}
+                        {% else %}
+                          {{ quantity_blocks[0].settings.product_content_text }}
+                      {% endif %}
+                      {% endcomment %}
+      
+
+                      {% if quantity_blocks[0].settings.product_content_text == blank and buy_buttons_true > 0 and bbb.product_content_text_default_kit != blank %}
+                        {{ bbb.product_content_text_default_kit }}
+                      {% elsif quantity_blocks[0].settings.product_content_text != blank %}
+                        {{ block.settings.product_content_text }}
+                      {% else %}
+                        {{ total_bottles | round }}
+                        {{- settings.bottles_suffix -}}
+                      {% endif %}
+              </p>
+              <p class="save-text js-onetime-save js-onetime-save-custom"></p>
+            </div>
+          </div>
+        </button>
+        <div class="value-props">
+          <div class="value-prop">
+            {%- render 'icon-shipping-box', class: 'value-prop-icon shipping-box' -%}
+            <p class="value-prop-text js-one-info-1">{{ bbb.default_info_one_1 }}</p>
+          </div>
+          <div class="value-prop">
+            {%- render 'icon-shipping-clock', class: 'value-prop-icon shipping-clock' -%}
+            <p class="value-prop-text js-one-info-2">{{ bbb.default_info_one_2 }}</p>
+          </div>
+        </div>
+      </div>
+    {%- endunless -%}
+    {% comment %} / ONE TIME {% endcomment %}
+  </cadence-selector>
+</subscription-widget>

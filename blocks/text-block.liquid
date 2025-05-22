@@ -1,0 +1,160 @@
+{% style %}
+
+  #shopify-block-{{ block.id }} .text-block {
+    color: {{ block.settings.text_color | default: 'inherit' }};
+    {% if block.settings.mobile_font_size > 0 %}
+      font-size: {{ block.settings.mobile_font_size | append: 'px' }};
+    {% else %}
+      font-size: 14px;
+    {% endif %}
+    {% if block.settings.mobile_line_height > 0 %}
+      line-height: {{ block.settings.mobile_line_height | append: 'px' }};
+    {% else %}
+      line-height: 20px;
+    {% endif %}
+    {% if block.settings.letter_spacing > 0 %}
+      letter-spacing: {{ block.settings.letter_spacing | divided_by: 100.00 | append: 'em' }};
+    {% else %}
+      letter-spacing: inherit;
+    {% endif %}
+    font-weight: {{ block.settings.text_weight | default: 'inherit' }};
+    {% if block.settings.top_spacing_mobile > 0 %}
+      padding-top: {{ block.settings.top_spacing_mobile }}px;
+    {% else %}
+      padding-top: 0;
+    {% endif %}
+    text-align: {{ block.settings.text_alignment_mobile }};
+  }
+  .text-block a {
+    color: #ADA18F;
+  }
+  @media (min-width: 1200px) {
+    {% if block.settings.max_width > 0 %}
+      #shopify-block-{{ block.id }} {
+        max-width: {{ block.settings.max_width }}px;
+        column-span: 2;
+      }
+    {% endif %}
+    #shopify-block-{{ block.id }} .text-block {
+      {% if block.settings.desktop_font_size > 0 %}
+        font-size: {{ block.settings.desktop_font_size | append: 'px' }};
+      {% else %}
+        font-size: 14px;
+      {% endif %}
+      {% if block.settings.desktop_line_height > 0 %}
+        line-height: {{ block.settings.desktop_line_height | append: 'px' }};
+      {% else %}
+        line-height: 20px;
+      {% endif %}
+      {% if block.settings.top_spacing_desktop > 0 %}
+        padding-top: {{ block.settings.top_spacing_desktop }}px;
+      {% else %}
+        padding-top: 0;
+      {% endif %}
+      text-align: {{ block.settings.text_alignment_desktop }};
+    }
+  }
+{% endstyle %}
+
+<div class="text-block {% if block.settings.border-top %}border-t{% endif %}">
+  {{ block.settings.text }}
+</div>
+
+{% schema %}
+{
+  "name": "Text block",
+  "class": "text-block-wrapper",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Text weight",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "bold", "label": "Bold" },
+      ],
+    },
+    {
+      "type": "number",
+      "id": "letter_spacing",
+      "label": "Letter spacing %",
+    },
+    {
+      "type": "checkbox",
+      "id": "border-top",
+      "label": "Enable border top",
+    },
+    {
+      "type": "header",
+      "content": "Desktop text style"
+    },
+    {
+      "type": "number",
+      "id": "max_width",
+      "label": "Max width",
+    },
+    {
+      "type": "number",
+      "id": "desktop_font_size",
+      "label": "Desktop font size",
+    },
+    {
+      "type": "number",
+      "id": "desktop_line_height",
+      "label": "Desktop line height",
+    },
+    {
+      "type": "number",
+      "id": "top_spacing_desktop",
+      "label": "Top spacing",
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_alignment_desktop",
+      "label": "Text alignment desktop",
+    }, 
+    
+    
+    
+    {
+      "type": "header",
+      "content": "Mobile text style"
+    },
+    {
+      "type": "number",
+      "id": "mobile_font_size",
+      "label": "Mobile font size",
+    },
+    {
+      "type": "number",
+      "id": "mobile_line_height",
+      "label": "Mobile line height",
+    },
+    {
+      "type": "number",
+      "id": "top_spacing_mobile",
+      "label": "Top spacing",
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_alignment_mobile",
+      "label": "Text alignment mobile",
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text block"
+    }
+  ]
+}
+{% endschema %}

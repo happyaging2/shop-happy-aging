@@ -1,0 +1,162 @@
+<div class="md:grid md:grid-cols-2 md:grid-rows-1 md:gap-0 relative">
+  <div class="md:order-2">
+    <div class="flex flex-col items-center justify-center md:h-screen md:min-h-[800px] md:sticky md:top-0 px-4 py-14 lg:py-20 text-center">
+      <p class="sub-heading mb-2">{{ section.settings.sub_heading }}</p>
+      <h2 class="heading heading--1">{{  section.settings.title }}</h2>
+      {% unless section.settings.product_image == blank %}
+        <img class="my-6 md:my-10 mx-auto h-full max-h-[367px]" src="{{ section.settings.product_image | img_url: 'x740' }}" loading="lazy" />
+      {% endunless %}
+      {% unless section.settings.product_video_url == blank %}
+        <site-video>
+          <video
+            {% unless section.settings.product_video_poster == blank %} poster="{{ section.settings.product_video_poster | img_url: '1920x' }}"{% endunless %}
+            class="my-6 md:my-10"
+            loop
+            autoplay
+            muted
+            playsinline>
+            <source data-src="{{ section.settings.product_video_url }}" type="video/mp4">
+          </video>
+        </site-video>
+      {% endunless %}
+      <p class="paragraph paragraph--2 max-w-[280px] mb-6">{{ section.settings.text }}</p>
+      <a href="{{ section.settings.cta_link }}" title="{{ section.settings.cta_label }}" class="button button--black !w-[208px] lg:!w-[265px]">
+         {{ section.settings.cta_label }}
+      </a>
+    </div>
+  </div>
+  <div>
+    {% for block in section.blocks %}
+      {% if block.type == "card_item" %}
+        <div class="bg-beige h-screen sm:h-[640px] lg:h-screen min-h-[513px] xl:min-h-[834px] overflow-hidden relative text-white text-center">
+          <div class="d-grid grid-cols-1 grid-rows-3 gap-0 h-[100%] relative px-4 py-14 lg:py-20 z-10">
+            <span></span>
+            <div class="flex flex-col justify-center">
+              {% unless block.settings.card_title == blank %}
+                <div class="heading heading--1">{{ block.settings.card_title }}</div>
+              {% endunless %}
+            </div>
+            <div class="flex flex-col justify-end items-center gap-7">
+              {% unless block.settings.card_text == blank %}
+                <p class="sub-heading">{{ block.settings.card_text }}</p>
+              {% endunless %}
+              {% unless block.settings.card_cta_label == blank or block.settings.card_cta_link == blank %}
+                <a class="button button--hover-cream" href="{{ block.settings.card_cta_link }}" title="{{  block.settings.card_cta_label }}">
+                  {{ block.settings.card_cta_label }}
+                </a>
+              {% endunless %}
+            </div>
+          </div>
+          <div class="absolute inset-0">
+            {% unless block.settings.card_video_url == blank %}
+              <site-video>
+                <video
+                  {% unless block.settings.card_video_poster == blank %} poster="{{ block.settings.card_video_poster | img_url: '1920x' }}"{% endunless %}
+                  class="absolute w-full h-full object-cover object-center top-0 left-0"
+                  loop
+                  autoplay
+                  muted
+                  playsinline>
+                  <source data-src="{{ block.settings.card_video_url }}" type="video/mp4">
+                </video>
+              </site-video>
+            {% endunless %}
+            {% unless block.settings.card_img == blank %}
+              <img class="site-image" src="{{ block.settings.card_img | img_url: '1200x' }}" loading="lazy" />
+            {% endunless %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Side by Side",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Side by Side"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub-Heading"
+    }, {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title"
+    }, {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    }, {
+      "type": "url",
+      "id": "product_video_url",
+      "label": "Product Video URL"
+    }, {
+      "type": "image_picker",
+      "id": "product_video_poster",
+      "label": "Product Video Poster"
+    }, {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    }, {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    }, {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Label"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Card",
+      "type": "card_item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "card_img",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "card_video_url",
+          "label": "Video URL (Mp4)"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_video_poster",
+          "label": "Video Poster"
+        },
+        {
+          "type": "richtext",
+          "id": "card_title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "card_text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "card_cta_link",
+          "label": "CTA Link"
+        },
+        {
+          "type": "text",
+          "id": "card_cta_label",
+          "label": "CTA Label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

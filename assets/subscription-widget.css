@@ -1,0 +1,371 @@
+.subscription-widget {
+  display: block;
+}
+
+.quantity-blocks {
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .quantity-blocks {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem
+  }
+}
+
+.quantity-picker {
+  display: block;
+}
+
+.quantity-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1023px) {
+  .quantity-grid {
+    display: none;
+  }
+}
+
+.quantity-grid-mobile {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .quantity-grid-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .quantity-grid-mobile .radio-option {
+    border: 1px solid #e5dbcc;
+  }
+
+  .quantity-grid-mobile .option-subtitle {
+    font-size: 10px;
+    color: #666;
+  }
+
+  .quantity-grid-mobile .value-props {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid #e5dbcc;
+    gap: 1rem 2rem;
+  }
+
+  .quantity-grid-mobile .radio-option.active .value-props {
+    display: grid;
+  }
+
+  .quantity-grid-mobile .value-prop {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    align-items: center;
+    gap: 5px;
+    margin-left: -0.125rem;
+  }
+
+  .quantity-grid-mobile .value-prop-text {
+    font-size: 10px;
+  }
+
+  .quantity-grid-mobile .value-prop-icon {
+    position: relative;
+  }
+
+  .quantity-grid-mobile .value-prop-icon.shipping-box {
+    left: 2px;
+  }
+
+  .quantity-grid-mobile .value-prop-icon.shipping-clock {
+    left: 1px;
+  }
+}
+
+.quantity-block {
+  position: relative;
+  border: 1px solid;
+  padding: 1rem;
+}
+
+.quantity-block.active .quantity-block__inner {
+  opacity: 1;
+}
+
+.quantity-block__inner {
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.quantity-image {
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.quantity-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.quantity-title {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.quantity-subtitle {
+  font-size: 10px;
+}
+
+.quantity-badge {
+  background-color: #e5dbcc;
+  padding: 5px 10px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+.cadence-selector {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.radio-option {
+  border: 1px solid transparent;
+  padding: 1.5rem;
+  padding-top: 1rem;
+}
+
+.radio-option.active {
+  border-color: #000 !important;
+}
+
+.radio-option__button {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  outline: 0;
+}
+
+@media (min-width: 1024px) {
+  .radio-option__button {
+    gap: 1.5rem;
+  }
+}
+
+.radio-circle {
+  margin-top: 0.75rem;
+  min-width: 14px;
+  min-height: 14px;
+  max-width: 14px;
+  max-height: 14px;
+  border-radius: 9999px;
+  border: 1px solid;
+  cursor: pointer;
+  position: relative;
+}
+
+.radio-dot {
+  background-color: transparent;
+  border-radius: 9999px;
+  width: 6px;
+  height: 6px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-option.active .radio-dot {
+  background-color: #000 !important;
+}
+
+.option-content {
+  width: 100%;
+}
+
+.option-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+  flex-wrap: wrap;
+  line-height: 1;
+}
+
+.option-label {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.option-label-text {
+  font-family: var(--font-body-family);
+  font-size: 10px;
+  text-transform: uppercase;
+  line-height: 2rem;
+  letter-spacing: 1px !important;
+}
+
+@media (min-width: 1280px) {
+  .option-label-text {
+    font-size: 12px !important;
+  }
+}
+
+.price-container {
+  display: flex;
+  gap: 0.75rem;
+  grid-auto-flow: column;
+  justify-content: end;
+}
+
+.compare-price {
+  font-family: var(--font-heading-family);
+  font-size: 26px;
+  text-decoration: line-through;
+  color: #9e9b9b;
+}
+
+.current-price {
+  font-family: var(--font-heading-family);
+  font-size: 26px;
+}
+
+.option-details {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  justify-content: space-between;
+  font-size: 10px;
+  line-height: normal;
+}
+
+.bottles-text {
+  white-space: nowrap;
+}
+
+.save-text {
+  margin-right: auto;
+  color: var(--highlight-color);
+}
+
+.period-price {
+  display: block;
+}
+
+.value-props {
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+  justify-items: start;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid #e5dbcc;
+}
+
+.radio-option.active .value-props {
+  display: grid;
+}
+
+.value-prop {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: center;
+  gap: 5px;
+  margin-left: -0.125rem;
+}
+
+.value-prop-text {
+  font-size: 10px;
+}
+
+.value-prop-icon {
+  position: relative;
+}
+
+.value-prop-icon.shipping-box {
+  left: 2px;
+}
+
+.value-prop-icon.shipping-clock {
+  left: 1px;
+}
+
+@media (max-width: 1023px) {
+  .subscription-widget {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cadence-selector {
+    order: -1;
+    margin-bottom: 1rem;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .cadence-selector .radio-option {
+    flex: 1;
+    padding: 0;
+    border: 1px solid #e5dbcc;
+  }
+
+  .cadence-selector .radio-option.active {
+    border: 1px solid #000;
+  }
+
+  .cadence-selector .radio-option__button {
+    margin: 0;
+    padding: 1rem;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+  }
+
+  .cadence-selector .radio-circle,
+  .cadence-selector .option-details,
+  .cadence-selector .price-container {
+    display: none;
+  }
+
+  .cadence-selector .value-props {
+    display: none !important;
+  }
+
+  .cadence-selector .option-content {
+    width: auto;
+  }
+
+  .cadence-selector .option-header {
+    flex-wrap: nowrap;
+  }
+
+  .cadence-selector .option-label-text {
+    line-height: normal;
+    white-space: nowrap;
+  }
+}

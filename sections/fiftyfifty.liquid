@@ -1,0 +1,83 @@
+<div class="border-t border-black py-6 lg:py-8">
+  <div class="flex flex-col md:grid md:grid-cols-2 site-container">
+    <div class="mb-10 md:mb-0 md:order-2 lg:grid lg:grid-cols-12">
+      <div class="lg:hidden relative pb-[143%] md:pb-[165%] bg-beige">
+        {% unless section.settings.image_mobile == blank %}
+          <img class="site-image" src="{{ section.settings.image_mobile | img_url: '1000x' }}" loading="lazy" />
+        {% endunless %}
+      </div>
+      <div class="d-none lg:block relative pb-[143%] lg:col-start-5 lg:col-span-8 bg-beige">
+        {% unless section.settings.image_desktop == blank %}
+          <img class="site-image" src="{{ section.settings.image_desktop | img_url: '2000x' }}" loading="lazy" />
+        {% endunless %}
+      </div>
+    </div>
+    <div class="px-4 lg:px-0 md:flex md:flex-col">
+      {% unless section.settings.eyebrow == blank %}
+        <h2 class="sub-heading mb-2">
+          {{ section.settings.eyebrow }}
+        </h2>
+      {% endunless %}
+      {% unless section.settings.title == blank %}
+        <h3 class="heading heading--1 mb-5 lg:mb-0 max-w-[260px] md:max-w-[100%]">
+          {{ section.settings.title }}
+        </h3>
+      {% endunless %}
+      {% unless section.settings.text == blank %}
+        <div class="paragraph paragraph--2 flex flex-col gap-7 md:mt-auto md:max-w-[560px]">
+          {{ section.settings.text }}
+        </div>
+      {% endunless %}
+      {% unless section.settings.cta_text == blank or section.settings.cta_link == blank %}
+        <div class="mt-10 md:mt-[53px] max-w-[260px] md:max-w-[329px]">
+          <a href="{{ section.settings.cta_link }}" title="{{ section.settings.cta_text }}">
+            <button class="button button--black button--full-width">{{ section.settings.cta_text }}</button>
+          </a>
+        </div>
+      {% endunless %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Fifty Fifty",
+    "tag": "section",
+    "presets": [
+      {
+        "name": "Fifty Fifty"
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "eyebrow",
+        "label": "Eyebrow"
+      }, {
+        "type": "inline_richtext",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      }, {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image Mobile"
+      }, {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Image"
+      }, {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Text"
+      }, {
+        "type": "url",
+        "id": "cta_link",
+        "label": "CTA Link"
+      }
+    ]
+  }
+{% endschema %}

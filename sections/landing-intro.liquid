@@ -1,0 +1,174 @@
+{% style %}
+  .intro-text-block {
+
+  }
+  #shopify-section-{{ section.id }} .em-newline-mobile em {
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .heading-text {
+    text-align: left;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  @media (min-width: 1024px) {
+    #shopify-section-{{ section.id }} .em-newline-mobile em {
+      display: inline;
+    }
+
+    #shopify-section-{{ section.id }} .heading-text {
+      text-align: inherit;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+
+{% endstyle %}
+
+<div class="py-10 lg:py-16 overflow-hidden">
+  <div class="site-container px-4">
+    {%- if section.settings.title != blank -%}
+      {% liquid 
+        assign text_align = section.settings.text_align
+        assign justify = 'items-center mx-auto'
+        if text_align == 'text-start'
+          assign justify = 'items-start'
+        endif
+      %}
+      <div class="flex flex-col justify-start max-w-[710px] {{ text_align }} {{ justify }}">
+        {%- if section.settings.sub_heading != blank -%}
+          <div class="eyebrow">{{ section.settings.sub_heading }}</div>
+        {%- endif -%}
+        <h2 class="heading heading--4 text-5xl text-[40px] lg:!text-[60px] mt-2 lg:mt-5 em-newline-mobile">{{ section.settings.title }}</h2>
+        {%- if section.settings.text != blank -%}
+          <div class="text-sm mt-5 lg:mt-5 max-w-[532px] heading-text">{{ section.settings.text }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="image-block pt-10 lg:pt-16">
+      {% comment %} Desktop image {% endcomment %}
+      {%- if section.settings.image_desk -%}
+        <div class="d-none lg:block">
+          <div class="media media--transparent ratio" style="--ratio-percent: {{ 100 | divided_by: section.settings.image_desk.aspect_ratio }}%">
+            {{ section.settings.image_desk | image_url: width: 2000 | image_tag: class: 'object-cover w-full', loading: 'lazy' }}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {% comment %} Mobile image {% endcomment %}
+      {%- if section.settings.image_mob -%}
+        <div class="lg:hidden w-full">
+          <div class="media media--transparent ratio" style="--ratio-percent: {{ 100 | divided_by: section.settings.image_mob.aspect_ratio }}%">
+            {{ section.settings.image_mob | image_url: width: 2000 | image_tag: class: 'object-cover w-full', loading: 'lazy' }}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.caption != blank -%}
+        <div class="text-sm mt-5 lg:mt-8 max-w-[383px]">{{ section.settings.caption }}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="{% if section.settings.title != blank %}mt-10{% endif %} d-grid lg:mt-20 gap-x-[1rem] gap-y-8 lg:gap-y-14 grid-cols-1 lg:grid-cols-3">
+      {% for block in section.blocks %}
+        <div class="intro-text-block border-b border-black pb-7">
+          {%- if block.settings.title != blank -%}
+            <h3 class="heading text-[26px] mt-2 lg:mt-3">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <div class="text-sm mt-3">{{ block.settings.text }}</div>
+          {%- endif -%}
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing Intro",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Landing Intro"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Heading Alignment",
+      "options": [
+        {
+          "value": "text-start",
+          "label": "Left"
+        },
+        {
+          "value": "text-center", 
+          "label": "Center"
+        }
+      ],
+      "default": "text-center"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desk",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mob",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Text",
+      "type": "text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,131 @@
+<style>
+  @media screen and (max-width: 767px) {
+    .product__media-wrapper site-carousel {
+      margin: 0 -2rem;
+    }
+  }
+</style>
+
+{%
+  assign config = '{ 
+    "loop":false,
+    "slidesPerView":1.25,
+    "spaceBetween": 16,
+    "slidesOffsetBefore": 16,
+    "slidesOffsetAfter": 16,
+    "breakpoints": {
+      "1024": {
+        "slidesPerView": 1,
+        "slidesOffsetBefore": 0,
+        "slidesOffsetAfter": 0
+      }
+    }
+  }'
+%}
+
+<site-carousel
+  class="carousel-default relative opacity-0 invisible duration-300 transition-all block"
+  data-config="{{ config | escape }}"
+  id="{{ section.id }}"
+  data-id="{{ section.id }}"
+>
+  <div class="d-grid">
+    <div class="order-2 d-none lg:block lg:order-1 thumbnail-wrapper relative lg:h-full lg:absolute lg:top-0 lg:left-0 lg:w-[56px] lg:z-[2] lg:overflow-auto">
+      <button
+        class="scroll-up-arrow opacity-0 invisible transition-opacity duration-300 absolute top-0 left-0 w-full z-10 h-14 d-none lg:grid justify-center items-start bg-[linear-gradient(to_bottom,_rgba(247,245,235,1)_0%,_rgba(247,245,235,1)_50%,_rgba(247,245,235,0)_100%)]"
+        onclick="scrollUp()"
+      >
+        <svg class="rotate-180" width="22" height="11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="m.825.403 10.129 9.619L20.913.403" stroke="#000"/>
+        </svg>
+      </button>
+      <div id="thumbnails" class="thumbnails-container overflow-auto lg:h-full flex flex-col hide-scrollbar w-screen lg:w-auto px-4 lg:px-0">
+        <carousel-pager class="w-full flex gap-2 lg:gap-0 lg:flex-col">
+          {% for img in product.media %}
+            <button class="gallery-thumb w-[56px] h-[56px] aspect-square relative mb-3 active {% if forloop.last %}mr-4 lg:mr-0{% endif %}">
+              <img
+                width="auto"
+                height="auto"
+                class="absolute top-0 left-0 h-full w-full object-cover object-center"
+                src="{{ img.src | img_url: '400x' }}"
+                alt="{{ img.alt | escape }}"
+                loading="lazy"
+              >
+            </button>
+          {% endfor %}
+        </carousel-pager>
+      </div>
+      <button
+        class="scroll-down-arrow transition-opacity duration-300 absolute bottom-0 left-0 w-full z-10 h-14 d-none lg:grid justify-center items-end bg-[linear-gradient(to_top,_rgba(247,245,235,1)_0%,_rgba(247,245,235,1)_50%,_rgba(247,245,235,0)_100%)]"
+        onclick="scrollDown()"
+      >
+        <svg width="22" height="11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="m.825.403 10.129 9.619L20.913.403" stroke="#000"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="order-1 lg:order-2 swiper w-full lg:pb-0 lg:mr-0 lg:w-[calc(100%-68px)]">
+      {% render 'frontrow-sticker' %}
+      <div class="swiper-wrapper">
+        {% for img in product.media %}
+          <div class="swiper-slide" data-media-id="{{ img.id }}" data-index="{{ forloop.index0 }}">
+            <div class="aspect-square relative">
+              <img
+                width="auto"
+                height="auto"
+                src="{{ img.src | img_url: '1500x' }}"
+                class="absolute top-0 left-0 w-full h-full object-cover object-center"
+              >
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {%- if product.media.size > 1 -%}
+    <div class="lg:w-[calc(100%-68px)] lg:ml-auto relative">
+      <carousel-pager class="w-full left-0 top-0 flex justify-center gap-2 absolute">
+        {% for img in product.media %}
+          <button class="carousel-bullet {% if forloop.first %} active {% endif %}"></button>
+        {% endfor %}
+      </carousel-pager>
+    </div>
+  {%- endif -%}
+</site-carousel>
+
+<script>
+  const thumbnailContainer = document.getElementById('thumbnails');
+  const scrollUpArrow = document.querySelector('.scroll-up-arrow');
+  const scrollDownArrow = document.querySelector('.scroll-down-arrow');
+  const buffer = 10;
+
+  function scrollDown() {
+    thumbnailContainer.scrollBy({ top: thumbnailContainer.clientHeight, behavior: 'smooth' });
+  }
+
+  function scrollUp() {
+    thumbnailContainer.scrollBy({ top: -thumbnailContainer.clientHeight, behavior: 'smooth' });
+  }
+
+  function checkScrollArrows() {
+    const scrollTop = thumbnailContainer.scrollTop;
+    const scrollHeight = thumbnailContainer.scrollHeight;
+    const clientHeight = thumbnailContainer.clientHeight;
+
+    if (scrollTop > 0) {
+      scrollUpArrow.classList.remove('opacity-0', 'invisible');
+    } else {
+      scrollUpArrow.classList.add('opacity-0', 'invisible');
+    }
+
+    if (scrollHeight > clientHeight && scrollTop + clientHeight < scrollHeight - buffer) {
+      scrollDownArrow.classList.remove('opacity-0', 'invisible');
+    } else {
+      scrollDownArrow.classList.add('opacity-0', 'invisible');
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', checkScrollArrows);
+  thumbnailContainer.addEventListener('scroll', checkScrollArrows);
+</script>

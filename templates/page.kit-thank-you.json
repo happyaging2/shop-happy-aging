@@ -1,0 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "register-a-kit-thank-you": {
+      "type": "register-a-kit-thank-you",
+      "settings": {
+        "title": "<p>THANK YOU <em>for registering your test<\/em><\/p>",
+        "subtitle": "Your registration is complete. You can view the status of your test anytime in your Happy Aging account. If you have any questions, reach out to us at hello@happyaging.com."
+      }
+    }
+  },
+  "order": [
+    "register-a-kit-thank-you"
+  ]
+}
+ 

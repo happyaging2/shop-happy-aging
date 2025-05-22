@@ -1,0 +1,57 @@
+
+        <question-answer>
+          <div class="faqs__item-container d-grid w-full border-b">
+            <button
+              type="button"
+              class="faqs__item d-grid grid-cols-[1fr_auto] justify-between gap-5 lg:items-center text-left py-8"
+            >
+              <h3 class="eyebrow">{{ block.settings.question }}</h3>
+              <div class="faqs__item-plus relative flex h-full items-center justify-center">
+                <div class="relative translate-y-1">
+                  {% render 'icon-expand' %}
+                </div>
+              </div>
+              <div class="faqs__item-minus relative hidden flex h-full items-center justify-center">
+                <div class="relative rotate-180 translate-y-1">
+                  {% render 'icon-expand' %}
+                </div>
+              </div>
+            </button>
+            <div class="faqs__answer w-full">
+              <div class="mb-6 text-sm  lg:pr-16">{{ block.settings.answer }}</div>
+            </div>
+          </div>
+        </question-answer>
+
+
+
+        
+
+{% schema %}
+{
+  "name": "Accordion FAQ 2",
+  "class": "accordion-block-x",
+  "blocks": [{ "type": "@theme" }],
+  "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ],
+  
+  "presets": [
+    {
+      "name": "Accordion",
+      "settings": {
+        "question": "Accordion heading"
+      }
+    }
+  ]
+}
+{% endschema %}

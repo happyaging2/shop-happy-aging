@@ -1,0 +1,84 @@
+{% assign config = '{"loop":true,"slidesPerView":1,"effect":"fade","fadeEffect":{"crossFade":true}}' %}
+
+<div class="bg-beige border-y border-black w-full">
+  <div class="site-container text-center py-12 md:py-16 lg:py-20">
+    <h2 class="eyebrow mb-6">{{ section.settings.title }}</h2>
+    <div class="relative max-lg:w-full max-lg:overflow-hidden">
+      <site-carousel
+        data-config="{{ config | escape }}"
+        id="testimonial-carousel"
+        data-id="testimonial-carousel"
+        class=" block"
+      >
+        <div class="absolute top-0 left-0 w-full h-full">
+          <carousel-prev>
+            <button class="absolute rotate-180 z-10 left-3 top-0 bottom-0 my-auto flex rounded-full items-center justify-center site-header">
+              {% render 'carousel-arrow' %}
+            </button>
+          </carousel-prev>
+          <carousel-next>
+            <button class="absolute z-10 right-3 top-0 bottom-0 my-auto flex rounded-full items-center justify-center site-header">
+              {% render 'carousel-arrow' %}
+            </button>
+          </carousel-next>
+        </div>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="swiper-slide lg:px-3">
+                <div>
+                  <p class="heading heading--1 max-w-[1020px] mx-auto px-10 max-lg:text-4xl">{{ block.settings.testimonial }}</p>
+                </div>
+                <div class="d-grid md:grid-flow-col justify-center gap-3 md:gap-6 items-center mt-8">
+                  <div class="flex gap-2">
+                    {% for i in (1..5) %}
+                      {% render 'star-review' %}
+                    {% endfor %}
+                  </div>
+                  <span class="eyebrow">{{ block.settings.author }}</span>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </site-carousel>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonial Carousel",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Testimonial Carousel"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Item",
+      "type": "item",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "testimonial",
+          "label": "Testimonial"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

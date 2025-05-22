@@ -1,0 +1,98 @@
+{% style %}
+  .grid-list#shopify-block-{{ block.id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.mobile_grid_columns }}, 1fr);
+    column-gap: {{ block.settings.column_gap_mobile }}px;
+    row-gap: {{ block.settings.row_gap_mobile }}px;
+    width: 100%;
+  }
+  @media (min-width: 1200px) {
+    .grid-list#shopify-block-{{ block.id }} {
+      grid-template-columns: repeat({{ block.settings.desktop_grid_columns }}, 1fr);
+      column-gap: {{ block.settings.column_gap_desktop }}px;
+      row-gap: {{ block.settings.row_gap_desktop }}px;
+    }
+  }
+{% endstyle %}
+
+{% content_for 'blocks' %}
+
+{% schema %}
+{
+  "name": "Grid (simple)",
+  "tag": "div",
+  "class": "grid-list",
+  "blocks": [{ "type": "@theme" }],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Desktop"
+    },
+    {
+      "type": "select",
+      "id": "desktop_grid_columns",
+      "label": "Desktop Columns",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" },
+        { "value": "5", "label": "5" },
+        { "value": "6", "label": "6" },
+        { "value": "7", "label": "7" },
+        { "value": "8", "label": "8" },
+        { "value": "9", "label": "9" },
+        { "value": "10", "label": "10" },
+        { "value": "11", "label": "11" },
+        { "value": "12", "label": "12" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "number",
+      "id": "column_gap_desktop",
+      "label": "Column Gap",
+      "default": 40
+    },
+    {
+      "type": "number",
+      "id": "row_gap_desktop",
+      "label": "Row Gap",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "select",
+      "id": "mobile_grid_columns",
+      "label": "Mobile Columns",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "number",
+      "id": "column_gap_mobile",
+      "label": "Column Gap",
+      "default": 30
+    },
+    {
+      "type": "number",
+      "id": "row_gap_mobile",
+      "label": "Row Gap",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Grid (simple)"
+    }
+  ]
+}
+{% endschema %}

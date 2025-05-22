@@ -1,0 +1,255 @@
+{% stylesheet %}
+  .section-grid > .section-grid {
+    height: 100%;
+  }
+{% endstylesheet %}
+{% style %}
+  #shopify-block-{{ block.id }}.section-grid {
+    {% if block.settings.mobile_max_width > 0 %}
+      max-width: {{ block.settings.mobile_max_width }}px;
+    {% endif %}
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.mobile_grid_columns }}, 1fr);
+    column-gap: {{ block.settings.mobile_grid_column_gap }}px;
+    row-gap: {{ block.settings.mobile_grid_row_gap }}px;
+    padding: {{ block.settings.top_spacing_mobile }}px {{ block.settings.right_spacing_mobile }}px {{ block.settings.bottom_spacing_mobile }}px {{ block.settings.left_spacing_mobile }}px;
+    justify-items: {{ block.settings.mobile_horizontal_alignment }};
+    align-items: {{ block.settings.mobile_vertical_alignment }};
+  }
+  @media (min-width: 1200px) {
+
+    #shopify-block-{{ block.id }}.section-grid {
+      {% if block.settings.desktop_max_width > 0 %}
+        max-width: {{ block.settings.desktop_max_width }}px;
+      {% else %}
+        max-width: unset;
+      {% endif %}
+      {% if block.settings.desktop_grid_columns contains 'px' or block.settings.desktop_grid_columns contains 'auto' %}
+        grid-template-columns: {{ block.settings.desktop_grid_columns }};
+      {% else %}
+        grid-template-columns: repeat({{ block.settings.desktop_grid_columns }}, 1fr);
+      {% endif %}
+      column-gap: {{ block.settings.desktop_grid_column_gap }}px;
+      row-gap: {{ block.settings.desktop_grid_row_gap }}px;
+      padding: {{ block.settings.top_spacing_desktop }}px {{ block.settings.right_spacing_desktop }}px {{ block.settings.bottom_spacing_desktop }}px {{ block.settings.left_spacing_desktop }}px;
+      justify-items: {{ block.settings.horizontal_alignment }};
+      align-items: {{ block.settings.vertical_alignment }};
+    }
+
+    #shopify-block-{{ block.id }}.section-grid {
+      {% if block.settings.vertical_alignment == 'flex-between' %}
+        display: flex!important;
+        flex-direction: column!important;
+        flex-wrap: nowrap!important;
+        justify-content: space-between!important;
+      {% endif %}
+    }
+    
+    
+  }
+{% endstyle %}
+
+{% content_for 'blocks' %}
+
+
+{% schema %}
+{
+  "name": "Grid (wrapper)",
+  "tag": "div",
+  "class": "section-grid",
+  "blocks": [{ "type": "@theme" }],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Desktop Grid"
+    },
+    {
+      "type": "number",
+      "id": "desktop_max_width",
+      "label": "Desktop Max Width",
+    },
+    {
+      "type": "select",
+      "id": "desktop_grid_columns",
+      "label": "Desktop Grid Columns",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" },
+        { "value": "5", "label": "5" },
+        { "value": "6", "label": "6" },
+        { "value": "7", "label": "7" },
+        { "value": "8", "label": "8" },
+        { "value": "9", "label": "9" },
+        { "value": "10", "label": "10" },
+        { "value": "11", "label": "11" },
+        { "value": "12", "label": "12" },
+        { "value": "300px auto", "label": "300px auto" },
+      ],
+      "default": "1"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment",
+      "label": "Horizontal Alignment",
+      "options": [
+        { "value": "start", "label": "Start" },
+        { "value": "center", "label": "Center" },
+        { "value": "end", "label": "End" },
+        { "value": "space-between", "label": "Space Between" },
+        { "value": "space-around", "label": "Space Around" },
+        { "value": "space-evenly", "label": "Space Evenly" }
+      ],
+      "default": "start"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical Alignment",
+      "options": [
+        { "value": "start", "label": "Start" },
+        { "value": "center", "label": "Center" },
+        { "value": "end", "label": "End" },
+        { "value": "space-between", "label": "Space Between" },
+        { "value": "space-around", "label": "Space Around" },
+        { "value": "space-evenly", "label": "Space Evenly" },
+        { "value": "flex-between", "label": "Flex Between" }
+      ],
+      "default": "start"
+    },
+
+    {
+      "type": "number",
+      "id": "desktop_grid_column_gap",
+      "label": "Desktop Grid Column Gap",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_grid_row_gap",
+      "label": "Desktop Grid Row Gap",
+      "default": 0
+    },
+
+    {
+      "type": "number",
+      "id": "top_spacing_desktop",
+      "label": "Top Spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "bottom_spacing_desktop",
+      "label": "Bottom Spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "left_spacing_desktop",
+      "label": "Left Spacing",
+      "default": 70
+    },
+    {
+      "type": "number",
+      "id": "right_spacing_desktop",
+      "label": "Right Spacing",
+      "default": 70
+    },
+    {
+      "type": "header",
+      "content": "Mobile Grid"
+    },
+    {
+      "type": "number",
+      "id": "mobile_max_width",
+      "label": "Mobile Max Width",
+    },
+    {
+      "type": "select",
+      "id": "mobile_grid_columns",
+      "label": "Mobile Grid Columns",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" },
+        { "value": "5", "label": "5" },
+        { "value": "6", "label": "6" },
+      ],
+      "default": "1"
+    },
+    {
+      "type": "select",
+      "id": "mobile_horizontal_alignment",
+      "label": "Mobile Horizontal Alignment",
+      "options": [
+        { "value": "start", "label": "Start" },
+        { "value": "center", "label": "Center" },
+        { "value": "end", "label": "End" },
+        { "value": "space-between", "label": "Space Between" },
+        { "value": "space-around", "label": "Space Around" },
+        { "value": "space-evenly", "label": "Space Evenly" }
+      ],
+      "default": "start"
+    },
+    {
+      "type": "select",
+      "id": "mobile_vertical_alignment",
+      "label": "Mobile Vertical Alignment",
+      "options": [
+        { "value": "start", "label": "Start" },
+        { "value": "center", "label": "Center" },
+        { "value": "end", "label": "End" },
+        { "value": "space-between", "label": "Space Between" },
+        { "value": "space-around", "label": "Space Around" },
+        { "value": "space-evenly", "label": "Space Evenly" },
+        { "value": "flex-between", "label": "Flex Between" }
+        
+      ],
+      "default": "start"
+    },
+    {
+      "type": "number",
+      "id": "mobile_grid_column_gap",
+      "label": "Mobile Grid Column Gap",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_grid_row_gap",
+      "label": "Mobile Grid Row Gap",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "top_spacing_mobile",
+      "label": "Top Spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "bottom_spacing_mobile",
+      "label": "Bottom Spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "left_spacing_mobile",
+      "label": "Left Spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "right_spacing_mobile",
+      "label": "Right Spacing",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Grid (wrapper)"
+    }
+  ]
+}
+{% endschema %}

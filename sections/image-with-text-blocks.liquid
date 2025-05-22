@@ -1,0 +1,473 @@
+{% style %}
+  #shopify-section-{{ section.id }} .content-block > div:last-child {
+    margin-bottom: 0;
+  }
+  #shopify-section-{{ section.id }} .flex-1 {
+    flex: 1;
+  }
+  @media screen and (min-width: 1024px) {
+    {%- if section.settings.image_large -%}
+      #shopify-section-{{ section.id }} .image-block {
+        width: 60%;
+      }
+    {%- else -%}
+      #shopify-section-{{ section.id }} .image-block {
+        width: 50%;
+      }
+    {%- endif -%}
+    #shopify-section-{{ section.id }} .section-text {
+      max-width: 490px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+{% endstyle %}
+
+{%- liquid
+
+  if section.settings.width == 'container'
+    assign desktop_container = 'site-container'
+  endif
+
+  if section.settings.width_mobile == 'container'
+    assign mobile_container = 'px-5 lg:px-0'
+  endif
+
+  if section.settings.width == 'container'
+    assign mobile_container = mobile_container | append: ' -mx-5 lg:mx-0'
+  endif
+
+  assign desktop_spacing = section.settings.spacing_desktop
+  assign mobile_spacing = section.settings.spacing_mobile
+
+-%}
+<div class="{% if section.settings.show_border_top %} {% if section.settings.hide_border_mobile %}{% else %} border-t {% endif %} lg:border-t border-black {% endif %}">
+  <div class="{{ desktop_container }} {{ desktop_spacing }} {{ mobile_spacing }}">
+      <div class="{{ mobile_container }}">
+      {% comment %} Heading {% endcomment %}
+      {%- if section.settings.title != blank or section.settings.text != blank -%}
+        <div class="flex flex-col items-center px-5 pt-10 pb-14 lg:pt-0 lg:pb-20">
+          {% if section.settings.title != blank %}
+            <h2 class="heading heading--1 mb-3 lg:mb-[10px] flex flex-col lg:flex-row lg:gap-3 text-center">
+              {{ section.settings.title }}
+            </h2>
+          {% endif %}
+          {% if section.settings.text != blank %}
+            <div class="max-w-[490px] text-xs leading-5 text-center mt-4 section-text">
+              {{ section.settings.text }}
+            </div>
+          {% endif %}
+        </div>
+      {%- endif -%}
+      {% comment %} Image with content {% endcomment %}
+      <div class="flex flex-col lg:flex-row ">
+        {%- capture image_classes -%}
+          {% if section.settings.wrap_image_mobile %} px-5 lg:px-0 {% endif %}
+          {% unless section.settings.image_first_mob %} order-2 {% else %} order-1 {% endunless %} 
+          {% unless section.settings.image_first %} lg:order-2 {% else %} lg:order-1 {% endunless %} 
+        {%- endcapture -%}
+        {%- comment -%} Image Container {%- endcomment -%}
+        <div class="image-block {{ image_classes }}">
+          {% comment %} Desktop image: {% endcomment %}
+          {%- if section.settings.image_desk -%}
+            {%- liquid
+              assign ratio = 100
+              if section.settings.image_height_desk == 'adapt'
+                assign ratio = 1 | divided_by: section.settings.image_desk.aspect_ratio | times: 100
+              endif
+              if section.settings.image_height_desk == 'fit'
+                assign ratio = 0
+              endif
+            -%}
+            <div
+              class="d-none lg:block"
+              {% if section.settings.image_height_desk == 'fit' %}
+                style="min-height: 40vw; height: 100%"
+              {% endif %}
+            >
+              <div
+                class="media media--transparent ratio {% if section.settings.image_height_desk == 'fit' %}h-full{% endif %}"
+                style="--ratio-percent: {{ ratio }}%;"
+              >
+                {{ section.settings.image_desk | image_url: width: 2000 | image_tag: class: 'object-cover', loading: 'lazy' }}
+              </div>
+            </div>
+          {%- else -%}
+            <div class="d-none lg:block" style="min-height: 40vw;">
+              {{ 'detailed-apparel-1' | placeholder_svg_tag: 'w-full h-full' }}
+            </div>
+          {%- endif -%}
+          {% comment %} Mobile image: {% endcomment %}
+          {%- if section.settings.image_mob -%}
+            {%- liquid
+              assign ratio = 100
+              if section.settings.image_height_mob == 'adapt'
+                assign ratio = 1 | divided_by: section.settings.image_mob.aspect_ratio | times: 100
+              endif
+            -%}
+            <div class="lg:hidden">
+              <div class="media media--transparent ratio" style="--ratio-percent: {{ ratio }}%">
+                {{ section.settings.image_mob | image_url: width: 2000 | image_tag: class: 'object-cover', loading: 'lazy' }}
+              </div>
+            </div>
+          {%- else -%}
+            <div class="lg:hidden">
+              {{ 'detailed-apparel-2' | placeholder_svg_tag: 'w-full' }}
+            </div>
+          {%- endif -%}
+        </div>
+        {%- comment -%} Content Container {%- endcomment -%}
+        {%- capture limited_width -%}
+          {%- if section.settings.small_content -%}lg:max-w-[330px]{%- else -%}lg:max-w-[440px]{%- endif -%}
+          {%- endcapture -%}
+        {%- capture content_classes -%}
+          flex-1 flex items-center py-10
+          {%- unless section.settings.remove_py_content %} lg:py-20{% else %} lg:py-0{% endunless %}
+          {%- if section.settings.wrap_content_mobile %}px-5{% endif %}
+          lg:px-8
+          {%- if section.settings.image_first %} lg:pl-20{% else %} lg:pr-20{% endif %}
+          {%- if section.settings.show_border %} lg:{% if section.settings.image_first %}border-l{% else %}border-r{% endif %} lg:border-black{% endif -%}
+          {%- endcapture -%}
+        <div class="{{ content_classes }} order-1">
+          <div class="content-block w-full {{ limited_width }} flex flex-col justify-center h-full lg:mx-auto lg:px-0">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'text' -%}
+                  {%- if block.settings.text != blank -%}
+                    {%- liquid
+                      capture text_style
+                        case block.settings.text_style
+                          when 'uppercase'
+                            echo 'eyebrow mb-2'
+                          when 'heading'
+                            echo 'heading heading--1 lg:text-[50px] em-newline'
+                          when 'heading_medium'
+                            echo 'heading heading--4 lg:text-[40px]'
+                            if block.settings.has_border
+                              echo ' pb-5 mb-5'
+                            else
+                              echo ' mb-2'
+                            endif
+                          when 'heading_small'
+                            echo 'heading heading--5'
+                            if block.settings.has_border
+                              echo ' pb-5 mb-5'
+                            else
+                              echo ' mb-2'
+                            endif
+                          else
+                            echo 'text-xs leading-5 restore-em'
+                            if block.settings.has_border
+                              echo ' pb-4 mb-4'
+                            else
+                              echo ' mb-2'
+                            endif
+                        endcase
+                        if block.settings.has_border
+                          echo ' border-b'
+                        endif
+                      endcapture
+                    -%}
+                    <div class="{{ text_style }} {% if block.settings.center_mobile %} text-center {% endif %}">
+                      {{ block.settings.text }}
+                    </div>
+                  {%- endif -%}
+                {%- when 'spacing' -%}
+                  <div class="{% if block.settings.fill_all_desktop %}md:mt-auto{% endif %}">{% render 'vertical-spacing', section: section, block: block %}</div>
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with Text Blocks",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text Block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add your text here</p>"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "Body"
+            },
+            {
+              "value": "uppercase",
+              "label": "Uppercase"
+            },
+            {
+              "value": "heading",
+              "label": "Heading large"
+            },
+            {
+              "value": "heading_medium",
+              "label": "Heading medium"
+            },
+            {
+              "value": "heading_small",
+              "label": "Heading small"
+            }
+          ],
+          "default": "body",
+          "label": "Text style"
+        },
+        {
+          "type": "checkbox",
+          "id": "has_border",
+          "label": "Add bottom border",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "center_mobile",
+          "label": "Center on mobile",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "spacing",
+      "name": "Spacing Block",
+      "settings": [
+        {
+          "type": "range",
+          "id": "spacing_desktop",
+          "min": 0,
+          "max": 200,
+          "step": 2,
+          "unit": "px",
+          "label": "Spacing desktop",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "spacing_mobile",
+          "min": 0,
+          "max": 200,
+          "step": 2,
+          "unit": "px",
+          "label": "Spacing mobile",
+          "default": 20
+        },
+        {
+          "type": "checkbox",
+          "id": "fill_all_desktop",
+          "label": "Fill all space on desktop",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text blocks",
+      "blocks": [
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desk",
+      "label": "Image desktop"
+    },
+    {
+      "type": "select",
+      "id": "image_height_desk",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "fit",
+          "label": "Fit to content"
+        }
+      ],
+      "default": "square",
+      "label": "Image height desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mob",
+      "label": "Image mobile"
+    },
+    {
+      "type": "select",
+      "id": "image_height_mob",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "square",
+      "label": "Image height mobile"
+    },
+    {
+      "type": "header",
+      "content": "Options"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Section inner width desktop",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full width"
+        },
+        {
+          "value": "container",
+          "label": "Container"
+        }
+      ],
+      "default": "full"
+    },
+    {
+      "type": "select",
+      "id": "width_mobile",
+      "label": "Section inner width mobile",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full width"
+        },
+        {
+          "value": "container",
+          "label": "Container"
+        }
+      ],
+      "default": "full"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_first",
+      "label": "Image first on desktop",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "image_first_mob",
+      "label": "Image first on mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "image_large",
+      "label": "Make image large on desktop",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Show border between image and content on desktop",
+      "default": false
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_border_top",
+      "label": "Show top border",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_border_mobile",
+      "label": "Hide top border on mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_py_content",
+      "label": "Remove top/bottom spacing for content on desktop",
+      "default": false
+    },
+
+    {
+      "type": "checkbox",
+      "id": "small_content",
+      "label": "Use small content container on desktop",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "wrap_image_mobile",
+      "label": "Wrap image in a container on mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "wrap_content_mobile",
+      "label": "Wrap content in a container on mobile",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "spacing_desktop",
+      "label": "Vertical spacing desktop",
+      "options": [
+        { "value": "lg:py-0", "label": "None" },
+        { "value": "lg:py-10", "label": "Thin" },
+        { "value": "lg:py-20", "label": "Large" },
+      ],
+      "default": "lg:py-10"
+    },
+    {
+      "type": "select",
+      "id": "spacing_mobile",
+      "label": "Vertical spacing mobile",
+      "options": [
+        { "value": "py-0", "label": "None" },
+        { "value": "py-10", "label": "Thin" },
+        { "value": "py-20", "label": "Large" },
+      ],
+      "default": "py-10"
+    }
+  ]
+}
+{% endschema %}

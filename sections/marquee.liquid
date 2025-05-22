@@ -1,0 +1,43 @@
+<site-marquee
+  class="overflow-x-hidden bg-[#E5DBCC] transition-all duration-300 invisible opacity-0 w-screen max-w-[100%]"
+  data-duration="30s"
+>
+  <div slot="content">
+    {%- for i in (1..5) -%}
+      <div class="d-grid grid-flow-col">
+        {% for block in section.blocks %}
+          <div class="bg-beige h-[66px] whitespace-nowrap flex items-center px-[35px] lg:px-[75px] justify-center">
+            <h3 class="font-heading-light-italic text-3xl">
+              {{ block.settings.text }}
+            </h3>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</site-marquee>
+
+{% schema %}
+{
+  "name": "Marquee",
+  "tag": "section",
+  "blocks": [
+    {
+      "name": "Text",
+      "type": "text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,300 @@
+<div class="site-container pt-4 pb-12 lg:py-12">
+  <div class="px-4 lg:px-7 min-[1440px]:px-0 d-grid lg:grid-cols-[1fr_1.2fr] lg:gap-16 xl:gap-20">
+    <div class="order-2 lg:order-1 d-grid gap-2 content-start">
+      <span class="!text-[10px] xl:!text-[12px] eyebrow text-nowrap !tracking-[1px]">{{ product.metafields.custom.eyebrow }}</span>
+      <h1 class="heading heading--1">{{ section.settings.title }}</h1>
+      {% for block in section.blocks %}
+        {% if block.type == 'offer_details' %}
+          <div class="mt-4 border-b border-beige pb-4 mb-4">
+            <div class="d-grid items-center grid-flow-col justify-between">
+              <span class="text-base">{{ block.settings.title }}</span>
+              <div class="text-[20px] lg:text-[22px] d-grid grid-flow-col gap-2">
+                <span class="text-[#9E9B9B] line-through">{{ product.variants[0].selling_plan_allocations[0].compare_at_price | money_without_currency }}</span>
+                <span class="text-[#D0535B]">{{ product.variants[0].selling_plan_allocations[0].price | money_without_currency }}</span>
+              </div>
+            </div>
+            <div class="d-grid justify-items-start gap-1 mt-3">
+              <div class="d-grid grid-cols-[30px_1fr] items-center gap-[5px] -ml-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" viewBox="0 0 23 23" fill="none">
+                  <path d="M3.01468 13.6715C1.75005 9.03654 4.4822 4.254 9.11712 2.98937C12.3447 2.10872 15.6439 3.16623 17.7769 5.45478M17.2035 3.34821L17.7829 5.47189L15.8902 5.98831" stroke="black" stroke-width="0.5"/>
+                  <path d="M20.0853 9.48623C21.3499 14.1211 18.6177 18.9037 13.9828 20.1683C10.7552 21.049 7.45601 19.9915 5.32304 17.7029M5.89646 19.8095L5.31701 17.6858L7.20971 17.1694" stroke="black" stroke-width="0.5"/>
+                </svg>
+                <p class="text-[10px]">{{ block.settings.cadence }}</p>
+              </div>
+              <div class="d-grid grid-cols-[30px_1fr] items-center gap-[5px] -ml-0.5">
+                <svg class="relative left-[1px]" width="24" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
+                  <g transform="translate(1 1)" stroke="#000" stroke-width=".5" fill="none" fill-rule="evenodd">
+                    <circle cx="8.449" cy="8.449" r="8.449"/>
+                    <path d="M8.45 2.347v7.355l3.243-3.253" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                </svg>
+                <p class="text-[10px]">{{ block.settings.shipping_time }}</p>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        {% if block.type == 'monthly_gifts' %}
+          <div class="border-b border-black pb-6">
+            <span class="text-base block mb-2 md:mb-4">{{ block.settings.title }}</span>
+            <div class="d-grid md:gap-4">
+              {% if block.settings.month_label_1 != blank %}
+              <div class="d-grid items-center md:grid-cols-[auto_1fr] gap-2 lg:gap-4 my-2 pb-2 md:pb-0 md:my-0 border-b border-beige md:border-0">
+                <div class="py-0.5 w-[120px] text-center bg-beige !text-[10px] eyebrow text-nowrap !tracking-[1px]">{{ block.settings.month_label_1 }}</div>
+                <div class="d-grid items-center grid-cols-[1fr_auto] gap-4">
+                  <span class="!text-[10px] xl:!text-[12px] eyebrow text-nowrap !tracking-[1px]">{{ block.settings.every_month_gift }}</span>
+                  <div class="text-[14px] lg:text-base d-grid grid-flow-col gap-2">
+                    <span class="text-[#9E9B9B] line-through">{{ block.settings.every_month_value }}</span>
+                    <span class="text-[#D0535B]">$0</span>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+              {% if block.settings.month_label_2 != blank %}
+              <div class="d-grid items-center md:grid-cols-[auto_1fr] gap-2 lg:gap-4 my-2 pb-2 md:pb-0 md:my-0 border-b border-beige md:border-0">
+                <div class="py-0.5 w-[120px] text-center bg-beige !text-[10px] eyebrow text-nowrap !tracking-[1px]">{{ block.settings.month_label_2 }}</div>
+                <div class="d-grid items-center grid-cols-[1fr_auto] gap-4">
+                  <span class="!text-[10px] xl:!text-[12px] eyebrow text-nowrap !tracking-[1px]">{{ block.settings.month_two_gift }}</span>
+                  <div class="text-[14px] lg:text-base d-grid grid-flow-col gap-2">
+                    <span class="text-[#9E9B9B] line-through">{{ block.settings.month_two_value }}</span>
+                    <span class="text-[#D0535B]">$0</span>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+              {% if block.settings.month_label_3 != blank %}
+              <div class="d-grid items-center md:grid-cols-[auto_1fr] gap-2 lg:gap-4 my-2 pb-2 md:pb-0 md:my-0 border-b border-beige md:border-0">
+                <div class="py-0.5 w-[120px] text-center bg-beige !text-[10px] eyebrow text-nowrap !tracking-[1px]">{{ block.settings.month_label_3 }}</div>
+                <div class="d-grid items-center grid-cols-[1fr_auto] gap-4">
+                  <span class="!text-[10px] xl:!text-[12px] eyebrow text-nowrap !tracking-[1px]">{{ block.settings.month_three_gift }}</span>
+                  <div class="text-[14px] lg:text-base d-grid grid-flow-col gap-2">
+                    <span class="text-[#9E9B9B] line-through">{{ block.settings.month_three_value }}</span>
+                    <span class="text-[#D0535B]">$0</span>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+              {% if block.settings.month_label_4 != blank %}
+              <div class="d-grid items-center md:grid-cols-[auto_1fr] gap-2 lg:gap-4 my-2 pb-2 md:pb-0 md:my-0 border-b border-beige md:border-0">
+                <div class="py-0.5 w-[120px] text-center bg-beige !text-[10px] eyebrow text-nowrap !tracking-[1px]">{{ block.settings.month_label_4 }}</div>
+                <div class="d-grid items-center grid-cols-[1fr_auto] gap-4">
+                  <span class="!text-[10px] xl:!text-[12px] eyebrow text-nowrap !tracking-[1px]">{{ block.settings.month_four_gift }}</span>
+                  <div class="text-[14px] lg:text-base d-grid grid-flow-col gap-2">
+                    <span class="text-[#9E9B9B] line-through">{{ block.settings.month_four_value }}</span>
+                    <span class="text-[#D0535B]">$0</span>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+      <div class="pt-4">
+        <div class="d-grid grid-flow-col items-center justify-between">
+          <span class="text-base block">{{ section.settings.total_price_text }}</span>
+          <div class="text-[20px] lg:text-[22px] d-grid grid-flow-col gap-2">
+            <span class="text-[#D0535B]">{{ product.variants[0].selling_plan_allocations[0].price | money_without_currency }}</span>
+          </div>
+        </div>
+        <p class="text-xs mt-1.5">{{ section.settings.billed_text }}</p>
+      </div>
+
+
+      <button id="add-special-offer" class="mb-5 lg:mb-1 !w-full button button--black border border-black">
+        <div class="d-grid justify-items-center pb-1.5">
+          <span class="text-[20px] lg:text-[22px] font-body-regular">Try it today for {{ product.variants[0].selling_plan_allocations[0].price | money_without_currency }}</span>
+          <span class="!text-[10px] xl:!text-[12px] eyebrow text-nowrap !tracking-[1px]">Limited Time Offer</span>
+      </button>
+
+        <div id="selling-plan-json" style="display: none;">
+          <pre>
+            {{ product | json }}
+          </pre>
+        </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const offerButton = document.getElementById("add-special-offer");
+          const submitButton = document.querySelector(".product-form__submit");
+        
+          if (offerButton && submitButton) {
+            offerButton.addEventListener("click", function () {
+              submitButton.click();
+            });
+          }
+        });
+
+      </script>
+
+          
+      {% comment %}                
+      <cart-add>
+        <form class="mt-6 lg:mt-10">
+          <input
+            type="hidden"
+            name="id"
+            id="variant-id-js"
+            value="{{ product.selected_or_first_available_variant.id }}"
+          >
+          <input
+            type="hidden"
+            name="selling_plan"
+            value="{{ product.selling_plan_groups[0].selling_plans[0].id }}"
+          >
+          <button class="mb-5 lg:mb-1 !w-full button button--black border border-black">
+            <div class="d-grid justify-items-center pb-1.5">
+              <span class="text-[20px] lg:text-[22px] font-body-regular">Try it today for $37</span>
+              <span class="!text-[10px] xl:!text-[12px] eyebrow text-nowrap !tracking-[1px]">Limited Time Offer</span>
+            </div>
+          </button>
+        </form>
+              
+      </cart-add>
+      {% endcomment %}                
+
+      
+      
+      <div class="mt-4 lg:mt-6 text-center d-grid justify-items-center gap-2">
+        <p class="text-[14px] lg:text-base">{{ section.settings.sub_cta_text }}</p>
+        <p class="text-xs max-w-[320px] mx-auto">{{ section.settings.sub_cta_description }}</p>
+      </div>
+    </div>
+    <div class="order-1 lg:order-2">
+      <div class="aspect-[0.93] relative">
+        {% unless product.images[0] == blank %}
+          <img class="absolute top-0 left-0 w-full h-full object-cover object-center" src="{{ product.images[0] | img_url: '1000x' }}" loading="lazy" />
+        {% endunless %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Special Offer",
+    "tag": "section",
+    "presets": [
+      {
+        "name": "Special Offer"
+      }
+    ],
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "text",
+        "id": "sub_cta_text",
+        "label": "Sub-CTA Text"
+      }, {
+        "type": "text",
+        "id": "sub_cta_description",
+        "label": "Sub-CTA Description"
+      }, {
+        "type": "inline_richtext",
+        "id": "billed_text",
+        "label": "Billed Text"
+      }, {
+        "type": "inline_richtext",
+        "id": "total_price_text",
+        "label": "Total Price Text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "offer_details",
+        "name": "Offer Details",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }, {
+            "type": "text",
+            "id": "cadence",
+            "label": "Cadence"
+          }, {
+            "type": "text",
+            "id": "shipping_time",
+            "label": "Shipping Time"
+          }
+        ]
+      }, {
+        "type": "monthly_gifts",
+        "name": "Offer Gifts",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },{
+            "type": "header",
+            "content": "LABELS TEXTS"
+          },
+          {
+            "type": "paragraph",
+            "content": "Leave empty to disable"
+          },
+          {
+            "type": "text",
+            "id": "month_label_1",
+            "label": "LABEL 1 Text"
+          }, {
+            "type": "text",
+            "id": "month_label_2",
+            "label": "LABEL 2 Text"
+          }, {
+            "type": "text",
+            "id": "month_label_3",
+            "label": "LABEL 3 Text"
+          }, {
+            "type": "text",
+            "id": "month_label_4",
+            "label": "LABEL 4 Text"
+          }, 
+          {
+            "type": "header",
+            "content": "Gifts NAMES"
+          }, {
+            "type": "text",
+            "id": "every_month_gift",
+            "label": "Gift 1 NAME"
+          }, {
+            "type": "text",
+            "id": "month_two_gift",
+            "label": "Gift 2 NAME"
+          }, {
+            "type": "text",
+            "id": "month_three_gift",
+            "label": "Gift 3 NAME"
+          }, {
+            "type": "text",
+            "id": "month_four_gift",
+            "label": "Gift 4 NAME"
+          }, 
+          {
+            "type": "header",
+            "content": "Gifts VALUES"
+          }, {
+            "type": "text",
+            "id": "every_month_value",
+            "label": "Every Month Value"
+          }, {
+            "type": "text",
+            "id": "month_two_value",
+            "label": "Month 2 Value"
+          }, {
+            "type": "text",
+            "id": "month_three_value",
+            "label": "Month 3 Value"
+          }, {
+            "type": "text",
+            "id": "month_four_value",
+            "label": "Month 4 Value"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,5 @@
+{{ 'templates.cart.cart' | t }}
+        
+{%- if cart != empty -%}
+  <span class="cart-count-bubble">({{ cart.item_count }})</span>
+{%- endif -%}

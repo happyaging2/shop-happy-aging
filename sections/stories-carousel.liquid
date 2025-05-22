@@ -1,0 +1,101 @@
+
+
+<div class="lg:py-16 {% if section.settings.show_border_top %}border-t border-black{% endif %}">
+  <div class="site-container">
+
+    <site-carousel
+      data-config='{"slidesPerView": 1, "loop": false, "spaceBetween": 0}'
+      id="{{ section.id }}"
+      class="relative flex flex-col lg:grid lg:grid-cols-12"
+      data-id="{{ section.id }}"
+    >
+
+      {%- if section.settings.image -%}
+        <div class="ratio lg:col-span-4 order-3 lg:order-1 -mx-5 lg:mx-0" style="--ratio-percent: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%">
+          <img src="{{ section.settings.image | image_url: width: 1000 }}" class="site-image" width="auto" height="auto" alt="{{ block.settings.title | escape }}">
+        </div>
+      {%- endif -%}
+
+      <div class="order-1 lg:order-2 lg:col-span-8">
+        <div class="swiper h-full">
+          <div class="swiper-wrapper h-full">
+            {% for block in section.blocks %}
+              <div class="swiper-slide h-auto">
+                <div class="lg:flex flex-col text-center lg:text-left lg:pl-16 pt-10 lg:py-0 h-full">
+                  <p class="eyebrow">{{ block.settings.subtitle }}</p>
+                  <h2 class="heading !text-[50px] mt-8 max-w-[550px]"><em class="!normalcase">“{{ block.settings.title }}”</em></h2>
+                  <p class=" mt-auto font heading !text-[50px] pt-10">{{ block.settings.author }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+  
+      <div class="order-2 lg:absolute bottom-0 right-0 gap-6 flex justify-center items-center gap-4 z-50 my-20 md:my-0">
+        <carousel-prev>
+          <button class="carousel-nav rotate-180">
+            {% render 'carousel-arrow', height: '32px' %}
+          </button>
+        </carousel-prev>
+        <p class="text-xs tracking-widest">
+          <span class="carousel-index" data-disable-zero="true">1</span> of {{ section.blocks.size }}
+        </p>
+        <carousel-next>
+          <button class="carousel-nav">
+            {% render 'carousel-arrow', height: '32px' %}
+          </button>
+        </carousel-next>
+      </div>
+    </site-carousel>
+  </div>
+</div>
+
+{% schema %}
+{
+	"name": "Stories carousel",
+	"tag": "section",
+	"settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border_top",
+      "label": "Show Top Border",
+      "default": true
+    }
+  ],
+	"blocks": [
+		{
+			"type": "slide",
+			"name": "Slide",
+			"settings": [
+
+				{
+					"type": "text",
+					"id": "subtitle",
+					"label": "Subtitle"
+				},
+				{
+					"type": "text",
+					"id": "title",
+					"label": "Title"
+				},
+				{
+					"type": "text",
+					"id": "author",
+					"label": "Author"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Stories carousel"
+		}
+	]
+}
+{% endschema %}

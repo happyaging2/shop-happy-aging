@@ -1,0 +1,237 @@
+{% assign user_agent = request.user_agent %}
+{% assign is_mobile = false %}
+
+{% if user_agent contains 'Mobile' or user_agent contains 'Android' or user_agent contains 'iPhone' %}
+  {% assign is_mobile = true %}
+{% endif %}
+
+{% if is_mobile %}
+  
+{% endif %}
+
+<div class="pt-14 lg:py-20 bg-beige overflow-hidden border-t border-black">
+  <div class="lg:flex flex-col items-center site-container">
+
+
+    <div class="container-{{ section.id }} mb-8">
+
+
+      {% comment %} DESKTOP {% endcomment %}
+      
+      <info-media-slider class="d-none md:block">
+        {%- assign config = '{
+        "slidesPerView": 1,
+        "centeredSlides": false,
+        "spaceBetween": 20,
+        "loop": false,
+        "resistanceRatio": 0,
+        "breakpoints": {
+        "768": {
+          "slidesPerView": 1,
+          "centeredSlides": false,
+          "spaceBetween": 30
+        }
+        }
+      }' -%}
+        <site-carousel
+          data-config="{{ config | escape }}"
+          id="{{ section.id }}-2"
+          class="js-media-slider md:grid md:grid-cols-2 gap-12 items-center relative opacity-0 transition-all duration-500 md:block"
+          data-id="{{ section.id }}-2"
+        >
+
+          {% comment %} MEDIA {% endcomment %}
+          <div class="order-2 md:order-1 -mx-5 lg:mx-0">
+            <div class="swiper !overflow-visible lg:!overflow-hidden">
+              <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                  <div class="swiper-slide items-center" data-slider-index="{{ forloop.index0 }}">
+                    {%- if block.settings.image -%}
+                      <div class="ratio" style="--ratio-percent: 70%">
+                        <img src="{{ block.settings.image | image_url: width: 2000 }}" class="site-image" width="auto" height="auto" alt="{{ block.settings.title | escape }}">
+                      </div>
+                    {%- endif -%}
+
+                    <div class="d-none js-slide-info">
+                      <div class="text-xs leading-5 relative w-full content-center text-start z-10 li-circle">
+                        {% unless block.settings.block_title == blank %}
+                          <h4 class="eyebrow border-t pt-5 mb-4 ">{{ block.settings.block_title }}</h4>
+                          <div class="xpb-5">{{ block.settings.block_description }}</div>
+                        {% endunless %}
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          {% comment %} INFO {% endcomment %}
+          <div class="flex flex-col md:block my-12 order-1 md:order-2 md:my-0 ">
+            {% if section.settings.title != blank %}
+              <h2 class="heading heading--1 flex flex-col lg:flex-row lg:gap-3 text-center">
+                {{ section.settings.title }}
+              </h2>
+            {% endif %}
+          
+            <carousel-pager class="mb-14 mt-14 overflow-x-auto -mx-5 lg:mx-0 pl-5 lg:pl-0 flex flex-nowrap lg:flex-wrap gap-2">
+              {% for block in section.blocks %}
+                <button class="carousel-bullet whitespace-nowrap text-xs px-4 py-3 {% if forloop.first %}active{% endif %} cursor-pointer border">
+                  {{ block.settings.title }}
+                </button>
+              {% endfor %}
+            </carousel-pager>
+            <div class="js-info-slider max-w-[490px]"></div>
+          </div>         
+        </site-carousel>
+      </info-media-slider>
+
+
+
+
+
+      {% comment %} MOBILE {% endcomment %}
+      
+      <info-media-slider class="block md:hidden">
+  {%- assign config = '{
+    "slidesPerView": 1,
+    "centeredSlides": false,
+    "spaceBetween": 20,
+    "loop": false,
+    "resistanceRatio": 0,
+    "breakpoints": {
+      "768": {
+        "slidesPerView": 1,
+        "centeredSlides": false,
+        "spaceBetween": 30
+      }
+    }
+  }' -%}
+  
+  <site-carousel
+    data-config='{{ config }}'
+    id="{{ section.id }}-3"
+    class="js-media-slider md:grid md:grid-cols-2 gap-12 items-center relative opacity-0 transition-all duration-500 md:block"
+    data-id="{{ section.id }}-3"
+  >
+
+    {%- comment -%} INFO {%- endcomment -%}
+    <div class="flex flex-col md:block order-1 md:order-2 md:my-0 ">
+      {% if section.settings.title != blank %}
+        <h2 class="heading heading--1 flex-col lg:flex-row lg:gap-3 text-center">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+    
+      <carousel-pager class="mb-14 mt-14 overflow-x-auto -mx-5 lg:mx-0 lg:pl-0 flex flex-nowrap justify-center lg:flex-wrap gap-2">
+        {% for block in section.blocks %}
+          <button class="carousel-bullet whitespace-nowrap text-xs px-4 py-3 {% if forloop.first %}active{% endif %} cursor-pointer border">
+            {{ block.settings.title }}
+          </button>
+        {% endfor %}
+      </carousel-pager>
+      <div class="js-info-slider max-w-[490px]"></div>
+    </div>
+
+    {%- comment -%} MEDIA {%- endcomment -%}
+    <div class="order-2 md:order-1 pl-4 pr-4 pb-4 pt-8 -mx-5 lg:mx-0">
+      <div class="swiper overflow-hidden"> <!-- Corrigido aqui -->
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide items-center" data-slider-index="{{ forloop.index0 }}">
+              {% if block.settings.image %}
+                <div class="ratio" style="--ratio-percent: 70%">
+                  <img src="{{ block.settings.image | image_url: width: 2000 }}" class="site-image" width="auto" height="auto" alt="{{ block.settings.title | escape }}">
+                </div>
+              {% endif %}
+
+              <div class="d-none js-slide-info">
+                <div class="text-xs leading-5 relative w-full content-center text-start z-10 li-circle">
+                  {% unless block.settings.block_title == blank %}
+                    <h4 class="eyebrow pt-0 mb-4 text-center">{{ block.settings.block_title }}</h4>
+                    <div class="xpb-5 text-center">{{ block.settings.block_description }}</div>
+                  {% endunless %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </site-carousel>
+</info-media-slider>
+
+
+
+
+      
+    </div>
+  </div>
+</div>
+<style>
+  button.carousel-bullet.active {
+      background: #000!important;
+      color: #e5dbcc!important;
+      border-color: #000!important;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "How it Works Carousel",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Name"
+        },
+        {
+          "type": "richtext",
+          "id": "block_title",
+          "label": "Title",
+          "default": "<p>Add your text here</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "block_description",
+          "label": "Description",
+          "default": "<p>Add your text here</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How it Works Carousel",
+      "blocks": [
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

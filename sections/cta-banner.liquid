@@ -1,0 +1,94 @@
+<div class="relative text-center sm:h-[548px] sm:text-white">
+  <div class="site-container px-4 flex flex-col relative z-10 sm:h-full sm:grid sm:grid-cols-3 sm:grid-rows-1 sm:gap-4">
+    <div class="h-[250px] sm:h-auto flex flex-col justify-center items-center sm:order-2 w-full">
+      <div class="relative size-[168px]">
+        <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-white">
+          {% render 'img-badge-logo', width: 84 %}
+        </div>
+        <div class="animate-spin-slow text-white">
+          {% render 'img-badge-text', width: 164 %}
+        </div>
+      </div>
+    </div>
+    <div class="pt-10 sm:pt-0 flex flex-col justify-center items-center sm:order-1">
+      <h2 class="heading heading--1">{{ section.settings.title }}</h2>
+    </div>
+    <div class="mt-6 sm:mt-0 flex flex-col justify-center items-center gap-6 pb-12 sm:pb-0 sm:order-3">
+      <p class="paragraph paragraph--2 max-w-[34rem]">{{ section.settings.text }}</p>
+      <a href="{{ section.settings.cta_link }}" title="{{  section.settings.cta_label }}">
+        {% if section.settings.cta_style == 'link' %}
+          <button class="cta">{{ section.settings.cta_label }}</button>
+        {% else %}
+          <button class="button button--hover-cream">{{  section.settings.cta_label }}</button>
+        {% endif %}
+      </a>
+    </div>
+  </div>
+  {% unless section.settings.cta_banner_video == blank %}
+    <site-video>
+      <video
+        {% unless section.settings.cta_banner_poster == blank %} poster="{{ section.settings.cta_banner_poster | img_url: '1920x' }}"{% endunless %}
+        class="absolute w-full h-[250px] sm:h-full object-cover top-0 left-0"
+        loop
+        autoplay
+        muted
+        playsinline>
+        <source data-src="{{ section.settings.cta_banner_video }}" type="video/mp4">
+      </video>
+    </site-video>
+  {% endunless %}
+  {% unless section.settings.image == blank %}
+    <img class="site-image" src="{{ section.settings.image | img_url: '2000x' }}" loading="lazy" />
+  {% endunless %}
+</div>
+
+{% schema %}
+{
+  "name": "CTA Banner",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "CTA Banner"
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }, {
+      "type": "url",
+      "id": "cta_banner_video",
+      "label": "Video URL"
+    }, {
+      "type": "image_picker",
+      "id": "cta_banner_poster",
+      "label": "Video Poster"
+    }, {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }, {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "Text"
+    }, {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    }, {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Label"
+    }, {
+      "type": "select",
+      "id": "cta_style",
+      "label": "CTA Style",
+      "options": [
+        { "value": "button", "label": "Button" },
+        { "value": "link", "label": "Link" }
+      ]
+    }
+  ]
+}
+{% endschema %}

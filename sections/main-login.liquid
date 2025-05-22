@@ -1,0 +1,183 @@
+<style>
+  #seal-login-helper {
+    display: none !important;
+  }
+</style>
+
+<div class="site-container py-6 lg:py-8">
+  <div class="d-grid lg:grid-cols-2 lg:items-center lg:gap-6 px-4 lg:px-0 pb-12 lg:pb-0">
+    <div class="h-full d-grid items-center">
+      <login-form class="md:w-2/3 lg:w-full lg:max-w-[440px]">
+        <h1
+          class="heading heading--1 !capitalize mb-2"
+          data-login="{{ section.settings.title }}"
+          data-recover="Recover Password"
+        >
+          {{ section.settings.title }}
+        </h1>
+        <div class="recover-form d-grid items-center d-none mt-6 lg:mt-8">
+          {%- form 'recover_customer_password', class: 'd-grid gap-5' -%}
+            {% assign recover_success = form.posted_successfully? %}
+            <div class="text-input relative">
+              <input
+                required
+                type="email"
+                value=""
+                name="email"
+                id="RecoverEmail"
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+                placeholder=" "
+              >
+              <label for="RecoverEmail">Email</label>
+            </div>
+            {%- if form.errors -%}
+              <p class="text-red text-xs md:text-sm">{{ form.errors.messages.form }}</p>
+            {%- endif -%}
+            <button class="button button--black !w-full !max-w-[unset]">Submit</button>
+            <a href="#login" class="close-button text-center text-black underline text-sm"> Back to Login </a>
+          {%- endform -%}
+        </div>
+
+        <div class="login-form d-grid items-center">
+          {% form 'customer_login' %}
+            {%- if recover_success == true -%}
+              <div class="d-grid grid-flow-col items-center justify-start gap-1 text-green mt-3">
+                <svg
+                  class="relative top-[1px]"
+                  width="16"
+                  height="17"
+                  viewBox="0 0 12 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#a)" fill="currentColor">
+                    <path d="M6 .5c-3.316 0-6 2.684-6 6s2.684 6 6 6 6-2.684 6-6-2.684-6-6-6zm0 11.063A5.06 5.06 0 0 1 .937 6.5 5.06 5.06 0 0 1 6 1.437 5.06 5.06 0 0 1 11.063 6.5 5.06 5.06 0 0 1 6 11.563z" />
+                    <path d="M6 3.521a.469.469 0 0 0-.469.47v3.018a.469.469 0 1 0 .938 0V3.99A.469.469 0 0 0 6 3.521zM6 9.316a.633.633 0 1 0 0-1.265.633.633 0 0 0 0 1.265z" />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path
+                        fill="#fff"
+                        transform="translate(0 .5)"
+                        d="M0 0h12v12H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <div>{{ 'customer.recover_password.success' | t }}</div>
+              </div>
+            {%- endif -%}
+            {% if form.errors %}
+              <div class="d-grid grid-flow-col items-center justify-start gap-1 text-red mt-3">
+                <svg
+                  class="relative top-[1px]"
+                  width="16"
+                  height="17"
+                  viewBox="0 0 12 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#a)" fill="currentColor">
+                    <path d="M6 .5c-3.316 0-6 2.684-6 6s2.684 6 6 6 6-2.684 6-6-2.684-6-6-6zm0 11.063A5.06 5.06 0 0 1 .937 6.5 5.06 5.06 0 0 1 6 1.437 5.06 5.06 0 0 1 11.063 6.5 5.06 5.06 0 0 1 6 11.563z" />
+                    <path d="M6 3.521a.469.469 0 0 0-.469.47v3.018a.469.469 0 1 0 .938 0V3.99A.469.469 0 0 0 6 3.521zM6 9.316a.633.633 0 1 0 0-1.265.633.633 0 0 0 0 1.265z" />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path
+                        fill="#fff"
+                        transform="translate(0 .5)"
+                        d="M0 0h12v12H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <div>Incorrect email or password</div>
+              </div>
+            {% endif %}
+
+            <div class="d-grid gap-4 mt-6 lg:mt-8">
+              <div class="text-input relative">
+                <input
+                  required
+                  type="email"
+                  name="customer[email]"
+                  id="CustomerEmail"
+                  autocomplete="one-time-code"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  placeholder=" "
+                >
+                <label for="CustomerEmail">Email</label>
+              </div>
+              <div class="text-input relative">
+                <input
+                  required
+                  type="password"
+                  value=""
+                  name="customer[password]"
+                  id="CustomerPassword"
+                  autocomplete="current-password"
+                  placeholder=" "
+                >
+                <label for="CustomerPassword">Password</label>
+              </div>
+              <div class="field customer_password d-grid justify-end -mt-1">
+                <a href="#recover" class="recover-button underline text-sm">
+                  {{ 'customer.login_page.forgot_password' | t }}
+                </a>
+              </div>
+            </div>
+            <div class="d-grid mt-8 gap-4">
+              <button class="button button--black !max-w-none !w-full">
+                {{ 'customer.login_page.sign_in' | t }}
+              </button>
+              <div class="text-center text-sm">
+                <span>Don't have an account?</span>
+                <a href="{{ routes.account_register_url }}" class="text-black underline"> Sign up </a>
+              </div>
+            </div>
+          {%- endform -%}
+        </div>
+        <div class="mt-8">
+          <a href="/apps/retextion#/login" class="button button--black !w-full"
+            >Manage subscriptions without password</a
+          >
+        </div>
+      </login-form>
+    </div>
+    <div class="d-none lg:block">
+      <div class="pb-[80%] relative">
+        {% unless section.settings.image == blank %}
+          <img
+            class="absolute top-0 left-0 w-full h-full object-center object-cover"
+            src="{{ section.settings.image | img_url: '1500x' }}"
+          >
+        {% endunless %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Main Login",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "recover_title",
+      "label": "Recover Title"
+    }
+  ]
+}
+{% endschema %}

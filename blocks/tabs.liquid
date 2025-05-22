@@ -1,0 +1,77 @@
+{% stylesheet %}
+  .tabs-list {
+    display: block;
+  }
+  .tabs-header {
+    display: flex;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .tabs-header .tab-block {
+    flex: 1;
+  }
+  .tabs-header .tab-button {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    padding: 14px 20px;
+    border-bottom: 2px solid #ADA18F;
+    letter-spacing: 0.1em;
+  }
+  .tabs-header .tab-button.is-active {
+    border-bottom: 2px solid #000;
+  }
+{% endstylesheet %}
+
+<tabs-list class="tabs-list">
+  <div class="tabs-header">
+    {% content_for 'blocks' %}
+  </div>
+  <div class="tabs-content js-content-placeholder"></div>
+</tabs-list>
+
+<script>
+  if (!window.customElements.get("tabs-list")) {
+    class TabsBlock extends HTMLElement {
+      constructor() {
+        super();
+        this.contentPlaceholder = this.querySelector(".js-content-placeholder");
+        this.tabButtons = this.querySelectorAll(".js-tab-button");
+      }
+
+      connectedCallback() {
+        this.refresh();
+        this.tabButtons.forEach(button => {
+          button.addEventListener("click", () => {
+            this.tabButtons.forEach(button => button.classList.remove("is-active"));
+            button.classList.add("is-active");
+            this.refresh();
+          });
+        });
+      }
+
+      refresh() {
+        const activeTab = this.querySelector(".js-tab-button.is-active");
+        if (activeTab) {
+          this.contentPlaceholder.innerHTML = activeTab.nextElementSibling.innerHTML;
+        }
+      }
+    }
+    window.customElements.define("tabs-list", TabsBlock);
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Tabs",
+  "class": "tabs-block",
+  "blocks": [{ "type": "_tab" }],
+
+  "presets": [
+    {
+      "name": "Tabs",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

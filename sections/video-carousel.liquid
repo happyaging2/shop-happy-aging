@@ -1,0 +1,94 @@
+<script src="{{ 'web-components-video-carousel.js' | asset_url }}" defer></script>
+
+<div class="site-container overflow-hidden">
+  <div class="relative w-full py-14 lg:py-20 lg:px-12">
+    <h2 class="heading heading--1 lg:text-center mb-10 lg:mb-[55px] lg:flex-row lg:gap-3 w-full lg:justify-center">
+      {{ section.settings.title }}
+    </h2>
+    {%- assign config = '{"slidesPerView": 1.7,"spaceBetween": 16, "breakpoints": {"768": {"slidesPerView": 3},"1024": {"slidesPerView": 4}}}' -%}
+
+    <video-carousel>
+      <site-carousel
+        data-config="{{ config | escape }}"
+        id="{{ section.id }}"
+        class="relative opacity-0 transition-all duration-500 block"
+        data-id="{{ section.id }}"
+      >
+        {% unless section.blocks.size <= 4 %}
+          <carousel-prev>
+            <button class="absolute z-10 left-[-40px] top-0 bottom-0 my-auto rotate-180 d-none lg:block">
+              {% render 'carousel-arrow' %}
+            </button>
+          </carousel-prev>
+        {% endunless %}
+        <div class="swiper !overflow-visible lg:!overflow-hidden">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="swiper-slide">
+                <div class="relative pb-[178%] rounded-[21px] overflow-hidden cursor-pointer">
+                  <site-video data-stop-on-observe="true">
+                    <div class="absolute m-auto left-0 right-0 top-0 bottom-0 w-fit h-fit z-10 opacity-50 play-button-js">
+                      {% render 'play-button' %}
+                    </div>
+                    {% assign poster_img = block.settings.poster | image_url %}
+                    {{
+                      block.settings.video
+                      | video_tag:
+                        class: 'absolute w-full h-full object-cover top-0 left-0',
+                        autoplay: false,
+                        poster: poster_img
+                    }}
+                  </site-video>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% unless section.blocks.size <= 4 %}
+          <carousel-next>
+            <button class="absolute z-10 right-[-40px] top-0 bottom-0 my-auto d-none lg:block">
+              {% render 'carousel-arrow' %}
+            </button>
+          </carousel-next>
+        {% endunless %}
+      </site-carousel>
+    </video-carousel>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Video Carousel",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Video Item",
+      "type": "video-item",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "poster",
+          "label": "Poster"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Carousel"
+    }
+  ]
+}
+{% endschema %}

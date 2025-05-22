@@ -1,0 +1,22 @@
+<a href="{{ blog_url }}" class="group block border-b border-black relative">
+  <div class="relative pb-[79%] bg-beige">
+    <img class="site-image" src="{{ blog_image | img_url: '1200x' }}" loading="lazy" />
+  </div>
+  <div class="my-8 lg:my-7">
+    <span class="eyebrow">
+      {{ blog_tags | join: ' + ' }}
+    </span>
+    <h3 class="heading--3 mt-2.5 mb-5 uppercase">
+      {% if blog_meta %}
+        {% assign ital = '<br /><em class="lowercase">' | append: blog_meta | append: '</em>' %}
+        {{ blog_title | replace: blog_meta, ital }}
+      {% else %}
+        {{ blog_title }}
+      {% endif %}
+    </h3>
+    <div class="flex items-center gap-x-3.5 paragraph--2">
+      <span>Read more</span>
+      <span class="lg:group-hover:translate-x-2 transition-transform duration-300">{% render 'icon-read-arrow' %}</span>
+    </div>
+  </div>
+</a>

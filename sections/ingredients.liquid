@@ -1,0 +1,140 @@
+<div class="pt-14 lg:py-20 overflow-hidden border-t border-black">
+  <div class="lg:flex flex-col items-center site-container">
+    {% if section.settings.title != blank %}
+      <h2 class="heading heading--1 mb-3 lg:mb-[10px] flex flex-col lg:flex-row lg:gap-3 text-center">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+    {% if section.settings.text != blank %}
+      <p class="max-w-[300px] md:max-w-[560px] mx-auto text-xs text-center mt-8 lg:mt-3 mb-8 leading-5">
+        {{ section.settings.text }}
+      </p>
+    {% endif %}
+
+    <div class="container-{{ section.id }} mt-8">
+      <info-media-slider class="block">
+        {%- assign config = '{
+        "slidesPerView": 1,
+        "centeredSlides": false,
+        "spaceBetween": 20,
+        "breakpoints": {
+        "768": {
+          "slidesPerView": 1,
+          "centeredSlides": false,
+          "spaceBetween": 30
+        }
+        }
+      }' -%}
+        <site-carousel
+          data-config="{{ config | escape }}"
+          id="{{ section.id }}-2"
+          class="js-media-slider md:grid md:grid-cols-2 gap-4 items-start relative opacity-0 transition-all duration-500 block"
+          data-id="{{ section.id }}-2"
+        >
+
+          {% comment %} INFO {% endcomment %}
+          <div class="flex flex-col md:block my-12 md:order-1 md:my-0 ">
+            <h4 class="eyebrow mb-5">CHOOSE AN INGREDIENT</h4>
+            <carousel-pager class="mb-8 overflow-x-auto -mx-5 lg:mx-0 pl-5 lg:pl-0 flex flex-nowrap lg:flex-wrap gap-2">
+              {% for block in section.blocks %}
+                <button class="carousel-bullet whitespace-nowrap text-xs px-4 py-3 {% if forloop.first %}active{% endif %} cursor-pointer border">
+                  {{ block.settings.title }}
+                </button>
+              {% endfor %}
+            </carousel-pager>
+            <div class="js-info-slider max-w-[490px]"></div>
+          </div>
+
+          {% comment %} MEDIA {% endcomment %}
+          <div class="md:order-2 -mx-5 lg:mx-0">
+            <div class="swiper !overflow-visible lg:!overflow-hidden">
+              <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                  <div class="swiper-slide" data-slider-index="{{ forloop.index0 }}">
+                    {%- if block.settings.image -%}
+                      <div class="ratio" style="--ratio-percent: 100%">
+                        <img src="{{ block.settings.image | image_url: width: 2000 }}" class="site-image" width="auto" height="auto" alt="{{ block.settings.title | escape }}">
+                      </div>
+                    {%- endif -%}
+
+                    <div class="d-none js-slide-info">
+                      <div class="text-xs leading-5 relative w-full content-center text-start z-10 li-circle">
+                        {% unless block.settings.what_it_does == blank %}
+                          <h4 class="eyebrow mb-4">WHAT IT DOES</h4>
+                          <div class="border-b pb-5">{{ block.settings.what_it_does }}</div>
+                        {% endunless %}
+                        {% unless block.settings.why_its_special == blank %}
+                          <h4 class="eyebrow mt-5 mb-4">WHY IT’S SPECIAL</h4>
+                          <div class="border-b pb-5">{{ block.settings.why_its_special }}</div>
+                        {% endunless %}
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </site-carousel>
+      </info-media-slider>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ingredients Carousel",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "what_it_does",
+          "label": "What it does",
+          "default": "<p>Add your text here</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "why_its_special",
+          "label": "Why it's special",
+          "default": "<p>Add your text here</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients Carousel",
+      "blocks": [
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

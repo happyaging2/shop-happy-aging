@@ -1,0 +1,76 @@
+{% style %}
+  #shopify-block-{{ block.id }} .image-block__image {
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  {% if block.settings.show_on_mobile == false %}
+    @media (max-width: 1199px) {
+      #shopify-block-{{ block.id }} {
+        display: none;
+      }
+    }
+  {% endif %}
+
+  {% if block.settings.show_on_desktop == false %}
+    @media (min-width: 1200px) {
+      #shopify-block-{{ block.id }} {
+        display: none;
+      }
+    }
+  {% endif %}
+
+  
+{% endstyle %}
+
+<div class="image-block__inner">
+  {% if block.settings.different_mobile_image %}
+    {{ block.settings.mobile_image | image_url: width: 1000 | image_tag: class: 'image-block__image image-block__image--mobile', loading: 'lazy' }}
+  {% endif %}
+  
+  {{ block.settings.image | image_url: width: 1000 | image_tag: class: 'image-block__image image-block__image--desktop', loading: 'lazy' }}
+</div>
+
+
+{% schema %}
+{
+  "name": "Image block",
+  "class": "image-block",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "checkbox",
+      "id": "different_mobile_image",
+      "label": "Different mobile image",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "Show on mobile",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "Show on desktop",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image block"
+    }
+  ]
+}
+{% endschema %}

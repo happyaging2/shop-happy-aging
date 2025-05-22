@@ -1,0 +1,117 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "press_list_rfwxXn": {
+      "type": "press-list",
+      "blocks": {
+        "press_item_DNy4UW": {
+          "type": "press_item",
+          "settings": {
+            "title": "Launch Digest: Biscotti Balm Dotcom, Shots For Aging Backwards, & Plenty Of Corduroy & Cashmere",
+            "excerpt": "",
+            "publication_logo": "shopify://shop_images/quality-edit.png",
+            "publication_name": "The Quality Edit ",
+            "link": "https://www.thequalityedit.com/articles/best-new-launches-october-18"
+          }
+        },
+        "press_item_kHWmy8": {
+          "type": "press_item",
+          "settings": {
+            "title": "Novo suplemento promete melhorar a pele e retardar o envelhecimento",
+            "excerpt": "",
+            "publication_logo": "shopify://shop_images/mc.png",
+            "publication_name": "Marie Claire",
+            "link": "https://revistamarieclaire.globo.com/saude/noticia/2024/10/novo-suplemento-promete-melhorar-a-pele-e-retardar-o-envelhecimento.ghtml"
+          }
+        },
+        "press_item_9zY7X9": {
+          "type": "press_item",
+          "settings": {
+            "title": "Com produtos e suplementos para longevidade, empresa fundada por brasileira e médico de Harvard estreia no mercado norte-americano",
+            "excerpt": "",
+            "publication_logo": "shopify://shop_images/vogue.png",
+            "publication_name": "Vogue",
+            "link": "https://vogue.globo.com/wellness/noticia/2024/10/com-produtos-e-suplementos-para-longevidade-empresa-fundada-por-brasileira-e-medico-de-harvard-estreia-no-mercado-norte-americano.ghtml"
+          }
+        },
+        "press_item_hC9kPq": {
+          "type": "press_item",
+          "settings": {
+            "title": "Happy Aging Pairs Science and Wellness to Boost Skin and General Longevity",
+            "excerpt": "",
+            "publication_logo": "shopify://shop_images/gci.png",
+            "publication_name": "GCI Magazine",
+            "link": "https://www.gcimagazine.com/brands-products/skin-care/news/22923737/happy-aging-pairs-science-and-wellness-to-boost-skin-and-general-longevity"
+          }
+        },
+        "press_item_HgVM86": {
+          "type": "press_item",
+          "settings": {
+            "title": "Fall Favorites! Styles, Snacks, Viral Beauty Products and More Must-Haves This Season",
+            "excerpt": "",
+            "publication_logo": "shopify://shop_images/ok.png",
+            "publication_name": "OK Magazine",
+            "link": "https://okmagazine.com/deals/fall-favorites-fashion-style-food-treats-beauty-products/"
+          }
+        },
+        "press_item_bWbTCa": {
+          "type": "press_item",
+          "settings": {
+            "title": "This new longevity shot aims to support healthy aging (and 10,000 people are waiting to try it)",
+            "excerpt": "",
+            "publication_logo": "shopify://shop_images/ww.png",
+            "publication_name": "Well Worthy",
+            "link": "https://wellworthy.com/happy-aging-nad-longevity-shot/"
+          }
+        },
+        "press_item_MmhePi": {
+          "type": "press_item",
+          "settings": {
+            "title": "Happy Aging Enters The Wellness Industry With Two Trailblazing Products",
+            "excerpt": "",
+            "publication_logo": "shopify://shop_images/bev.png",
+            "publication_name": "BevNet",
+            "link": "https://www.bevnet.com/pr/2024/10/17/happy-aging-enters-the-wellness-industry-with-two-trailblazing-products"
+          }
+        },
+        "press_item_9pVeBt": {
+          "type": "press_item",
+          "settings": {
+            "title": "Happy Aging Enters the Wellness Industry With Two Trailblazing Products to Transform the $600B Longevity Market",
+            "excerpt": "",
+            "publication_logo": "shopify://shop_images/pr.png",
+            "publication_name": "PR Newswire",
+            "link": "https://www.prnewswire.com/news-releases/happy-aging-enters-the-wellness-industry-with-two-trailblazing-products-to-transform-the-600b-longevity-market-302278588.html"
+          }
+        }
+      },
+      "block_order": [
+        "press_item_DNy4UW",
+        "press_item_kHWmy8",
+        "press_item_9zY7X9",
+        "press_item_hC9kPq",
+        "press_item_HgVM86",
+        "press_item_bWbTCa",
+        "press_item_MmhePi",
+        "press_item_9pVeBt"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "press_list_rfwxXn"
+  ]
+}

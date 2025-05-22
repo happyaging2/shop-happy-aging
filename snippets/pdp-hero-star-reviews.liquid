@@ -1,0 +1,77 @@
+{%- liquid
+  if old_product != blank
+    assign product = old_product
+  endif
+-%}
+
+{%- if product.metafields.okendo.summaryData.reviewAverageValue != blank and product.metafields.okendo.summaryData.reviewAverageValue != '0.0' -%}
+  <script>
+    function goToReviews() {
+      event.preventDefault();
+      scrollToTargetAdjusted();
+    }
+    function scrollToTargetAdjusted(){
+      var element = document.querySelector('[data-oke-widget]');
+      var headerOffset = 65;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+      window.scrollTo({
+           top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  </script>
+  <a href="#" onclick="goToReviews()" class="flex items-center gap-1 text-xs tracking-widest uppercase flex">
+    {% assign review_average_value = product.metafields.okendo.summaryData.reviewAverageValue | split: '.' %}
+    {% assign integer_average_review_value = review_average_value[0] %}
+    {% assign decimal_average_review_value = review_average_value[1] | times: 0.1 %}
+    {% if decimal_average_review_value > 1 %}
+      {% assign decimal_average_review_value = decimal_average_review_value | times: 0.1 %}
+    {% endif %}
+    {% assign total_stars = 5 %}
+    {% assign rendered_stars = integer_average_review_value %}
+    {% if decimal_average_review_value > 0 %}
+      {% assign rendered_stars = rendered_stars | plus: 1 %}
+    {% endif %}
+    {% assign remaining_stars = total_stars | minus: rendered_stars %}
+
+    <div class="relative">
+      <div class="top-0 left-0">
+        <div class="flex gap-x-1">
+          {% for i in (1..integer_average_review_value) %}
+            <div class="overflow-hidden flex">
+              {% render 'star-review' %}
+            </div>
+          {% endfor %}
+          {% if decimal_average_review_value > 0 %}
+            <div class="overflow-hidden flex">
+              <div class="overflow-hidden relative w-[14px]">
+                <div
+                  class="overflow-hidden absolute top-0 left-0"
+                  style="width:{{ decimal_average_review_value | times: 100 }}%"
+                >
+                  {% render 'star-review' %}
+                </div>
+                <div class="overflow-hidden absolute top-0 left-0">
+                  {% render 'empty-star-review' %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          {% for i in (1..remaining_stars) %}
+            <div class="overflow-hidden flex">
+              {% render 'empty-star-review' %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {%- unless hide_based_on -%}
+      <span class="ml-1">{{ product.metafields.okendo.summaryData.reviewAverageValue }} based on</span>
+    {%- endunless -%}
+    <span class="{% unless hide_based_on %}underline{% endunless %}">{{ product.metafields.okendo.summaryData.reviewCount }} {% if product.metafields.okendo.summaryData.reviewCount == 1 %}Review{% else %}Reviews{% endif %}</span>
+  </a>
+{%- elsif show_placeholder -%}
+  <div class="text-sm">&nbsp;</div>
+{%- endif -%}

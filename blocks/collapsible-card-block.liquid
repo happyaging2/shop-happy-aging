@@ -1,0 +1,187 @@
+{% style %}
+  .collapsible-card, collapsible-card {
+    height: 100%;
+    display: block;
+  }
+  collapsible-card {
+    cursor: pointer;
+  }
+  .collapsible-card__icon svg > *:nth-child(3) {
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center;
+  }
+  collapsible-card.active .collapsible-card__icon svg > *:nth-child(3) {
+    transform: rotate(90deg);
+  }
+  .collapsible-card {
+    border-top: 1px solid currentColor;
+    padding-top: 20px;
+    height: 100%;
+  }
+  .collapsible-card__title {
+    font-size: 30px;
+    line-height: 1.2;
+    font-family: var(--font-heading-family);
+  }
+  .collapsible-card__text {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .collapsible-card__image-wrapper {
+    margin-top: 20px;
+    position: relative;
+    padding-top: 150%;
+    overflow: hidden;
+  }
+  .collapsible-card__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .collapsible-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .collapsible-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+  .collapsible-card__content {
+    position: absolute;
+    inset: 20px 20px auto;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(24px);
+    border: 1px solid #000;
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out, visibility 0s linear 0.3s;
+    will-change: transform, opacity, visibility;
+  }
+  collapsible-card.active .collapsible-card__content {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  }
+  .collapsible-card__content-title {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .collapsible-card__content-text {
+    margin-top: 35px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .collapsible-card__content-text * + * {
+    margin-top: 20px;
+  }
+  @media (min-width: 1200px) {
+    collapsible-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .collapsible-card__icon {
+      margin-bottom: 0;
+    }
+    .collapsible-card__text {
+      max-width: 90%;
+      margin-bottom: auto;
+    }
+  }
+{% endstyle %}
+
+
+<collapsible-card>
+  <div class="collapsible-card__header">
+    {% if block.settings.title != blank %}
+      <div class="collapsible-card__title">{{ block.settings.title }}</div>
+    {% endif %}
+    <button class="collapsible-card__icon">
+      {% render 'icon-plus-circled' %}
+    </button>
+  </div>
+  {% if block.settings.image != blank %}
+    <div class="collapsible-card__image-wrapper">
+      {{ block.settings.image | image_url: width: 1000 | image_tag: class: 'collapsible-card__image' }}
+      <div class="collapsible-card__content">
+        {% if block.settings.collapsible_title != blank %}
+          <div class="collapsible-card__content-title">{{ block.settings.collapsible_title }}</div>
+        {% endif %}
+        {% if block.settings.collapsible_text != blank %}
+          <div class="collapsible-card__content-text">{{ block.settings.collapsible_text }}</div>
+        {% endif %}
+        {% content_for 'blocks' %}
+      </div>
+    </div>
+  {% endif %}
+  
+</collapsible-card>
+
+<script>
+  if (!customElements.get('collapsible-card')) {
+    class CollapsibleCard extends HTMLElement {
+      constructor() {
+        super();
+        this.addEventListener('click', () => {
+          this.classList.toggle('active');
+        });
+      }
+    }
+    customElements.define('collapsible-card', CollapsibleCard);
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Collapsible Card",
+  "class": "collapsible-card",
+  "blocks": [{ "type": "@theme" }],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Collapsible Content"
+    },
+    {
+      "type": "richtext",
+      "id": "collapsible_title",
+      "label": "Collapsible Title"
+    },
+    {
+      "type": "richtext",
+      "id": "collapsible_text",
+      "label": "Collapsible Text"
+    },
+
+  ],
+  "presets": [
+    {
+      "name": "Collapsible Card"
+    }
+  ]
+}
+{% endschema %}

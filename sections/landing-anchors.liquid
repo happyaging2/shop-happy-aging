@@ -1,0 +1,273 @@
+{% style %}
+  .anchor-section {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    --highlight-color: #e5dbcc;
+    background-color: var(--highlight-color);
+    overflow-x: auto;
+    position: sticky;
+    top: calc(var(--header-height));
+    height: fit-content;
+    z-index: 10;
+  }
+  .anchor-section__button {
+    padding: 25px 15px;
+    font-size: 12px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    white-space: nowrap;
+    opacity: 0.2;
+    text-align: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .anchor-section__button:hover,
+  .anchor-section__button.active {
+    background-color: var(--highlight-color);
+    opacity: 1;
+  }
+
+  @media (max-width: 1199px) {
+    .anchor-section__button:hover:not(.active) {
+      opacity: 0.2;
+    }
+    .landing-site-container {
+      padding: 0;
+    }
+  }
+  @media (min-width: 1200px) {
+    .anchor-section {
+      background-color: transparent;
+      overflow-x: visible;
+      flex-direction: column;
+      min-width: 330px;
+      max-width: 330px;
+      top: calc(var(--header-height));
+    }
+    .anchor-section__button {
+      opacity: 1;
+      border-bottom: 1px solid currentColor;
+    }
+    .landing-site-container {
+      display: flex;
+      gap: 70px;
+      justify-content: flex-start;
+    }
+  }
+{% endstyle %}
+
+{% for block in section.blocks %}
+  <button class="anchor-section__button {% if forloop.first %}active{% endif %}">
+    {{ block.settings.title }}
+  </button>
+{% endfor %}
+
+<script>
+
+  class LandingAnchors {
+    constructor(container) {
+      this.container = container;
+      this.buttons = container.querySelectorAll('.anchor-section__button');
+      this.wrapper = null;
+      this.sectionsContainer = null;
+      this.headerHeight = document.querySelector('site-header').clientHeight;
+      this.breakpoint = 1200;
+      this.isDesktop = window.innerWidth >= this.breakpoint;
+      this.isScrollingFromClick = false;
+      
+      this.init();
+    }
+  
+    init() {
+      this.handleLayout();
+      // Setup events after layout is done
+      setTimeout(() => {
+        this.setupEventListeners();
+        this.updateActiveState();
+      }, 100);
+    }
+  
+    setupEventListeners() {
+      // Handle button clicks - only scroll, no active state change
+      this.buttons.forEach(button => {
+        button.addEventListener('click', () => this.handleButtonClick(button));
+      });
+  
+      // Update active state on scroll immediately
+      window.addEventListener('scroll', () => {
+        if (!this.isScrollingFromClick) {
+          this.updateActiveState();
+        }
+      }, { passive: true });
+  
+      window.addEventListener('resize', () => {
+        this.isDesktop = window.innerWidth >= this.breakpoint;
+      });
+    }
+  
+    handleButtonClick(button) {
+      const section = this.getSectionForButton(button);
+      if (section) {
+        this.isScrollingFromClick = true;
+        this.scrollToSection(section);
+        
+        // Delay active state updates during scroll animation
+        setTimeout(() => {
+          this.isScrollingFromClick = false;
+          this.updateActiveState();
+        }, 1000); // Duration matches smooth scroll animation
+      }
+    }
+  
+    setActiveButton(button) {
+      if (!button) return;
+      this.buttons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      if (!this.isDesktop) {
+        button.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        });
+      }
+    }
+  
+    getSectionForButton(button) {
+      const index = Array.from(this.buttons).indexOf(button);
+      return Array.from(this.sectionsContainer.children)[index];
+    }
+  
+    scrollToSection(section) {
+      if (!section) return;
+      
+      const isFirstSection = section === this.sectionsContainer.firstElementChild;
+      let offset = this.headerHeight;
+      
+      if (!this.isDesktop) {
+        offset += 64; // Mobile header adjustment
+      }
+      if (isFirstSection) {
+        offset += this.isDesktop ? 0 : 50; // Extra padding for first section on mobile
+      }
+  
+      const targetPosition = section.offsetTop - offset;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  
+    updateActiveState() {
+      if (!this.sectionsContainer) return;
+      const sections = Array.from(this.sectionsContainer.children);
+      if (!sections.length) return;
+  
+      const scrollPosition = window.scrollY + this.headerHeight + (this.isDesktop ? 0 : 64);
+  
+      // Find active section
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        const sectionTop = section.offsetTop;
+        
+        if (scrollPosition + window.innerHeight/3 >= sectionTop) {
+          this.setActiveButton(this.buttons[i]);
+          return;
+        }
+      }
+  
+      // Handle out of bounds scrolling
+      if (scrollPosition < sections[0].offsetTop) {
+        this.setActiveButton(this.buttons[0]);
+      } else {
+        this.setActiveButton(this.buttons[this.buttons.length - 1]);
+      }
+    }
+  
+    handleLayout() {
+      this.container.style.visibility = 'hidden';
+      
+      // Create wrapper and container
+      this.wrapper = this.createWrapper();
+      this.sectionsContainer = this.createSectionsContainer();
+      
+      // Move elements
+      this.moveElements();
+      
+      setTimeout(() => {
+        this.container.style.visibility = 'visible';
+      }, 100);
+    }
+  
+    createWrapper() {
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('landing-site-container', 'site-container');
+      return wrapper;
+    }
+  
+    createSectionsContainer() {
+      return document.createElement('div');
+    }
+  
+    moveElements() {
+      const parent = this.container.parentElement;
+      const nextSiblings = [];
+      let nextSibling = this.container.nextElementSibling;
+      
+      // Collect next siblings
+      while (nextSibling) {
+        nextSiblings.push(nextSibling);
+        nextSibling = nextSibling.nextElementSibling;
+      }
+  
+      // Remove siblings from DOM
+      nextSiblings.forEach(sibling => sibling.remove());
+  
+      // Create new structure
+      parent.appendChild(this.wrapper);
+      this.wrapper.appendChild(this.container);
+      
+      // Add siblings to container
+      nextSiblings.forEach(section => {
+        this.sectionsContainer.appendChild(section);
+      });
+      
+      this.wrapper.appendChild(this.sectionsContainer);
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('shopify-section-{{ section.id }}');
+    if (container) {
+      new LandingAnchors(container);
+    }
+  });
+
+
+</script>
+
+{% schema %}
+{
+  "name": "Landing Anchors",
+  "tag": "section",
+  "class": "anchor-section",
+  "presets": [
+    {
+      "name": "Landing Anchors"
+    }
+  ],
+  "settings": [],
+  "blocks": [
+    {
+      "type": "anchor",
+      "name": "Anchor",
+      "settings": [{ "type": "text", "id": "title", "label": "Title" }]
+    }
+  ]
+}
+{% endschema %}

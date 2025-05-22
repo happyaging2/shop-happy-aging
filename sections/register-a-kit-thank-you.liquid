@@ -1,0 +1,37 @@
+{{ 'kit-a-thank-you.css' | asset_url | stylesheet_tag }}
+
+<div class="register-a-kit__thank" data-section-type="register-a-kit-thank-you">
+  {% if section.settings.title != blank %}
+    <div class="register-a-kit__title mb-2">{{ section.settings.title }}</div>
+  {% endif %}
+  {% if section.settings.subtitle != blank %}
+    <div class="register-a-kit__subtitle mb-12 mt-2.5">
+      {{ section.settings.subtitle | strip_html | newline_to_br }}
+    </div>
+  {% endif %}
+  <div class="register-a-kit__thank-button">
+    <button>
+      <a href="/account"> Return to My Account </a>
+    </button>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "A kit thank you",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "QuIckly register your kit below. Make sure to use your kits barcode, oterwise we are unable to process your results"
+    }
+  ]
+}
+{% endschema %}

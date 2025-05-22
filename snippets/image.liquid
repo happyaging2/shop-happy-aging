@@ -1,0 +1,29 @@
+{%- liquid
+  assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+  assign fetch_priority = 'auto'
+  if section.index == 1
+    assign fetch_priority = 'high'
+  endif
+  unless loading
+    assign loading = 'lazy'
+  endunless
+  unless sizes
+    assign sizes = '100vw'
+  endunless
+  unless alt
+    assign alt = image.alt
+  endunless
+-%}
+
+{{
+  image
+  | image_url: width: 3840
+  | image_tag:
+    width: image.width,
+    class: class,
+    sizes: sizes,
+    widths: widths,
+    fetchpriority: fetch_priority,
+    loading: loading,
+    alt: alt
+}}

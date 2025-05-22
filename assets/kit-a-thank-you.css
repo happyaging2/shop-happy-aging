@@ -1,0 +1,74 @@
+.register-a-kit__thank {
+  padding: 118px 90px 349px;
+}
+
+.register-a-kit__thank > em {
+  font-style: italic !important;
+}
+
+[data-section-type="register-a-kit-thank-you"] .register-a-kit__title,
+[data-section-type="register-a-kit-thank-you"] .register-a-kit__title * {
+  font-family: "Flecha Bronzea M Light", serif;
+  font-size: 50px;
+  font-weight: 300;
+  line-height: normal;
+}
+
+[data-section-type="register-a-kit-thank-you"] .register-a-kit__title em {
+  font-style: italic;
+}
+
+[data-section-type="register-a-kit-thank-you"] .register-a-kit__subtitle,
+[data-section-type="register-a-kit-thank-you"] .register-a-kit__subtitle * {
+  width: 493.797px;
+  color: #000;
+  font-family: "AT Surt", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+[data-section-type="register-a-kit-thank-you"] .register-a-kit__thank-button {
+  width: 263px;
+  height: 41px;
+  flex-shrink: 0;
+  background: #1e1e1e;
+}
+
+[data-section-type="register-a-kit-thank-you"]
+  .register-a-kit__thank-button
+  button {
+  color: #fff;
+  height: inherit;
+  text-align: center;
+  font-family: "Flecha Bronzea M Light", serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .register-a-kit__thank {
+    padding: 77px 25px 204px !important;
+  }
+
+  .register-a-kit__subtitle,
+  .register-a-kit__thank-button {
+    width: 100% !important;
+  }
+
+  [data-section-type=register-a-kit-thank-you] .register-a-kit__title * {
+    line-height: 1;
+  }
+  [data-section-type=register-a-kit-thank-you] .register-a-kit__title, [data-section-type=register-a-kit-thank-you] .register-a-kit__title * {
+    margin-bottom: 26px;
+  }
+  [data-section-type=register-a-kit-thank-you] .register-a-kit__subtitle {
+    margin-bottom: 60px;
+    font-size: 14px;
+  }
+}

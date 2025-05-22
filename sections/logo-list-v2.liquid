@@ -1,0 +1,126 @@
+<div class="py-16 lg:py-20 overflow-hidden {{ section.settings.border }}">
+  <div class="site-container">
+    {%- if section.settings.title != blank -%}
+      <div class="flex flex-col items-center justify-center gap-6 mx-auto max-w-[34rem] lg:max-w-[525px] text-center">
+        <h2 class="heading heading--1">{{ section.settings.title }}</h2>
+        {%- if section.settings.text != blank -%}
+          <div class="text-sm max-w-[383px]">{{ section.settings.text }}</div>
+        {%- endif -%}
+        {%- if section.settings.cta_text != blank -%}
+          <a href="{{ section.settings.cta_url }}" class="cta">{{ section.settings.cta_text }}</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    {% comment %} DESKTOP {% endcomment %}
+    <div class="{% if section.settings.title != blank %}mt-10{% endif %} d-none lg:flex flex-wrap justify-center items-center gap-10 lg:gap-20 xl:gap-20">
+      {% for block in section.blocks %}
+        {% if block.settings.logo_img %}
+          <div class="">
+            {%- assign style = 'width: ' | append: block.settings.width | append: 'px' -%}
+            {{ block.settings.logo_img | image_url: width: 350 | image_tag: class: 'block object-contain h-auto', style: style, loading: 'lazy' }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% comment %} MOBILE {% endcomment %}
+  {%- assign config = '{"slidesPerView": 2.5,"spaceBetween": 70, "breakpoints": {"768": {"slidesPerView": 3},"1024": {"slidesPerView": 4}}}' -%}
+  <div class="{% if section.settings.title != blank %}mt-14{% endif %} lg:hidden">
+    <site-carousel
+      data-config="{{ config | escape }}"
+      id="{{ section.id }}"
+      class="relative opacity-0 transition-all duration-500 block"
+      data-id="{{ section.id }}"
+    >
+      <div class="swiper px-5">
+        <div class="swiper-wrapper items-center">
+          {% for block in section.blocks %}
+            {% if block.settings.logo_img %}
+              <div class="swiper-slide">
+                {%- assign style = 'width: 100%' -%}
+                {{ block.settings.logo_img | image_url: width: 350 | image_tag: class: 'block object-contain h-auto', style: style, loading: 'lazy' }}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </site-carousel>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Logo List",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Logo List"
+    }
+  ],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Link"
+    },
+    {
+      "type": "select",
+      "id": "border",
+      "label": "Section Border",
+      "options": [
+        {
+          "value": "border-t border-black",
+          "label": "Top"
+        },
+        {
+          "value": "border-b border-black",
+          "label": "Bottom"
+        },
+        {
+          "value": "",
+          "label": "None"
+        }
+      ],
+      "default": ""
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Logo",
+      "type": "logo_item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_img",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "width",
+          "min": 50,
+          "max": 350,
+          "step": 10,
+          "unit": "px",
+          "label": "Width",
+          "default": 150
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,146 @@
+{% assign config = '{"loop":false,"slidesPerView":1,"effect":"fade","fadeEffect":{"crossFade":true},"allowTouchMove":false}' %}
+
+<div id="key-points" class="bg-[#E5DBCC] border-t">
+  <div class="py-14 lg:py-20 key-points">
+    <div class="site-container px-8 lg:px-16">
+      <site-carousel
+        data-config="{{ config | escape }}"
+        id="exploring-carousel"
+        data-id="exploring-carousel"
+        class="d-grid grid-cols-4 lg:grid-cols-2 lg:gap-20 block lg:min-h-[400px]"
+      >
+        <div class="col-span-3 lg:col-span-1 flex flex-col justify-between items-center">
+          <div class="pb-20 lg:pb-0">
+            <div class="relative lg:mb-4">
+              <h3 class="heading--3 mb-1">
+                {{ section.settings.title }}
+                {%- if section.settings.double_nutri_logo -%}
+                  <img
+                    class="h-[40px] inline-block mix-blend-multiply"
+                    src="{{ section.settings.double_nutri_logo | img_url: '500x' }}"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+              </h3>
+
+            </div>
+
+            <p class="text-xs leading-5">
+              {{ section.settings.text }}
+            </p>
+            {% comment %} <div class="lg:hidden">
+              <label for="select-ingredient" class="eyebrow">{{ section.settings.mobile_select_label }}</label>
+              <div class="relative mt-3 mb-7 max-w-[450px]">
+                <select
+                  id="select-ingredient"
+                  class="select-container-js cursor-pointer w-full py-3 px-4 bg-transparent border appearance-none relative z-10"
+                ></select>
+                <div class="absolute top-1/2 -translate-y-1/2 right-3">
+                  {% render 'icon-expand' %}
+                </div>
+              </div>
+            </div> {% endcomment %}
+          </div>
+
+          <div class="swiper w-full">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                {% if block.type == 'slide_item' %}
+                  <div class="swiper-slide flex items-end">
+                    <div class="lg:border-b pb-3 lg:pb-5">
+                      <h3 class="heading--3 mb-1 lg:mb-3">
+                        {{ block.settings.slide_item_title }}
+                      </h3>
+                      <p class="eyebrow mb-4">
+                        {{ block.settings.slide_item_eyebrow }}
+                      </p>
+                      <p class="text-xs leading-5">
+                        {{ block.settings.slide_item_text }}
+                      </p>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1 relative">
+          <div class="lg:hidden border-l absolute top-0 h-full" style="right: 8px"></div>
+          <carousel-pager class="max-lg:pl-8 flex overflow-hidden w-full h-full lg:h-auto justify-between flex-col items-end lg:items-start gap-9 lg:pl-10">
+            {% for block in section.blocks %}
+              {% if block.type == 'slide_item' %}
+                <button class="group flex flex-col items-start lg:flex-row lg:gap-x-8 w-fit ingredient-button" data-disable-scroll="true">
+                  <div class="flex items-center lg:flex-col">
+                    <div
+                      class="carousel-bullet key-ingredient min-w-4 min-h-4 border flex z-50 border-black rounded-full bg-[#E5DBCC] {% if forloop.first %}active{% endif %}"
+                    ></div>
+                  </div>
+                  <p class="d-none lg:block opacity-50 lg:group-hover:opacity-100 paragraph--2 pr-0.5 uppercase transition-all !text-xs lg:!text-sm duration-300 lg:-mt-0.5 {% if forloop.first %}active{% endif %}">
+                    {{ block.settings.slide_item_title }}
+                  </p>
+                </button>
+              {% endif %}
+            {% endfor %}
+          </carousel-pager>
+        </div>
+      </site-carousel>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Key points",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Key points"
+    }
+  ],
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "double_nutri_logo",
+      "label": "Double Nutri Logo"
+    },
+    {
+      "type": "text",
+      "id": "mobile_select_label",
+      "label": "Mobile Select Label"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide Item",
+      "type": "slide_item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "slide_item_title",
+          "label": "Slide Item Title"
+        },
+        {
+          "type": "text",
+          "id": "slide_item_eyebrow",
+          "label": "Slide Item Eyebrow"
+        },
+        {
+          "type": "text",
+          "id": "slide_item_text",
+          "label": "Slide Item Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

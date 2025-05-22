@@ -1,0 +1,101 @@
+{% assign config = '{"loop":false,"slidesPerView":1,"effect":"fade","fadeEffect":{"crossFade":true}}' %}
+
+<div class="max-lg:px-4 pt-10 lg:border-b">
+  <div class="border-b lg:border-none site-container pb-6 lg:pb-8">
+    <site-carousel
+      data-config="{{ config | escape }}"
+      id="exploring-carousel"
+      data-id="exploring-carousel"
+      class="lg:grid lg:grid-cols-2 block"
+    >
+      <div class="">
+        <carousel-pager class="max-lg:pl-4 hide-scrollbar flex overflow-x-auto w-full lg:flex-col">
+          {% for block in section.blocks %}
+            {% if block.type == 'slide_item' %}
+              <button class="group flex flex-col items-start lg:flex-row lg:gap-x-2.5 lg:w-fit">
+                <div class="max-lg:min-w-56 flex items-center lg:flex-col mb-6 lg:mb-0">
+                  <div class="carousel-bullet min-w-4 min-h-4 border flex border-black rounded-full lg:group-hover:!bg-black transition-colors duration-300 {% if forloop.first %}active{% endif %}"></div>
+                  <div class="max-lg:border-t max-lg:w-full border-black lg:border-l lg:h-10 {% if forloop.last %}lg:hidden{% endif %}"></div>
+                </div>
+                <span class="paragraph--2 pr-0.5 uppercase opacity-50 transition-opacity duration-200 lg:group-hover:opacity-100 !text-xs lg:!text-sm duration-300 lg:-mt-0.5 {% if forloop.first %}active{% endif %}">
+                  {{ block.settings.slide_item_pagination_name }}
+                </span>
+              </button>
+            {% endif %}
+          {% endfor %}
+        </carousel-pager>
+      </div>
+
+      <div class="">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              {% if block.type == 'slide_item' %}
+                <div class="swiper-slide">
+                  <div class="max-lg:my-10 max-lg:px-4 lg:mb-11 lg:max-w-[38.685rem]">
+                    <h3 class="heading--3 mb-5 lg:mb-1">
+                      {{ block.settings.slide_item_title }}
+                    </h3>
+                    <p class="paragraph--2">
+                      {{ block.settings.slide_item_text }}
+                    </p>
+                  </div>
+
+                  <div class="lg:max-w-[24.875rem]">
+                    <div class="relative pb-[143%] bg-beige">
+                      <img class="site-image" src="{{ block.settings.slide_item_image | img_url: '1000x' }}" loading="lazy" />
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </site-carousel>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Exploring Carousel",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Exploring Carousel"
+    }
+  ],
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Slide Item",
+      "type": "slide_item",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "slide_item_title",
+          "label": "Slide Item Title",
+          "default": "[Slide Item Title]"
+        },
+        {
+          "type": "text",
+          "id": "slide_item_text",
+          "label": "Slide Item Text",
+          "default": "[Slide Item Text]"
+        },
+        {
+          "type": "text",
+          "id": "slide_item_pagination_name",
+          "label": "Slide Item Pagination Name",
+          "default": "[Slide Item Pagination Name]"
+        },
+        {
+          "type": "image_picker",
+          "id": "slide_item_image",
+          "label": "Slide Item Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

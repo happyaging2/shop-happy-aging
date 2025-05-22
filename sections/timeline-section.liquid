@@ -1,0 +1,163 @@
+<div class="{% if section.settings.show_border_top %} border-t border-black{% endif %}">
+  <div class="relative px-8 lg:px-6 lg:pt-[70px] text-center text-sm max-w-[1074px] m-auto">
+    {% for block in section.blocks %}
+
+    {% if block.type == 'title' %}
+
+    {% style %}
+      .timeline-title {
+        margin-bottom: 14rem;
+      }
+      .timeline-title .heading:after{
+            content: '';
+            width: 1px;
+            background: black;
+            height: 90px;
+            position: absolute;
+            margin-top:15px;
+        }
+      @media screen and (max-width:500px){
+        .timeline-title .heading:after{
+          margin-top:25px;
+        }
+      .timeline-title {
+        margin-bottom: unset;
+        padding-bottom: unset;
+      }
+      }
+    {% endstyle %}
+    
+      <div class="timeline-title py-10 lg:py-0 lg:mt-0 lg:mb-30">
+          <h2 class="heading heading--1 mb-3 lg:mb-5">
+            {{ block.settings.title }}
+          </h2>
+        </div>
+  {% endif %}
+    
+      <div class="py-10 lg:py-0 lg:mt-0 lg:mb-20">
+        <h3 class="eyebrow mb-2 lg:mb-1">
+          {{ block.settings.number }}
+        </h3>
+        <h2 class="heading heading--1 mb-3 lg:mb-5">
+          {{ block.settings.step_title }}
+        </h2>
+        <p class="max-w-[330px] lg:max-w-[410px] m-auto">
+          {{ block.settings.step_text }}
+        </p>
+      </div>
+      {% if forloop.index == 3 and section.settings.first_image != blank and section.settings.second_image != blank %}
+        {% comment %} <div class="d-grid grid-cols-2 gap-[10px] mb-10 lg:hidden">
+          {%- render 'image', image: section.settings.first_image, class: 'w-full', sizes: '400px' -%}
+          {%- render 'image', image: section.settings.second_image, class: 'w-full', sizes: '400px' -%}
+        </div> {% endcomment %}
+        <div class="d-none lg:block absolute top-[87px] lg:right-[32px] xl:right-[0]">
+          {%- render 'image', image: section.settings.first_image, class: 'max-w-[260px]', sizes: '400px' -%}
+        </div>
+        <div class="d-none lg:block absolute top-[380px] lg:left-[32px] xl:left-[0]">
+          {%- render 'image', image: section.settings.second_image, class: 'max-w-[260px]', sizes: '400px' -%}
+        </div>
+      {% endif %}
+      {% if forloop.index == 5 and section.settings.third_image != blank %}
+        <div class="mb-10 lg:hidden pb-[70%] relative">
+          {%- render 'image', image: section.settings.third_image, class: 'site-image', sizes: '400px' -%}
+        </div>
+        <div class="d-none lg:block absolute top-[974px] lg:right-[0px] xl:right-[-60px]">
+          <div class="relative w-[330px]">
+            {%- render 'image', image: section.settings.third_image, class: 'max-w-[330px]', sizes: '400px' -%}
+          </div>
+        </div>
+      {% endif %}
+      {% if forloop.index == 8 and section.settings.fourth_image != blank and section.settings.fifth_image != blank %}
+        {% comment %} <div class="d-grid grid-cols-2 gap-[10px] mb-10 lg:hidden">
+          {%- render 'image', image: section.settings.fourth_image, class: 'w-full', sizes: '400px' -%}
+          {%- render 'image', image: section.settings.fifth_image, class: 'w-full', sizes: '400px' -%}
+        </div> {% endcomment %}
+        <div class="d-none lg:block absolute top-[1318px] lg:left-[32px] xl:left-[0]">
+          {%- render 'image', image: section.settings.fourth_image, class: 'max-w-[260px]', sizes: '400px' -%}
+        </div>
+        <div class="d-none lg:block absolute top-[1680px] lg:right-[32px] xl:right-[0]">
+          {%- render 'image', image: section.settings.fifth_image, class: 'max-w-[260px]', sizes: '400px' -%}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Timeline Section",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Timeline Section"
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_border_top",
+      "label": "Show Top Border",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "first_image",
+      "label": "First Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "second_image",
+      "label": "Second Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "third_image",
+      "label": "Third Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "fourth_image",
+      "label": "Fourth Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "fifth_image",
+      "label": "Fifth Image"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Step",
+      "type": "step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Step Number(ex: one)"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "step_title",
+          "label": "Step Title"
+        },
+        {
+          "type": "text",
+          "id": "step_text",
+          "label": "Step Text"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "title",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Page title"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

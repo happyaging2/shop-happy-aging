@@ -1,0 +1,48 @@
+<div class="site-container py-16 lg:py-20 {% if section.settings.show_atc %} lg:pb-0 {% endif %}">
+  {% unless section.settings.title == blank %}
+    <h2 class="heading !text-[40px] mb-8 lg:mb-10">{{ section.settings.title }}</h2>
+  {% endunless %}
+  <div class="d-grid gap-4 md:grid-cols-2 md:gap-4 lg:grid-cols-4">
+    {% for block in section.blocks %}
+      {% render 'product-item', product: block.settings.product, show_atc: section.settings.show_atc %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product List",
+  "class": "border-t border-black",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_atc",
+      "label": "Show Add To Cart"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_item",
+      "name": "Product Item",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product List"
+    }
+  ]
+}
+{% endschema %}

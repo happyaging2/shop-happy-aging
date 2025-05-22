@@ -1,0 +1,125 @@
+<div class="{% if section.settings.show_border_top %}border-t border-black{% endif %} py-16 pt-8">
+  <div class="site-container">
+      <div class="lg:px-0">
+      {%- comment -%} Image Container {%- endcomment -%}
+      <div class="">
+        {% comment %} DESKTOP IMAGE: {% endcomment %}
+        {%- if section.settings.image_desk -%}
+          {%- liquid
+            assign ratio = 40
+          -%}
+          <div
+            class="d-none lg:block"
+          >
+            <div
+              class="media media--transparent ratio"
+              style="--ratio-percent: {{ ratio }}%;"
+            >
+              {{ section.settings.image_desk | image_url: width: 2000 | image_tag: class: 'object-cover', loading: 'lazy' }}
+            </div>
+          </div>
+        {%- else -%}
+          <div class="d-none lg:block" style="height: 20vw;">
+            {{ 'collection-apparel-1' | placeholder_svg_tag: 'w-full h-full' }}
+          </div>
+        {%- endif -%}
+        {% comment %} MOBILE IMAGE: {% endcomment %}
+        {%- if section.settings.image_mob -%}
+          {%- liquid
+            assign ratio = 1 | divided_by: section.settings.image_mob.aspect_ratio | times: 100
+          -%}
+          <div class="lg:hidden">
+            <div class="media media--transparent ratio" style="--ratio-percent: {{ ratio }}%">
+              {{ section.settings.image_mob | image_url: width: 2000 | image_tag: class: 'object-cover', loading: 'lazy' }}
+            </div>
+          </div>
+        {%- else -%}
+          <div class="lg:hidden">
+            {{ 'collection-apparel-2' | placeholder_svg_tag: 'w-full' }}
+          </div>
+        {%- endif -%}
+      </div>
+      {% comment %} Text Container {% endcomment %}
+      <div class="flex flex-col lg:flex-row justify-between items-start pt-6 lg:pt-10">
+        <div class="flex flex-col max-w-[490px]">
+          {% if section.settings.eyebrow_text != blank %}
+            <div class="eyebrow mb-4">{{ section.settings.eyebrow_text }}</div>
+          {% endif %}
+          {%- if section.settings.title != blank -%}
+            <div class="flex flex-col lg:flex-row items-baseline gap-2 mb-6">
+              <h2 class="heading !text-[50px]">{{ section.settings.title }}</h2>
+            </div>
+          {%- endif -%}
+          {% if section.settings.body_text != blank %}
+            <div class="rte li-circle">{{ section.settings.body_text }}</div>
+          {% endif %}
+        </div>
+        {% if section.settings.button_text != blank %}
+          <floating-cta class="block mt-10 lg:mt-0 text-center lg:text-left w-full lg:w-auto">
+            <button class="button button--black">{{ section.settings.button_text }}</button>
+          </floating-cta>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Banner v2",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desk",
+      "label": "Image Desktop"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image_mob",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_text",
+      "label": "Eyebrow Text",
+      "default": "WHY WAIT?"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Heading Text",
+      "default": "<p>YOUR CALM <em>starts now</em></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body Text",
+      "default": "<p>Don't let stress hold you back. With Calm Shot, you can approach every challenge with clarity, focus, and peace of mind. Take control today! try Calm Shot and experience the difference!</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Get Calm"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border_top",
+      "label": "Show Top Border",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner v2",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

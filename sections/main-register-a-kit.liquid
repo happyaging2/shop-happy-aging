@@ -1,0 +1,442 @@
+{{ 'register-a-kit.css' | asset_url | stylesheet_tag }}
+
+<main-register-kit>
+  <section class="register-a-kit-section w-full">
+    <div data-section-type="register-a-kit" data-section-id="{{ section.id }}">
+      <section class="flex flex-col">
+        {% if section.settings.title != blank %}
+          <div class="register-a-kit__title mb-2">{{ section.settings.title }}</div>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <div class="register-a-kit__subtitle mb-8">
+            {{ section.settings.subtitle | strip_html | newline_to_br }}
+          </div>
+        {% endif %}
+        <form class="register-a-kit__form">
+          <fieldset>
+            <legend>your Personal Information</legend>
+
+            <div class="register-a-kit__form__input-email flex pt-4 pb-4">
+              <input type="hidden" required name="email" value="{{ customer.email }}">
+              <input type="hidden" required name="externalId" value="{{ customer.id }}">
+
+              <label for="email">Email: </label>
+              <p style="padding-left: 3px;">{{ customer.email }}</p>
+            </div>
+
+            <div class="register-a-kit__form__input first_name">
+              <div class="text-input relative">
+                <input
+                  type="text"
+                  id="first_name"
+                  name="firstName"
+                  placeholder=" "
+                  required
+                  autocomplete="one-time-code"
+                >
+                <label for="first_name" class="register-a-kit__form__label">First Name</label>
+              </div>
+              <div></div>
+            </div>
+
+            <div class="register-a-kit__form__input last_name">
+              <div class="text-input relative">
+                <input
+                  type="text"
+                  id="last_name"
+                  required
+                  name="lastName"
+                  placeholder=" "
+                  autocomplete="one-time-code"
+                >
+                <label for="last_name" class="register-a-kit__form__label">Last Name</label>
+              </div>
+              <div></div>
+            </div>
+
+            <div class="mt-8 register-a-kit__form-date-block">
+              <p class="mb-2 mt-11 register-a-kit__form__label-title">Date of Birth</p>
+              <small class="mb-3 register-a-kit__form__label-subtitle"
+                >Enter your DOB to calculate your biological-to-chronological age ratio.</small
+              >
+              <div class="location-row register-a-kit__form__date  d-grid md:grid-cols-4 md:gap-8 mt-4">
+                <div class="text-input relative">
+                  <div class="h-full relative -top-[1px] text-sm pr-3">
+                    <select-input>
+                      <select
+                        id="month"
+                        class="absolute top-0 left-0 w-full h-full z-10 opacity-0 cursor-pointer"
+                        name="month"
+                        required
+                      >
+                        <option value="" selected disabled>--Please choose an option--</option>
+                      </select>
+                      <div class="h-full d-grid grid-cols-[1fr_auto] items-center">
+                        <div class="h-full relative">
+                          <div class="absolute w-full top-0 left-0 h-full d-grid items-center pt-4">
+                            <span class="select-target truncate w-full"></span>
+                          </div>
+                        </div>
+
+                        {% render 'arrow-svg' %}
+                      </div>
+                    </select-input>
+                  </div>
+                  <label
+                    for="month"
+                    class="relative !left-0 register-a-kit__form__label"
+                    >Month</label
+                  >
+                </div>
+
+                <div class="text-input relative">
+                  <div class="h-full relative -top-[1px] text-sm pr-3">
+                    <select-input>
+                      <select
+                        id="day"
+                        required
+                        class="absolute top-0 left-0 w-full h-full z-10 opacity-0 cursor-pointer"
+                        name="day"
+                      >
+                        <option value="" selected disabled>--Please choose an option--</option>
+                      </select>
+                      <div class="h-full d-grid grid-cols-[1fr_auto] items-center">
+                        <div class="h-full relative">
+                          <div class="absolute w-full top-0 left-0 h-full d-grid items-center pt-4">
+                            <span class="select-target truncate w-full"></span>
+                          </div>
+                        </div>
+                        {% render 'arrow-svg' %}
+                      </div>
+                    </select-input>
+                  </div>
+                  <label for="day" class="relative !left-0 register-a-kit__form__label">Day</label>
+                </div>
+
+                <div class="text-input relative">
+                  <div class="h-full relative -top-[1px] text-sm pr-3">
+                    <select-input>
+                      <select
+                        id="year"
+                        required
+                        class="absolute top-0 left-0 w-full h-full z-10 opacity-0 cursor-pointer"
+                        name="year"
+                      >
+                        <option value="" selected disabled>--Please choose an option--</option>
+                      </select>
+                      <div class="h-full d-grid grid-cols-[1fr_auto] items-center">
+                        <div class="h-full relative">
+                          <div class="absolute w-full top-0 left-0 h-full d-grid items-center pt-4">
+                            <span class="select-target truncate w-full"></span>
+                          </div>
+                        </div>
+                        {% render 'arrow-svg' %}
+                      </div>
+                    </select-input>
+                  </div>
+                  <label for="year" class="relative !left-0 register-a-kit__form__label">Year</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 register-a-kit__form-sex-block">
+              <p class="mb-2 mt-11 register-a-kit__form__label-title">Sex Assigned at Birth</p>
+              <div class="location-row d-grid md:grid-cols-6 md:gap-8 register-a-kit__form__birth__block">
+                <div class="text-input relative">
+                  <div class="h-full relative -top-[1px] text-sm pr-3">
+                    <select-input>
+                      <select
+                        id="sex"
+                        required
+                        class="absolute top-0 left-0 w-full h-full z-10 opacity-0 cursor-pointer"
+                        name="sex"
+                      >
+                        <option value="" selected disabled>--Please choose an option--</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                      <div class="h-full d-grid grid-cols-[1fr_auto] items-center">
+                        <div class="h-full relative">
+                          <div class="absolute w-full top-0 left-0 h-full d-grid items-center pt-4">
+                            <span class="select-target truncate w-full"></span>
+                          </div>
+                        </div>
+                        {% render 'arrow-svg' %}
+                      </div>
+                    </select-input>
+                  </div>
+                  <label for="sex" class="relative !left-0 mb-2">Gender</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <section class="mt-10 register-a-kit__form-section-barcode">
+            <h1 class="mb-5 register-a-kit__form__barcode">YOUR TEST BARCODE</h1>
+            <div class="barcode-block flex flex-wrap gap-8">
+              <div class="barcode-block__image">
+                {% comment %} <img src="{{ section.settings.image_barcode | img_url: 'medium'}}"> {% endcomment %}
+                <img src="{{ 'barcode-new.png' | file_url }}">
+              </div>
+
+              <div class="barcode-block__form">
+                <div class="barcode-block__form-info mb-6">
+                  Make sure to include all three lines of the barcode with no spaces. For example: "000112345ABCDEFG."
+                  See the image for reference.
+                </div>
+
+                <div class="location-row md:gap-8 barcode-block__form-input">
+                  <div class="text-input relative">
+                    <input
+                      type="text"
+                      id="barcode"
+                      required
+                      name="barcode"
+                      autocomplete="one-time-code"
+                    >
+                    <label for="barcode" class="register-a-kit__form__label">16 - Alphanumeric Barcode</label>
+                  </div>
+                </div>
+
+                <div class="location-row  md:gap-8 barcode-block__form-input barcodeConfirm">
+                  <div class="text-input relative">
+                    <input
+                      type="text"
+                      id="barcodeConfirm"
+                      name="barcodeConfirm"
+                      required
+                      autocomplete="one-time-code"
+                    >
+                    <label for="barcodeConfirm" class="register-a-kit__form__label">Confirm Barcode </label>
+                  </div>
+                </div>
+                {% comment %}<span class="error-message text-red"></span>{% endcomment %}
+              </div>
+            </div>
+            <div>
+              <div class="mt-8 register-a-kit__form__collection">
+                <p class="mb-2 register-a-kit__form__collection-subtitle">Date of Sample Collection</p>
+                <div class="location-row d-grid md:grid-cols-6 md:gap-8 mb-8">
+                  <div class="text-input relative register-a-kit__form__collection-input">
+                    <div class="h-full relative -top-[1px] text-sm">
+                      <div class="custom-date">
+                        <input type="date">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="mb-2 register-a-kit__form__collection-subtitle">Height</p>
+                <div class="flex d-grid md:grid-cols-4 md:gap-8 mt-4 mb-8">
+                  <div class="location-row ">
+                    <div class="text-input relative flex">
+                      <div>
+                        <input
+                          required
+                          type="number"
+                          id="feet"
+                          name="feet"
+                          autocomplete="one-time-code"
+                        >
+                        <label for="feet" class="register-a-kit__form__label">Feet</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="location-row ">
+                    <div class="text-input relative ">
+                      <input
+                        required
+                        type="number"
+                        id="inches"
+                        name="inches"
+                        autocomplete="one-time-code"
+                      >
+
+                      <label for="inches" class="register-a-kit__form__label">Inches</label>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="mb-2 register-a-kit__form__collection-subtitle">Weight</p>
+                <div class="flex d-grid md:grid-cols-4 md:gap-8 mt-4 mb-8">
+                  <div class="location-row ">
+                    <div class="text-input relative ">
+                      <input
+                        type="number"
+                        id="weight"
+                        required
+                        name="weight"
+                        autocomplete="one-time-code"
+                      >
+                      <label for="weight" class="register-a-kit__form__label">Pounds</label>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="mb-2 register-a-kit__form__collection-subtitle">Alcohol Use</p>
+
+                <div class="location-row d-grid md:grid-cols-6 md:gap-8 mb-8">
+                  <div class="text-input relative register-a-kit__form__collection-input">
+                    <div class="h-full relative -top-[1px] text-sm pr-3">
+                      <select-input>
+                        <select
+                          id="alcoholUse"
+                          required
+                          class="absolute top-0 left-0 w-full h-full z-10 opacity-0 cursor-pointer"
+                          name="alcoholUse"
+                        >
+                          <option value="" selected disabled>--Please choose an option--</option>
+                          <option value="Regularly">Regularly</option>
+                          <option value="TimesPerWeek35">3-5 Times Per Week</option>
+                          <option value="OncePerWeek">Once Per Week</option>
+                          <option value="OnSpecialOccasions">On Special Occasions</option>
+                          <option value="Never">Never</option>
+                        </select>
+                        <div class="h-full d-grid grid-cols-[1fr_auto] items-center">
+                          <div class="h-full relative">
+                            <div class="absolute w-full top-0 left-0 h-full d-grid items-center pt-4">
+                              <span class="select-target truncate w-full"></span>
+                            </div>
+                          </div>
+                          {% render 'arrow-svg' %}
+                        </div>
+                      </select-input>
+                    </div>
+                    <label for="alcoholUse" class="relative !left-0 mb-2">Select One</label>
+                  </div>
+                </div>
+
+                <p class="mb-2 register-a-kit__form__collection-subtitle">Ethnicity</p>
+
+                <div class="location-row d-grid md:grid-cols-6 md:gap-8 mb-8">
+                  <div class="text-input relative register-a-kit__form__collection-input">
+                    <div class="h-full relative -top-[1px] text-sm pr-3">
+                      <select-input>
+                        <select
+                          id="ancestryEthnicity"
+                          required
+                          class="absolute top-0 left-0 w-full h-full z-10 opacity-0 cursor-pointer"
+                          name="ancestryEthnicity"
+                        >
+                          <option value="" selected disabled>--Please choose an option--</option>
+                          <option value="Asian">Asian</option>
+                          <option value="PacificIslanderOrOceanian">Pacific Islander or Oceanian</option>
+                          <option value="SubSaharanAfrican">Sub-Saharan African</option>
+                          <option value="NativeAmericanOrAlaskaNative">Native American or Alaskan Native</option>
+                          <option value="LatinoOrHispanic">Latino or Hispanic</option>
+                          <option value="EuropeanOrCaucasian">European or Caucasian</option>
+                          <option value="MiddleEasternOrNorthAfrican">Middle Eastern or North African</option>
+                          <option value="AfricanAmericanOBlack">African American or Black</option>
+                        </select>
+                        <div class="h-full d-grid grid-cols-[1fr_auto] items-center">
+                          <div class="h-full relative">
+                            <div class="absolute w-full top-0 left-0 h-full d-grid items-center pt-4">
+                              <span class="select-target truncate w-full"></span>
+                            </div>
+                          </div>
+                          {% render 'arrow-svg' %}
+                        </div>
+                      </select-input>
+                    </div>
+                    <label for="ancestryEthnicity" class="relative !left-0 mb-2">Select One</label>
+                  </div>
+                </div>
+
+                <p class="mb-2 register-a-kit__form__collection-subtitle" style="display: none;">Ancestry Ethnicity</p>
+
+                <div class="location-row d-grid md:grid-cols-6 md:gap-8 mb-8" style="display: none;">
+                  <div class="text-input relative register-a-kit__form__collection-input">
+                    <div class="h-full relative -top-[1px] text-sm pr-3">
+                      <select-input>
+                        <select
+                          id="rejuvenationOlympicsConsent"
+                          required
+                          class="absolute top-0 left-0 w-full h-full z-10 opacity-0 cursor-pointer"
+                          name="rejuvenationOlympicsConsent"
+                        >
+                          <option value="" disabled>--Please choose an option--</option>
+                          <option selected value="Blank">Blank</option>
+                          <option value="Accept">Accept</option>
+                          <option value="Decline">Decline</option>
+                        </select>
+                        <div class="h-full d-grid grid-cols-[1fr_auto] items-center">
+                          <div class="h-full relative">
+                            <div class="absolute w-full top-0 left-0 h-full d-grid items-center pt-4">
+                              <span class="select-target truncate w-full"></span>
+                            </div>
+                          </div>
+                          {% render 'arrow-svg' %}
+                        </div>
+                      </select-input>
+                    </div>
+                    <label for="rejuvenationOlympicsConsent" class="relative !left-0 mb-2">Select One</label>
+                  </div>
+                </div>
+
+                <div class="mt-6">
+                  <label
+                    for="terms-policy"
+                    class="register-a-kit__form__policy flex gap-4 items-center"
+                  >
+                    <div
+                      class="flex min-w-4 min-h-4 max-w-4 max-h-4 rounded-full border items-center justify-center cursor-pointer"
+                    >
+                      <input
+                        type="radio"
+                        id="terms-policy"
+                        name="policy"
+                        value=""
+                        class="appearance-none checked:bg-black rounded-full w-2 h-2 cursor-pointer"
+                      >
+                    </div>
+                    <span
+                      >I have read and agree to the
+                      <a
+                        target="_blank"
+                        href="/pages/terms-and-conditions"
+                        class="underline"
+                        >Terms of Service</a
+                      >and<a
+                        href="/pages/privacy-policy"
+                        target="_blank"
+                        class="underline"
+                        >Privacy Statement</a
+                      ></span
+                    >
+                  </label>
+                </div>
+                <div class="error-message pt-5"></div>
+                <div class="register-a-kit__form__button">
+                  <button type="submit">Register My Test</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </form>
+      </section>
+    </div>
+  </section>
+</main-register-kit>
+{% schema %}
+{
+  "name": "Main REGISTER a kit",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "QuIckly register your kit below. Make sure to use your kits barcode, oterwise we are unable to process your results"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_barcode",
+      "label": "Image Barcode"
+    }
+  ]
+}
+{% endschema %}

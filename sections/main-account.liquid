@@ -1,0 +1,485 @@
+<script src="{{ 'web-components-site-modal.js' | asset_url }}" defer></script>
+
+<div class="d-grid justify-items-center items-center pt-14 md:pt-16 text-center px-4 mb-6 lg:mb-20 lg:pt-14 lg:px-8 pb-10 lg:pb-16 border-b main-account-head">
+  <svg viewBox="0 0 62 49" class="fill-black d-none md:block w-[54px] lg:w-[68px] mb-9">
+    {% render "symbol-logo" %}
+  </svg>
+  <h1
+    class="heading heading--1 mb-3 lg:mb-[10px] flex flex-col lg:flex-row lg:gap-3 uppercase js-info main-account-head__title"
+    data-email="{{ customer.email }}"
+  >
+    Welcome, {{ customer.first_name }}
+  </h1>
+</div>
+<div class="site-container px-4 main-account">
+  <div class="lg:px-24 xl:px-32 main-account__wrapper">
+    <setting-selector class="pt-6 pb-16 md:pb-20 d-grid lg:grid-cols-[0.8fr_2fr] lg:gap-16 xl:gap-48 m-wrapper-content">
+      <div class="flex md:justify-center lg:justify-start lg:grid lg:content-start overflow-auto -mx-4 w-screen lg:w-auto lg:overflow-none hide-scrollbar mb-6 lg:mb-0 m-dropdown cursor-pointer main-account__menu">
+        <button
+          class="active setting-option eyebrow text-left pb-3 md:pb-4 pr-3 whitespace-nowrap ml-4 lg:ml-0"
+          data-setting="details"
+        >
+          <span>Account Details</span>
+        </button>
+        <button
+          class="setting-option eyebrow text-left pb-3 md:pb-4 px-3 lg:px-0 whitespace-nowrap"
+          data-setting="subscriptions"
+        >
+          <span>Subscriptions</span>
+        </button>
+        <button
+          class="setting-option eyebrow text-left pb-3 md:pb-4 px-3 lg:px-0 whitespace-nowrap mr-3"
+          data-setting="history"
+        >
+          <span>Order History</span>
+        </button>
+        <button
+          class="setting-option eyebrow text-left pb-3 md:pb-4 px-3 lg:px-0 whitespace-nowrap mr-3"
+          data-setting="bio-age-test"
+        >
+          <span>HA Bio Age Test</span>
+        </button>
+        <a
+          class="setting-option eyebrow text-left pb-3 md:pb-4 px-3 lg:px-0 whitespace-nowrap mr-3"
+          href="{{ routes.account_logout_url }}"
+        >
+          <span>Logout</span>
+        </a>
+      </div>
+      <div class="setting-container" data-setting="details">
+        <h4 class="heading--4 mb-6 !capitalize">Profile Settings</h4>
+        <div class="d-grid gap-6 lg:gap-8 mb-16 lg:mb-24">
+          <div class="border-b border-black border-opacity-30">
+            <div class="d-grid text-sm">
+              <div class="py-4 border-b border-black border-opacity-30 md:flex items-center justify-between">
+                <span class="opacity-50">User Name</span>
+                <p>{{ customer.name }}</p>
+              </div>
+              <div class="py-4 border-b border-black border-opacity-30 md:flex items-center justify-between">
+                <span class="opacity-50">Email</span>
+                <p>{{ customer.email }}</p>
+              </div>
+              <div class="py-4 md:flex items-center justify-between">
+                <span class="opacity-50">Password</span>
+                <p>**************</p>
+              </div>
+            </div>
+          </div>
+          <button class="edit-settings button button--black !max-w-[unset] lg:!max-w-80">Edit Settings</button>
+        </div>
+        <h2 class="heading--4 mb-6 !capitalize">Shipping Details</h2>
+        <div class="d-grid gap-6 lg:gap-8 mb-16 lg:mb-24">
+          <div class="border-b border-black border-opacity-30">
+            <div class="d-grid text-sm">
+              <div class="pt-4 md:flex items-start justify-between">
+                <span class="opacity-50">Address</span>
+                <p class="md:text-right">
+                  {{ customer.name }}
+                  <br>
+                  {% unless customer.default_address.company == blank %}
+                    {{ customer.default_address.company }}
+                    <br>
+                  {% endunless %}
+                  {% unless customer.default_address.street == blank %}
+                    {{ customer.default_address.street }}
+                  {% endunless %}
+                  <br>
+                  {% unless customer.default_address.province == blank %}
+                    {{ customer.default_address.province }},
+                  {% endunless %}
+                  {% unless customer.default_address.city == blank %}
+                    {{ customer.default_address.city }},
+                  {% endunless %}
+                  {% unless customer.default_address.zip == blank %}
+                    {{ customer.default_address.zip }}
+                  {% endunless %}
+                  {% unless customer.default_address.phone == blank %}
+                    <br>
+                    {{ customer.default_address.phone }}
+                  {% endunless %}
+                </p>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="edit-address button button--black !max-w-[unset] lg:!max-w-80">
+            {% if customer.default_address.street == blank %}Add Details{% else %}Edit Details{% endif %}
+          </button>
+        </div>
+        <div class="d-grid lg:justify-end">
+          <a href="/account/logout" class="text-sm underline">Sign Out</a>
+        </div>
+      </div>
+      <div data-setting="subscriptions" class="d-none setting-container w-full">
+        <h2 class="heading--4 mb-6 !capitalize">Subscriptions</h2>
+        <div class="aspect-[0.8] md:aspect-[1.4]">
+          <div class="w-full h-full bg-[#E5DBCC]">
+            <div class="relative h-full w-full">
+              <div class="absolute top-0 left-0 w-full h-full z-20 p-5 lg:p-10 d-grid justify-items-start content-start gap-4">
+                <p class="text-cream text-xs">Need help accessing your subscriptions?</p>
+                <a class="button button--black button--hover-cream !w-auto" href="/a/subscriptions/login"
+                  >Manage Subscriptions</a
+                >
+              </div>
+              <div class="d-none md:block absolute top-0 left-0 w-full h-full z-10">
+                <img
+                  src="{{ section.settings.subscription_image_desktop | img_url: '1500x' }}"
+                  loading="lazy"
+                  class="absolute top-0 left-0 w-full h-full object-cover object-center"
+                >
+              </div>
+              <div class="md:hidden absolute top-0 left-0 w-full h-full z-10">
+                <img
+                  src="{{ section.settings.subscription_image_mobile | img_url: '800x' }}"
+                  loading="lazy"
+                  class="absolute top-0 left-0 w-full h-full object-cover object-center"
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-none d-grid setting-container" data-setting="history">
+        <h2 class="heading--4 mb-6 !capitalize">Order History</h2>
+        {% if customer.orders.size == 0 %}
+          <p class="border-b border-black mb-8 pb-6 text-sm">No orders just yet.</p>
+          <a class="button button--black !max-w-[unset] lg:!max-w-80" href="/collections/goatmeal">Shop Products</a>
+        {% else %}
+          {% for order in customer.orders %}
+            <a
+              href="{{ order.order_status_url }}"
+              class="border-b border-black py-6 {% unless forloop.last %}mb-6{% endunless %}"
+            >
+              <div class="flex items-center justify-between lg:justify-start gap-5 pb-4 border-b border-black border-opacity-30">
+                <h3 class="heading--3">#{{ order.order_number }}</h3>
+                <span class="block eyebrow -mb-1 flex items-center justify-center h-5 lg:h-7 rounded-full bg-peanut-butter ml-auto lg:mx-0">
+                  {{ order.fulfillment_status_label }}
+                </span>
+              </div>
+              <div class="d-grid gap-5 mt-6 text-sm">
+                {% for item in order.line_items %}
+                  <div class="d-grid grid-cols-[64px_1fr] md:grid-cols-[56px_1fr_1fr] items-center gap-3">
+                    <div class="relative">
+                      <img width="64" src="{{ item.product.featured_image | img_url: '128x' }}" loading="lazy">
+                    </div>
+                    <div class="d-grid justify-items-start md:gap-1">
+                      <span>{{ item.title }}</span>
+                    </div>
+                    <div class="flex justify-between items-center w-full md:grid md:grid-flow-col md:auto-cols-fr lg:pl-12 col-span-2 md:col-span-1">
+                      <span>
+                        <span class="md:hidden">Qty: </span>
+                        {{ item.quantity -}}
+                      </span>
+                      <span class="font-body-bold md:hidden">
+                        {{ item.final_line_price | money }}
+                      </span>
+                      <span class="d-none md:block md:text-right">
+                        {% if item.final_line_price == 0 %}
+                          Free
+                        {% else %}
+                          {{ item.price | money }}
+                        {% endif %}
+                      </span>
+                      <span class="d-none md:block md:text-right">
+                        {% if item.final_line_price == 0 %}
+                          Free
+                        {% else %}
+                          {{ item.final_line_price | money }}
+                        {% endif %}
+                      </span>
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="d-grid md:grid-cols-[2fr_1fr] items-end gap-2 md:gap-6">
+                  <div class="order-2 md:order-1">
+                    <p>Order Date: {{ order.created_at | date: '%m/%d/%Y' }}</p>
+                  </div>
+                  <div class="order-1 md:order-2 d-grid gap-2 border-t border-black border-opacity-30 pt-2 md:pt-4">
+                    <div class="flex items-center justify-between">
+                      <span>Shipping:</span>
+                      <span>
+                        {% if order.shipping_price == 0 %}
+                          Free
+                        {% else %}
+                          {{ order.shipping_price | money }}
+                        {% endif %}
+                      </span>
+                    </div>
+                    <div class="flex items-center justify-between font-body-medium">
+                      <span>Total:</span>
+                      <span>{{ order.total_price | money }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          {% endfor %}
+        {% endif %}
+      </div>
+      {% render 'bio-age-test-content' %}
+    </setting-selector>
+  </div>
+</div>
+
+{%- for address in customer.addresses -%}
+  <site-modal data-trigger=".edit-settings">
+    {% capture modal_content %}
+      <div class="px-6 py-12">
+        <div class="mb-8 d-grid grid-cols-[1fr_auto] gap-4">
+          <h3 class="heading--3">Edit Profile Settings</h3>
+          <button class="modal-close">
+            {% render 'icon-close' %}
+          </button>
+        </div>
+        {%- form 'customer_address', address -%}
+          <div class="text-input relative mb-3 md:mb-5">
+            <input
+              class="opacity-50"
+              type="email"
+              disabled
+              value="{{ customer.email }}"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete=""
+              placeholder=" ">
+            <label for="AddressEmail_{{ form.id }}">Email</label>
+          </div>
+          <div class="text-input relative mb-3 md:mb-5">
+            <input
+              class="opacity-50"
+              type="password"
+              value="**************"
+              id="AddressPassword_{{ form.id }}"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete=""
+              placeholder=" ">
+            <label for="AddressPassword_{{ form.id }}">Password</label>
+            <reset-password>
+              <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 underline z-10 text-sm">Reset</button>
+            </reset-password>
+          </div>
+          <div class="text-input relative mb-3 md:mb-5">
+            <input
+              type="text"
+              value="{{ form.first_name }}"
+              name="address[first_name]"
+              id="AddressFirstName_{{ form.id }}"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="given-name"
+              placeholder=" ">
+            <label for="AddressFirstName_{{ form.id }}">{{ 'customer.addresses.first_name' | t }}</label>
+          </div>
+          <div class="text-input relative">
+            <input
+              type="text"
+              value="{{ form.last_name }}"
+              name="address[last_name]"
+              id="AddressLastName_{{ form.id }}"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="family-name"
+              placeholder=" ">
+            <label for="AddressLastName_{{ form.id }}">{{ 'customer.addresses.last_name' | t }}</label>
+          </div>
+          <div class="d-grid md:justify-end mt-8">
+            <button class="button button--black px-5">Save Settings</button>
+          </div>
+        {%- endform -%}
+      </div>
+    {% endcapture %}
+    {% render 'site-modal', modal_content: modal_content, width: 'max-w-lg' %}
+  </site-modal>
+{% endfor %}
+
+{%- for address in customer.addresses -%}
+  <site-modal data-trigger=".edit-address">
+    {% capture modal_content %}
+      <div class="px-6 py-12">
+        <div class="d-grid grid-cols-[1fr_auto] gap-4">
+          <h3 class="heading--3">{% if customer.default_address.street == blank %}Add Shipping Details{% else %}Edit Shipping Details{% endif %}</h3>
+            <button class="modal-close">
+              {% render 'icon-close' %}
+            </button>
+        </div>
+        {%- form 'customer_address', address -%}
+          <div class="mt-8">
+            <div class="d-grid md:grid-cols-2 gap-3 md:gap-4 mb-3 md:mb-5">
+              <div class="text-input relative">
+                <input
+                  type="text"
+                  id="AddressFirstName"
+                  name="address[first_name]"
+                  value="{{ form.first_name }}"
+                  autocomplete="given-name"
+                  placeholder=" "
+                  required>
+                <label for="AddressFirstName">{{ 'customer.addresses.first_name' | t }}*</label>
+              </div>
+              <div class="text-input relative">
+                <input
+                  type="text"
+                  id="AddressLastName"
+                  name="address[last_name]"
+                  value="{{ form.last_name }}"
+                  autocomplete="family-name"
+                  placeholder=" "
+                  required>
+                <label for="AddressLastName">{{ 'customer.addresses.last_name' | t }}*</label>
+              </div>
+            </div>
+            <div class="text-input relative mb-3 md:mb-5">
+              <input
+                type="text"
+                id="AddressAddress1"
+                name="address[address1]"
+                value="{{ form.address1 }}"
+                autocomplete="address-line1"
+                placeholder=" "
+                required>
+              <label for="AddressAddress1">{{ 'customer.addresses.address1' | t }}*</label>
+            </div>
+            <div class="text-input relative mb-3 md:mb-5">
+              <input
+                type="text"
+                id="AddressAddress2"
+                name="address[address2]"
+                value="{{ form.address2 }}"
+                autocomplete="address-line2"
+                placeholder=" ">
+              <label for="AddressAddress2">{{ 'customer.addresses.address2' | t }}</label>
+            </div>
+            <div class="d-grid grid-cols-2 gap-3 md:gap-4 mb-3 md:mb-5">
+              <div class="text-input relative">
+                <input
+                  type="text"
+                  id="AddressCity"
+                  name="address[city]"
+                  value="{{ form.city }}"
+                  autocomplete="address-level2"
+                  placeholder=" "
+                  required>
+                <label for="AddressCity">{{ 'customer.addresses.city' | t }}*</label>
+              </div>
+              <div class="text-input relative">
+                <input
+                  type="text"
+                  id="AddressZip"
+                  name="address[zip]"
+                  value="{{ form.zip }}"
+                  autocapitalize="characters"
+                  autocomplete="postal-code"
+                  placeholder=" "
+                  required>
+                <label for="AddressZip">{{ 'customer.addresses.zip' | t }}*</label>
+              </div>
+            </div>
+            <div class="d-grid md:grid-cols-2 gap-3 md:gap-4 mb-3 md:mb-5">
+              <div class="text-input relative">
+                <country-select class="h-full" {% unless address.country == blank %}data-active="{{ address.country }}"{% endunless %}>
+                  <div class="h-full relative -top-[1px] text-sm">
+                    <select-input>
+                      <select
+                        id="AddressCountry"
+                        class="absolute top-0 left-0 w-full h-full z-10 opacity-0 cursor-pointer"
+                        name="address[country]"
+                        data-default="{{ form.country }}"
+                        value="{{ customer.addresses.country }}"
+                        autocomplete="country"
+                        required>
+                        {{ country_option_tags }}
+                      </select>
+                      <div class="h-full d-grid grid-cols-[1fr_auto] items-center lg:pl-3">
+                        <div class="h-full relative">
+                          <div class="absolute w-full top-0 left-0 h-full d-grid items-center pt-4">
+                            <span class="select-target truncate w-full"></span>
+                          </div>
+                        </div>
+                        <svg width="16" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="m1 1 7 7 7-7" stroke="currentColor"></path>
+                        </svg>
+                      </div>
+                    </select-input>
+                  </div>
+                  <label for="AddressCountry" class="relative">{{ 'customer.addresses.country' | t }}</label>
+                </country-select>
+              </div>
+              <div class="text-input relative">
+                <province-select class="h-full" {% unless address.province == blank %}data-active="{{ address.province }}"{% endunless %}>
+                  <div class="h-full relative -top-[1px] text-sm">
+                    <select-input>
+                      <select
+                        id="AddressProvince"
+                        class="absolute top-0 left-0 w-full h-full z-10 opacity-0 cursor-pointer"
+                        name="address[province]"
+                        data-default="{{ form.province }}"
+                        value="{{ customer.addresses.province }}"
+                        autocomplete="off"
+                        required>
+                      </select>
+                      <div class="h-full d-grid grid-cols-[1fr_auto] items-center lg:pl-3">
+                        <div class="h-full relative">
+                          <div class="absolute w-full top-0 left-0 h-full d-grid items-center pt-4">
+                            <span class="select-target truncate w-full"></span>
+                          </div>
+                        </div>
+                        <svg width="16" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="m1 1 7 7 7-7" stroke="currentColor"></path>
+                        </svg>
+                      </div>
+                    </select-input>
+                  </div>
+                  <label for="AddressProvince">{{ 'customer.addresses.province' | t }}</label>
+                </province-select>
+              </div>
+            </div>
+            <div class="text-input relative mb-3 md:mb-5">
+              <input
+                type="tel"
+                id="AddressPhone"
+                name="address[phone]"
+                value="{{ form.phone }}"
+                autocomplete="tel"
+                placeholder=" ">
+              <label for="AddressPhone" class="mb-2">{{ 'customer.addresses.phone' | t }}</label>
+            </div>
+            <div class="text-input relative">
+              <input
+                type="text"
+                id="AddressCompany"
+                name="address[company]"
+                value="{{ form.company }}"
+                autocomplete="organization"
+                placeholder=" ">
+              <label for="AddressCompany" class="mb-2">{{ 'customer.addresses.company' | t }}</label>
+            </div>
+            <div class="text-center d-grid md:flex md:justify-end items-center gap-4 mt-8">
+              <button class="order-2 md:order-1 modal-close text-sm" type="reset">{{ 'customer.addresses.cancel' | t }}</button>
+              <button class="order-1 md:order-2 button button--black">Save Details</button>
+            </div>
+          </div>
+        {%- endform -%}
+      </div>
+    {% endcapture %}
+    {% render 'site-modal', modal_content: modal_content, width: 'max-w-xl' %}
+  </site-modal>
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Main Account",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "subscription_image_desktop",
+      "label": "Subscription Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "subscription_image_mobile",
+      "label": "Subscription Image Mobile"
+    }
+  ]
+}
+{% endschema %}

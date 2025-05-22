@@ -1,0 +1,183 @@
+<div class="{{ section.settings.border }}">
+  <div class="lg:grid grid-cols-2">
+    <div class="order-2">
+      {% comment %} DESKTOP IMAGE: {% endcomment %}
+      {%- if section.settings.image_desk -%}
+        {%- liquid
+          assign ratio = 100
+          if section.settings.image_height_desk == 'adapt'
+            assign ratio = 1 | divided_by: section.settings.image_desk.aspect_ratio | times: 100
+          endif
+          if section.settings.image_height_desk == 'fit'
+            assign ratio = 0
+          endif
+        -%}
+        <div class="d-none lg:block" {% if section.settings.image_height_desk == 'fit' %}style="min-height: 40vw; height: 100%"{% endif %}>
+          <div class="media media--transparent ratio {% if section.settings.image_height_desk == 'fit' %}h-full{% endif %}" style="--ratio-percent: {{ ratio }}%;">
+            {{ section.settings.image_desk | image_url: width: 2000 | image_tag: class: 'object-cover', loading: 'lazy' }}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {% comment %} MOBILE IMAGE: {% endcomment %}
+      {%- if section.settings.image_mob -%}
+        {%- liquid
+          assign ratio = 100
+          if section.settings.image_height_mob == 'adapt'
+            assign ratio = 1 | divided_by: section.settings.image_mob.aspect_ratio | times: 100
+          endif
+        -%}
+        <div class="lg:hidden">
+          <div class="media media--transparent ratio" style="--ratio-percent: {{ ratio }}%">
+            {{ section.settings.image_mob | image_url: width: 2000 | image_tag: class: 'object-cover', loading: 'lazy' }}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+    <div class="px-5 py-14 lg:py-16 lg:px-20">
+      <div class="flex flex-col justify-center items-center h-full lg:min-h-[600px]">
+        <div class="lg:max-w-[410px]">
+          {%- if section.settings.text != blank -%}
+            <div class="text-sm mb-10">{{ section.settings.text }}</div>
+          {%- endif -%}
+
+          {%- if section.blocks.size > 0 -%}
+            <vertical-marquee data-duration="{{ section.settings.speed }}s" class="relative block overflow-hidden mb-10 lg:mb-20" style="height: 300px">
+              <div slot="content">
+                <div class="d-grid grid-flow-row">
+                  {%- for i in (1..20) -%}
+                    {%- for block in section.blocks -%}
+                      <div class="heading heading--3">
+                        <em>{{ block.settings.text }}</em>
+                      </div>
+                    {%- endfor -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+            </vertical-marquee>
+          {%- endif -%}
+
+          {%- if section.settings.cta_text != blank -%}
+            <a href="{{ section.settings.cta_link }}" class="cta">{{ section.settings.cta_text }}</a>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with Marquee",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "number",
+      "id": "speed",
+      "label": "Scrolling text speed",
+      "default": 120,
+      "info": "Recommended speed range is from 40 to 400"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desk",
+      "label": "Image Desktop"
+    },
+    {
+      "type": "select",
+      "id": "image_height_desk",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "fit",
+          "label": "Fit to content"
+        },
+      ],
+      "default": "square",
+      "label": "Image Height Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mob",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "select",
+      "id": "image_height_mob",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "square",
+      "label": "Image Height Mobile"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text"
+    },
+    {
+      "type": "select",
+      "id": "border",
+      "label": "Section Border",
+      "options": [
+        {
+          "value": "border-t border-black",
+          "label": "Top"
+        },
+        {
+          "value": "border-b border-black",
+          "label": "Bottom"
+        },
+        {
+          "value": "",
+          "label": "None"
+        }
+      ],
+      "default": ""
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "text_item",
+      "name": "Text Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Marquee"
+    }
+  ]
+}
+{% endschema %}

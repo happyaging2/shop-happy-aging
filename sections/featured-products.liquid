@@ -1,0 +1,145 @@
+<style>
+  .newline-em-mobile em {
+    display: block;
+  }
+  @media (min-width: 768px) {
+    .newline-em-mobile em {
+      display: inline;
+    }
+  }
+</style>
+{%- liquid
+  assign desktop_spacing = section.settings.spacing_desktop
+  assign mobile_spacing = section.settings.spacing_mobile
+-%}
+
+<div class="{% if section.settings.show_border_top %} {% if section.settings.hide_border_mobile %}{% else %} border-t {% endif %} lg:border-t border-black {% endif %}">
+  <div class="site-container {{ desktop_spacing }} {{ mobile_spacing }}">
+    {% unless section.settings.image_mobile == blank %}
+      <div class="relative w-full mb-5 md:hidden">
+        {% render 'image', image: section.settings.image_mobile, class: '' %}
+      </div>
+    {% endunless %}
+    {% unless section.settings.image_desktop == blank %}
+      <div class="relative d-none md:block mb-10 lg:mb-6 w-full pb-[36%] bg-beige">
+        {% render 'image', image: section.settings.image_desktop, class: 'site-image' %}
+      </div>
+    {% endunless %}
+    <div class="md:px-0 lg:grid lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        {% unless section.settings.eyebrow == blank %}
+          <div class="text-sm tracking-widest mb-5">
+            {{ section.settings.eyebrow }}
+          </div>
+        {% endunless %}
+        {% unless section.settings.title == blank %}
+          <h3 class="heading heading--1 mb-4 newline-em-mobile">
+            {{ section.settings.title }}
+          </h3>
+        {% endunless %}
+        {% unless section.settings.text == blank %}
+          <p class="paragraph paragraph--2 max-w-[550px]">
+            {{ section.settings.text }}
+          </p>
+        {% endunless %}
+      </div>
+      <div class="lg:col-span-4">
+        <div class="max-w-[230px] mt-12 mx-auto lg:mt-0 lg:ml-auto lg:mr-0 lg:mb-0">
+          {% unless section.settings.cta_text == blank or section.settings.cta_link == blank %}
+            <a href="{{ section.settings.cta_link }}" title="{{ section.settings.cta_text }}">
+              <button class="button button--black button--full-width">{{ section.settings.cta_text }}</button>
+            </a>
+          {% endunless %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Featured Products"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Image Desktop"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Label"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "header",
+      "content": "Options"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border_top",
+      "label": "Show top border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_border_mobile",
+      "label": "Hide top border on mobile",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "spacing_desktop",
+      "label": "Vertical spacing desktop",
+      "options": [
+        { "value": "lg:py-0", "label": "None" },
+        { "value": "lg:py-10", "label": "Thin" },
+        { "value": "lg:py-20", "label": "Large" },
+      ],
+      "default": "lg:py-10"
+    },
+    {
+      "type": "select",
+      "id": "spacing_mobile",
+      "label": "Vertical spacing mobile",
+      "options": [
+        { "value": "py-0", "label": "None" },
+        { "value": "py-10", "label": "Thin" },
+        { "value": "py-20", "label": "Large" },
+      ],
+      "default": "py-10"
+    }
+  ]
+}
+{% endschema %}
+

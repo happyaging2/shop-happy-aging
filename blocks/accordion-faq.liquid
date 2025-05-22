@@ -1,0 +1,95 @@
+<script src="{{ 'web-components-faqs.js' | asset_url }}" defer></script>
+
+<div
+  id="faqs"
+  class="px-8
+  {% if block.settings.is_background_default == "no" %} bg-beige {% endif %}
+  {% if block.settings.is_padding_top == "yes" %} pt-10 lg:pt-28 {% endif %}
+  {% if block.settings.is_margin_bottom == "yes" %} pb-10 lg:pb-28 {% else %} pb-10 lg:pb-16 {% endif %}"
+>
+  <div class="max-w-4xl flex flex-col mx-auto">
+    <div>
+      <h2 class="heading mb-9 lg:mb-4 max-w-60 lg:max-w-full !text-[50px]">{{ block.settings.title }}</h2>
+        {% content_for 'blocks' %}
+      </div>
+      {% if block.settings.callout_text != blank %}
+        <div class="text-xs leading-5 mt-10 underline-a">{{ block.settings.callout_text }}</div>
+      {% endif %}
+      </div>
+    </div>
+
+{% schema %}
+{
+  "name": "FAQs new",
+  "blocks": [{ "type": "_question" }],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "is_padding_top",
+      "label": "Padding Top?",
+      "default": "no",
+      "options": [
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "yes",
+          "label": "Yes"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "is_background_default",
+      "label": "Background Color Default?",
+      "default": "yes",
+      "options": [
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "yes",
+          "label": "Yes"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "is_margin_bottom", 
+      "label": "Margin extra bottom?",
+      "default": "no",
+      "options": [
+      {
+        "value": "no",
+        "label": "No"
+      },
+      {
+        "value": "yes",
+        "label": "Yes"
+      }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "callout_text",
+      "label": "Callout Text"
+    }
+
+  ],
+  "presets": [
+    {
+      "name": "FAQs new 2",
+      "settings": {
+        "title": "Frequently Asked Questions 2"
+      }
+    }
+  ]
+}
+{% endschema %}

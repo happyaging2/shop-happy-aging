@@ -1,0 +1,56 @@
+<div class="border-y border-black">
+  <div class="d-grid lg:grid-cols-2">
+    <div class="order-2 lg:order-1 d-grid content-center h-full px-4 lg:pl-7 min-[1472px]:pl-[calc(((100vw-1416px)/2)+52px)] lg:pr-0 py-4 lg:py-0">
+      {% for block in section.blocks %}
+        <div class="py-2 lg:py-6 lg:pr-16 xl:py-10 d-grid gap-4">
+          <span class="heading heading--2">{{ block.settings.title }}</span>
+          <div class="text-xs leading-5 restore-em">{{ block.settings.text }}</div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="order-1 lg:order-2">
+      <div class="aspect-square relative bg-beige border-b lg:border-b-0 lg:border-l lg:border-black">
+        {% unless section.settings.image == blank %}
+          <img class="absolute top-0 left-0 w-full h-full object-cover object-center" src="{{ section.settings.image | img_url: '1400x' }}" loading="lazy" />
+        {% endunless %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Fifty Fifty",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Text Block",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Title"
+        }, {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fifty Fifty"
+    }
+  ]
+}
+{% endschema %}

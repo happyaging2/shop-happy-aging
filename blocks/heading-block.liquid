@@ -1,0 +1,197 @@
+{% style %}
+  #shopify-block-{{ block.id }} .heading-block {
+    font-family: var(--font-heading-family);
+    color: {{ block.settings.text_color | default: 'inherit' }};
+    {% if block.settings.mobile_font_size > 0 %}
+      font-size: {{ block.settings.mobile_font_size | append: 'px' }};
+    {% else %}
+      font-size: 30px;
+    {% endif %}
+    {% if block.settings.mobile_line_height %}
+      line-height: {{ block.settings.mobile_line_height | append: 'px' }};
+    {% else %}
+      line-height: 1;
+    {% endif %}
+    {% if block.settings.letter_spacing %}
+      letter-spacing: {{ block.settings.letter_spacing | divided_by: 100.00 | append: 'em' }};
+    {% else %}
+      letter-spacing: inherit;
+    {% endif %}
+
+    padding-top: {{ block.settings.top_spacing_mobile }}px;
+    text-align: {{ block.settings.text_alignment_mobile }};
+  }
+  .heading-block em {
+    font-family: var(--font-heading-family-italic);
+  }
+  .heading-block a {
+    color: #ADA18F;
+  }
+  .heading-block__subheading {
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  @media (min-width: 1200px) {
+    {% if block.settings.max_width > 0 %}
+      #shopify-block-{{ block.id }} {
+        max-width: {{ block.settings.max_width }}px;
+      }
+    {% endif %}
+    .heading-block__subheading {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+    #shopify-block-{{ block.id }} .heading-block {
+      {% if block.settings.desktop_font_size > 0 %}
+        font-size: {{ block.settings.desktop_font_size | append: 'px' }};
+      {% else %}
+        font-size: 40px;
+      {% endif %}
+      {% if block.settings.desktop_line_height > 0 %}
+        line-height: {{ block.settings.desktop_line_height | append: 'px' }};
+      {% else %}
+        line-height: 1;
+      {% endif %}
+      padding-top: {{ block.settings.top_spacing_desktop }}px;
+      text-align: {{ block.settings.text_alignment_desktop }};
+    }
+  }
+
+  @media screen and (max-width:500px){
+    #shopify-block-{{ block.id }} .heading-block {
+      padding-left: {{ block.settings.lr_spacing_mobile }}px;
+      padding-right: {{ block.settings.lr_spacing_mobile }}px;
+    }
+  }
+  
+{% endstyle %}
+
+{% if block.settings.subheading != blank %}
+  <div class="heading-block__subheading">
+    {{ block.settings.subheading }}
+  </div>
+{% endif %}
+{% comment %}
+<{{ block.settings.tag_select }} class="heading-block">
+  {{ block.settings.text }}
+</{{ block.settings.tag_select }}>
+{% endcomment %}
+
+<div class="heading-block">
+  {{ block.settings.text }}
+</div>
+
+{% schema %}
+{
+  "name": "Heading block",
+  "class": "heading-block-wrapper",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "tag_select",
+      "label": "Tag",
+      "options": [
+        { "value": "h1", "label": "Heading 1" },
+        { "value": "h2", "label": "Heading 2" },
+        { "value": "h3", "label": "Heading 3" },
+        { "value": "h4", "label": "Heading 4" },
+        { "value": "h5", "label": "Heading 5" },
+        { "value": "h6", "label": "Heading 6" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "header",
+      "content": "Custom styles"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+    },
+    {
+      "type": "number",
+      "id": "letter_spacing",
+      "label": "Letter spacing %",
+    },
+    {
+      "type": "header",
+      "content": "Desktop styles"
+    },
+    {
+      "type": "number",
+      "id": "max_width",
+      "label": "Max width",
+    },
+    {
+      "type": "number",
+      "id": "desktop_font_size",
+      "label": "Desktop font size",
+    },
+    {
+      "type": "number",
+      "id": "desktop_line_height",
+      "label": "Desktop line height",
+    },
+    {
+      "type": "number",
+      "id": "top_spacing_desktop",
+      "label": "Desktop top spacing",
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_alignment_desktop",
+      "label": "Text alignment desktop",
+    }, 
+    
+    
+    
+    {
+      "type": "header",
+      "content": "Mobile styles"
+    },
+    {
+      "type": "number",
+      "id": "mobile_font_size",
+      "label": "Mobile font size",
+    },
+    {
+      "type": "number",
+      "id": "mobile_line_height",
+      "label": "Mobile line height",
+    },
+    {
+      "type": "number",
+      "id": "top_spacing_mobile",
+      "label": "Mobile top spacing",
+    },
+    {
+      "type": "number",
+      "id": "lr_spacing_mobile",
+      "label": "Mobile horizontal spacing",
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_alignment_mobile",
+      "label": "Text alignment mobile",
+    }
+  ],
+  "presets": [
+    {
+      "name": "Heading block"
+    }
+  ]
+}
+{% endschema %}

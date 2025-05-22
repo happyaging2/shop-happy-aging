@@ -1,0 +1,78 @@
+<div class="bg-deep-gray text-white">
+  <div class="site-container py-12 md:py-16 lg:py-20">
+    <div class="text-center d-grid justify-center">
+      <h1 class="heading heading--1 mb-8">{{ section.settings.title }}</h1>
+      <lp-subscribe data-klaviyo-list-id="{{ section.settings.klaviyo_list_id }}">
+        <form class="w-full md:max-w-2xl mx-auto">
+          <div class="d-grid md:grid-cols-2 md:gap-8">
+            <div class="text-input text-input--inverted relative">
+              <input type="text" id="first_name" name="first_name" placeholder=" " autocomplete="one-time-code" required>
+              <label for="first_name">First Name</label>
+            </div>
+            <div>
+              <div class="text-input text-input--inverted relative">
+                <input type="tel" id="phone" name="phone" placeholder=" " autocomplete="one-time-code" pattern="^\([1-9]\d{2}\) [1-9]\d{2}-\d{4}$" required>
+                <label for="phone">Phone Number</label>
+              </div>
+              <span class="text-xs opacity-50 block mt-2 px-2 lg:px-3 text-left">Format: (222) 222-2222</span>
+            </div>
+          </div>
+          <div class="text-input text-input--inverted relative">
+            <input type="email" id="email" name="email" placeholder=" " autocomplete="one-time-code" required>
+            <label for="email">Email Address</label>
+          </div>
+          <div class="my-4 lg:mb-0 flex">
+            <div class="relative">
+              <input
+                type="checkbox"
+                name="sms-consent"
+                id="sms-consent"
+                class="peer opacity-0 absolute top-0 left-0 w-full h-full cursor-pointer">
+              <span class="block mr-2 mt-1 w-5 h-5 flex items-center justify-center border border-cream rounded bg-cream text-deep-gray peer-checked:bg-transparent">
+                <svg width="16" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                  <path d="m28.998 8.531-2.134-2.134a1.006 1.006 0 0 0-1.423 0L12.646 19.192l-6.086-6.13a1.006 1.006 0 0 0-1.423 0l-2.134 2.134a1.006 1.006 0 0 0 0 1.423l8.924 8.984c.393.393 1.03.393 1.423 0L28.998 9.954a1.006 1.006 0 0 0 0-1.423z"/>
+                </svg>
+              </span>
+            </div>
+            <label for="sms-consent" class="text-xs mt-1 text-left">I accept receiving SMS text messages from Happy Aging. Standard rates and data may apply. Reply STOP to opt out. By signing up, you also agree to receive emails from Happy Aging.</label>
+          </div>
+          <div class="d-grid justify-center">
+            <button type="submit" class="button button--cream !max-w-[unset] !w-auto mt-8">{{ section.settings.cta_text }}</button>
+          </div>
+        </form>
+        <div class="success d-none text-base mt-4 text-center">{{ section.settings.success_text }}</div>
+      </lp-subscribe>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "LP Subscribe",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "LP Subscribe"
+    }
+  ],
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title"
+    }, {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text"
+    }, {
+      "type": "text",
+      "id": "klaviyo_list_id",
+      "label": "Klaviyo List ID"
+    }, {
+      "type": "text",
+      "id": "success_text",
+      "label": "Success Text"
+    }
+  ]
+}
+{% endschema %}

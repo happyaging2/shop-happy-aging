@@ -1,0 +1,106 @@
+<div class="py-10 lg:py-20 overflow-hidden {{ section.settings.border }}">
+  <div class="site-container">
+    {%- if section.settings.title != blank -%}
+      <div class="flex flex-col items-center justify-center gap-6 mx-auto max-w-[383px] lg:max-w-[525px] text-center">
+        <h2 class="heading heading--1">{{ section.settings.title }}</h2>
+        {%- if section.settings.text != blank -%}
+          <div class="text-sm max-w-[383px]">{{ section.settings.text }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    {%- if section.blocks.size > 0 and section.blocks[0].settings.image != blank -%}
+      {%- assign first_image = section.blocks[0].settings.image -%}
+      {%- assign image_aspect_ratio = 100 | divided_by: first_image.aspect_ratio -%}
+    {%- endif -%}
+    <div class="{% if section.settings.title != blank %}mt-10{% endif %} d-grid grid-cols-1 lg:grid-cols-3 justify-center items-center gap-3">
+      {% for block in section.blocks %}
+        {% if block.settings.image %}
+          <a href="{{ block.settings.url }}" class="mt-5 lg:mt-0block border-t border-black pt-5">
+            <div class="flex justify-between items-center w-full mb-5">
+              {%- if block.settings.title != blank -%}
+                <div class="heading heading--5 pl-2 lg:pl-0">{{ block.settings.title }}</div>
+              {%- endif -%}
+              <div class="ml-auto mr-4 pr-4">
+                {% render 'icon-arrow' %}
+              </div>
+            </div>
+            <div class="w-full ratio" style="--ratio-percent: {{ image_aspect_ratio | default: 150 }}%">
+              {{
+                block.settings.image
+                | image_url: width: 500
+                | image_tag: class: 'block absolute object-cover top-0 left-0 h-full w-full', loading: 'lazy'
+              }}
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Cards",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Featured Cards"
+    }
+  ],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "border",
+      "label": "Section Border",
+      "options": [
+        {
+          "value": "border-t border-black",
+          "label": "Top"
+        },
+        {
+          "value": "border-b border-black",
+          "label": "Bottom"
+        },
+        {
+          "value": "",
+          "label": "None"
+        }
+      ],
+      "default": ""
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Image",
+      "type": "image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}

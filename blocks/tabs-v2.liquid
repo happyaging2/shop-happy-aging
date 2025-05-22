@@ -1,0 +1,132 @@
+{% stylesheet %}
+  .tabs-list {
+    display: block;
+  }
+  .tabs-header {
+    display: flex;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .tabs-header .tab-block {
+    flex: 1;
+  }
+  .tabs-header .tab-button {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    padding: 14px 20px;
+    border-bottom: 2px solid #ADA18F;
+    letter-spacing: 0.1em;
+  }
+  .tabs-header .tab-button.is-active {
+    border-bottom: 2px solid #000;
+  }
+
+
+
+  @media screen and (min-width:501px){
+  
+.tabs-header {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin-bottom:4%;
+  }
+  button.js-tab-button.tab-button.is-active, button.js-tab-button.tab-button:hover {
+    background: #000;
+    color: #f7f5eb;
+  }
+  button.js-tab-button.tab-button {
+    /* background:red; */
+    padding: 10px 5px; /* margin: 10px; */
+    border: 1px solid #000;
+  }
+  .shopify-block.tab-block {
+    padding: 5px;
+    min-width: 30%;
+    display: flex;
+  }
+}
+
+  
+@media screen and (max-width:500px){
+    
+  .tabs-header {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin-top:0!important;
+  }
+  button.js-tab-button.tab-button.is-active {
+    background: #000;
+    color: #f7f5eb;
+  }
+  button.js-tab-button.tab-button {
+    /* background:red; */
+    padding: 5px; /* margin: 10px; */
+    border: 1px solid #000;
+  }
+  .shopify-block.tab-block {
+    width: 50% !important;
+    padding: 5px;
+    min-width: 40%;
+    display: flex;
+  }
+  
+}
+
+  
+{% endstylesheet %}
+
+<tabs-list class="tabs-list">
+  <div class="tabs-header">
+    {% content_for 'blocks' %}
+  </div>
+  <div class="tabs-content js-content-placeholder"></div>
+</tabs-list>
+
+<script>
+  if (!window.customElements.get("tabs-list")) {
+    class TabsBlock extends HTMLElement {
+      constructor() {
+        super();
+        this.contentPlaceholder = this.querySelector(".js-content-placeholder");
+        this.tabButtons = this.querySelectorAll(".js-tab-button");
+      }
+
+      connectedCallback() {
+        this.refresh();
+        this.tabButtons.forEach(button => {
+          button.addEventListener("click", () => {
+            this.tabButtons.forEach(button => button.classList.remove("is-active"));
+            button.classList.add("is-active");
+            this.refresh();
+          });
+        });
+      }
+
+      refresh() {
+        const activeTab = this.querySelector(".js-tab-button.is-active");
+        if (activeTab) {
+          this.contentPlaceholder.innerHTML = activeTab.nextElementSibling.innerHTML;
+        }
+      }
+    }
+    window.customElements.define("tabs-list", TabsBlock);
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Tabs V2",
+  "class": "tabs-block",
+  "blocks": [{ "type": "_tab2" }],
+
+  "presets": [
+    {
+      "name": "Tabs V2",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

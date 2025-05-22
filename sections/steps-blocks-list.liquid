@@ -1,0 +1,81 @@
+<div class="py-12 pb-12 md:pb-6 lg:py-20 border-t">
+  <div class="site-container">
+    <div class="md:px-4">
+      {% unless section.settings.title == blank %}
+        <h2 class="heading heading--1 mb-6 pb-10 em-newline text-center">{{ section.settings.title }}</h2>
+      {% endunless %}
+      <div class="d-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        {% for block in section.blocks %}
+          <div class="d-gridx flex flex-col mb-4 md:mb-0 w-full border">
+            <div class="flex items-center align-center justify-between p-4">
+              <div class="step_name flex items-center gap-3 pr-4 md:pr-0">
+                <div class="step_dot bg-black rounded-full" style="width: 10px;height: 10px;min-width: 10px;min-height: 10px;"></div>
+                {% unless block.settings.step_title == blank %}
+                  <h4 class="eyebrow" style="width: max-content;"><p>{{ block.settings.step_title }}</p></h4>
+                {% endunless %}
+              </div>
+              {% unless block.settings.title == blank %}
+                <h3 class="heading heading--5 uppercase text-right md:text-start">{{ block.settings.title }}</h3>
+              {% endunless %}
+            </div>
+            <div class="aspect-squarex relative bg-beige" style="padding-top:60%;">
+              {% unless block.settings.image == blank %}
+                <img class="absolute top-0 left-0 w-full h-full object-cover object-center border-t border-b" src="{{ block.settings.image | image_url: width: 1000 }}" width="auto" height="auto" loading="lazy">
+              {% endunless %}
+            </div>
+            {% unless block.settings.text == blank %}
+              <div class="text-xs leading-5 p-4">{{ block.settings.text }}</div>
+            {% endunless %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Steps Blocks",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "result_item",
+      "name": "Result Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "Step Title"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Steps Blocks List"
+    }
+  ]
+}
+{% endschema %}

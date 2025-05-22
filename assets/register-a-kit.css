@@ -1,0 +1,187 @@
+.register-a-kit-section {
+  padding: 135px 102px;
+}
+.register-a-kit-section .text-input label {
+  left: 0 !important;
+}
+
+[data-section-type=register-a-kit] .register-a-kit__title,
+[data-section-type=register-a-kit] .register-a-kit__title * {
+  font-family: "Flecha Bronzea M Light";
+  font-size: 50px;
+  font-weight: 300;
+  line-height: normal;
+}
+[data-section-type=register-a-kit] .register-a-kit__title em {
+  font-style: italic;
+}
+[data-section-type=register-a-kit] .register-a-kit__subtitle {
+  color: #000;
+  font-family: "Surf Normal Regular";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  width: 493.797px;
+}
+[data-section-type=register-a-kit] .register-a-kit__form legend {
+  color: #000;
+  font-family: "Surf Normal Regular";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+[data-section-type=register-a-kit] .register-a-kit__form__label {
+  color: #5b5b5b;
+}
+[data-section-type=register-a-kit] .register-a-kit__form__birth__block {
+  width: 461px;
+}
+[data-section-type=register-a-kit] .register-a-kit__form__image img {
+  width: 408.948px;
+  height: 220.655px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+[data-section-type=register-a-kit] .register-a-kit__form__policy {
+  color: #000;
+  font-family: "AT Surt", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+  gap: 5px;
+}
+[data-section-type=register-a-kit] .register-a-kit__form__collection-input {
+  width: 461.278px;
+}
+[data-section-type=register-a-kit] .register-a-kit__form__collection-subtitle {
+  color: #000;
+  font-family: "AT Surt", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+[data-section-type=register-a-kit] .register-a-kit__form__button {
+  width: 263px;
+  height: 41px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background: #1e1e1e;
+  text-align: center;
+  margin-top: 65px;
+}
+[data-section-type=register-a-kit] .register-a-kit__form__button button {
+  color: #fff;
+  text-align: center;
+  font-family: "Flecha Bronzea M Light", serif;
+  height: 41px;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+[data-section-type=register-a-kit] .register-a-kit__form__input {
+  width: 667.374px;
+}
+[data-section-type=register-a-kit] .register-a-kit__form__input-email > * {
+  color: #000;
+  font-family: "AT Surt", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+[data-section-type=register-a-kit] .register-a-kit__form__label-title {
+  color: #000;
+  font-family: "AT Surt", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+[data-section-type=register-a-kit] .register-a-kit__form__label-subtitle {
+  color: #000;
+  font-family: "AT Surt", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+}
+[data-section-type=register-a-kit] .register-a-kit__form__barcode {
+  color: #000;
+  font-family: "AT Surt", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+[data-section-type=register-a-kit] .barcode-block__form-info {
+  width: 380.664px;
+  color: #000;
+  font-family: "AT Surt", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+}
+[data-section-type=register-a-kit] .barcode-block__form-input {
+  width: 482px;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  z-index: 1;
+}
+
+.custom-date {
+  position: relative;
+}
+
+.custom-date::after {
+  content: url("arrow.svg");
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  pointer-events: none;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 767px) {
+  .register-a-kit__form__input,
+  .register-a-kit__form__birth__block,
+  .barcode-block__form-input,
+  .register-a-kit__form__collection-input,
+  .barcode-block__form-info,
+  .register-a-kit__subtitle,
+  .register-a-kit__form__button {
+    width: 100% !important;
+  }
+  .register-a-kit-section {
+    padding: 134px 16px;
+  }
+  .register-a-kit__form__date {
+    width: 286px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .register-a-kit__form__date {
+    width: 100%;
+  }
+}

@@ -1,0 +1,86 @@
+{% comment %}
+  Renders a megamenu for the header.
+
+  Usage:
+  {% render 'header-mega-menu' %}
+{% endcomment %}
+
+<nav class="header__inline-menu">
+  <ul class="d-none lg:flex justify-start gap-x-8" role="list">
+    {%- for link in section.settings.menu.links -%}
+      <li {% if forloop.index == 1 %} onmouseenter="openSubcar(1)"{% endif %}>
+        <a
+          href="{{ link.url }}"
+          class="d-grid text-xs uppercase {% if forloop.first %}pr-3{% else %}px-3{% endif %} tracking-wider relative top-[1px] pb-3 {% if link.links.size > 0 %}has-submenu{% endif %} {% if request.path == link.url %}shop-link-active active--link{% endif %}"
+        >
+          {{ link.title }}
+        </a>
+        {% if link.links.size > 0 %}
+          <div class="opacity-0 invisible absolute top-[100%] bg-cream py-10 left-0 right-0 d-none lg:block border-b border-black">
+            <div class="submenu-box d-flex text-black d-grid content-start gap-4 relative site-container">
+              <div class="d-grid gap-6 w-50 submenu-links-box">
+                {% for sublink in link.links %}
+                  {% unless sublink.url == '#' %}
+                    <a
+                      href="{{ sublink.url }}"
+                      class="heading heading--2 uppercase hover:font-heading-light-italic hover:normal-case"
+                      {%- if blocks.size > 0 -%}onmouseenter="openSubcar({{ forloop.index }})"{%- endif -%}
+                    >
+                      {{ sublink.title }}
+                    </a>
+                  {% endunless %}
+                {% endfor %}
+              </div>
+            
+              {%- if blocks.size > 0 -%}
+                <div class="d-grid w-50 submenu-carousel">
+                {%- for block in blocks -%}
+                  {%- if block.type == "product" -%}
+                    <script>
+                      console.warn({{ block.settings | json }});
+                    </script>
+                    {% render 'menu-products-carousel' , block: block.settings %}
+                  {%- endif -%}    
+                {%- endfor -%}
+                </div>
+
+
+              <style>
+                .submenu-box {
+                    display: flex;
+                }
+                
+                .submenu-carousel {
+                    width: 100%;
+                }
+                .submenu-links-box {
+                    width: 30%;
+                }
+
+              </style>
+
+              <script>
+                function openSubcar(p){
+                  cla = '.subcar-p' + p;
+                  el = document.querySelector(cla);
+                  document.querySelectorAll('.submenu-carousel-inner').forEach(function(e){
+                    e.classList.add('hidden');
+                  });
+
+                  //el.parentElement('.submenu-carousel').classList.remove('hidden');
+                  el.classList.remove('hidden');
+                  //el.style.display = "flex";
+                }
+              </script>
+              
+              {%- endif -%}
+              
+              
+              
+            </div>
+          </div>
+        {% endif %}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>

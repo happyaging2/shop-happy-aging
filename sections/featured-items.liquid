@@ -1,0 +1,99 @@
+<div class="py-16 lg:py-20 overflow-hidden {{ section.settings.border }}">
+  <div class="site-container">
+    {%- if section.settings.title != blank -%}
+      <div class="flex flex-col items-center justify-center gap-6 mx-auto max-w-[383px] lg:max-w-[525px] text-center">
+        <h2 class="heading heading--1">{{ section.settings.title }}</h2>
+        {%- if section.settings.text != blank -%}
+          <div class="text-sm max-w-[383px]">{{ section.settings.text }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    {% assign desktop_columns = section.blocks.size %}
+    <div class="{% if section.settings.title != blank %}mt-10{% endif %} d-grid grid-cols-2 lg:grid-cols-{{ desktop_columns }} justify-center items-center gap-10 lg:gap-16 {% if desktop_columns < 4 %} lg:max-w-[710px] mx-auto {% endif %}">
+      {% for block in section.blocks %}
+        {% if block.settings.image %}
+          <{% if block.settings.url %}a href="{{ block.settings.url }}"{% else %}div{% endif %} class="flex flex-col items-center justify-center text-center gap-6">
+            <div class="w-full ratio" style="--ratio-percent: 100%">
+              {{
+                block.settings.image
+                | image_url: width: 350
+                | image_tag: class: 'block absolute object-cover top-0 left-0 h-full w-full rounded-full', loading: 'lazy'
+              }}
+            </div>
+
+            {%- if block.settings.title != blank -%}
+              <div class="text-lg">{{ block.settings.title }}</div>
+            {%- endif -%}
+          </{% if block.settings.url %}a{% else %}div{% endif %}>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Items",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Featured Items"
+    }
+  ],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "border",
+      "label": "Section Border",
+      "options": [
+        {
+          "value": "border-t border-black",
+          "label": "Top"
+        },
+        {
+          "value": "border-b border-black",
+          "label": "Bottom"
+        },
+        {
+          "value": "",
+          "label": "None"
+        }
+      ],
+      "default": ""
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Image",
+      "type": "image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}

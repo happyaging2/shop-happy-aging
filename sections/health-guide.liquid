@@ -1,0 +1,79 @@
+<div class="border-b border-black">
+  <div class="px-3 site-container py-12 md:py-16 lg:py-20 xl:pl-24">
+    <div class="md:max-w-xl md:mx-auto lg:max-w-[unset]">
+      <div class="d-grid gap-8 lg:grid-cols-2 lg:gap-12 mb-12 lg:mb-20">
+        <div>
+          {% unless section.settings.eyebrow == blank %}
+            <h2 class="eyebrow mb-6">{{ section.settings.eyebrow }}</h2>
+          {% endunless %}
+          {% unless section.settings.title == blank %}
+            <p class="heading heading--1">{{ section.settings.title }}</p>
+          {% endunless %}
+        </div>
+        <div>
+          <div class="aspect-[2.2] relative bg-beige">
+            {% unless section.settings.image == blank %}
+              <img class="absolute top-0 left-0 w-full h-full object-cover object-center" src="{{ section.settings.image | img_url: '1200x' }}" loading="lazy" />
+            {% endunless %}
+          </div>
+        </div>
+      </div>
+      <div class="d-grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3 xl:pr-24">
+        {% for block in section.blocks %}
+          <div class="d-grid gap-2 border-b border-black pb-6 content-start">
+            {% unless block.settings.title == blank %}
+              <h3 class="heading heading--5 uppercase">{{ block.settings.title }}</h3>
+            {% endunless %}
+            {% unless block.settings.description == blank %}
+              <p class="text-sm">{{ block.settings.description }}</p>
+            {% endunless %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Health Guide",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Health Guide"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    }, {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title"
+    }, {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Health Item",
+      "type": "health_item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }, {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,46 @@
+<div class="py-10 lg:py-16 site-container">
+  <div class="lg:px-24 xl:px-32">
+    <h2 class="text-center heading--4">{{ section.settings.section_title }}</h2>
+      <div class="d-grid grid-cols-1 gap-y-5 px-4 mt-10 mx-auto lg:grid-cols-2 lg:gap-x-14 lg:gap-y-12">
+        {% for article in blog.articles %}
+          {% render 'blog-card',
+            blog_image: article.image,
+            blog_tags: article.tags,
+            blog_title: article.title,
+            blog_url: article.url,
+            blog_short_text: article.excerpt,
+            blog_meta: article.metafields.happy_aging.italicized_title_segment
+          %}
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if blog.articles.size > 12 %}
+      <div class="text-center mt-10">
+        <a href="{{ blog.url }}" class="btn btn-primary">View All</a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog List Section",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Blog List Section"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "[SECTION TITLE]"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,34 @@
+<div class="js-teleport-content" data-devices="{{ block.settings.devices }}">
+</div>
+
+{% schema %}
+{
+  "name": "Tab / accordion teleport",
+  "class": "teleport-content",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "This block is used for tabs and accordions when you want to display their active content outside of them but still in their parent section."
+    },
+    {
+      "type": "select",
+      "id": "devices",
+      "label": "Use on device",
+      "options": [
+        { "value": "desktop", "label": "Desktop" },
+        { "value": "mobile", "label": "Mobile" },
+        { "value": "both", "label": "Both" },
+        { "value": "none", "label": "None" }
+      ],
+      "default": "desktop"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Tab / accordion teleport",
+
+    }
+  ]
+}
+{% endschema %}

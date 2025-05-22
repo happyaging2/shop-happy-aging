@@ -1,0 +1,68 @@
+<div class="border-b border-black">
+  <div class="d-grid justify-items-center items-center pt-10 text-center lg:pt-14 site-container">
+    <svg class="fill-black d-none lg:block h-[54px] w-[68px] mb-9" width="36" viewBox="0 0 73 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M48.1962 22.6069L53.9532 8.00806L55.3553 4.05552L55.674 4.05552L56.9911 7.92305L60.7724 17.8469C56.5875 20.0357 52.4025 21.6294 48.1962 22.6282M64.4901 17.8044C65.7435 17.0819 66.9756 16.2956 68.2077 15.4669C69.5885 14.5531 72.6264 12.9168 72.6264 12.9168L70.9056 10.6643C70.9056 10.6643 68.5689 13.0656 67.2305 13.9581C66.1046 14.7231 64.9574 15.4244 63.8315 16.1044L57.9258 0.697988L54.8455 0.697989L45.9232 23.0957C43.1403 23.6057 40.3573 23.8607 37.5957 23.8395L37.5957 3.22677L37.7444 0.719242L33.6868 0.719243L33.8356 3.22677L33.8356 23.6482C27.5262 23.0532 21.1531 21.0982 14.7588 17.8044L14.7588 3.22677L14.9287 0.719246L10.85 0.719247L11.0199 3.22677L11.0199 15.7219C9.02302 14.5319 7.00488 13.1931 4.98674 11.7268C4.07326 11.0681 2.58621 9.24058 2.58621 9.24058L0.886721 11.4081C0.886721 11.4081 3.07481 12.5131 4.03077 13.2144C6.36757 14.9144 8.70437 16.4231 11.0199 17.7619L11.0199 31.3195L10.85 34.3796L14.9287 34.3796L14.7588 31.3195L14.7588 19.7807C21.1531 22.9682 27.5262 24.8595 33.8356 25.4332L33.8356 31.3195L33.6869 34.3795L37.7444 34.3795L37.5957 31.3195L37.5957 25.6245C37.5957 25.6245 37.7869 25.6245 37.8718 25.6245C40.2936 25.6245 42.7154 25.412 45.1584 25.0295L42.6516 31.3195L41.3558 34.3795L43.8201 34.3795L44.776 31.3195L47.4102 24.6257C52.0838 23.6482 56.7574 21.9269 61.4098 19.5257L65.9134 31.3408L66.8269 34.4008L71.0544 34.4008L69.6948 31.3408L64.5113 17.8256L64.4901 17.8044Z" fill="currentColor"></path>
+    </svg>
+    {% unless section.settings.eyebrow == blank %}
+      <h1 class="uppercase text-xs tracking-widest mb-2 lg:mb-3">
+        {{ section.settings.eyebrow }}
+      </h1>
+    {% endunless %}
+    {% unless section.settings.title == blank %}
+      <h2 class="heading heading--1 mb-3 lg:mb-2.5 lg:flex-row lg:gap-3">
+        {{ section.settings.title }}
+      </h2>
+    {% endunless %}
+    {% unless section.settings.text == blank %}
+      <p class="max-w-[532px] text-sm mb-10 lg:mb-20">
+        {{ section.settings.text }}
+      </p>
+    {% endunless %}
+    <div class="relative w-full pb-[72%] lg:pb-[47%] mb-5 lg:mb-8 bg-beige">
+      {% if section.settings.video %}
+        <site-video>
+          {{ section.settings.video | video_tag: class: 'absolute w-full h-full object-cover top-0 left-0', autoplay: true, loop:true }}
+        </site-video>
+      {% else %}
+        {% unless section.settings.image == blank %}
+          <img class="site-image" src="{{ section.settings.image | img_url: '2000x' }}" />
+        {% endunless %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Manifesto Hero",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Manifesto Hero"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    }, {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title"
+    }, {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    }, {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }, {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    }
+  ]
+}
+{% endschema %}

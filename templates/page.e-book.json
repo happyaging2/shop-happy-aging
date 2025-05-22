@@ -1,0 +1,179 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": { 
+    "lp_hero_aMEKsd": {
+      "type": "lp-hero",
+      "settings": {
+        "eyebrow": "Free Guide",
+        "title": "The Art of Aging Well <em>a woman’s guide to radiant health and longevity<\/em>",
+        "description": "<p>Discover a transformative approach to aging that integrates the latest science with practical advice on nutrition, movement, sleep, emotional well-being, and preventive health. <\/p><p>Co-created by wellness advocate Martha Graeff and Harvard-trained longevity expert Dr. Daniel Yadegar, this guide is dedicated to helping you age better, healthier, and happier.<\/p>",
+        "image": "shopify:\/\/shop_images\/Finalebook_cover_47ae0a38-4a6e-4da4-9a7b-117aa05daf57.png",
+        "cta_text": "Download Your Guide",
+        "klaviyo_list_id": "RQLRRv",
+        "success_text": "Thank you! You’ll receive an email with the download shortly."
+      }
+    },
+    "testimonial_carousel_sEjdkI": {
+      "type": "testimonial-carousel",
+      "blocks": {
+        "item-1": {
+          "type": "item",
+          "settings": {
+            "testimonial": "<em>Sometimes I’m overwhelmed by all the health and wellness advice out there. This ebook broke everything down in a way that made sense and wasn’t too much to take in. Plus, it’s beautiful!<\/em>",
+            "author": "Rachel P."
+          }
+        },
+        "item-2": {
+          "type": "item",
+          "settings": {
+            "testimonial": "<em>I’m so over the hardcore, biohacking approach that’s everywhere. This guide was exactly what I needed—down-to-earth, relatable, and made for women.<\/em>",
+            "author": "Monica L."
+          }
+        },
+        "item-3": {
+          "type": "item",
+          "settings": {
+            "testimonial": "<em>Lately, I can’t stop thinking about how stress is aging me and affecting my health. My job is intense and I know it’s wearing me down. I'm feeling empowered to make changes.<\/em>",
+            "author": "Amara K."
+          }
+        },
+        "item_ADMaUN": {
+          "type": "item",
+          "settings": {
+            "testimonial": "<em>This book feels like talking with a friend who gets what you’re going through. As a mom, it’s so important to set a good example for my daughters. This book helped me see aging in a whole new light.<\/em>",
+            "author": "Sophie M."
+          }
+        },
+        "item_T3hjeb": {
+          "type": "item",
+          "settings": {
+            "testimonial": "<em>Getting older has come with some health scares that made me realize I need to take better care of myself. I’ve already tried a few tips out and I’m feeling more energized and sleeping better!<\/em>",
+            "author": "Nina R."
+          }
+        }
+      },
+      "block_order": [
+        "item-1",
+        "item-2",
+        "item-3",
+        "item_ADMaUN",
+        "item_T3hjeb"
+      ],
+      "settings": {
+        "title": "Glowing Reviews"
+      }
+    },
+    "health_guide_isneLd": {
+      "type": "health-guide",
+      "blocks": {
+        "health-item-1": {
+          "type": "health_item",
+          "settings": {
+            "title": "Proactive Wellness",
+            "description": "Early detection and proactive measures to maintain optimal health."
+          }
+        },
+        "health-item-2": {
+          "type": "health_item",
+          "settings": {
+            "title": "Balanced Approach",
+            "description": "A balanced approach to nutrition and superfoods for promoting longevity."
+          }
+        },
+        "health-item-3": {
+          "type": "health_item",
+          "settings": {
+            "title": "Resilience",
+            "description": "The right combination of movement for physical and mental resilience."
+          }
+        },
+        "health-item-4": {
+          "type": "health_item",
+          "settings": {
+            "title": "Restorative Sleep",
+            "description": "How to achieve deep, restorative sleep for overall health."
+          }
+        },
+        "health-item-5": {
+          "type": "health_item",
+          "settings": {
+            "title": "Managing Stress",
+            "description": "Strategies for managing stress and nurturing mental health."
+          }
+        },
+        "health-item-6": {
+          "type": "health_item",
+          "settings": {
+            "title": "Environmental Toxins",
+            "description": "Ways to reduce your exposure to environmental toxins."
+          }
+        }
+      },
+      "block_order": [
+        "health-item-1",
+        "health-item-2",
+        "health-item-3",
+        "health-item-4",
+        "health-item-5",
+        "health-item-6"
+      ],
+      "settings": {
+        "eyebrow": "Redefining what it means to age well",
+        "title": "The Art of Aging Well <em>is more than just a health guide—it's an opportunity to transform your well-being for life<\/em>",
+        "image": "shopify:\/\/shop_images\/health-guide_11zon.jpg"
+      }
+    },
+    "science-fifty-fifty": {
+      "type": "science-fifty-fifty",
+      "blocks": {
+        "cards_Emi8jU": {
+          "type": "cards",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/M.jpg",
+            "title_card": "<p>MARTHA GRAEFF,<br\/><em>wellness advocate<\/em><\/p>",
+            "text_card": "Martha Graeff is a wellness advocate, entrepreneur, and co-founder of Happy Aging. With a background in fashion and a passion for holistic health, Martha brings a unique perspective to the conversation on aging well."
+          }
+        },
+        "cards_xJdif8": {
+          "type": "cards",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/D.jpg",
+            "title_card": "<p>Daniel Yadegar, MD, <br\/><em>longevity expert<\/em><\/p>",
+            "text_card": "Dr. Daniel Yadegar is a Harvard-trained longevity expert and co-founder of Happy Aging. He specializes in preventive health and longevity, combining cutting-edge research with practical advice to help women live healthier, longer lives."
+          }
+        }
+      },
+      "block_order": [
+        "cards_Emi8jU",
+        "cards_xJdif8"
+      ],
+      "settings": {
+        "page_title": "Meet the authors"
+      }
+    },
+    "lp_subscribe_PeiAnd": {
+      "type": "lp-subscribe",
+      "settings": {
+        "title": "TRANSFORM YOUR APPROACH <em>to aging<\/em>",
+        "cta_text": "Download Now",
+        "klaviyo_list_id": "RQLRRv",
+        "success_text": "Thank you! You’ll receive an email with the download shortly."
+      }
+    }
+  },
+  "order": [
+    "lp_hero_aMEKsd",
+    "testimonial_carousel_sEjdkI",
+    "health_guide_isneLd",
+    "science-fifty-fifty",
+    "lp_subscribe_PeiAnd"
+  ]
+}

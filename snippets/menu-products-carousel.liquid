@@ -1,0 +1,48 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'quick-add.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+<div class="submenu-carousel-inner subcar-p{{ block.position }} {% if block.position > 0 %} hidden {% endif %} overflow-hidden {{ section.settings.border }}">
+  <div class="site-container">
+    {%- assign config = '{"slidesPerView": 1.7,"spaceBetween": 10, "breakpoints": {"768": {"slidesPerView": 3},"1024": {"slidesPerView": 3}}}' -%}
+    <site-carousel
+      data-config="{{ config | escape }}"
+      id="{{ section.id }}{{ block.position }}"
+      class="relative opacity-0 transition-all duration-500 block"
+      data-id="{{ section.id }}{{ block.position }}"
+    >
+      <div class="flex items-center mb-8 lg:px-6 gap-x-14">
+        {% unless section.settings.title == blank %}
+          <h2 class="font-body-regular text-sm tracking-widest uppercase">
+            {{ section.settings.title }}
+          </h2>
+        {% endunless %}
+        <carousel-prev class="ml-auto">
+          <button class="carousel-nav rotate-180 ">
+            {% render 'carousel-arrow' %}
+          </button>
+        </carousel-prev>
+        <carousel-next class="">
+          <button class="carousel-nav">
+            {% render 'carousel-arrow' %}
+          </button>
+        </carousel-next>
+      </div>
+
+      <div class="swiper !overflow-visible lg:!overflow-hidden">
+        <div class="swiper-wrapper">
+          {% for product in block.product_list %}
+            <div class="swiper-slide">
+              {% render 'card-product', card_product: product, quick_add: 'standard' %}
+            </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </site-carousel>
+  </div>
+</div>
+

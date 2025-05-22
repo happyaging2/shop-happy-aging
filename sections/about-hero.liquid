@@ -1,0 +1,62 @@
+<div class="pb-6 lg:pb-8">
+  <div class="flex flex-col items-center pt-10 lg:pt-[66px] site-container">
+    {% unless section.settings.eyebrow == blank %}
+      <h1 class="sub-heading text-center mb-2 lg:mb-3">
+        {{ section.settings.eyebrow }}
+      </h1>
+    {% endunless %}
+    {% unless section.settings.title == blank %}
+      <div class="heading heading--1 text-center mb-10 lg:mb-[55px] flex flex-col lg:flex-row lg:gap-3">
+        {{ section.settings.title }}
+      </div>
+    {% endunless%}
+    <div class="relative md:hidden w-full pb-[72%] mb-5 lg:mb-8 bg-beige">
+      <img class="site-image" src="{{ section.settings.image_mobile | img_url: '1000x' }}" />
+    </div>
+    <div class="d-none md:block relative w-full md:pb-[37%] mb-5 lg:mb-8 bg-beige">
+      <img class="site-image" src="{{ section.settings.image_desktop | img_url: '2000x' }}" />
+    </div>
+    <div class="max-w-[680px] mr-auto text-sm px-4 lg:px-0">
+      {{ section.settings.text }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "About Page Hero",
+    "tag": "section",
+    "presets": [
+      {
+        "name": "About Page Hero"
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "eyebrow",
+        "label": "Eyebrow"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Image Desktop"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      }
+    ]
+  }
+{% endschema %}

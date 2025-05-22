@@ -1,0 +1,66 @@
+<section class="flex flex-col items-center w-full site-container py-8 lg:py-20">
+  <div class="d-grid lg:grid-cols-[1fr_2fr]">
+    <h2 class="sub-heading text-start mb-5 lg:mb-14 w-full lg:px-20">{{ section.settings.page_title }}</h2>
+    <div class="site-container flex flex-col gap-10 lg:gap-[182px] sm:grid sm:grid-cols-2 w-full lg:px-20">
+      {% for block in section.blocks %}
+        <div>
+          <div class="relative max-w-[220px] md:max-w-[261px] pb-[80%] md:pb-[110%] lg:pb-[130%] lg:pb-0 overflow-hidden w-full mb-8 bg-beige">
+            <img class="site-image" src="{{ block.settings.image | img_url: '800x' }}" loading="lazy" />
+          </div>
+          <h2 class="heading heading--2 md:max-w-[360px] mb-[15px] lg:mb-5">
+            {{ block.settings.title_card }}
+          </h2>
+          <p class="text-sm md:max-w-[360px]">
+            {{ block.settings.text_card }}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<div class="px-4 lg:px-0">
+  <div class="border-t"></div>
+</div>
+
+{% schema %}
+{
+  "name": "Science Fifty Fifty",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Science Fifty Fifty"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Cards",
+      "type": "cards",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "title_card",
+          "label": "Title Card"
+        },
+        {
+          "type": "text",
+          "id": "text_card",
+          "label": "Text Card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

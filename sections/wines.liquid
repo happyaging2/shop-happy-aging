@@ -1,0 +1,42 @@
+<script src="{{ 'web-components-wines.js' | asset_url }}" defer></script>
+
+<div class="max-lg:px-4 w-full h-full overflow-hidden border-t">
+  <wines-scroll class="block w-full h-full border-deep-gray py-10 px-4 lg:px-40 lg:py-16">
+    <div class="flex flex-col items-center gap-y-2.5 mb-9 text-center mx-auto max-w-xl lg:mb-10">
+      <h2 class="heading--1 font-heading-light">{{ section.settings.title_section }}</h2>
+      <p class="text-xs leading-5">{{ section.settings.text_section }}</p>
+    </div>
+    <div class="wine-container d-grid grid-cols-11 items-center gap-x-2.5 gap-y-3.5 max-w-3xl mx-auto lg:flex lg:justify-center lg:flex-wrap lg:relative lg:gap-x-3.5 lg:gap-y-6">
+      {% for i in (1..43) %}
+        <div class="wine">
+          {% render 'wine-bottle' %}
+          <div class="wine--fill "></div>
+        </div>
+        {% if forloop.index == 5 %}
+          <div class="max-lg:col-span-6 max-lg:row-span-2 max-lg:mx-auto lg:absolute lg:-right-[140px] lg:-top-28">
+            {% render 'wine-badge' %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </wines-scroll>
+</div>
+
+{% schema %}
+{
+  "name": "Wines",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title_section",
+      "label": "Title Section"
+    },
+    {
+      "type": "text",
+      "id": "text_section",
+      "label": "Text Section"
+    }
+  ]
+}
+{% endschema %}

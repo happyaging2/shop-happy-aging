@@ -1,0 +1,243 @@
+<div class="{{ section.settings.border }}">
+  <div class="lg:grid grid-cols-2">
+    <div class="{% unless section.settings.image_first %}order-2{% endunless %}">
+      {% comment %} DESKTOP IMAGE: {% endcomment %}
+      {%- if section.settings.image_desk -%}
+        {%- liquid
+          assign ratio = 100
+          if section.settings.image_height_desk == 'adapt'
+            assign ratio = 1 | divided_by: section.settings.image_desk.aspect_ratio | times: 100
+          endif
+          if section.settings.image_height_desk == 'fit'
+            assign ratio = 0
+          endif
+        -%}
+        <div class="d-none lg:block" {% if section.settings.image_height_desk == 'fit' %}style="min-height: 40vw; height: 100%"{% endif %}>
+          <div class="media media--transparent ratio {% if section.settings.image_height_desk == 'fit' %}h-full{% endif %}" style="--ratio-percent: {{ ratio }}%;">
+            {{ section.settings.image_desk | image_url: width: 2000 | image_tag: class: 'object-cover', loading: 'lazy' }}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {% comment %} MOBILE IMAGE: {% endcomment %}
+      {%- if section.settings.image_mob -%}
+        {%- liquid
+          assign ratio = 100
+          if section.settings.image_height_mob == 'adapt'
+            assign ratio = 1 | divided_by: section.settings.image_mob.aspect_ratio | times: 100
+          endif
+        -%}
+        <div class="lg:hidden">
+          <div class="media media--transparent ratio" style="--ratio-percent: {{ ratio }}%">
+            {{ section.settings.image_mob | image_url: width: 2000 | image_tag: class: 'object-cover', loading: 'lazy' }}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+    <div class="px-5 py-14 lg:py-16 lg:px-20">
+      <div class="flex flex-col justify-center items-center h-full lg:min-h-[600px]">
+        <div class="lg:max-w-[410px]">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'text' -%}
+                {%- if block.settings.text != blank -%}
+                  <div class="text-sm mb-6">{{ block.settings.text }}</div>
+                {%- endif -%}
+              {%- when 'cta' -%}
+                {%- if block.settings.cta_text != blank -%}
+                  <div class="lg:flex justify-center">
+                    <a href="{{ block.settings.cta_link }}" class="button button--black">{{ block.settings.cta_text }}</a>
+                  </div>
+                {%- endif -%}
+              {%- when 'title' -%}
+                {%- if block.settings.title != blank -%}
+                  <h4 class="heading heading--1 mb-6 lg:mb-2">{{ block.settings.title }}</h4>
+                {%- endif -%}
+              {%- when 'image' -%}
+                {%- if block.settings.image_desk -%}
+                  {{
+                    block.settings.image_desk
+                    | image_url: width: 1000
+                    | image_tag: class: 'd-none lg:block object-contain h-auto mb-6', loading: 'lazy'
+                  }}
+                {%- endif -%}
+          
+                {%- if block.settings.image_mob -%}
+                  {{
+                    block.settings.image_mob
+                    | image_url: width: 1000
+                    | image_tag: class: 'block lg:hidden object-contain h-auto mb-10', loading: 'lazy'
+                  }}
+                {%- endif -%}
+              {%- when 'badges' -%}
+                {%- assign badges = block.settings.text | split: ';' -%}
+                {%- if badges != blank -%}
+                  <div class="flex gap-3 mb-6">
+                    {%- for badge in badges -%}
+                      <div class="badge">{{ badge }}</div>
+                    {%- endfor -%}
+                  </div>
+                {%- endif -%}
+              {%- else -%}
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with Blocks",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_desk",
+      "label": "Image Desktop"
+    },
+    {
+      "type": "select",
+      "id": "image_height_desk",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "fit",
+          "label": "Fit to content"
+        },
+      ],
+      "default": "square",
+      "label": "Image Height Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mob",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "select",
+      "id": "image_height_mob",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "square",
+      "label": "Image Height Mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_first",
+      "label": "Image First",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "border",
+      "label": "Section Border",
+      "options": [
+        {
+          "value": "border-t border-black",
+          "label": "Top"
+        },
+        {
+          "value": "border-b border-black",
+          "label": "Bottom"
+        },
+        {
+          "value": "",
+          "label": "None"
+        }
+      ],
+      "default": ""
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "badges",
+      "name": "Badges",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Badges",
+          "info": "Split by ;"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "name": "CTA",
+      "settings": [
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA Link"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_desk",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mob",
+          "label": "Image Mobile"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Blocks"
+    }
+  ]
+}
+{% endschema %}

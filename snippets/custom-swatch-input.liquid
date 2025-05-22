@@ -1,0 +1,43 @@
+{% for variant in product.variants %}
+  {% if variant.options contains value %}
+    {% assign variant_image = variant.image %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+
+<input
+  type="{{ type | default: 'radio' }}"
+  id="{{ id }}"
+  name="{{ name }}"
+  value="{{ value }}"
+  form="{{ product_form_id }}"
+  class="swatch-input__input{% if visually_disabled %} visually-disabled{% endif %}"
+  {% if checked %}
+    checked
+  {% endif %}
+  {% if disabled %}
+    disabled
+  {% endif %}
+  {% if additional_props %}
+    {{ additional_props }}
+  {% endif %}
+>
+<label
+  for="{{ id }}"
+  title="{{ value }}"
+  class="w-full swatch-input__label border text-xs opacity-50 transition-all duration-300 relative w-full outline-0"
+>
+  <div class="aspect-square relative">
+    {%- if variant_image -%}
+      <div class="aspect-square relative">
+        {{
+          variant_image
+          | image_url: width: 500
+          | image_tag: class: 'absolute top-0 left-0 w-full h-full object-contain object-center', loading: 'lazy'
+        }}
+      </div>
+    {%- endif -%}
+  </div>
+  <p class="text-[10px] text-center py-[14px] px-4">{{ value | escape }}</p>
+</label>

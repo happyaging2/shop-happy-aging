@@ -1,0 +1,131 @@
+<div class="{% if section.settings.show_border_top %}border-t{% endif %}">
+  <div class="flex flex-col items-center site-container py-14 lg:py-20 px-8 lg:px-16">
+    <div class="flex flex-col items-center max-w-[260px] lg:max-w-full mb-5 lg:mb-0">
+      {% if section.settings.title != blank %}
+        <h2 class="heading heading--1 mb-3 lg:mb-[10px] flex flex-col lg:flex-row lg:gap-3 text-center em-newline">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <p class="max-w-[490px] text-xs leading-5 text-center mt-4">
+          {{ section.settings.text }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="relative w-full lg:pt-20">
+      <div class="d-grid lg:grid-cols-3 gap-7 relative">
+        <!-- Middle column - Media -->
+        <div class="relative h-full lg:order-2">
+          {% unless section.settings.video_url == blank %}
+            <site-video>
+              <video
+                {% unless section.settings.video_poster == blank %}
+                  poster="{{ section.settings.video_poster | img_url: '1920x' }}"
+                {% endunless %}
+                class="my-6 md:my-10 max-h-[440px] lg:max-h-[500px] m-auto"
+                loop
+                autoplay
+                muted
+                playsinline
+              >
+                <source data-src="{{ section.settings.video_url }}" type="video/mp4">
+              </video>
+            </site-video>
+          {% endunless %}
+          {% unless section.settings.image == blank %}
+            {%- assign image = section.settings.image -%}
+            <img class="site-image" src="{{ image | image_url: width: 1000 }}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy">
+          {% endunless %}
+        </div>
+        <!-- Left column -->
+        <div class="flex flex-col gap-7 lg:gap-12 justify-center lg:order-1 lg:px-0">
+          {% for block in section.blocks %}
+            {% assign remainder = forloop.index | modulo: 2 %}
+            {% if remainder == 0 %}
+              <div class="w-full md:w-[336px] pb-4 lg:pb-5 border-b">
+                <h4 class="mb-1 heading heading--2 !text-3xl">{{ block.settings.title }}</h4>
+                <p class="text-xs leading-5">{{ block.settings.text }}</p>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+  
+        <!-- Right column -->
+        <div class="flex flex-col gap-7 lg:gap-12 justify-center lg:order-3 px-4 lg:px-0">
+          {% for block in section.blocks %}
+            {% assign remainder = forloop.index | modulo: 2 %}
+            {% if remainder == 1 %}
+              <div class="w-full md:w-[336px] pb-4 lg:pb-5 border-b">
+                <h4 class="mb-1 heading heading--2 !text-3xl">{{ block.settings.title }}</h4>
+                <p class="text-xs leading-5">{{ block.settings.text }}</p>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Benefits",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Benefits"
+    }
+  ],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image Desktop"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "video_poster",
+      "label": "Video Poster"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border_top",
+      "label": "Show Top Border",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Benefit Item",
+      "type": "benefit-item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

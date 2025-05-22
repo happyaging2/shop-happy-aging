@@ -1,0 +1,137 @@
+<script src="{{ 'web-components-faqs.js' | asset_url }}" defer></script>
+
+<div
+  id="faqs"
+  class="px-8
+  {% if section.settings.is_background_default == "no" %} bg-beige {% endif %}
+  {% if section.settings.is_padding_top == "yes" %} pt-10 lg:pt-28 {% endif %}
+  {% if section.settings.is_margin_bottom == "yes" %} pb-10 lg:pb-28 {% else %} pb-10 lg:pb-16 {% endif %}"
+>
+  <div class="max-w-4xl flex flex-col mx-auto">
+    <div>
+      <h2 class="heading mb-9 lg:mb-4 max-w-60 lg:max-w-full !text-[50px]">{{ section.settings.title }}</h2>
+      {%- for block in section.blocks -%}
+        <question-answer>
+          <div class="faqs__item-container d-grid w-full border-b">
+            <button
+              type="button"
+              class="faqs__item d-grid grid-cols-[1fr_auto] justify-between gap-5 lg:items-center text-left py-8"
+            >
+              <h3 class="eyebrow">{{ block.settings.question }}</h3>
+              <div class="faqs__item-plus relative flex h-full items-center justify-center">
+                <div class="relative translate-y-1">
+                  {% render 'icon-expand' %}
+                </div>
+              </div>
+              <div class="faqs__item-minus relative hidden flex h-full items-center justify-center">
+                <div class="relative rotate-180 translate-y-1">
+                  {% render 'icon-expand' %}
+                </div>
+              </div>
+            </button>
+            <div class="faqs__answer w-full">
+              <div class="mb-6 text-sm  lg:pr-16">{{ block.settings.answer }}</div>
+            </div>
+          </div>
+        </question-answer>
+        {%- endfor -%}
+      </div>
+      {% if section.settings.callout_text != blank %}
+        <div class="text-xs leading-5 mt-10 underline-a">{{ section.settings.callout_text }}</div>
+      {% endif %}
+      </div>
+    </div>
+
+{% schema %}
+{
+  "name": "FAQs",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "is_padding_top",
+      "label": "Padding Top?",
+      "default": "no",
+      "options": [
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "yes",
+          "label": "Yes"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "is_background_default",
+      "label": "Background Color Default?",
+      "default": "yes",
+      "options": [
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "yes",
+          "label": "Yes"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "is_margin_bottom", 
+      "label": "Margin extra bottom?",
+      "default": "no",
+      "options": [
+      {
+        "value": "no",
+        "label": "No"
+      },
+      {
+        "value": "yes",
+        "label": "Yes"
+      }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "callout_text",
+      "label": "Callout Text"
+    }
+
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQs",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      }
+    }
+  ]
+}
+{% endschema %}

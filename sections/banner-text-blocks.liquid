@@ -1,0 +1,300 @@
+<style>
+
+  @media (max-width: 1200px) {
+    .darkmode .heading {
+      color: rgba(255, 255, 255, 1);
+    }
+    .darkmode .content-block {
+      color: inherit;
+    }
+  }
+  @media (min-width: 1200px) {
+    .darkmode .heading, .darkmode .content-block {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+</style>
+
+{%- capture title -%}
+  {% unless section.settings.title == blank %}
+    <div class="heading heading--1 !text-[40px] lg:!text-[60px] max-w-[680px]">
+      {{ section.settings.title }}
+    </div>
+  {% endunless %}
+  {%- endcapture -%}
+
+{% comment %} Banner Container {% endcomment %}
+<div class="site-container py-16 lg:py-0 {% if section.settings.darkmode %}darkmode{% endif %}">
+  {% comment %} Image with content {% endcomment %}
+  <div class="flex flex-col lg:flex-row lg:relative">
+    {%- comment -%} Image Container {%- endcomment -%}
+    <div class="image-block w-full relative">
+      {% comment %} Desktop image: {% endcomment %}
+      {%- if section.settings.image_desk -%}
+        <div class="w-full">
+          {%- liquid
+            assign ratio = 100
+            if section.settings.image_height_desk == 'adapt'
+              assign ratio = 1 | divided_by: section.settings.image_desk.aspect_ratio | times: 100
+            endif
+          -%}
+          <div
+            class="d-none lg:block"
+          >
+            <div
+              class="media media--transparent ratio"
+              style="--ratio-percent: {{ ratio }}%;"
+            >
+              {{ section.settings.image_desk | image_url: width: 2000 | image_tag: class: 'object-cover', loading: 'lazy' }}
+            </div>
+          </div>
+        </div>
+      {%- else -%}
+        <div class="d-none lg:block" style="min-height: 40vw;">
+          {{ 'detailed-apparel-1' | placeholder_svg_tag: 'w-full h-full' }}
+        </div>
+      {%- endif -%}
+      {% comment %} Mobile image: {% endcomment %}
+      {%- if section.settings.image_mob -%}
+        {%- liquid
+          assign ratio = 100
+          if section.settings.image_height_mob == 'adapt'
+            assign ratio = 1 | divided_by: section.settings.image_mob.aspect_ratio | times: 100
+          endif
+        -%}
+        <div class="lg:hidden">
+          <div class="media media--transparent ratio" style="--ratio-percent: {{ ratio }}%">
+            {{ section.settings.image_mob | image_url: width: 2000 | image_tag: class: 'object-cover', loading: 'lazy' }}
+          </div>
+        </div>
+      {%- else -%}
+        <div class="lg:hidden">
+          {{ 'detailed-apparel-1' | placeholder_svg_tag: 'w-full' }}
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Content Container - mobile {%- endcomment -%}
+      <div class="lg:hidden absolute inset-0 z-10 px-6 py-6">
+        {{ title }}
+      </div>
+      {% comment %} End content container - mobile {% endcomment %}
+    </div>
+    {% comment %} End image container {% endcomment %}
+
+    {%- comment -%} Content Container - desktop {%- endcomment -%}
+    <div class="content-block w-full flex flex-col justify-center mt-4 px-4 h-full lg:mt-0 lg:py-12 lg:px-16 lg:absolute lg:inset-0 lg:z-10">
+      <div class="d-none lg:block">{{ title }}</div>
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'text' -%}
+            {%- if block.settings.text != blank -%}
+              {%- liquid
+                capture text_style
+                  case block.settings.text_style
+                    when 'uppercase'
+                      echo 'eyebrow mb-2'
+                    when 'heading'
+                      echo 'heading heading--4 !text-[40px] lg:!text-[60px] em-newline'
+                    when 'heading_medium'
+                      echo 'heading heading--4 lg:text-[40px]'
+                      if block.settings.has_border
+                        echo ' pb-5 mb-5'
+                      else
+                        echo ' mb-2'
+                      endif
+                    when 'heading_small'
+                      echo 'heading heading--5'
+                      if block.settings.has_border
+                        echo ' pb-5 mb-5'
+                      else
+                        echo ' mb-2'
+                      endif
+                    else
+                      echo 'text-xs leading-5 restore-em'
+                      if block.settings.has_border
+                        echo ' pb-4 mb-4'
+                      else
+                        echo ' mb-2'
+                      endif
+                  endcase
+                  if block.settings.has_border
+                    echo ' border-b'
+                  endif
+                endcapture
+              -%}
+              <div class="{{ text_style }} {% if block.settings.center_mobile %} text-center {% endif %} max-w-[680px]">
+                {{ block.settings.text }}
+              </div>
+            {%- endif -%}
+          {%- when 'spacing' -%}
+            <div class="{% if block.settings.fill_all_desktop %}md:mt-auto{% endif %}">{% render 'vertical-spacing', section: section, block: block %}</div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+    {% comment %} End content container - desktop {% endcomment %}
+  </div>
+  {% comment %} End image with content container {% endcomment %}
+</div>
+{% comment %} End banner container {% endcomment %}
+
+{% schema %}
+{
+  "name": "Banner with text blocks",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text Block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add your text here</p>"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "Body"
+            },
+            {
+              "value": "uppercase",
+              "label": "Uppercase"
+            },
+            {
+              "value": "heading",
+              "label": "Heading large"
+            },
+            {
+              "value": "heading_medium",
+              "label": "Heading medium"
+            },
+            {
+              "value": "heading_small",
+              "label": "Heading small"
+            }
+          ],
+          "default": "body",
+          "label": "Text style"
+        },
+        {
+          "type": "checkbox",
+          "id": "has_border",
+          "label": "Add bottom border",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "center_mobile",
+          "label": "Center on mobile",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "spacing",
+      "name": "Spacing Block",
+      "settings": [
+        {
+          "type": "range",
+          "id": "spacing_desktop",
+          "min": 0,
+          "max": 200,
+          "step": 2,
+          "unit": "px",
+          "label": "Spacing desktop",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "spacing_mobile",
+          "min": 0,
+          "max": 200,
+          "step": 2,
+          "unit": "px",
+          "label": "Spacing mobile",
+          "default": 20
+        },
+        {
+          "type": "checkbox",
+          "id": "fill_all_desktop",
+          "label": "Fill all space on desktop",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner with text blocks",
+      "blocks": [
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "darkmode",
+      "label": "Dark mode",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desk",
+      "label": "Image desktop"
+    },
+    {
+      "type": "select",
+      "id": "image_height_desk",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "square",
+      "label": "Image height desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mob",
+      "label": "Image mobile"
+    },
+    {
+      "type": "select",
+      "id": "image_height_mob",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "square",
+      "label": "Image height mobile"
+    }
+  ]
+}
+{% endschema %}

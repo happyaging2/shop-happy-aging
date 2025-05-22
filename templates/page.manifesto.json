@@ -1,0 +1,130 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{ 
+  "sections": {
+    "e8f08648-2468-4bb6-bd05-384de39e1bbf": {
+      "type": "manifesto-hero",
+      "settings": {
+        "eyebrow": "Our Manifesto",
+        "title": "WHERE AGE <em>is a celebration<\/em>",
+        "text": "Join a movement that embraces life fully. Nurture your energy, body, and soul with a joyful and empowered approach to aging.",
+        "video": "shopify:\/\/files\/videos\/_13102024_HappyAging_V01.mp4"
+      }
+    },
+    "timeline-section": {
+      "type": "timeline-section",
+      "blocks": {
+        "step_ctedDa": {
+          "type": "step",
+          "settings": {
+            "number": "One",
+            "step_title": "TIMELESS <em>radiance<\/em>",
+            "step_text": "Our journey is illuminated by the timeless radiance within. With each passing day, we shine brighter, for age is a mere footnote in the story of our lives."
+          }
+        },
+        "step_DmGbCD": {
+          "type": "step",
+          "settings": {
+            "number": "two",
+            "step_title": "DEFYING <em>expectations<\/em>",
+            "step_text": "We are rebels against the constraints of time. We break free from society's boxes and live life unapologetically on our terms."
+          }
+        },
+        "step_cjDrAG": {
+          "type": "step",
+          "settings": {
+            "number": "three",
+            "step_title": "THE <em>ageless spirit<\/em>",
+            "step_text": "In our hearts, we are forever young. Our energy knows no bounds, and our passion is our fountain of youth."
+          }
+        },
+        "step_x4Kwhg": {
+          "type": "step",
+          "settings": {
+            "number": "four",
+            "step_title": "EMBRACE <em>the journey<\/em>",
+            "step_text": "Every step of our journey is a masterpiece in the making. We embrace life's twists and turns, finding beauty in every chapter."
+          }
+        },
+        "step_Vp9LYF": {
+          "type": "step",
+          "settings": {
+            "number": "five",
+            "step_title": "CHERISH <em>inner beauty<\/em>",
+            "step_text": "True beauty is the kindness that radiates from our souls. We nurture it within and share it generously with the world."
+          }
+        },
+        "step_cTwiTq": {
+          "type": "step",
+          "settings": {
+            "number": "six",
+            "step_title": "RESILIENCE <em>in wisdom<\/em>",
+            "step_text": "Age is not a sign of frailty but a testament to our resilience and the wisdom that comes with the years."
+          }
+        },
+        "step_8rFDrA": {
+          "type": "step",
+          "settings": {
+            "number": "seven",
+            "step_title": "FREEDOM <em>to define<\/em>",
+            "step_text": "We define our own path, write our own story, and create our unique definition of aging."
+          }
+        },
+        "step_irYyX4": {
+          "type": "step",
+          "settings": {
+            "number": "EIGHT",
+            "step_title": "ENERGY <em>unleashed<\/em>",
+            "step_text": "Our spirits are boundless, fueled by a zest for life that knows no limits. We awaken our energy and let it light up our world."
+          }
+        },
+        "step_Kwjxbw": {
+          "type": "step",
+          "settings": {
+            "number": "nine",
+            "step_title": "FOREVER <em>learning<\/em>",
+            "step_text": "Our quest for knowledge and personal growth is eternal. We thrive on the exhilaration of learning and evolving."
+          }
+        },
+        "step_GcDg3T": {
+          "type": "step",
+          "settings": {
+            "number": "ten",
+            "step_title": "SPREADING <em>joy<\/em>",
+            "step_text": "We are ambassadors of joy, spreading happiness wherever we go, for a life well-lived is a life filled with laughter and love."
+          }
+        }
+      },
+      "block_order": [
+        "step_ctedDa",
+        "step_DmGbCD",
+        "step_cjDrAG",
+        "step_x4Kwhg",
+        "step_Vp9LYF",
+        "step_cTwiTq",
+        "step_8rFDrA",
+        "step_irYyX4",
+        "step_Kwjxbw",
+        "step_GcDg3T"
+      ],
+      "settings": {
+        "first_image": "shopify:\/\/shop_images\/Happy_Aging_-_Photo_by_Ton_Gomes-036_1.jpg",
+        "second_image": "shopify:\/\/shop_images\/Happy_Aging_-_Photo_by_Ton_Gomes-058_1.jpg",
+        "third_image": "shopify:\/\/shop_images\/Happy_Aging_-_Photo_by_Ton_Gomes-066_1.jpg",
+        "fourth_image": "shopify:\/\/shop_images\/Happy_Aging_-_Photo_by_Ton_Gomes-021_1.jpg",
+        "fifth_image": "shopify:\/\/shop_images\/Happy_Aging_-_Photo_by_Ton_Gomes-007_1.jpg"
+      }
+    }
+  },
+  "order": [
+    "e8f08648-2468-4bb6-bd05-384de39e1bbf",
+    "timeline-section"
+  ]
+}
