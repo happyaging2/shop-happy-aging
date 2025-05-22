@@ -239,60 +239,6 @@
       ],
       "settings": {}
     },
-    "benefits_TnXkPb": {
-      "type": "benefits",
-      "blocks": {
-        "benefit_item_kPmN3R": {
-          "type": "benefit-item",
-          "settings": {
-            "title": "Fast, Visible Results",
-            "text": "In as little as 4 weeks, you'll notice softer, smoother skin. By 12 weeks, expect firmer, more resilient skin, strengthened nails, and an overall revitalized appearance."
-          }
-        },
-        "benefit_item_aEgn8V": {
-          "type": "benefit-item",
-          "settings": {
-            "title": "Hydrated, Radiant Skin",
-            "text": "Glow Shot delivers deep hydration, improving skin texture, reducing dryness, and restoring a luminous, healthy glow from within."
-          }
-        },
-        "benefit_item_qbW6JR": {
-          "type": "benefit-item",
-          "settings": {
-            "title": "Protection Against Environmental Stress",
-            "text": "The antioxidant power of hibiscus extract helps combat oxidative damage from pollution and UV exposure, keeping your skin healthier for longer."
-          }
-        },
-        "benefit_item_gUamQp": {
-          "type": "benefit-item",
-          "settings": {
-            "title": "Enhanced Skin Firmness and Elasticity",
-            "text": "Thanks to its potent 10,000 mg dose of marine collagen, Glow Shot supports your skin's structure by rebuilding collagen density, improving elasticity, and reducing sagging."
-          }
-        },
-        "benefit_item_ndzfAW": {
-          "type": "benefit-item",
-          "settings": {
-            "title": "Holistic Beauty Support",
-            "text": "Beyond skin hydration, Glow Shot supports stronger nails and improved hair resilience, giving you a comprehensive beauty boost."
-          }
-        }
-      },
-      "block_order": [
-        "benefit_item_kPmN3R",
-        "benefit_item_aEgn8V",
-        "benefit_item_qbW6JR",
-        "benefit_item_gUamQp",
-        "benefit_item_ndzfAW"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "<p>THE MAIN BENEFITS OF <em>glow shot</em></p>",
-        "text": "Empowering beauty and vitality.",
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/d59e99138e964a2b80860f18acb30caa.mp4",
-        "show_border_top": true
-      }
-    },
     "image_with_text_blocks_AriX9t": {
       "type": "image-with-text-blocks",
       "blocks": {
@@ -1315,7 +1261,6 @@
   "order": [
     "main",
     "marquee_pMqq4Y",
-    "benefits_TnXkPb",
     "image_with_text_blocks_AriX9t",
     "image_with_text_blocks_H7NErY",
     "steps_blocks_list_DDUtiT",
