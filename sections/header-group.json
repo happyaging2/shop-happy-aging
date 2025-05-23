@@ -50,7 +50,7 @@
             "product_list": [
               "longevity-shots"
             ],
-            "position": 3
+            "position": 4
           }
         },
         "product_LWRUWT": {
@@ -59,7 +59,7 @@
             "product_list": [
               "glow-shot"
             ],
-            "position": 4
+            "position": 5
           }
         },
         "product_qAaYnH": {
@@ -68,7 +68,7 @@
             "product_list": [
               "calm-shot"
             ],
-            "position": 5
+            "position": 6
           }
         },
         "product_WmiVMk": {
@@ -78,7 +78,7 @@
               "kit-calm-and-glow",
               "kit-full-routine"
             ],
-            "position": 6
+            "position": 7
           }
         },
         "product_eg7cRY": {
@@ -87,7 +87,7 @@
             "product_list": [
               "hydroburn"
             ],
-            "position": 2
+            "position": 3
           }
         },
         "product_yjiiYL": {
@@ -98,7 +98,16 @@
               "cap-happy-aging-copy",
               "cap-happy-aging"
             ],
-            "position": 7
+            "position": 8
+          }
+        },
+        "product_AV8gVr": {
+          "type": "product",
+          "settings": {
+            "product_list": [
+              "lean-muscle-formula"
+            ],
+            "position": 2
           }
         }
       },
@@ -109,7 +118,8 @@
         "product_qAaYnH",
         "product_WmiVMk",
         "product_eg7cRY",
-        "product_yjiiYL"
+        "product_yjiiYL",
+        "product_AV8gVr"
       ],
       "custom_css": [
         "@media screen and (max-width: 768px) {.seu-container {padding-bottom: 20px; }}"
