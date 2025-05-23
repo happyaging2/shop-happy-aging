@@ -61,8 +61,8 @@
         "cta_text": "Shop Now",
         "image_desktop": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-12_c928f717-7f07-474a-88e0-7e4725721203.jpg",
         "image_mobile": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-12_c928f717-7f07-474a-88e0-7e4725721203.jpg",
-        "video_url_desktop": "https://cdn.shopify.com/videos/c/o/v/13dbf7ed8ee141adaa73157add233438.webm",
-        "video_url_mobile": "https://cdn.shopify.com/videos/c/o/v/13dbf7ed8ee141adaa73157add233438.webm",
+        "video_url_desktop": "",
+        "video_url_mobile": "",
         "mobile_image_first": true
       }
     },
