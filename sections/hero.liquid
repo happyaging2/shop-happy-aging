@@ -10,55 +10,72 @@
       {% unless section.settings.sub_heading == blank %}
         <p class="sub-heading">{{ section.settings.sub_heading }}</p>
       {% endunless %}
-      {% unless section.settings.title == blank %}
-        <h2 class="heading heading-with-floating heading--1 lg:text-[90px] lg:w-[410px] lg:mb-2">
-          
-          {%- capture words -%}
-            {% unless section.settings.title_words == blank %}
-              <span>
-                <words-changer data-words="{{ section.settings.title_words }}">
-                  {% assign first_word = section.settings.title_words | split: ',' | first %}
-                  <em class="target-js">{{ first_word }}</em>
-                </words-changer>
-              </span>
-            {% endunless %}
-          {%- endcapture -%}
-      
-          {%- liquid
-            assign title_last = section.settings.title | split: '</p>' | last
-            assign supword = ''
-            if section.settings.sup_word != blank
-              assign supword = '<sup class="sup_word" style="vertical-align: sub;">' | append: section.settings.sup_word | append: '</sup>'
-            endif
-      
-            assign last_row = title_last | append: supword | append: words
-            assign original_block = title_last | append: '</p>'
-            assign new_block = last_row | append: '</p>'
-            assign title = section.settings.title | replace: original_block, new_block
-          -%}
-      
-          {{ title }}
-      
-        </h2>
-      
-        <style>
-          .sup_word {
-            {% comment %}
-            font-size: {{ section.settings.sup_size }}%;
-            {% endcomment %}
-          }
-        </style>
-      
-        {% comment %}
-          <i class="heading_floating_text">{{ section.settings.floating_text }}</i>
-          <style>
-            .heading-with-floating:after {
-              content: "{{ section.settings.floating_text | escape }}";
-            }
-          </style>
-        {% endcomment %}
-      
+
+
+{% unless section.settings.title == blank %}
+  <h2 class="heading heading-with-floating heading--1 lg:text-[90px] lg:w-[410px] lg:mb-2">
+    
+    {%- capture words -%}
+      {% unless section.settings.title_words == blank %}
+        <span>
+          <words-changer data-words="{{ section.settings.title_words }}">
+            {% assign first_word = section.settings.title_words | split: ',' | first %}
+            <em class="target-js">{{ first_word }}</em>
+          </words-changer>
+        </span>
       {% endunless %}
+    {%- endcapture -%}
+
+    {%- liquid
+      assign supword = ''
+      if section.settings.sup_word != blank
+        assign supword = '<sup class="sup_word" style="vertical-align: sub;">' | append: section.settings.sup_word | append: '</sup>'
+      endif
+
+      comment
+        Define todas as possíveis tags de fechamento em uma lista separada
+      endcomment
+      assign closing_tags_raw = "</h1>|</h2>|</h3>|</h4>|</h5>|</h6>|</p>"
+      assign closing_tags = closing_tags_raw | split: "|"
+      assign used_tag = ''
+
+      for tag in closing_tags
+        if section.settings.title contains tag
+          assign used_tag = tag
+        endif
+      endfor
+
+      assign title_last = section.settings.title | split: used_tag | last
+      assign last_row = title_last | append: supword | append: words
+      assign original_block = title_last | append: used_tag
+      assign new_block = last_row | append: used_tag
+      assign title = section.settings.title | replace: original_block, new_block
+    -%}
+
+    {{ title }}
+
+  </h2>
+
+  <style>
+    .sup_word {
+      {% comment %}
+      font-size: {{ section.settings.sup_size }}%;
+      {% endcomment %}
+    }
+  </style>
+
+  {% comment %}
+    <i class="heading_floating_text">{{ section.settings.floating_text }}</i>
+    <style>
+      .heading-with-floating:after {
+        content: "{{ section.settings.floating_text | escape }}";
+      }
+    </style>
+  {% endcomment %}
+{% endunless %}
+
+
+      
 
       {% unless section.settings.text == blank %}
         <div class="paragraph paragraph--2 lg:max-w-[330px] mb-4 lg:mb-8">{{ section.settings.text }}</div>
