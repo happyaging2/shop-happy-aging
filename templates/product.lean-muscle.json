@@ -46,7 +46,7 @@
             "text3": "<h1>5g</h1>",
             "text4": "<p>MICRONIZED<br/>CREATINE</p>",
             "text5": "<h1>0g</h1>",
-            "text6": "<p>SUGAR</p>"
+            "text6": "<p>ADDED SUGAR</p>"
           }
         },
         "description": {
@@ -245,7 +245,7 @@
         "text_RT9jGJ": {
           "type": "text",
           "settings": {
-            "text": "<p>5g Micronized Creatine.<br/>20g ORGANIC PROTEIN.<br/>0g SUGAR.<br/><br/></p>",
+            "text": "<p>5g Micronized Creatine.<br/>20g ORGANIC PROTEIN.<br/>0g ADDED SUGAR.<br/><br/></p>",
             "text_style": "heading",
             "has_border": false,
             "center_mobile": false
@@ -270,7 +270,7 @@
         "text_VDenjw": {
           "type": "text",
           "settings": {
-            "text": "<p>When it comes to building strength, energy, and performance, creatine makes all the difference. Yet most vegan protein powders leave it out. Happy Aging Vegan Protein + Creatine includes 5g of creatine micronized, the most researched and trusted form, blended directly into your daily shake.</p><p><br/>You get real results with no need for extra supplements, no artificial fillers, and no compromises.<br/><br/>Made with 5 organic ingredients, this formula is sugar free, stevia free, and delivers a rich flavor you'll look forward to enjoying every single day.</p>",
+            "text": "<p>When it comes to building strength, energy, and performance, creatine makes all the difference. Yet most vegan protein powders leave it out. Happy Aging Vegan Protein + Creatine includes 5g of creatine micronized, the most researched and trusted form, blended directly into your daily shake.</p><p><br/>You get real results with no need for extra supplements, no artificial fillers, and no compromises.<br/><br/>Made with 5 organic ingredients, this formula is 0g added sugar, stevia free, and delivers a rich flavor you'll look forward to enjoying every single day.</p>",
             "text_style": "body",
             "has_border": false,
             "center_mobile": false
@@ -435,7 +435,7 @@
             "image": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-25.jpg",
             "step_title": "",
             "title": "Clean and Easy to Digest",
-            "text": "<p>No sugar, no stevia, no gums. Just pure, functional ingredients</p>"
+            "text": "<p>0g added sugar, no stevia, no gums. Just pure, functional ingredients</p>"
           }
         }
       },
