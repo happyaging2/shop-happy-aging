@@ -245,7 +245,7 @@
         "text_RT9jGJ": {
           "type": "text",
           "settings": {
-            "text": "<p>5g CREATINE.<br/>20g ORGANIC PROTEIN.<br/>0g SUGAR.<br/><br/></p>",
+            "text": "<p>5g Micronized Creatine.<br/>20g ORGANIC PROTEIN.<br/>0g SUGAR.<br/><br/></p>",
             "text_style": "heading",
             "has_border": false,
             "center_mobile": false
@@ -315,7 +315,7 @@
         "text_gBUiKM": {
           "type": "text",
           "settings": {
-            "text": "<p>5g Creatine Micronized</p>",
+            "text": "<p>5g Micronized Creatine</p>",
             "text_style": "heading_small",
             "has_border": false,
             "center_mobile": false
