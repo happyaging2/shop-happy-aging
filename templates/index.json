@@ -9,35 +9,6 @@
  */
 {
   "sections": {
-    "hero": {
-      "type": "hero",
-      "disabled": true,
-      "custom_css": [
-        "@media screen and (max-width: 768px) {.seu-container {padding-bottom: 20px; }}",
-        ".hero-left-block p.sub-heading {font-weight: bold;}",
-        "@media screen and (min-width: 501px) {.hero-left-block {display: flex; flex-direction: column; align-content: center; justify-content: center; align-items: center; flex-wrap: wrap; text-align: center; gap: 5px; }}",
-        "@media screen and (min-width: 1400px) {.hero-left-block {padding-left: 0; transform: scale(1.2); }}",
-        "@media screen and (max-width: 500px) {.hero-left-block {padding: 3rem; }}"
-      ],
-      "settings": {
-        "fifty_fifty": true,
-        "bg_color": "#f7f5eb",
-        "button_color": "black",
-        "text_color": "black",
-        "sub_heading": "NEW",
-        "title": "<p>hydro <em>burn </em>™</p>",
-        "sup_word": "",
-        "title_words": "",
-        "text": "<p>Burn more. Feel the energy.</p>",
-        "cta_link": "shopify://products/hydroburn",
-        "cta_text": "Shop Now",
-        "image_desktop": "shopify://shop_images/HydroBanner_v1.png",
-        "image_mobile": "shopify://shop_images/Hydro_Burn_-_Happy_Aging_-_Martha_Graeff_-_Skep360-_Photo_by_Ton_Gomes_2025-4_1.png",
-        "video_url_desktop": "",
-        "video_url_mobile": "",
-        "mobile_image_first": true
-      }
-    },
     "hero_Nq9J7U": {
       "type": "hero",
       "custom_css": [
@@ -62,32 +33,6 @@
         "video_url_desktop": "https://cdn.shopify.com/videos/c/o/v/13dbf7ed8ee141adaa73157add233438.webm",
         "video_url_mobile": "https://cdn.shopify.com/videos/c/o/v/13dbf7ed8ee141adaa73157add233438.webm",
         "mobile_image_first": true
-      }
-    },
-    "hero_v2_tAjFKf": {
-      "type": "hero-v2",
-      "disabled": true,
-      "custom_css": [
-        "@media screen and (min-width: 600px) {.hero-left-block {display: grid; justify-content: center; justify-items: center; text-align: center; gap: 0; }}",
-        "@media screen and (max-width: 500px) {.hero-left-block {display: grid; justify-content: center; justify-items: center; text-align: center; gap: 0; } .fifty-selector {display: flex; flex-direction: column-reverse; height: 50%; } .hero-left-block {padding: 4rem 0; } .hero-media-img {aspect-ratio: 1 / 0.7; border-bottom: 1px solid; }}"
-      ],
-      "settings": {
-        "fifty_fifty": false,
-        "fifty_on_mobile": true,
-        "bg_color": "",
-        "button_color": "black",
-        "text_color": "black",
-        "sub_heading": "<strong>NEW</strong>",
-        "title": "<p>hydro <em>burn</em></p>",
-        "title_words": "™",
-        "text": "<p>Burn more. Feel the energy.</p>",
-        "cta_link": "shopify://products/hydroburn",
-        "cta_text": "Shop Now",
-        "image_desktop": "shopify://shop_images/HydroBanner_v1.png",
-        "image_mobile": "shopify://shop_images/HydroBanner_v1.png",
-        "video_url_desktop": "",
-        "video_url_mobile": "",
-        "mobile_image_first": false
       }
     },
     "landing_section_PVxkVe": {
@@ -151,103 +96,6 @@
         "bottom_spacing_mobile": 40,
         "use_top_border_mobile": true,
         "use_bottom_border_mobile": false
-      }
-    },
-    "hero_G3BmVP": {
-      "type": "hero",
-      "disabled": true,
-      "settings": {
-        "fifty_fifty": true,
-        "bg_color": "#f7f5eb",
-        "button_color": "black",
-        "text_color": "black",
-        "sub_heading": "Doctor-Founded, Science-Driven",
-        "title": "<p>AGE SLOWER </p><p><em>& live</em></p>",
-        "sup_word": "",
-        "title_words": "more,better,healthier,happier",
-        "text": "",
-        "cta_link": "shopify://collections/all",
-        "cta_text": "Shop Our Shots",
-        "image_desktop": "shopify://shop_images/PNG_image_1.png",
-        "image_mobile": "shopify://shop_images/d55ac1a454b4cbd94c9152d7871bca60.png",
-        "video_url_desktop": "",
-        "video_url_mobile": "",
-        "mobile_image_first": true
-      }
-    },
-    "image_banner_v2_aREdiH": {
-      "type": "image-banner-v2",
-      "blocks": {
-        "text_X8MwnR": {
-          "type": "text",
-          "settings": {
-            "text": "<strong>NEW</strong>",
-            "text_style": "body"
-          }
-        },
-        "heading_F9jQRa": {
-          "type": "heading",
-          "settings": {
-            "heading": "hydro <em>burn</em>",
-            "heading_size": "h0"
-          }
-        },
-        "text_B7X7hN": {
-          "type": "text",
-          "settings": {
-            "text": "dissovable Molecular Hydrogen",
-            "text_style": "caption-with-letter-spacing"
-          }
-        },
-        "text_hX99ir": {
-          "type": "text",
-          "settings": {
-            "text": "HydroBurn is a breakthrough metabolic support supplement,powered by Molecular Hydrogen (H₂)—an emerging discovery in longevity science.",
-            "text_style": "body"
-          }
-        },
-        "buttons_PXnfAP": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop Now",
-            "button_link_1": "shopify://products/hydroburn",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false,
-            "padding_top": 44,
-            "padding_bottom": 0,
-            "padding_top_mobile": 0,
-            "padding_bottom_mobile": 0
-          }
-        }
-      },
-      "block_order": [
-        "text_X8MwnR",
-        "heading_F9jQRa",
-        "text_B7X7hN",
-        "text_hX99ir",
-        "buttons_PXnfAP"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "@media screen and (max-width: 500px) {.banner__box {padding: 120px 40px 40px 20px; } .media img {/*transform: rotate(-90deg);*/ } .img-desk {display: none !important; }}",
-        "@media screen and (min-width: 501px) {.media img:nth-child(2) {display: none !important; } .media img:nth-child(1) {display: block !important; }}"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/21074dae6909998de588a93bc70c01a8_43f34695-27ef-417d-867a-dc45b90a1c91.png",
-        "image_3": "shopify://shop_images/21074dae6909998de588a93bc70c01a8_25fee679-8361-4783-be69-4415c77b4d3e.png",
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "desktop_content_position": "middle-left",
-        "show_text_box": false,
-        "left_box_width_50": true,
-        "desktop_content_alignment": "left",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "stack_images_on_mobile": true,
-        "show_text_below": false
       }
     },
     "logo-list": {
@@ -339,169 +187,6 @@
         "border": "border-b border-black"
       }
     },
-    "logo_list_v2_xAk4RK": {
-      "type": "logo-list-v2",
-      "blocks": {
-        "logo_item_hnGJgq": {
-          "type": "logo_item",
-          "settings": {
-            "logo_img": "shopify://shop_images/vogue-logo-1.png",
-            "width": 90
-          }
-        },
-        "logo_item_dcDrzw": {
-          "type": "logo_item",
-          "settings": {
-            "logo_img": "shopify://shop_images/Bustle_logo_2020.svg",
-            "width": 100
-          }
-        },
-        "logo_item_izD8LB": {
-          "type": "logo_item",
-          "settings": {
-            "logo_img": "shopify://shop_images/wellworthy.svg",
-            "width": 150
-          }
-        },
-        "logo_item_zdaUQe": {
-          "type": "logo_item",
-          "settings": {
-            "logo_img": "shopify://shop_images/Marie_Claire_Magazine_logo_2.svg",
-            "width": 140
-          }
-        },
-        "logo_item_KM8hC7": {
-          "type": "logo_item",
-          "settings": {
-            "logo_img": "shopify://shop_images/forbes-logo-6-1.png",
-            "width": 80
-          }
-        }
-      },
-      "block_order": [
-        "logo_item_hnGJgq",
-        "logo_item_dcDrzw",
-        "logo_item_izD8LB",
-        "logo_item_zdaUQe",
-        "logo_item_KM8hC7"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "<p>EMPOWERING WOMEN TO <em>age better, healthier, and happier</em></p>",
-        "text": "<p>More than just a wellness brand, we are dedicated to celebrating life and nurturing energy, body, and soul with a positive, holistic approach.</p>",
-        "cta_text": "Learn About Happy Aging",
-        "cta_url": "shopify://pages/about",
-        "border": "border-b border-black"
-      }
-    },
-    "featured_items_QNYFR4": {
-      "type": "featured-items",
-      "blocks": {
-        "image_Kh6wH7": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/todos_os_shots_em_caixas.png",
-            "title": "Shots",
-            "url": "shopify://collections/shots"
-          }
-        },
-        "image_9GydkE": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/d55ac1a454b4cbd94c9152d7871bca60_1.png",
-            "title": "Kits",
-            "url": "shopify://collections/kits"
-          }
-        },
-        "image_TNVY74": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/e60e3961e83624913e8f67dc7ca5f302.jpg",
-            "title": "Accessories",
-            "url": "shopify://collections/accessories"
-          }
-        },
-        "image_Lr9fVw": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/12ee93efd90276182f72c02e30bf24b5.jpg",
-            "title": "Shop All",
-            "url": "shopify://collections/all"
-          }
-        }
-      },
-      "block_order": [
-        "image_Kh6wH7",
-        "image_9GydkE",
-        "image_TNVY74",
-        "image_Lr9fVw"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "",
-        "text": "",
-        "border": ""
-      }
-    },
-    "products_info_carousel_yNBHC7": {
-      "type": "products-info-carousel",
-      "blocks": {
-        "product_Ahnr37": {
-          "type": "product",
-          "settings": {
-            "video": "shopify://files/videos/Longevity.mp4",
-            "sub_heading": "Discover the shots",
-            "title": "<p>A POWERFUL TOOL <em>for aging beautifully </em></p>",
-            "text": "<p>Powered by Resveratrol and Nicotinamide Riboside—the two most researched ingredients for longevity. </p>",
-            "cta_link": "shopify://products/longevity-shots",
-            "cta_text": "Shop Longevity Shots"
-          }
-        },
-        "product_Ahnr38": {
-          "type": "product",
-          "settings": {
-            "video": "shopify://files/videos/Glow.mp4",
-            "sub_heading": "Discover the shots",
-            "title": "<p><em>glow </em>shot</p>",
-            "text": "<p>Powered by Resveratrol and Nicotinamide Riboside—the two most researched ingredients for longevity. </p>",
-            "cta_link": "shopify://products/glow-shot",
-            "cta_text": "Shop Glow"
-          }
-        },
-        "product_Ahnr39": {
-          "type": "product",
-          "settings": {
-            "video": "shopify://files/videos/Calm.mp4",
-            "sub_heading": "Discover the shots",
-            "title": "<p><em>calm </em>shot</p>",
-            "text": "<p>Powered by Resveratrol and Nicotinamide Riboside—the two most researched ingredients for longevity. </p>",
-            "cta_link": "shopify://products/calm-shot",
-            "cta_text": "Shop Calm"
-          }
-        },
-        "product_Ahnr40": {
-          "type": "product",
-          "settings": {
-            "video": "shopify://files/videos/Longevity.mp4",
-            "sub_heading": "Discover the shots",
-            "title": "<p><em>longevity </em>shot</p>",
-            "text": "<p>Powered by Resveratrol and Nicotinamide Riboside—the two most researched ingredients for longevity. </p>",
-            "cta_link": "shopify://products/longevity-shots",
-            "cta_text": "Shop Longevity Shots"
-          }
-        }
-      },
-      "block_order": [
-        "product_Ahnr37",
-        "product_Ahnr38",
-        "product_Ahnr39",
-        "product_Ahnr40"
-      ],
-      "disabled": true,
-      "settings": {
-        "border": ""
-      }
-    },
     "products_carousel_6wT9GL": {
       "type": "products-carousel",
       "blocks": {
@@ -579,15 +264,6 @@
     "image_with_text_NQGXqp": {
       "type": "image-with-text",
       "blocks": {
-        "caption_PptWnR": {
-          "type": "caption",
-          "disabled": true,
-          "settings": {
-            "caption": "Add a tagline",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
         "heading_LBEqjr": {
           "type": "heading",
           "settings": {
@@ -613,7 +289,6 @@
         }
       },
       "block_order": [
-        "caption_PptWnR",
         "heading_LBEqjr",
         "text_eBgftp",
         "button_YLR4dr"
@@ -636,95 +311,6 @@
         "mobile_content_alignment": "center",
         "padding_top": 60,
         "padding_bottom": 60
-      }
-    },
-    "multicolumn_v2_cTqXCC": {
-      "type": "multicolumn-v2",
-      "blocks": {
-        "column_AUBt9x": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/3f20d14386b3cac350c9952e38fb5bb4.jpg",
-            "show_icon": false,
-            "icon_dark": false,
-            "background_transparent": true,
-            "lr_border": true,
-            "top_border": true,
-            "show_info": false,
-            "padding_top": 24,
-            "padding_bottom": 36,
-            "padding_top_mobile": 12,
-            "padding_bottom_mobile": 12,
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_nzUQeU": {
-          "type": "column",
-          "settings": {
-            "show_icon": true,
-            "icon_dark": true,
-            "background_transparent": true,
-            "lr_border": true,
-            "top_border": true,
-            "show_info": true,
-            "padding_top": 24,
-            "padding_bottom": 36,
-            "padding_top_mobile": 12,
-            "padding_bottom_mobile": 12,
-            "title": "",
-            "text": "<p>At Happy Aging, we believe aging is a privilege, not a problem to fix. We’re leading a pro-aging movement built on science, purpose, and self-celebration.<br/><br/>Our mission? To help women optimize their biological age through innovative formulations that support beauty, emotional balance, and long-term vitality.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_KgEm6E": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/43e28aa2fe2e805f47fb18080b68564d.jpg",
-            "show_icon": false,
-            "icon_dark": false,
-            "background_transparent": true,
-            "lr_border": true,
-            "top_border": true,
-            "show_info": false,
-            "padding_top": 24,
-            "padding_bottom": 36,
-            "padding_top_mobile": 12,
-            "padding_bottom_mobile": 12,
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_AUBt9x",
-        "column_nzUQeU",
-        "column_KgEm6E"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "@media screen and (max-width: 500px) {ul {flex-direction: row-reverse; display: flex; flex-wrap: wrap; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; list-style: none; padding: 0; } ul li:nth-child(4n) {grid-column: span 2; } ul li:nth-child(4) {order: 3; /*border: 5px solid blue !important;*/ } ul li:nth-child(2) {order: 1; border: 1px solid; /*border-color: #f90 !important;*/ } ul li:nth-child(6) {order: ; border: 1px solid; /*border-color: green !important;*/ } .animated-logo-badge {display: none; }}"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "image_with_marquee_KQbghH": {
@@ -881,68 +467,6 @@
         "border": "border-t border-black"
       }
     },
-    "doctors_hqYJaV": {
-      "type": "doctors",
-      "blocks": {
-        "doctor_8iaaae": {
-          "type": "doctor",
-          "settings": {
-            "image": "shopify://shop_images/Mask_group_9.png",
-            "title": "Dr. Daniel Yadegar, MD",
-            "sub_heading": "CREDENTIALS",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>",
-            "bio": ""
-          }
-        },
-        "doctor_8iaaaa": {
-          "type": "doctor",
-          "settings": {
-            "image": "shopify://shop_images/Mask_group2.png",
-            "title": "Dr. John Doe",
-            "sub_heading": "CREDENTIALS",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>",
-            "bio": ""
-          }
-        },
-        "doctor_8iaaab": {
-          "type": "doctor",
-          "settings": {
-            "image": "shopify://shop_images/Mask_group3.png",
-            "title": "Dr. Jane Doe",
-            "sub_heading": "CREDENTIALS",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>",
-            "bio": ""
-          }
-        },
-        "doctor_8iaaac": {
-          "type": "doctor",
-          "settings": {
-            "image": "shopify://shop_images/Mask_group4.png",
-            "title": "Dr. Janet Doe",
-            "sub_heading": "CREDENTIALS",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>",
-            "bio": ""
-          }
-        }
-      },
-      "block_order": [
-        "doctor_8iaaae",
-        "doctor_8iaaaa",
-        "doctor_8iaaab",
-        "doctor_8iaaac"
-      ],
-      "disabled": true,
-      "settings": {
-        "text_align": "text-center",
-        "sub_heading": "",
-        "title": "<p>TRUSTED <em>by doctors</em></p>",
-        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-        "cta_text": "Learn More",
-        "cta_url": "",
-        "bg": "#e5dbcc",
-        "border": ""
-      }
-    },
     "cta-banner": {
       "type": "cta-banner",
       "settings": {
@@ -957,23 +481,14 @@
     }
   },
   "order": [
-    "hero",
     "hero_Nq9J7U",
-    "hero_v2_tAjFKf",
     "landing_section_PVxkVe",
-    "hero_G3BmVP",
-    "image_banner_v2_aREdiH",
     "logo-list",
-    "logo_list_v2_xAk4RK",
-    "featured_items_QNYFR4",
-    "products_info_carousel_yNBHC7",
     "products_carousel_6wT9GL",
     "image_with_text_NQGXqp",
-    "multicolumn_v2_cTqXCC",
     "image_with_marquee_KQbghH",
     "image_with_blocks_e6WPEE",
     "featured_reviews_XUfiHi",
-    "doctors_hqYJaV",
     "cta-banner"
   ]
 }
