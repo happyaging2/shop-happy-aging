@@ -245,10 +245,12 @@
           "ref": true
         }
       },
-      "1910501027098541543": {
-        "type": "shopify://apps/variant-image-automator/blocks/starapps-via-embed/2a01d106-3d10-48e8-ba53-5cb971217ac4",
+      "4571859552318407796": {
+        "type": "shopify://apps/glo-color-swatch-variant-image/blocks/app-embed-block/4394f710-096c-4021-bbde-8ebb26057c11",
         "disabled": false,
-        "settings": {}
+        "settings": {
+          "customCssGCW": ""
+        }
       }
     },
     "color_schemes": {
