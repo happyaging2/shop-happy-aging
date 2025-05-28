@@ -249,11 +249,6 @@
         "type": "shopify://apps/variant-image-wizard-swatch/blocks/app-embed/66205c03-f474-4e2c-b275-0a2806eeac16",
         "disabled": true,
         "settings": {}
-      },
-      "3782161271425840822": {
-        "type": "shopify://apps/ns-color-swatch-variant-images/blocks/nestscale_product_variant/53eb5ed4-3892-414c-808b-3ea84516b10d",
-        "disabled": false,
-        "settings": {}
       }
     },
     "color_schemes": {

@@ -15,7 +15,7 @@
         "okendo_star_rating_XckRMV": {
           "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
           "settings": {
-            "product": "{{ section.settings.old_product }}"
+            "product": "lean-muscle-formula"
           }
         },
         "custom_reviews_yRiyrR": {
@@ -375,7 +375,6 @@
         "text_RhRm8r",
         "text_fFLFkF"
       ],
-      "name": "Image with text blocks",
       "settings": {
         "title": "<p>WHAT YOU’LL GET IN <em>every scoop</em></p>",
         "text": "",
@@ -609,7 +608,6 @@
         "step_ykbgV9",
         "step_qMPH6L"
       ],
-      "name": "Timeline Section",
       "settings": {
         "show_border_top": true,
         "first_image": "shopify://shop_images/ChatGPT_Image_Apr_29_2025_08_00_28_PM.png",
@@ -629,7 +627,6 @@
       "blocks": {
         "section_inner_jaGitq": {
           "type": "section-inner",
-          "name": "Grid (wrapper)",
           "settings": {
             "desktop_grid_columns": "2",
             "horizontal_alignment": "start",
@@ -653,7 +650,6 @@
           "blocks": {
             "grid_list_8NRiw8": {
               "type": "grid-list",
-              "name": "Grid (simple)",
               "settings": {
                 "desktop_grid_columns": "1",
                 "column_gap_desktop": 40,
@@ -665,7 +661,6 @@
               "blocks": {
                 "image_block_4rVcUP": {
                   "type": "image-block",
-                  "name": "Image block",
                   "settings": {
                     "image": "shopify://shop_images/ChatGPT_Image_Apr_29_2025_09_08_14_PM.png",
                     "different_mobile_image": false,
@@ -681,7 +676,6 @@
             },
             "section_inner_edEAQq": {
               "type": "section-inner",
-              "name": "Grid (wrapper)",
               "settings": {
                 "desktop_grid_columns": "1",
                 "horizontal_alignment": "start",
@@ -705,7 +699,6 @@
               "blocks": {
                 "grid_list_39DAGw": {
                   "type": "grid-list",
-                  "name": "Grid (simple)",
                   "settings": {
                     "desktop_grid_columns": "1",
                     "column_gap_desktop": 40,
@@ -717,7 +710,6 @@
                   "blocks": {
                     "heading_block_h8V6Bc": {
                       "type": "heading-block",
-                      "name": "Heading block",
                       "settings": {
                         "subheading": "",
                         "text": "<p>HOW TO USE</p>",
@@ -735,7 +727,6 @@
                 },
                 "grid_list_eF7r7e": {
                   "type": "grid-list",
-                  "name": "Grid (simple)",
                   "settings": {
                     "desktop_grid_columns": "1",
                     "column_gap_desktop": 40,
@@ -747,7 +738,6 @@
                   "blocks": {
                     "text_block_EnVxEh": {
                       "type": "text-block",
-                      "name": "Text block",
                       "settings": {
                         "text": "<p>HOW TO MAKE <br/><br/>Mix one scoop per day with water, almond milk, or your favorite smoothie.</p>",
                         "text_color": "",
@@ -762,7 +752,6 @@
                     },
                     "heading_block_wAMPBM": {
                       "type": "heading-block",
-                      "name": "Heading block",
                       "settings": {
                         "subheading": "",
                         "text": "",
@@ -777,7 +766,6 @@
                     },
                     "text_block_JCM36W": {
                       "type": "text-block",
-                      "name": "Text block",
                       "settings": {
                         "text": "<p>WHEN TO USE<br/><br/>Ideal after workouts or anytime you need a clean, plant-based energy boost</p>",
                         "text_color": "",
@@ -814,7 +802,6 @@
       "block_order": [
         "section_inner_jaGitq"
       ],
-      "name": "Landing Section",
       "settings": {
         "background_color": "#e5dbcc",
         "full_width": true,
@@ -834,7 +821,6 @@
       "blocks": {
         "section_inner_YmreYw": {
           "type": "section-inner",
-          "name": "Grid (wrapper)",
           "settings": {
             "desktop_grid_columns": "1",
             "horizontal_alignment": "center",
@@ -858,7 +844,6 @@
           "blocks": {
             "grid_list_Pf4yHh": {
               "type": "grid-list",
-              "name": "Grid (simple)",
               "settings": {
                 "desktop_grid_columns": "1",
                 "column_gap_desktop": 0,
@@ -870,7 +855,6 @@
               "blocks": {
                 "highlight_image_item_6wWHKq": {
                   "type": "highlight-image-item",
-                  "name": "Highlight image item",
                   "settings": {
                     "image_max_width_desktop": 0,
                     "title": "",
@@ -900,7 +884,6 @@
             },
             "section_inner_qAQ6QY": {
               "type": "section-inner",
-              "name": "Grid (wrapper)",
               "settings": {
                 "desktop_grid_columns": "2",
                 "horizontal_alignment": "start",
@@ -924,7 +907,6 @@
               "blocks": {
                 "grid_list_aTxT4k": {
                   "type": "grid-list",
-                  "name": "Grid (simple)",
                   "settings": {
                     "desktop_grid_columns": "1",
                     "column_gap_desktop": 40,
@@ -936,7 +918,6 @@
                   "blocks": {
                     "heading_block_gbkbFr": {
                       "type": "heading-block",
-                      "name": "Heading block",
                       "settings": {
                         "subheading": "",
                         "text": "<p>ORGANIC, POWERFUL <em>purposeful</em></p>",
@@ -956,7 +937,6 @@
                 },
                 "grid_list_UKGRj3": {
                   "type": "grid-list",
-                  "name": "Grid (simple)",
                   "settings": {
                     "desktop_grid_columns": "1",
                     "column_gap_desktop": 40,
@@ -968,7 +948,6 @@
                   "blocks": {
                     "text_block_EJp8ft": {
                       "type": "text-block",
-                      "name": "Text block",
                       "settings": {
                         "text": "<p>At Happy Aging, we don’t just make supplements. We create wellness rituals that support your energy, focus, and long-term strength. It’s not about perfection. It’s about progress that feels real.<br/><br/>This is your daily strength ritual, crafted with real.<br/>ingredients and backed by science. It gives your body exactly what it needs, and nothing it doesn’t.</p>",
                         "text_color": "",
@@ -1002,7 +981,6 @@
       "block_order": [
         "section_inner_YmreYw"
       ],
-      "name": "Landing Section",
       "settings": {
         "background_color": "",
         "full_width": true,
@@ -1022,7 +1000,6 @@
       "blocks": {
         "section_inner_JXkn3J": {
           "type": "section-inner",
-          "name": "Grid (wrapper)",
           "settings": {
             "desktop_max_width": 0,
             "desktop_grid_columns": "2",
@@ -1047,7 +1024,6 @@
           "blocks": {
             "grid_list_qxg7xP": {
               "type": "grid-list",
-              "name": "Grid (simple)",
               "settings": {
                 "desktop_grid_columns": "1",
                 "column_gap_desktop": 0,
@@ -1059,7 +1035,6 @@
               "blocks": {
                 "heading_block_Ht3kT6": {
                   "type": "heading-block",
-                  "name": "Heading block",
                   "settings": {
                     "subheading": "",
                     "text": "<p>MAKE IT A <em>ritual</em></p>",
@@ -1077,7 +1052,6 @@
             },
             "grid_list_jD7WGn": {
               "type": "grid-list",
-              "name": "Grid (simple)",
               "settings": {
                 "desktop_grid_columns": "1",
                 "column_gap_desktop": 40,
@@ -1089,7 +1063,6 @@
               "blocks": {
                 "text_block_kCWPrW": {
                   "type": "text-block",
-                  "name": "Text block",
                   "settings": {
                     "text": "<p>Subscribe and save with every order.  <br/><br/><br/><br/><br/></p>",
                     "text_color": "",
@@ -1103,7 +1076,6 @@
                 },
                 "newsletter_block_9F7BRy": {
                   "type": "newsletter-block",
-                  "name": "Newsletter block",
                   "settings": {
                     "text": "",
                     "text_color": "",
@@ -1117,7 +1089,6 @@
                 },
                 "text_block_4VzPLq": {
                   "type": "text-block",
-                  "name": "Text block",
                   "settings": {
                     "text": "<p>*By signing up, you agree to receive Happy Aging emails.<br/><br/></p>",
                     "text_color": "",
@@ -1146,7 +1117,6 @@
       "block_order": [
         "section_inner_JXkn3J"
       ],
-      "name": "Landing Section",
       "settings": {
         "background_color": "",
         "full_width": true,
