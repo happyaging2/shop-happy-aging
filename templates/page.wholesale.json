@@ -11,10 +11,51 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
+    },
+    "17490542661709f999": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_XmGGUL": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "496320",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#FFFFFF",
+            "links_color": "#1878B9",
+            "errors_color": "#E02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 52,
+            "padding_bottom": 37,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_XmGGUL"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "custom_liquid_8hNqrJ": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<iframe src=\"https://www.faire.com/embed/bw_qe85j29epj\" width=\"900\" height=\"600\" scrolling=\"no\" style=\"margin:0 auto;border:none;display:block;max-width:100%;width:900px;height:600px;\"></iframe>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "17490542661709f999",
+    "custom_liquid_8hNqrJ"
   ]
 }
