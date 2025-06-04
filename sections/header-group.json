@@ -46,10 +46,21 @@
             ],
             "position": 1
           }
+        },
+        "product_WnJncp": {
+          "type": "product",
+          "settings": {
+            "product_list": [
+              "kit-calm-and-glow",
+              "longevitys-essential"
+            ],
+            "position": 2
+          }
         }
       },
       "block_order": [
-        "product_kCjm7t"
+        "product_kCjm7t",
+        "product_WnJncp"
       ],
       "custom_css": [
         "@media screen and (max-width: 768px) {.seu-container {padding-bottom: 20px; }}"
