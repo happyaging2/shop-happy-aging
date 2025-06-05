@@ -1,0 +1,158 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "science-hero": {
+      "type": "science-hero",
+      "blocks": {
+        "images_4KDyrR": {
+          "type": "images",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_5.jpg"
+          }
+        },
+        "images_ELUTtT": {
+          "type": "images",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_6.jpg"
+          }
+        },
+        "images_cxExid": {
+          "type": "images",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_7.jpg"
+          }
+        },
+        "images_E7amNL": {
+          "type": "images",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_8.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "images_4KDyrR",
+        "images_ELUTtT",
+        "images_cxExid",
+        "images_E7amNL"
+      ],
+      "settings": {
+        "eyebrow": "OUR SCIENCE",
+        "title": "<p>THE FOUNDATION OF INNOVATION, <em>powered by research.</em></p>",
+        "text": "<p>Discover how cutting-edge science drives every Happy Aging formula, empowering you to age healthier, better, and with confidence.</p>"
+      }
+    },
+    "banner_text_blocks_icbCmJ": {
+      "type": "banner-text-blocks",
+      "blocks": {
+        "spacing_mzf6EN": {
+          "type": "spacing",
+          "settings": {
+            "spacing_desktop": 20,
+            "spacing_mobile": 20,
+            "fill_all_desktop": true
+          }
+        },
+        "text_HYKgDp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Why Science Matters in Aging</p>",
+            "text_style": "uppercase",
+            "has_border": false,
+            "center_mobile": false
+          }
+        },
+        "text_y8TV4Q": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Happy Aging, we believe that every stage of life can be vibrant and fulfilling. That’s why our products are rooted in rigorous research, blending the latest scientific advancements with nature’s most powerful ingredients. From cellular rejuvenation to overall vitality, we’re here to help you thrive, not just survive.</p>",
+            "text_style": "body",
+            "has_border": false,
+            "center_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "spacing_mzf6EN",
+        "text_HYKgDp",
+        "text_y8TV4Q"
+      ],
+      "settings": {
+        "darkmode": false,
+        "title": "<p>Aging isn’t a mystery—it’s biology. And we’ve mastered the science of supporting it. </p>",
+        "image_desk": "shopify://shop_images/DTS_Shadow_Tech_Fanette_Guilloud_Photos_ID9337_1.png",
+        "image_height_desk": "adapt",
+        "image_mob": "shopify://shop_images/DTS_Shadow_Tech_Fanette_Guilloud_Photos_ID9337_1_1.png",
+        "image_height_mob": "adapt"
+      }
+    },
+    "featured_cards_gdbNPX": {
+      "type": "featured-cards",
+      "blocks": {
+        "image_7XR4HV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/MARTHA_GRAEFF_-_HAPPY_AGING_-_Photo_by_Ton_Gomes_-14.jpg",
+            "title": "Cellular Health & Aging",
+            "url": "shopify://pages/cellular-health"
+          }
+        },
+        "image_gBkC6x": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DTS_Skin_Deep_Daniel_Faro_Photos_ID4247.jpg",
+            "title": "Ingredient Transparency",
+            "url": "shopify://pages/ingredient-transparency"
+          }
+        },
+        "image_HR7Ui9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Hydro_Burn_-_Happy_Aging_-_Martha_Graeff_-_Skep360_-_Photo_by_Ton_Gomes_-1_c7830940-f202-43fb-95a4-d920f1785de2.jpg",
+            "title": "Science of Hydro Burn",
+            "url": "shopify://pages/science-1"
+          }
+        }
+      },
+      "block_order": [
+        "image_7XR4HV",
+        "image_gBkC6x",
+        "image_HR7Ui9"
+      ],
+      "settings": {
+        "title": "",
+        "text": "",
+        "border": ""
+      }
+    },
+    "featured_products_grJ6A3": {
+      "type": "featured-products",
+      "settings": {
+        "eyebrow": "EXPLORE OUR PRODUCTS",
+        "title": "THE LATEST <em>from Happy Aging</em>",
+        "image_mobile": "shopify://shop_images/HappyAging_Packaging_01_1.jpg",
+        "image_desktop": "shopify://shop_images/HappyAging_Packaging_01_1.jpg",
+        "text": "",
+        "cta_text": "Shop Happy Aging",
+        "cta_link": "shopify://collections/all",
+        "show_border_top": false,
+        "hide_border_mobile": false,
+        "spacing_desktop": "lg:py-10",
+        "spacing_mobile": "py-10"
+      }
+    }
+  },
+  "order": [
+    "science-hero",
+    "banner_text_blocks_icbCmJ",
+    "featured_cards_gdbNPX",
+    "featured_products_grJ6A3"
+  ]
+}
