@@ -12,8 +12,12 @@
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
 <style>
-  .drawer {
+ .drawer:not(.active) {
     visibility: hidden;
+  }
+  
+  .drawer.active {
+    visibility: visible;
   }
 </style>
 
