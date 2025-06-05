@@ -46,12 +46,12 @@
       ],
       "settings": {
         "text_align": "text-center",
-        "sub_heading": "Advanced Delivery System",
+        "sub_heading": "Liposomal Technology",
         "title": "<p>ADVANCED NUTRIENT DELIVERY STARTS<em> at the cellular level. </em></p>",
         "text": "<p>Discover how our revolutionary liposomal technology enhances absorption and efficacy, delivering powerful nutrients directly to your cells.</p>",
         "image_desk": "shopify://shop_images/AdobeStock_320367239.jpg",
         "image_mob": "shopify://shop_images/AdobeStock_320367239_1.jpg",
-        "caption": "Liposomes are microscopic lipid bubbles that encapsulate active nutrients, ensuring efficient transportation into the human body. Our technology:"
+        "caption": "Our technology:"
       }
     },
     "landing_anchors_zpKNb8": {
@@ -275,11 +275,28 @@
                 "text_alignment_mobile": "left"
               },
               "blocks": {}
+            },
+            "ai_gen_block_cc3ea51_cqznhY": {
+              "type": "ai_gen_block_cc3ea51",
+              "settings": {
+                "font_size": 15,
+                "font_size_mobile": 16,
+                "font_weight": "500",
+                "text_alignment": "left",
+                "text_color": "#333333",
+                "highlight_color": "#009f57",
+                "background_color": "#f7f7f7",
+                "padding": 30,
+                "margin": 20,
+                "border_radius": 8
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "tabs_wpjFKx",
-            "text_block_KQNbrM"
+            "text_block_KQNbrM",
+            "ai_gen_block_cc3ea51_cqznhY"
           ]
         }
       },
@@ -488,6 +505,35 @@
     },
     "landing_section_difference": {
       "type": "landing-section",
+      "blocks": {
+        "ai_gen_block_8014e22_XF7HKY": {
+          "type": "ai_gen_block_8014e22",
+          "settings": {
+            "highlight_text": "<p>Happy Aging's liposomal formulas deliver nutrients up to <strong>10× better absorbed</strong> than regular capsules, giving you superior quality and results you can feel.</p>",
+            "text_alignment": "center",
+            "font_size": 18,
+            "font_size_mobile": 16,
+            "font_weight": "400",
+            "text_color": "#333333",
+            "accent_color": "#059f00",
+            "background_color": "#e5dbcc",
+            "padding": 30,
+            "padding_mobile": 20,
+            "margin": 20,
+            "border_radius": 8,
+            "border_width": 0,
+            "border_color": "#dddddd",
+            "show_accent_mark": true,
+            "accent_mark_position": "left",
+            "accent_mark_width": 4,
+            "accent_mark_color": "#009f57"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8014e22_XF7HKY"
+      ],
       "settings": {
         "background_color": "",
         "full_width": true,
@@ -502,6 +548,36 @@
         "use_top_border_mobile": false,
         "use_bottom_border_mobile": false
       }
+    },
+    "featured_collection_EY4e6m": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Liposomal Solutions",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -511,6 +587,7 @@
     "landing_section_ff4cfp",
     "landing_section_benefits",
     "landing_section_evidence",
-    "landing_section_difference"
+    "landing_section_difference",
+    "featured_collection_EY4e6m"
   ]
 }
