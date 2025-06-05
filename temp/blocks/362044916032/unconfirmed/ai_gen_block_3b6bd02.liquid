@@ -1,6 +1,519 @@
+{% doc %}
+  @prompt
+    Liposome Analysis — Happy Aging
+    A representative analysis of a Happy Aging liposomal formula shows how we confirm particle quality after simulated digestion.
+    
+    1. Dynamic Light Scattering (DLS)
+    We measure the post-digestion particle size by DLS. Results are consistent across our entire line, verifying that the liposomes remain in the optimal nanometre range.
+    
+    2. Why DLS, not just TEM
+    Single TEM images look impressive, but they capture only a few liposomes. DLS scans the whole sample, proving that every batch meets the “spherical-particle” specification—not just a photogenic subset.
+    
+    Bottom line
+    DLS-verified size distribution ensures product-wide uniformity and the high encapsulation efficiency (> 90 %) that sets Happy Aging liposomes apart., UNIQUE IMAGE. MANTENHA A FORMATAÇÃO DE ACORDO COM O RESTANTE DA PÁGINA
+    , ADD THIS TEXT: Dynamic Light Scattering (DLS)
+    We measure the post-digestion particle size by DLS. Results are consistent across our entire line, verifying that the liposomes remain in the optimal nanometre range.
+    
+    2. Why DLS, not just TEM
+    Single TEM images look impressive, but they capture only a few liposomes. DLS scans the whole sample, proving that every batch meets the “spherical-particle” specification—not just a photogenic subset.
+    
+    Bottom line
+    DLS-verified size distribution ensures product-wide uniformity and the high encapsulation efficiency (> 90 %) that sets Happy Aging liposomes apart. 
+    
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .liposome-analysis-{{ ai_gen_id }} {
+    margin: {{ block.settings.margin_vertical }}px {{ block.settings.margin_horizontal }}px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: {{ block.settings.layout }};
+    gap: {{ block.settings.content_spacing }}px;
+    align-items: {{ block.settings.vertical_alignment }};
+  }
+
+  .liposome-analysis-image-{{ ai_gen_id }} {
+    flex: 0 0 {{ block.settings.image_width_percentage }}%;
+    max-width: {{ block.settings.image_width_percentage }}%;
+  }
+
+  .liposome-analysis-content-{{ ai_gen_id }} {
+    flex: 1;
+  }
+
+  .liposome-analysis-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: {{ block.settings.title_weight }};
+    color: {{ block.settings.title_color }};
+    margin-top: 0;
+    margin-bottom: {{ block.settings.title_spacing }}px;
+  }
+
+  .liposome-analysis-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.5;
+    color: {{ block.settings.text_color }};}
+
+  .liposome-analysis-section-{{ ai_gen_id }} {
+    margin-bottom: {{ block.settings.section_spacing }}px;
+  }
+
+  .liposome-analysis-section-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.section_title_size }}px;
+    font-weight: {{ block.settings.section_title_weight }};
+    color: {{ block.settings.section_title_color }};
+    margin-top: 0;
+    margin-bottom: {{ block.settings.section_title_spacing }}px;
+  }
+
+  .liposome-analysis-bottom-line-{{ ai_gen_id }} {
+    margin-top: {{ block.settings.bottom_line_spacing }}px;
+    font-weight: {{ block.settings.bottom_line_weight }};
+    font-size: {{ block.settings.bottom_line_size }}px;
+    color: {{ block.settings.bottom_line_color }};
+  }
+
+  .liposome-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: {{ block.settings.border_radius }}px;{% if block.settings.add_shadow %}
+      box-shadow: 0 {{ block.settings.shadow_vertical_offset }}px {{ block.settings.shadow_blur }}px rgba(0, 0, 0, {{ block.settings.shadow_opacity | divided_by: 100.0 }});
+    {% endif %}{% if block.settings.add_border %}
+      border: {{ block.settings.border_thickness }}px solid {{ block.settings.border_color }};
+    {% endif %}
+  }
+
+  .liposome-image-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .liposome-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 0;
+    padding-bottom: {{ block.settings.aspect_ratio }}%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .liposome-image-placeholder-{{ ai_gen_id }} svg {
+    width: 50%;
+    height: 50%;
+    color: #888888;
+  }
+
+  @media screen and (max-width: 749px) {
+    .liposome-analysis-{{ ai_gen_id }} {
+      flex-direction: column;
+    }
+    
+    .liposome-analysis-image-{{ ai_gen_id }} {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: {{ block.settings.content_spacing }}px;
+    }
+    
+    .liposome-analysis-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.8 }}px;}
+    
+    .liposome-analysis-section-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.section_title_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="liposome-analysis-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="liposome-analysis-image-{{ ai_gen_id }}">
+    <div class="liposome-image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image %}
+        <img 
+          src="{{ block.settings.image | image_url: width: 800 }}" 
+          alt="{{ block.settings.image.alt | default: 'Liposome Analysis' | escape }}"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+          loading="{{ block.settings.loading }}"
+          class="liposome-image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="liposome-image-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="liposome-analysis-content-{{ ai_gen_id }}">
+    <h2 class="liposome-analysis-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+    
+    <div class="liposome-analysis-text-{{ ai_gen_id }}"><p>{{ block.settings.intro_text }}</p><div class="liposome-analysis-section-{{ ai_gen_id }}">
+        <h3 class="liposome-analysis-section-title-{{ ai_gen_id }}">1. Dynamic Light Scattering (DLS)</h3>
+        <p>We measure the post-digestion particle size by DLS. Results are consistent across our entire line, verifying that the liposomes remain in the optimal nanometre range.</p>
+      </div>
+      
+      <div class="liposome-analysis-section-{{ ai_gen_id }}">
+        <h3 class="liposome-analysis-section-title-{{ ai_gen_id }}">2. Why DLS, not just TEM</h3>
+        <p>Single TEM images look impressive, but they capture only a few liposomes. DLS scans the whole sample, proving that every batch meets the "spherical-particle" specification—not just a photogenic subset.</p>
+      </div><div class="liposome-analysis-bottom-line-{{ ai_gen_id }}">
+        <strong>Bottom line</strong><br>
+        DLS-verified size distribution ensures product-wide uniformity and the high encapsulation efficiency (> 90 %) that sets Happy Aging liposomes apart.
+      </div>
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Liposome Analysis",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Liposome Analysis — Happy Aging"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text",
+      "label": "Introduction text",
+      "default": "A representative analysis of a Happy Aging liposomal formula shows how we confirm particle quality after simulated digestion."
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "row",
+          "label": "Image left, text right"
+        },
+        {
+          "value": "row-reverse",
+          "label": "Image right, text left"
+        },
+        {
+          "value": "column",
+          "label": "Image top, text bottom"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Middle"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "content_spacing",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Space between image and text",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "margin_horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Horizontal margin",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_vertical",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Vertical margin",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_width_percentage",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "label": "Image width",
+      "default": 45
+    },
+    {
+      "type": "range",
+      "id": "aspect_ratio",
+      "min": 20,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "label": "Placeholder aspect ratio",
+      "default": 75
+    },
+    {
+      "type": "select",
+      "id": "loading",
+      "label": "Image loading",
+      "options": [
+        {
+          "value": "lazy",
+          "label": "Lazy load"
+        },
+        {
+          "value": "eager",
+          "label": "Immediate load"
+        }
+      ],
+      "default": "lazy"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "checkbox",
+      "id": "add_border",
+      "label": "Add border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "border_thickness",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Border thickness",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_shadow",
+      "label": "Add shadow",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Shadow opacity",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "shadow_vertical_offset",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Shadow vertical offset",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "shadow_blur",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Shadow blur",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "title_weight",
+      "min": 400,
+      "max": 900,
+      "step": 100,
+      "label": "Title weight",
+      "default": 700
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Space after title",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "section_spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Space between sections",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "section_title_size",
+      "min": 14,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Section title size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "section_title_weight",
+      "min": 400,
+      "max": 900,
+      "step": 100,
+      "label": "Section title weight",
+      "default": 600
+    },
+    {
+      "type": "color",
+      "id": "section_title_color",
+      "label": "Section title color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "section_title_spacing",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Space after section title",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "bottom_line_spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Space before bottom line",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "bottom_line_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Bottom line text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "bottom_line_weight",
+      "min": 400,
+      "max": 900,
+      "step": 100,
+      "label": "Bottom line weight",
+      "default": 500
+    },
+    {
+      "type": "color",
+      "id": "bottom_line_color",
+      "label": "Bottom line color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Liposome Analysis"
+    }
+  ]
+}
 {% endschema %}
