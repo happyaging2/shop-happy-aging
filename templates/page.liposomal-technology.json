@@ -1,0 +1,1695 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "landing_intro_YmYtTx": {
+      "type": "landing-intro",
+      "blocks": {
+        "text_4gpaLX": {
+          "type": "text",
+          "settings": {
+            "title": "Boost Energy Production",
+            "text": "<p>by enhancing mitochondrial function</p>"
+          }
+        },
+        "text_XUXeVM": {
+          "type": "text",
+          "settings": {
+            "title": "Promote DNA Repair",
+            "text": "<p>for long-term cellular resilience.</p>"
+          }
+        },
+        "text_nDkjxd": {
+          "type": "text",
+          "settings": {
+            "title": "Fight Inflammation and Oxidative Stress",
+            "text": "<p>Backed by research, our products work from the inside out to keep you feeling radiant, energized, and strong.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_4gpaLX",
+        "text_XUXeVM",
+        "text_nDkjxd"
+      ],
+      "settings": {
+        "text_align": "text-center",
+        "sub_heading": "Cellular Health & Aging",
+        "title": "<p>HEALTHY AGING STARTS<em> at the cellular level. </em></p>",
+        "text": "<p>Discover how cutting-edge science drives every Happy Aging formula, empowering you to age healthier, better, and with confidence.</p>",
+        "image_desk": "shopify://shop_images/AdobeStock_320367239.jpg",
+        "image_mob": "shopify://shop_images/AdobeStock_320367239_1.jpg",
+        "caption": "Your cells are the building blocks of your health, and as they age, so do you. Our formulas are designed to:"
+      }
+    },
+    "landing_anchors_zpKNb8": {
+      "type": "landing-anchors",
+      "blocks": {
+        "anchor_LfFdhK": {
+          "type": "anchor",
+          "settings": {
+            "title": "THE FOUNDATION"
+          }
+        },
+        "anchor_hPYMjL": {
+          "type": "anchor",
+          "settings": {
+            "title": "THE PROBLEM"
+          }
+        },
+        "anchor_3BFx4q": {
+          "type": "anchor",
+          "settings": {
+            "title": "NR AND NAD+"
+          }
+        },
+        "anchor_7QdbUk": {
+          "type": "anchor",
+          "settings": {
+            "title": "WHY NR MATTERS"
+          }
+        },
+        "anchor_KtHncQ": {
+          "type": "anchor",
+          "settings": {
+            "title": "OUR LONGEVITY SHOT"
+          }
+        },
+        "anchor_gRQCH6": {
+          "type": "anchor",
+          "settings": {
+            "title": "RESVERATROL"
+          }
+        },
+        "anchor_3W6cxc": {
+          "type": "anchor",
+          "settings": {
+            "title": "LIPOSOMAL TECHNOLOGY"
+          }
+        },
+        "anchor_QA9CLG": {
+          "type": "anchor",
+          "settings": {
+            "title": "THE RESULTS"
+          }
+        },
+        "anchor_TQjjNF": {
+          "type": "anchor",
+          "settings": {
+            "title": "KEY SCIENTIFIC INNOVATIONS"
+          }
+        }
+      },
+      "block_order": [
+        "anchor_LfFdhK",
+        "anchor_hPYMjL",
+        "anchor_3BFx4q",
+        "anchor_7QdbUk",
+        "anchor_KtHncQ",
+        "anchor_gRQCH6",
+        "anchor_3W6cxc",
+        "anchor_QA9CLG",
+        "anchor_TQjjNF"
+      ],
+      "settings": {}
+    },
+    "landing_section_ff4cfp": {
+      "type": "landing-section",
+      "blocks": {
+        "grid_block_gq3g7e": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 20,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "heading_block_4HCTYB": {
+              "type": "heading-block",
+              "settings": {
+                "subheading": "",
+                "text": "<p>Healthy cells are the key to a vibrant, energetic, and resilient you.</p>",
+                "tag_select": "h2",
+                "text_color": "",
+                "max_width": 350,
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "left"
+              }
+            },
+            "text_block_U9BaUP": {
+              "type": "text-block",
+              "settings": {
+                "text": "<p>At the core of every bodily function—glowing skin, steady energy, and resilience against aging—is your cellular health. Over time, your cells experience natural wear and tear, losing their ability to repair, energize, and thrive. </p>",
+                "text_color": "",
+                "text_weight": "normal",
+                "max_width": 540,
+                "desktop_font_size": 0,
+                "desktop_line_height": 0,
+                "top_spacing_desktop": 20,
+                "text_alignment_desktop": "left",
+                "mobile_font_size": 0,
+                "mobile_line_height": 0,
+                "top_spacing_mobile": 0,
+                "text_alignment_mobile": "left"
+              }
+            }
+          },
+          "block_order": [
+            "heading_block_4HCTYB",
+            "text_block_U9BaUP"
+          ]
+        },
+        "section_inner_KrTKUz": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 40,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "tabs_wpjFKx": {
+              "type": "tabs",
+              "settings": {},
+              "blocks": {
+                "tab_qQfdKb": {
+                  "type": "_tab",
+                  "settings": {
+                    "heading": "AGE 20",
+                    "is_active": true
+                  },
+                  "blocks": {
+                    "image_block_XibkWt": {
+                      "type": "image-block",
+                      "settings": {
+                        "image": "shopify://shop_images/Group_463.png",
+                        "different_mobile_image": false,
+                        "show_on_mobile": true,
+                        "show_on_desktop": true
+                      }
+                    }
+                  },
+                  "block_order": [
+                    "image_block_XibkWt"
+                  ]
+                },
+                "tab_F48EC4": {
+                  "type": "_tab",
+                  "settings": {
+                    "heading": "AGE 40",
+                    "is_active": false
+                  },
+                  "blocks": {
+                    "image_block_FYUrLh": {
+                      "type": "image-block",
+                      "settings": {
+                        "image": "shopify://shop_images/Group_463.png",
+                        "different_mobile_image": false,
+                        "show_on_mobile": true,
+                        "show_on_desktop": true
+                      }
+                    }
+                  },
+                  "block_order": [
+                    "image_block_FYUrLh"
+                  ]
+                },
+                "tab_3YJEJT": {
+                  "type": "_tab",
+                  "settings": {
+                    "heading": "AGE 60",
+                    "is_active": false
+                  },
+                  "blocks": {
+                    "image_block_mLeMrV": {
+                      "type": "image-block",
+                      "settings": {
+                        "image": "shopify://shop_images/Group_463.png",
+                        "different_mobile_image": false,
+                        "show_on_mobile": true,
+                        "show_on_desktop": true
+                      }
+                    }
+                  },
+                  "block_order": [
+                    "image_block_mLeMrV"
+                  ]
+                }
+              },
+              "block_order": [
+                "tab_qQfdKb",
+                "tab_F48EC4",
+                "tab_3YJEJT"
+              ]
+            },
+            "text_block_KQNbrM": {
+              "type": "text-block",
+              "settings": {
+                "text": "<p>By your 40s, NAD+ levels decline by up to 50%, reducing your cells’ ability to produce energy and repair damage <a href=\"https://google.com\" target=\"_blank\" title=\"https://google.com\">source: Cell Metabolism, 2016</a></p>",
+                "text_color": "",
+                "text_weight": "normal",
+                "max_width": 530,
+                "top_spacing_desktop": 40,
+                "text_alignment_desktop": "left",
+                "top_spacing_mobile": 40,
+                "text_alignment_mobile": "left"
+              }
+            }
+          },
+          "block_order": [
+            "tabs_wpjFKx",
+            "text_block_KQNbrM"
+          ]
+        }
+      },
+      "block_order": [
+        "grid_block_gq3g7e",
+        "section_inner_KrTKUz"
+      ],
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "max_width": 0,
+        "top_spacing": 60,
+        "bottom_spacing": 60,
+        "use_top_border": true,
+        "full_width_mobile": false,
+        "top_spacing_mobile": 30,
+        "bottom_spacing_mobile": 50,
+        "use_top_border_mobile": false
+      }
+    },
+    "landing_section_kzcpRW": {
+      "type": "landing-section",
+      "blocks": {
+        "section_inner_NRhdjD": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "2",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 70,
+            "desktop_grid_row_gap": 70,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 40,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "heading_block_DwrTPQ": {
+              "type": "heading-block",
+              "settings": {
+                "subheading": "",
+                "text": "<p>NAD+ levels naturally decline with age due to:</p>",
+                "tag_select": "h2",
+                "text_color": "",
+                "max_width": 250,
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "left"
+              }
+            },
+            "grid_list_nRe6ki": {
+              "type": "grid-list",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 40,
+                "row_gap_desktop": 40,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 30,
+                "row_gap_mobile": 30
+              },
+              "blocks": {
+                "highlight_text_item_PhPa8Y": {
+                  "type": "highlight-text-item",
+                  "settings": {
+                    "title": "<p>decreased production</p>",
+                    "text": "<p>Your body produces less NAD+ over time.</p>"
+                  }
+                },
+                "highlight_text_item_Hb4cf8": {
+                  "type": "highlight-text-item",
+                  "settings": {
+                    "title": "<p>Increased consumption</p>",
+                    "text": "<p>DNA repair and inflammation use up NAD+ <br/>faster as we age.<br/></p>"
+                  }
+                }
+              },
+              "block_order": [
+                "highlight_text_item_PhPa8Y",
+                "highlight_text_item_Hb4cf8"
+              ]
+            }
+          },
+          "block_order": [
+            "heading_block_DwrTPQ",
+            "grid_list_nRe6ki"
+          ]
+        },
+        "section_inner_JLd4pG": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "2",
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "center",
+            "desktop_grid_column_gap": 70,
+            "desktop_grid_row_gap": 70,
+            "top_spacing_desktop": 60,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "center",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 40,
+            "top_spacing_mobile": 40,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "highlight_image_item_EAUddw": {
+              "type": "highlight-image-item",
+              "settings": {
+                "image": "shopify://shop_images/20.svg",
+                "image_max_width_desktop": 300,
+                "image_max_width_mobile": 300,
+                "title": "<p>By age 60, you may have only</p>",
+                "title_size": 14,
+                "title_line_height": 20,
+                "title_color": "",
+                "text": "",
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "center",
+                "flex_direction": "row",
+                "justify_content": "start",
+                "align_items": "start",
+                "row_gap": 30,
+                "column_gap": 20,
+                "flex_direction_mobile": "column",
+                "justify_content_mobile": "center",
+                "align_items_mobile": "center",
+                "row_gap_mobile": 20,
+                "column_gap_mobile": 20
+              }
+            },
+            "grid_list_Px3bzC": {
+              "type": "grid-list",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 10,
+                "row_gap_desktop": 10,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 10,
+                "row_gap_mobile": 10
+              },
+              "blocks": {
+                "text_block_ctXxQj": {
+                  "type": "text-block",
+                  "settings": {
+                    "text": "<p>of the NAD+ you <br/>had when you were 20</p>",
+                    "text_color": "",
+                    "text_weight": "bold",
+                    "desktop_font_size": 22,
+                    "desktop_line_height": 27,
+                    "top_spacing_desktop": 40,
+                    "text_alignment_desktop": "left",
+                    "mobile_font_size": 22,
+                    "mobile_line_height": 27,
+                    "text_alignment_mobile": "center"
+                  }
+                },
+                "text_block_gtjEkB": {
+                  "type": "text-block",
+                  "settings": {
+                    "text": "<p>leading to visible aging, fatigue, and slower recovery.  <a href=\"https://google.com\" target=\"_blank\" title=\"https://google.com\">Source: Nature Communications, 2016</a></p>",
+                    "text_color": "",
+                    "text_weight": "normal",
+                    "text_alignment_desktop": "left",
+                    "text_alignment_mobile": "center"
+                  }
+                }
+              },
+              "block_order": [
+                "text_block_ctXxQj",
+                "text_block_gtjEkB"
+              ]
+            }
+          },
+          "block_order": [
+            "highlight_image_item_EAUddw",
+            "grid_list_Px3bzC"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_NRhdjD",
+        "section_inner_JLd4pG"
+      ],
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "max_width": 0,
+        "top_spacing": 60,
+        "bottom_spacing": 60,
+        "use_top_border": true,
+        "full_width_mobile": false,
+        "top_spacing_mobile": 60,
+        "bottom_spacing_mobile": 60,
+        "use_top_border_mobile": true
+      }
+    },
+    "landing_section_mUdU97": {
+      "type": "landing-section",
+      "blocks": {
+        "section_inner_r4UrUw": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "heading_block_yp4iKz": {
+              "type": "heading-block",
+              "settings": {
+                "subheading": "",
+                "text": "<p>The secret to energy, repair, and vitality lies in replenishing NAD+ levels.</p>",
+                "tag_select": "h2",
+                "text_color": "",
+                "max_width": 410,
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "left"
+              }
+            },
+            "text_block_XrXggd": {
+              "type": "text-block",
+              "settings": {
+                "text": "<p>NAD+ (Nicotinamide Adenine Dinucleotide) is a molecule found in every cell of your body, essential for:</p>",
+                "text_color": "",
+                "text_weight": "normal",
+                "max_width": 450,
+                "top_spacing_desktop": 15,
+                "text_alignment_desktop": "left",
+                "top_spacing_mobile": 15,
+                "text_alignment_mobile": "left"
+              }
+            }
+          },
+          "block_order": [
+            "heading_block_yp4iKz",
+            "text_block_XrXggd"
+          ]
+        },
+        "grid_block_7idAbQ": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "2",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 30,
+            "desktop_grid_row_gap": 60,
+            "top_spacing_desktop": 70,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 40,
+            "top_spacing_mobile": 50,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "highlight_text_item_MeiDXJ": {
+              "type": "highlight-text-item",
+              "settings": {
+                "title": "<p>Energy Production</p>",
+                "text": "<p>Powers mitochondria, the engines of your cells, to produce ATP.</p>",
+                "icon": "shopify://shop_images/Group_512.svg"
+              }
+            },
+            "highlight_text_item_gkMK47": {
+              "type": "highlight-text-item",
+              "settings": {
+                "title": "<p>Increased consumption</p>",
+                "text": "<p>Activates enzymes like sirtuins and PARPs that fix daily damage to your DNA.</p>",
+                "icon": "shopify://shop_images/Group_513.svg"
+              }
+            },
+            "highlight_text_item_YVDRRc": {
+              "type": "highlight-text-item",
+              "settings": {
+                "title": "<p>Metabolism Regulation</p>",
+                "text": "<p>Helps convert food into fuel efficiently.</p>",
+                "icon": "shopify://shop_images/Group_515.svg"
+              }
+            },
+            "highlight_text_item_eRLBxt": {
+              "type": "highlight-text-item",
+              "settings": {
+                "title": "<p>Cellular Longevity</p>",
+                "text": "<p>Supports sirtuins, proteins that protect cells and extend their lifespan.</p>",
+                "icon": "shopify://shop_images/Group_519.svg"
+              }
+            }
+          },
+          "block_order": [
+            "highlight_text_item_MeiDXJ",
+            "highlight_text_item_gkMK47",
+            "highlight_text_item_YVDRRc",
+            "highlight_text_item_eRLBxt"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_r4UrUw",
+        "grid_block_7idAbQ"
+      ],
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "top_spacing": 60,
+        "bottom_spacing": 60,
+        "use_top_border": true,
+        "full_width_mobile": false,
+        "top_spacing_mobile": 60,
+        "bottom_spacing_mobile": 60,
+        "use_top_border_mobile": true
+      }
+    },
+    "landing_section_7yhCKQ": {
+      "type": "landing-section",
+      "blocks": {
+        "section_inner_BDX6rP": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "2",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 90,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 40,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "highlight_image_item_bt6rPg": {
+              "type": "highlight-image-item",
+              "settings": {
+                "image": "shopify://shop_images/Screenshot_2025-01-16_at_4.25.38_PM_1_1.png",
+                "image_max_width_mobile": 260,
+                "title": "",
+                "title_size": 30,
+                "title_line_height": 42,
+                "title_color": "",
+                "text": "<p><strong>Nicotinamide Riboside (NR) </strong>is a precursor to NAD+, meaning your body converts it into NAD+ through natural processes:</p>",
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "left",
+                "flex_direction": "column",
+                "justify_content": "start",
+                "align_items": "start",
+                "row_gap": 20,
+                "column_gap": 20,
+                "flex_direction_mobile": "column",
+                "justify_content_mobile": "center",
+                "align_items_mobile": "center",
+                "row_gap_mobile": 20,
+                "column_gap_mobile": 20
+              }
+            },
+            "grid_list_iqetDa": {
+              "type": "grid-list",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 40,
+                "row_gap_desktop": 40,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 30,
+                "row_gap_mobile": 30
+              },
+              "blocks": {
+                "highlight_text_item_grzYaK": {
+                  "type": "highlight-text-item",
+                  "settings": {
+                    "title": "<p>NR is absorbed</p>",
+                    "text": "<p>Inside your cells, NR is transformed into Nicotinamide Mononucleotide (NMN).</p>"
+                  }
+                },
+                "highlight_text_item_Vqwb6X": {
+                  "type": "highlight-text-item",
+                  "settings": {
+                    "title": "<p>NR converts to NMN</p>",
+                    "text": "<p>Inside your cells, NR is transformed into Nicotinamide Mononucleotide (NMN).</p>"
+                  }
+                },
+                "highlight_text_item_TCifWK": {
+                  "type": "highlight-text-item",
+                  "settings": {
+                    "title": "<p>NMN becomes NAD+</p>",
+                    "text": "<p>NMN is then converted into NAD+, restoring energy and repair functions.</p>"
+                  }
+                }
+              },
+              "block_order": [
+                "highlight_text_item_grzYaK",
+                "highlight_text_item_Vqwb6X",
+                "highlight_text_item_TCifWK"
+              ]
+            }
+          },
+          "block_order": [
+            "highlight_image_item_bt6rPg",
+            "grid_list_iqetDa"
+          ]
+        },
+        "section_inner_3kpA43": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "2",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "end",
+            "desktop_grid_column_gap": 90,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 70,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "center",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 40,
+            "top_spacing_mobile": 40,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "highlight_image_item_nNP9bM": {
+              "type": "highlight-image-item",
+              "settings": {
+                "image": "shopify://shop_images/Up_to_60.svg",
+                "image_max_width_desktop": 200,
+                "image_max_width_mobile": 200,
+                "title": "<p><strong>Up To</strong></p>",
+                "title_size": 30,
+                "title_line_height": 42,
+                "title_color": "#d0535b",
+                "text": "<p><strong>increase in NAD+ <br/>levels within 4 weeks</strong></p>",
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "center",
+                "flex_direction": "row",
+                "justify_content": "start",
+                "align_items": "end",
+                "row_gap": 20,
+                "column_gap": 20,
+                "flex_direction_mobile": "column",
+                "justify_content_mobile": "center",
+                "align_items_mobile": "center",
+                "row_gap_mobile": 20,
+                "column_gap_mobile": 20
+              }
+            },
+            "highlight_image_item_EtNkQt": {
+              "type": "highlight-image-item",
+              "settings": {
+                "image": "shopify://shop_images/2x.svg",
+                "image_max_width_desktop": 150,
+                "image_max_width_mobile": 150,
+                "title": "",
+                "title_size": 30,
+                "title_line_height": 42,
+                "title_color": "",
+                "text": "<p><strong>NAD+ levels <br/>within 8 weeks</strong></p>",
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "center",
+                "flex_direction": "row",
+                "justify_content": "start",
+                "align_items": "end",
+                "row_gap": 20,
+                "column_gap": 20,
+                "flex_direction_mobile": "column",
+                "justify_content_mobile": "center",
+                "align_items_mobile": "center",
+                "row_gap_mobile": 20,
+                "column_gap_mobile": 20
+              }
+            }
+          },
+          "block_order": [
+            "highlight_image_item_nNP9bM",
+            "highlight_image_item_EtNkQt"
+          ]
+        },
+        "section_inner_ahXbfm": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "text_block_EiEBdE": {
+              "type": "text-block",
+              "settings": {
+                "text": "<p>In a study published in <strong>Nature Communications</strong>, daily supplementation with NR increased NAD+ levels by <strong>40-60% within 4 weeks and doubled NAD+ levels within 8 weeks.</strong> </p>",
+                "text_color": "",
+                "text_weight": "normal",
+                "top_spacing_desktop": 40,
+                "text_alignment_desktop": "left",
+                "top_spacing_mobile": 40,
+                "text_alignment_mobile": "left"
+              }
+            }
+          },
+          "block_order": [
+            "text_block_EiEBdE"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_BDX6rP",
+        "section_inner_3kpA43",
+        "section_inner_ahXbfm"
+      ],
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "top_spacing": 60,
+        "bottom_spacing": 60,
+        "use_top_border": true,
+        "full_width_mobile": false,
+        "top_spacing_mobile": 0,
+        "bottom_spacing_mobile": 60,
+        "use_top_border_mobile": false
+      }
+    },
+    "landing_section_mL33Pe": {
+      "type": "landing-section",
+      "blocks": {
+        "grid_block_CYFkYT": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "300px auto",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 20,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "heading_block_qenLQe": {
+              "type": "heading-block",
+              "settings": {
+                "subheading": "",
+                "text": "<p>How the Longevity Shot Supports Cellular Health</p>",
+                "tag_select": "h2",
+                "text_color": "",
+                "max_width": 250,
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "left"
+              }
+            },
+            "text_block_CYL87R": {
+              "type": "text-block",
+              "settings": {
+                "text": "<p>The Longevity Shot includes NR but doesn’t stop there. It also features complementary ingredients like Resveratrol, paired with advanced Liposomal Technology to ensure maximum absorption and efficacy.</p>",
+                "text_color": "",
+                "text_weight": "normal",
+                "desktop_font_size": 14,
+                "top_spacing_desktop": 0,
+                "text_alignment_desktop": "left",
+                "mobile_font_size": 14,
+                "top_spacing_mobile": 0,
+                "text_alignment_mobile": "left"
+              }
+            }
+          },
+          "block_order": [
+            "heading_block_qenLQe",
+            "text_block_CYL87R"
+          ]
+        },
+        "grid_block_QCk3yr": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "3",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 5,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 80,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 0,
+            "right_spacing_desktop": 0,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 25,
+            "top_spacing_mobile": 30,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "highlight_card_block_KDTCB9": {
+              "type": "highlight-card-block",
+              "settings": {
+                "title": "<p>NR Replenishes NAD+</p>",
+                "text": "<p>Helps restore your cells’ ability to produce energy and repair damage.</p>",
+                "image": "shopify://shop_images/AdobeStock_491041415_Preview.jpg"
+              }
+            },
+            "highlight_card_block_kByP94": {
+              "type": "highlight-card-block",
+              "settings": {
+                "title": "<p>Resveratrol</p>",
+                "text": "<p>Activates longevity proteins (sirtuins) and fights oxidative stress, amplifying NAD+ benefits.</p>",
+                "image": "shopify://shop_images/robinalaina_a_photograph_of_a_Resveratrol_is_powder_form_--ar_c293dae7-b574-4903-b532-ed3e859602d7_3_1.jpg"
+              }
+            },
+            "highlight_card_block_pbDBnW": {
+              "type": "highlight-card-block",
+              "settings": {
+                "title": "<p>Liposomal Delivery</p>",
+                "text": "<p>Encapsulates these ingredients in protective fat-based spheres, increasing absorption by up to 4x.</p>",
+                "image": "shopify://shop_images/AdobeStock_880447447_Preview.jpg"
+              }
+            }
+          },
+          "block_order": [
+            "highlight_card_block_KDTCB9",
+            "highlight_card_block_kByP94",
+            "highlight_card_block_pbDBnW"
+          ]
+        }
+      },
+      "block_order": [
+        "grid_block_CYFkYT",
+        "grid_block_QCk3yr"
+      ],
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "max_width": 0,
+        "top_spacing": 60,
+        "bottom_spacing": 70,
+        "use_top_border": true,
+        "full_width_mobile": false,
+        "top_spacing_mobile": 60,
+        "bottom_spacing_mobile": 60,
+        "use_top_border_mobile": true
+      }
+    },
+    "landing_section_PG6H3V": {
+      "type": "landing-section",
+      "blocks": {
+        "section_inner_RX3Aii": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "2",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 100,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 50,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "highlight_image_item_ymcVVB": {
+              "type": "highlight-image-item",
+              "settings": {
+                "image": "shopify://shop_images/Resveratrol.svg_1.png",
+                "image_max_width_desktop": 0,
+                "image_max_width_mobile": 280,
+                "title": "",
+                "title_size": 30,
+                "title_line_height": 42,
+                "title_color": "",
+                "text": "<p><strong>Resveratrol</strong>, a natural antioxidant found in grape skins and purple carrots, works hand-in-hand with NR to:</p>",
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "left",
+                "flex_direction": "column",
+                "justify_content": "start",
+                "align_items": "start",
+                "row_gap": 50,
+                "column_gap": 20,
+                "flex_direction_mobile": "column",
+                "justify_content_mobile": "center",
+                "align_items_mobile": "center",
+                "row_gap_mobile": 20,
+                "column_gap_mobile": 20
+              }
+            },
+            "grid_list_jwY7Rp": {
+              "type": "grid-list",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 40,
+                "row_gap_desktop": 30,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 30,
+                "row_gap_mobile": 30
+              },
+              "blocks": {
+                "highlight_text_item_p34tzG": {
+                  "type": "highlight-text-item",
+                  "settings": {
+                    "title": "<p>Activate Sirtuins</p>",
+                    "text": "<p>Proteins that rely on NAD+ to regulate DNA repair and cellular health.</p>"
+                  }
+                },
+                "highlight_text_item_tc9h8N": {
+                  "type": "highlight-text-item",
+                  "settings": {
+                    "title": "<p>Improve Mitochondrial Efficiency</p>",
+                    "text": "<p>Enhances the ability of mitochondria to produce energy.</p>"
+                  }
+                },
+                "highlight_text_item_wYH3jK": {
+                  "type": "highlight-text-item",
+                  "settings": {
+                    "title": "<p>Reduce Oxidative Stress</p>",
+                    "text": "<p>Protects cells from free radicals, slowing biological aging.</p>"
+                  }
+                }
+              },
+              "block_order": [
+                "highlight_text_item_p34tzG",
+                "highlight_text_item_tc9h8N",
+                "highlight_text_item_wYH3jK"
+              ]
+            }
+          },
+          "block_order": [
+            "highlight_image_item_ymcVVB",
+            "grid_list_jwY7Rp"
+          ]
+        },
+        "section_inner_R43xQU": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "2",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 110,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "center",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 40,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "highlight_image_item_4QQNh6": {
+              "type": "highlight-image-item",
+              "settings": {
+                "image": "shopify://shop_images/30.svg",
+                "image_max_width_desktop": 250,
+                "image_max_width_mobile": 206,
+                "title": "",
+                "title_size": 30,
+                "title_line_height": 42,
+                "title_color": "",
+                "text": "<p><strong>Increase of mitochondrial efficiency</strong></p>",
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "center",
+                "flex_direction": "row",
+                "justify_content": "start",
+                "align_items": "end",
+                "row_gap": 20,
+                "column_gap": 20,
+                "flex_direction_mobile": "column",
+                "justify_content_mobile": "center",
+                "align_items_mobile": "center",
+                "row_gap_mobile": 20,
+                "column_gap_mobile": 20
+              }
+            }
+          },
+          "block_order": [
+            "highlight_image_item_4QQNh6"
+          ]
+        },
+        "section_inner_NMDw8L": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 40,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "text_block_W3Hptf": {
+              "type": "text-block",
+              "settings": {
+                "text": "<p>A study published in Cell Metabolism found that Resveratrol increased mitochondrial efficiency by 30%, significantly improving cellular energy output. When combined with NR, Resveratrol amplifies NAD+ utilization, ensuring your cells function at their best.</p>",
+                "text_color": "",
+                "text_weight": "normal",
+                "top_spacing_desktop": 30,
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "left"
+              }
+            }
+          },
+          "block_order": [
+            "text_block_W3Hptf"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_RX3Aii",
+        "section_inner_R43xQU",
+        "section_inner_NMDw8L"
+      ],
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "top_spacing": 60,
+        "bottom_spacing": 60,
+        "use_top_border": true,
+        "full_width_mobile": false,
+        "top_spacing_mobile": 60,
+        "bottom_spacing_mobile": 60,
+        "use_top_border_mobile": true
+      }
+    },
+    "landing_section_tNVibw": {
+      "type": "landing-section",
+      "blocks": {
+        "section_inner_dNpmjY": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 20,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "heading_block_hFwrnA": {
+              "type": "heading-block",
+              "settings": {
+                "subheading": "",
+                "text": "<p>Liposomal Technology: Smarter Delivery for Better Results</p>",
+                "tag_select": "h2",
+                "text_color": "",
+                "max_width": 330,
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "left"
+              }
+            },
+            "text_block_rPhQUP": {
+              "type": "text-block",
+              "settings": {
+                "text": "<p>Traditional supplements often fail to deliver their full benefits because up to 80% of nutrients are destroyed by stomach acids before reaching the bloodstream.  <a href=\"https://google.com\" target=\"_blank\" title=\"https://google.com\"><em>Source: Journal of Nutrition, 2015</em></a></p>",
+                "text_color": "",
+                "text_weight": "normal",
+                "max_width": 470,
+                "text_alignment_desktop": "left",
+                "top_spacing_mobile": 20,
+                "text_alignment_mobile": "left"
+              }
+            }
+          },
+          "block_order": [
+            "heading_block_hFwrnA",
+            "text_block_rPhQUP"
+          ]
+        },
+        "section_inner_L9Yfme": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "2",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 30,
+            "desktop_grid_row_gap": 40,
+            "top_spacing_desktop": 60,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 40,
+            "top_spacing_mobile": 50,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "highlight_text_item_KjB4Wy": {
+              "type": "highlight-text-item",
+              "settings": {
+                "title": "<p>Protect Nutrients</p>",
+                "text": "<p>Shield active ingredients like NR and Resveratrol from being broken down by stomach acids.</p>",
+                "icon": "shopify://shop_images/Group_524.svg"
+              }
+            },
+            "highlight_text_item_rqpdNf": {
+              "type": "highlight-text-item",
+              "settings": {
+                "title": "<p>Enhance Absorption</p>",
+                "text": "<p>Liposomes fuse directly with gut cells, delivering nutrients into the bloodstream efficiently.</p>",
+                "icon": "shopify://shop_images/Group_525.svg"
+              }
+            },
+            "highlight_text_item_awgPaP": {
+              "type": "highlight-text-item",
+              "settings": {
+                "title": "<p>Increase Efficacy</p>",
+                "text": "<p>Clinical trials show liposomal delivery increases absorption by up to 4x compared to standard supplements</p>",
+                "icon": "shopify://shop_images/Group_526.svg"
+              }
+            }
+          },
+          "block_order": [
+            "highlight_text_item_KjB4Wy",
+            "highlight_text_item_rqpdNf",
+            "highlight_text_item_awgPaP"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_dNpmjY",
+        "section_inner_L9Yfme"
+      ],
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "top_spacing": 60,
+        "bottom_spacing": 60,
+        "use_top_border": true,
+        "full_width_mobile": false,
+        "top_spacing_mobile": 60,
+        "bottom_spacing_mobile": 60,
+        "use_top_border_mobile": true
+      }
+    },
+    "landing_section_6arx3r": {
+      "type": "landing-section",
+      "blocks": {
+        "section_inner_xLfcaY": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "300px auto",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "heading_block_RXqGmG": {
+              "type": "heading-block",
+              "settings": {
+                "subheading": "",
+                "text": "<p>The Results of Supporting Cellular Health</p>",
+                "tag_select": "h2",
+                "text_color": "",
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "left"
+              }
+            },
+            "text_block_XgRtzF": {
+              "type": "text-block",
+              "settings": {
+                "text": "<p>By targeting cellular health with NR, Resveratrol, and liposomal delivery, the Longevity Shot helps:</p>",
+                "text_color": "",
+                "text_weight": "normal",
+                "text_alignment_desktop": "left",
+                "top_spacing_mobile": 20,
+                "text_alignment_mobile": "left"
+              }
+            }
+          },
+          "block_order": [
+            "heading_block_RXqGmG",
+            "text_block_XgRtzF"
+          ]
+        },
+        "section_inner_DTfTTm": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "3",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 5,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 60,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 0,
+            "right_spacing_desktop": 0,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 25,
+            "top_spacing_mobile": 40,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "highlight_card_block_D9g4Ay": {
+              "type": "highlight-card-block",
+              "settings": {
+                "title": "<p>Boost Energy</p>",
+                "text": "<p>Improved mitochondrial function leads to sustained vitality</p>",
+                "image": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Skep360_-_Photo_by_Ton_Gomes_-1.jpg"
+              }
+            },
+            "highlight_card_block_iVYpF3": {
+              "type": "highlight-card-block",
+              "settings": {
+                "title": "<p>Enhance Skin Health</p>",
+                "text": "<p>Better cellular repair improves elasticity and radiance.</p>",
+                "image": "shopify://shop_images/DTS_my_own_summer_Daniel_Faro_Photos_ID9732.jpg"
+              }
+            },
+            "highlight_card_block_LEn8kx": {
+              "type": "highlight-card-block",
+              "settings": {
+                "title": "<p>Support Longevity</p>",
+                "text": "<p>Protects cells from damage, slowing visible and internal signs of aging.</p>",
+                "image": "shopify://shop_images/DTS_DEEP_SPA_Fanette_Guilloud_Photos_ID10962.jpg"
+              }
+            }
+          },
+          "block_order": [
+            "highlight_card_block_D9g4Ay",
+            "highlight_card_block_iVYpF3",
+            "highlight_card_block_LEn8kx"
+          ]
+        },
+        "section_inner_FzEted": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 60,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 60,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "grid_list_dJPryC": {
+              "type": "grid-list",
+              "settings": {
+                "desktop_grid_columns": "2",
+                "column_gap_desktop": 40,
+                "row_gap_desktop": 40,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 40,
+                "row_gap_mobile": 40
+              },
+              "blocks": {
+                "highlight_image_item_ipFa7Y": {
+                  "type": "highlight-image-item",
+                  "settings": {
+                    "image": "shopify://shop_images/25.svg",
+                    "image_max_width_desktop": 200,
+                    "image_max_width_mobile": 200,
+                    "title": "",
+                    "title_size": 30,
+                    "title_line_height": 42,
+                    "title_color": "",
+                    "text": "<p><strong>increase in </strong></p><p><strong>energy</strong></p>",
+                    "text_alignment_desktop": "left",
+                    "text_alignment_mobile": "center",
+                    "flex_direction": "row",
+                    "justify_content": "start",
+                    "align_items": "end",
+                    "row_gap": 20,
+                    "column_gap": 20,
+                    "flex_direction_mobile": "column",
+                    "justify_content_mobile": "center",
+                    "align_items_mobile": "center",
+                    "row_gap_mobile": 20,
+                    "column_gap_mobile": 20
+                  }
+                },
+                "highlight_image_item_fpxLXt": {
+                  "type": "highlight-image-item",
+                  "settings": {
+                    "image": "shopify://shop_images/40.svg",
+                    "image_max_width_desktop": 200,
+                    "image_max_width_mobile": 200,
+                    "title": "",
+                    "title_size": 30,
+                    "title_line_height": 42,
+                    "title_color": "",
+                    "text": "<p><strong>improvement in <br/>skin elasticity</strong></p>",
+                    "text_alignment_desktop": "left",
+                    "text_alignment_mobile": "center",
+                    "flex_direction": "row",
+                    "justify_content": "start",
+                    "align_items": "end",
+                    "row_gap": 20,
+                    "column_gap": 20,
+                    "flex_direction_mobile": "column",
+                    "justify_content_mobile": "center",
+                    "align_items_mobile": "center",
+                    "row_gap_mobile": 20,
+                    "column_gap_mobile": 20
+                  }
+                }
+              },
+              "block_order": [
+                "highlight_image_item_ipFa7Y",
+                "highlight_image_item_fpxLXt"
+              ]
+            },
+            "text_block_TM3NqU": {
+              "type": "text-block",
+              "settings": {
+                "text": "<p>Users report a 25% increase in energy within 30 days of use. Clinical studies on NR and Resveratrol show a 40% improvement in skin elasticity after 8 weeks. <a href=\"https://google.com\" target=\"_blank\" title=\"https://google.com\">Source: Nature Communications, 2016; Cell Metabolism, 2006</a>. The Longevity Shot is your solution to thriving from the inside out—restoring what time takes away.<br/><br/></p>",
+                "text_color": "",
+                "text_weight": "normal",
+                "top_spacing_desktop": 40,
+                "text_alignment_desktop": "left",
+                "top_spacing_mobile": 40,
+                "text_alignment_mobile": "left"
+              }
+            }
+          },
+          "block_order": [
+            "grid_list_dJPryC",
+            "text_block_TM3NqU"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_xLfcaY",
+        "section_inner_DTfTTm",
+        "section_inner_FzEted"
+      ],
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "top_spacing": 60,
+        "bottom_spacing": 60,
+        "use_top_border": true,
+        "full_width_mobile": false,
+        "top_spacing_mobile": 60,
+        "bottom_spacing_mobile": 60,
+        "use_top_border_mobile": true
+      }
+    },
+    "landing_section_HjeY6f": {
+      "type": "landing-section",
+      "blocks": {
+        "section_inner_zADhc8": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 50,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 60,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "heading_block_NjxrJ9": {
+              "type": "heading-block",
+              "settings": {
+                "subheading": "<p>Pioneering the future of longevity.</p>",
+                "text": "<p>We don’t just follow trends; we create breakthroughs. Happy Aging uses:</p>",
+                "tag_select": "h2",
+                "text_color": "",
+                "max_width": 550,
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "left"
+              }
+            },
+            "grid_list_wWNGBw": {
+              "type": "grid-list",
+              "settings": {
+                "desktop_grid_columns": "2",
+                "column_gap_desktop": 40,
+                "row_gap_desktop": 40,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 30,
+                "row_gap_mobile": 30
+              },
+              "blocks": {
+                "highlight_text_item_eyETbd": {
+                  "type": "highlight-text-item",
+                  "settings": {
+                    "title": "<p>Liposomal Technology</p>",
+                    "text": "<p>Ensures up to 4x better absorption of key nutrients for faster, more effective results.</p>",
+                    "icon": "shopify://shop_images/Group_527.svg"
+                  }
+                },
+                "highlight_text_item_rEjxjE": {
+                  "type": "highlight-text-item",
+                  "settings": {
+                    "title": "<p>NAD+ Boosting Compounds</p>",
+                    "text": "<p>Supports cellular energy and repair with ingredients like Resveratrol and NR precursors.</p>",
+                    "icon": "shopify://shop_images/Group_528.svg"
+                  }
+                },
+                "highlight_text_item_yXx79B": {
+                  "type": "highlight-text-item",
+                  "settings": {
+                    "title": "<p>Synergistic Formulas</p>",
+                    "text": "<p>Our ingredients are carefully paired to amplify their individual and collective benefits.</p>",
+                    "icon": "shopify://shop_images/Group_529.svg"
+                  }
+                }
+              },
+              "block_order": [
+                "highlight_text_item_eyETbd",
+                "highlight_text_item_rEjxjE",
+                "highlight_text_item_yXx79B"
+              ]
+            }
+          },
+          "block_order": [
+            "heading_block_NjxrJ9",
+            "grid_list_wWNGBw"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_zADhc8"
+      ],
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "top_spacing": 60,
+        "bottom_spacing": 100,
+        "use_top_border": true,
+        "full_width_mobile": false,
+        "top_spacing_mobile": 60,
+        "bottom_spacing_mobile": 100,
+        "use_top_border_mobile": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "landing_intro_YmYtTx",
+    "landing_anchors_zpKNb8",
+    "landing_section_ff4cfp",
+    "landing_section_kzcpRW",
+    "landing_section_mUdU97",
+    "landing_section_7yhCKQ",
+    "landing_section_mL33Pe",
+    "landing_section_PG6H3V",
+    "landing_section_tNVibw",
+    "landing_section_6arx3r",
+    "landing_section_HjeY6f"
+  ]
+}
