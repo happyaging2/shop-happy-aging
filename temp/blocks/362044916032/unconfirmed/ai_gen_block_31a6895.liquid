@@ -1,6 +1,418 @@
+{% doc %}
+  @prompt
+    Split-screen layout: TEM image left, 120-word overview right
+    
+    Click-to-zoom modal for the image
+    
+    Optional “Learn more” accordion with 3 technical bullets
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-split-screen-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-split-screen-{{ ai_gen_id }} {
+      flex-direction: column;
+    }
+  }
+
+  .ai-split-screen__image-container-{{ ai_gen_id }} {
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-split-screen__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-split-screen__image-container-{{ ai_gen_id }}:hover .ai-split-screen__image-{{ ai_gen_id }} {
+    transform: scale(1.05);
+  }
+
+  .ai-split-screen__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-split-screen__image-placeholder-{{ ai_gen_id }} svg {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+  }
+
+  .ai-split-screen__zoom-icon-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;}
+
+  .ai-split-screen__content-{{ ai_gen_id }} {
+    flex: 1;
+    padding: 20px;}
+
+  .ai-split-screen__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    margin-bottom: 15px;
+    color: {{ block.settings.title_color }};
+  }
+
+  .ai-split-screen__description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.6;
+    color: {{ block.settings.text_color }};
+    margin-bottom: 20px;
+  }
+
+  .ai-split-screen__accordion-{{ ai_gen_id }} {
+    margin-top: 20px;
+    border: 1px solid {{ block.settings.accordion_border_color }};
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .ai-split-screen__accordion-header-{{ ai_gen_id }} {
+    background-color: {{ block.settings.accordion_bg_color }};
+    color: {{ block.settings.accordion_text_color }};
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+  }
+
+  .ai-split-screen__accordion-icon-{{ ai_gen_id }} {
+    transition: transform 0.3s ease;}
+
+  .ai-split-screen__accordion-content-{{ ai_gen_id }} {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: {{ block.settings.accordion_content_bg_color }};
+  }
+
+  .ai-split-screen__accordion-content-inner-{{ ai_gen_id }} {
+    padding: 20px;
+  }
+
+  .ai-split-screen__accordion-content-{{ ai_gen_id }} ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .ai-split-screen__accordion-content-{{ ai_gen_id }} li {
+    margin-bottom: 10px;
+    color: {{ block.settings.accordion_text_color }};
+  }
+
+  .ai-split-screen__modal-{{ ai_gen_id }} {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-split-screen__modal-content-{{ ai_gen_id }} {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;}
+
+  .ai-split-screen__modal-image-{{ ai_gen_id }} {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+  }
+
+  .ai-split-screen__modal-close-{{ ai_gen_id }} {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+  }
+{% endstyle %}
+
+<div class="ai-split-screen-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-split-screen__image-container-{{ ai_gen_id }}" id="ai-image-container-{{ ai_gen_id }}">
+    {% if block.settings.tem_image %}
+      <img
+        src="{{ block.settings.tem_image | image_url: width: 800 }}" 
+        alt="{{ block.settings.tem_image.alt | escape }}" 
+        class="ai-split-screen__image-{{ ai_gen_id }}"
+        loading="lazy"
+        width="{{ block.settings.tem_image.width }}"
+        height="{{ block.settings.tem_image.height }}"
+      >
+    {% else %}
+      <div class="ai-split-screen__image-placeholder-{{ ai_gen_id }}">
+        {{ 'image' | placeholder_svg_tag }}
+      </div>
+    {% endif %}<div class="ai-split-screen__zoom-icon-{{ ai_gen_id }}">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 3H21V9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 21H3V15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M21 3L14 10" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 21L10 14" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="ai-split-screen__content-{{ ai_gen_id }}">
+    <h2 class="ai-split-screen__title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+    <div class="ai-split-screen__description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
+    
+    {% if block.settings.show_accordion %}
+      <div class="ai-split-screen__accordion-{{ ai_gen_id }}" id="ai-accordion-{{ ai_gen_id }}">
+        <div class="ai-split-screen__accordion-header-{{ ai_gen_id }}" id="ai-accordion-header-{{ ai_gen_id }}">
+          {{ block.settings.accordion_title }}
+          <span class="ai-split-screen__accordion-icon-{{ ai_gen_id }}">
+            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="ai-split-screen__accordion-content-{{ ai_gen_id }}" id="ai-accordion-content-{{ ai_gen_id }}">
+          <div class="ai-split-screen__accordion-content-inner-{{ ai_gen_id }}"><ul>
+              <li>{{ block.settings.bullet_point_1 }}</li>
+              <li>{{ block.settings.bullet_point_2 }}</li>
+              <li>{{ block.settings.bullet_point_3 }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<div class="ai-split-screen__modal-{{ ai_gen_id }}" id="ai-image-modal-{{ ai_gen_id }}">
+  <div class="ai-split-screen__modal-content-{{ ai_gen_id }}">
+    <button class="ai-split-screen__modal-close-{{ ai_gen_id }}" id="ai-modal-close-{{ ai_gen_id }}">×</button>
+    {% if block.settings.tem_image %}
+      <img 
+        src="{{ block.settings.tem_image | image_url: width: 1800 }}" 
+        alt="{{ block.settings.tem_image.alt | escape }}" 
+        class="ai-split-screen__modal-image-{{ ai_gen_id }}"
+        loading="lazy">
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  (function() {
+    const imageContainer = document.getElementById('ai-image-container-{{ ai_gen_id }}');
+    const modal = document.getElementById('ai-image-modal-{{ ai_gen_id }}');
+    const closeButton = document.getElementById('ai-modal-close-{{ ai_gen_id }}');
+    if (imageContainer && modal && closeButton) {
+      imageContainer.addEventListener('click', function() {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+      
+      closeButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+      modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      });
+    }
+    const accordionHeader = document.getElementById('ai-accordion-header-{{ ai_gen_id }}');
+    const accordionContent = document.getElementById('ai-accordion-content-{{ ai_gen_id }}');
+    
+    if (accordionHeader && accordionContent) {
+      accordionHeader.addEventListener('click', function() {
+        const icon = this.querySelector('.ai-split-screen__accordion-icon-{{ ai_gen_id }}');
+        
+        if (accordionContent.style.maxHeight) {
+          accordionContent.style.maxHeight = null;
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "TEM Image Split Screen",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "tem_image",
+      "label": "TEM Image"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "TEM Analysis Results"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description (120 words max)",
+      "default": "Transmission Electron Microscopy (TEM) reveals the nanoscale structure of our materials with atomic resolution. This image shows the crystalline lattice structure with clear grain boundaries and uniform particle distribution. Our proprietary synthesis method creates a highly ordered arrangement that contributes to enhanced performance characteristics. The absence of defects and impurities confirms the exceptional quality of our manufacturing process."
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Title font size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text font size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Accordion Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_accordion",
+      "label": "Show technical details accordion",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "accordion_title",
+      "label": "Accordion title",
+      "default": "Learn More Technical Details"
+    },
+    {
+      "type": "textarea",
+      "id": "bullet_point_1",
+      "label": "Technical point 1",
+      "default": "Resolution of 0.15 nm achieved using 200 kV acceleration voltage with aberration correction."
+    },
+    {
+      "type": "textarea",
+      "id": "bullet_point_2",
+      "label": "Technical point 2",
+      "default": "Lattice spacing measured at 0.24 nm, confirming the presence of our target crystalline phase."
+    },
+    {
+      "type": "textarea",
+      "id": "bullet_point_3",
+      "label": "Technical point 3",
+      "default": "Particle size distribution analysis shows 85% of particles within 10-15 nm diameter range."
+    },
+    {
+      "type": "color",
+      "id": "accordion_bg_color",
+      "label": "Accordion header background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "accordion_content_bg_color",
+      "label": "Accordion content background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accordion_text_color",
+      "label": "Accordion text color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "accordion_border_color",
+      "label": "Accordion border color",
+      "default": "#e0e0e0"
+    }
+  ],
+  "presets": [
+    {
+      "name": "TEM Image Split Screen"
+    }
+  ]
+}
 {% endschema %}
