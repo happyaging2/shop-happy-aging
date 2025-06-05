@@ -1,0 +1,201 @@
+/**
+ * Script aprimorado para corrigir problemas do carrinho no HappyAging.com
+ * Este script deve ser adicionado após o cart.js e cart-drawer.js originais
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Função para corrigir a visibilidade do carrinho
+  function fixCartVisibility() {
+    // 1. Corrigir a visibilidade do drawer do carrinho
+    const styleElement = document.createElement('style');
+    styleElement.textContent = `
+      .drawer:not(.active) {
+        visibility: hidden;
+      }
+      
+      .drawer.active {
+        visibility: visible;
+      }
+      
+      /* Remover a classe d-none dos elementos do carrinho */
+      #main-cart-items .d-none:has(cart-drawer) {
+        display: block !important;
+      }
+    `;
+    document.head.appendChild(styleElement);
+    
+    // 2. Ativar o carrinho quando estiver na página do carrinho
+    if (window.location.pathname.includes('/cart')) {
+      activateCartDrawer();
+    }
+    
+    // 3. Adicionar eventos para os botões do carrinho
+    const cartButtons = document.querySelectorAll('a[href="/cart"], a[aria-controls="CartDrawer"], #cart-icon-bubble');
+    cartButtons.forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        activateCartDrawer();
+      });
+    });
+  }
+  
+  // Função para ativar o drawer do carrinho
+  function activateCartDrawer() {
+    const cartDrawer = document.querySelector('cart-drawer');
+    if (cartDrawer) {
+      cartDrawer.classList.add('active');
+      
+      // Garantir que o método close funcione corretamente
+      ensureCartDrawerMethods(cartDrawer);
+    }
+  }
+  
+  // Função para garantir que os métodos do cart-drawer funcionem corretamente
+  function ensureCartDrawerMethods(cartDrawer) {
+    // Verificar se o método close existe e funciona corretamente
+    if (cartDrawer.close && typeof cartDrawer.close === 'function') {
+      // O método close já existe, vamos garantir que ele remova a classe active
+      const originalClose = cartDrawer.close;
+      cartDrawer.close = function() {
+        this.classList.remove('active');
+        originalClose.call(this);
+      };
+    } else {
+      // Definir o método close se não existir
+      cartDrawer.close = function() {
+        this.classList.remove('active');
+        
+        // Restaurar o comportamento de foco que estava comentado
+        try {
+          const activeElement = this.activeElement || document.activeElement;
+          if (typeof removeTrapFocus === 'function') {
+            removeTrapFocus(activeElement);
+          }
+          document.body.classList.remove('overflow-hidden');
+        } catch (e) {
+          console.error('Erro ao remover o foco:', e);
+        }
+      };
+    }
+    
+    // Adicionar evento para o botão de fechar
+    const closeButton = cartDrawer.querySelector('button[onclick="this.closest(\'cart-drawer\').close()"]');
+    if (closeButton) {
+      closeButton.addEventListener('click', function() {
+        cartDrawer.close();
+      });
+    }
+  }
+  
+  // Função para habilitar mensagens de erro
+  function enableErrorMessages() {
+    // Encontrar elementos de erro que possam estar ocultos
+    const errorElements = document.querySelectorAll('#cart-errors, #CartDrawer-CartErrors');
+    errorElements.forEach(errorElement => {
+      // Remover a classe d-none para permitir que erros sejam exibidos
+      if (errorElement) {
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'characterData' || mutation.type === 'childList') {
+              if (errorElement.textContent.trim() !== '') {
+                errorElement.classList.remove('d-none');
+              }
+            }
+          });
+        });
+        
+        observer.observe(errorElement, { 
+          characterData: true, 
+          childList: true, 
+          subtree: true 
+        });
+      }
+    });
+  }
+  
+  // Função para melhorar o feedback visual ao adicionar ao carrinho
+  function enhanceCartFeedback() {
+    // Melhorar o feedback visual quando produtos são adicionados ao carrinho
+    const addToCartButtons = document.querySelectorAll('button[name="add"]');
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Adicionar classe para indicar que o botão foi clicado
+        button.classList.add('clicked');
+        
+        // Restaurar após um tempo
+        setTimeout(() => {
+          button.classList.remove('clicked');
+        }, 2000);
+      });
+    });
+    
+    // Adicionar estilo para o feedback visual
+    const styleElement = document.createElement('style');
+    styleElement.textContent = `
+      button[name="add"].clicked {
+        background-color: #4CAF50 !important;
+        transition: background-color 0.3s ease;
+      }
+    `;
+    document.head.appendChild(styleElement);
+  }
+  
+  // Função para corrigir a visibilidade dos itens do carrinho na página principal
+  function fixMainCartItems() {
+    const mainCartItems = document.querySelector('#main-cart-items');
+    if (mainCartItems) {
+      const hiddenDivs = mainCartItems.querySelectorAll('.d-none');
+      hiddenDivs.forEach(div => {
+        // Verificar se o div contém o cart-drawer antes de remover a classe
+        if (div.querySelector('cart-drawer')) {
+          div.classList.remove('d-none');
+        }
+      });
+    }
+  }
+  
+  // Função para adicionar tratamento de erros robusto
+  function addErrorHandling() {
+    // Interceptar erros de fetch relacionados ao carrinho
+    const originalFetch = window.fetch;
+    window.fetch = function() {
+      return originalFetch.apply(this, arguments)
+        .catch(error => {
+          if (arguments[0].includes('/cart') || arguments[0].includes('/cart.js')) {
+            console.error('Erro na operação do carrinho:', error);
+            
+            // Exibir mensagem de erro para o usuário
+            const errorElements = document.querySelectorAll('#cart-errors, #CartDrawer-CartErrors');
+            errorElements.forEach(errorElement => {
+              if (errorElement) {
+                errorElement.textContent = 'Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente.';
+                errorElement.classList.remove('d-none');
+              }
+            });
+          }
+          throw error;
+        });
+    };
+    
+    // Adicionar handler global para erros de JavaScript
+    window.addEventListener('error', function(event) {
+      if (event.filename.includes('cart') || event.message.includes('cart')) {
+        console.error('Erro relacionado ao carrinho:', event.message);
+      }
+    });
+  }
+  
+  // Executar todas as correções
+  try {
+    fixCartVisibility();
+    enableErrorMessages();
+    enhanceCartFeedback();
+    fixMainCartItems();
+    addErrorHandling();
+    
+    console.log('Correções do carrinho aplicadas com sucesso');
+  } catch (e) {
+    console.error('Erro ao aplicar correções do carrinho:', e);
+  }
+});
+
