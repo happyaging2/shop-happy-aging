@@ -213,17 +213,6 @@
     },
     "1749155700222ac9df": {
       "type": "apps",
-      "blocks": {
-        "tolstoy_shoppable_video_quiz_stories_block_aPbanC": {
-          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
-          "settings": {
-            "publishId": "80vae92u474hx"
-          }
-        }
-      },
-      "block_order": [
-        "tolstoy_shoppable_video_quiz_stories_block_aPbanC"
-      ],
       "settings": {
         "include_margins": true
       }
