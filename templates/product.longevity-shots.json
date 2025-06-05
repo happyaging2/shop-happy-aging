@@ -1,1 +1,862 @@
-{"sections":{"main":{"type":"main-product","blocks":{"custom_reviews_yRiyrR":{"type":"custom_reviews","settings":{}},"title":{"type":"title","settings":{"badge_text":"{{ product.metafields.happy_aging.title_tag.value }}"}},"vendor":{"type":"text","settings":{"text":"Liposomal Delivery","text_style":"uppercase","text_size":"text-xs","text_align":"text-left"}},"description":{"type":"description","settings":{}},"frontrow_qeQ843":{"type":"frontrow","settings":{}},"forms_inline_UteN6W":{"type":"shopify:\/\/apps\/forms\/blocks\/inline\/8744a304-fcb1-4347-b211-bb6b4759a76a","disabled":true,"settings":{"form_id":"333302","text_color":"#202020","button_background_color":"#202020","button_label_color":"#ffffff","links_color":"#1878b9","errors_color":"#e02229","text_alignment":"center","form_alignment":"center","padding_top":0,"padding_bottom":0,"padding_right":0,"padding_left":0}},"kite_discount_free_gift_app_block_rxdmna":{"type":"shopify:\/\/apps\/kite-discount-free-gift\/blocks\/app-block\/2c7302c4-455d-4078-a829-48563ba26089","settings":{}},"kite_discount_free_gift_app_block_free_gift_Lh3WmU":{"type":"shopify:\/\/apps\/kite-discount-free-gift\/blocks\/app-block-freeGift\/2c7302c4-455d-4078-a829-48563ba26089","settings":{"blockId":"block-id"}},"buy_buttons_W9PKFR":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false,"show_gift_card_recipient":true,"default_info_sub_1":"Ships every month","default_info_sub_2":"Free shipping on all orders","default_info_sub_3":"Cancel your subscription anytime","default_info_sub_4":"Ships in 12 hours","default_info_one_1":"Free shipping on all orders","default_info_one_2":"Ships in 12 hours","product_content_text_default_kit":""}},"text_RB6DBe":{"type":"text","settings":{"text":"30 Day Money Back Guarantee","text_style":"bold","text_size":"text-xs","text_align":"text-center"}},"text_h9imWD":{"type":"text","settings":{"text":"If you're unsatisfied with your shots, for any reason, we'll give you a full refund–no return necessary!","text_style":"body","text_size":"text-[10px]","text_align":"text-center"}},"aside_content_TPcz4K":{"type":"aside_content","settings":{"title":"Ingredients","text":"<h2>KEY ingredients<\/h2><p>Resveratrol-enriched yeast, nicotinamide riboside chloride, White Versailles currant fruit extract, rice seed extract (contains ceramide), botanical blend (blood orange fruit extract, spinach leaf juice powder, grape seed extract, red wine powder)<\/p><h6>ADDITIONAL INGREDIENTS<\/h6><p>Water, apple juice concentrate, grape juice concentrate, glycerin, purple carrot juice concentrate, xanthan gum, citric acid, sunflower lecithin, gum acacia, steviol glycosides, pectin<\/p><p><a href=\"\/products\/longevity-shots#key-points\" title=\"All active ingredients\">Learn more about the active ingredients.<\/a><\/p>","image":"shopify:\/\/shop_images\/SFP_LongevityShot.png"}},"aside_content_rBPMby":{"type":"aside_content","settings":{"title":"How to use","text":"<h2>HOW to use<\/h2><p>Drink two shots shot per week—either straight from the bottle or over ice with sparkling water. Enjoy with or without food. Shake well before drinking.<\/p><h6>STORAGE<\/h6><p>Store at room temperature and away from direct sunlight to preserve potency. Consume within 18 months.<\/p><h6>A QUICK NOTE<\/h6><p>We recommend consulting your healthcare provider before adding any supplements to your routine, particularly if you have any health conditions or are taking medications.<\/p><p><a href=\"\/products\/longevity-shots#faqs\" title=\"FREQUENTLY <em>asked questions<\/em>\">Have more questions? See our FAQs.<\/a><\/p>"}},"quantity_block_XPNgFV":{"type":"quantity_block","settings":{"image":"shopify:\/\/shop_images\/1-month_1_deae0144-b2c7-4a81-a62a-56143de55c6f.png","qty":1,"onetime_price":60,"plan_id":"693008859456","title":"1 Month Supply","sub_title":"+ 1 Free Week","num_bottles":"10","badge":"","product_content_text":"","subs_info_1":"Ships every month","subs_info_2":"Free shipping on all orders","subs_info_3":"Cancel your subscription anytime","subs_info_4":"Ships in 12 hours","subs_info_5":"Free shipping on all orders","subs_info_6":"Ships in 12 hours"}},"quantity_block_4r9Hy4":{"type":"quantity_block","settings":{"image":"shopify:\/\/shop_images\/3-month_1_2778109b-4401-45a3-99d7-68b145edc100.png","qty":3,"onetime_price":50,"plan_id":"693008892224","title":"3 Month Supply","sub_title":"+ 3 Free Weeks","num_bottles":"30","badge":"Most Popular","product_content_text":"","subs_info_1":"Ships every 15 weeks","subs_info_2":"Free shipping on all orders","subs_info_3":"Cancel your subscription anytime","subs_info_4":"Ships in 12 hours","subs_info_5":"Free shipping on all orders","subs_info_6":"Ships in 12 hours"}},"quantity_block_mtz7Ty":{"type":"quantity_block","settings":{"image":"shopify:\/\/shop_images\/6-month_1_b89833f4-490e-4b32-b77f-a44ae4112e65.png","qty":6,"onetime_price":42.5,"plan_id":"693008924992","title":"6 Month Supply","sub_title":"+ 6 Free Weeks","num_bottles":"60","badge":"Best Deal","product_content_text":"","subs_info_1":"Ships every 30 weeks","subs_info_2":"Free shipping on all orders","subs_info_3":"Cancel your subscription anytime","subs_info_4":"Ships in 12 hours","subs_info_5":"Free shipping on all orders","subs_info_6":"Ships in 12 hours"}}},"block_order":["custom_reviews_yRiyrR","title","vendor","description","frontrow_qeQ843","forms_inline_UteN6W","kite_discount_free_gift_app_block_rxdmna","kite_discount_free_gift_app_block_free_gift_Lh3WmU","buy_buttons_W9PKFR","text_RB6DBe","text_h9imWD","aside_content_TPcz4K","aside_content_rBPMby","quantity_block_XPNgFV","quantity_block_4r9Hy4","quantity_block_mtz7Ty"],"settings":{"old_product":"longevity","enable_sticky_info":true,"color_scheme":"scheme-1","highlight_color":"#d0535b","media_size":"medium","constrain_to_viewport":true,"media_fit":"cover","gallery_layout":"thumbnail_slider","media_position":"left","image_zoom":"none","mobile_thumbnails":"show","hide_variants":true,"enable_video_looping":false,"padding_top":12,"padding_bottom":12}},"marquee_pMqq4Y":{"type":"marquee","blocks":{"text_F9fHWN":{"type":"text","settings":{"text":"Physician-Formulated"}},"text_z7tkeC":{"type":"text","settings":{"text":"Clinically-Validated Doses"}},"text_8c4bkD":{"type":"text","settings":{"text":"Premium Ingredients"}},"text_LhF6BY":{"type":"text","settings":{"text":"100% Natural"}},"text_K6wAUe":{"type":"text","settings":{"text":"Vegan & Gluten-Free"}},"text_fqxdgb":{"type":"text","settings":{"text":"No Added Sugars"}},"text_gEbBxk":{"type":"text","settings":{"text":"Incredible Berry Taste"}}},"block_order":["text_F9fHWN","text_z7tkeC","text_8c4bkD","text_LhF6BY","text_K6wAUe","text_fqxdgb","text_gEbBxk"],"settings":{}},"logo_list_V69zC4":{"type":"logo-list","blocks":{"logo_item_zJ9YWc":{"type":"logo_item","settings":{"logo_img":"shopify:\/\/shop_images\/vogue-logo-1.png"}},"logo_item_RmbiRG":{"type":"logo_item","settings":{"logo_img":"shopify:\/\/shop_images\/Marie_Claire_Magazine_logo_2.svg"}},"logo_item_QiAziG":{"type":"logo_item","settings":{"logo_img":"shopify:\/\/shop_images\/Logo_2.svg"}},"logo_item_NeTxLt":{"type":"logo_item","settings":{"logo_img":"shopify:\/\/shop_images\/Bustle_logo_2020.svg"}},"logo_item_yCH9tJ":{"type":"logo_item","settings":{"logo_img":"shopify:\/\/shop_images\/forbes-logo-6-1.png"}}},"block_order":["logo_item_zJ9YWc","logo_item_RmbiRG","logo_item_QiAziG","logo_item_NeTxLt","logo_item_yCH9tJ"],"settings":{}},"benefits_TnXkPb":{"type":"benefits","blocks":{"benefit_item_aEgn8V":{"type":"benefit-item","settings":{"title":"Slow Down Biological Aging","text":"Protect your cells from oxidative stress caused by free radicals and promote a healthier pace of aging."}},"benefit_item_gUamQp":{"type":"benefit-item","settings":{"title":"Improve Skin Elasticity & Radiance","text":"Facilitate cellular cleansing and provide antioxidant protection for a complexion that glows from the inside out."}},"benefit_item_qbW6JR":{"type":"benefit-item","settings":{"title":"Enhance Mental Clarity & Cognition","text":"Support mitochondrial health and reduce oxidative stress for sharper focus and mental clarity."}},"benefit_item_ndzfAW":{"type":"benefit-item","settings":{"title":"Boost Energy Levels","text":"Replenish NAD+ levels to fuel mitochondrial function and keep you vibrant and active throughout the day."}}},"block_order":["benefit_item_aEgn8V","benefit_item_gUamQp","benefit_item_qbW6JR","benefit_item_ndzfAW"],"settings":{"title":"<p>4 MAIN BENEFITS <em>of our blend<\/em><\/p>","text":"Our Longevity Shot is thoughtfully designed to support your body’s natural ability to age beautifully. Here’s what a regular routine can do for you.","video_url":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4552553829234937b9cf48e51b7741cb.mp4","video_poster":"shopify:\/\/shop_images\/Rotation_Poster.jpg","show_border_top":true}},"fifty_fifty_Sneidp":{"type":"fifty-fifty","blocks":{"text_block_aEgn8V":{"type":"text_block","settings":{"title":"4X MORE bioavailable**","text":"<p>We believe every nutrient should reach its full potential. Our Longevity Shot uses patented double Nutri® liposomal technology with micron-sized We believe every nutrient should reach its full potential. That’s why our Longevity Shot uses innovative, patented liposomal technology to maximize bioavailability. Tiny, protective bubbles— called liposomes—encapsulate key nutrients, ensuring they pass safely through your digestive system and are absorbed into your cells.<\/p><p><br\/><em>**Clinical studies show that our patented liposomal encapsulation of resveratrol increases its bioavailability by 4 times compared to its free form. Explore the scientific evidence.particles and biphasic nutrition to optimize bioavailability.<\/em><\/p>"}},"text_block_gUamQp":{"type":"text_block","settings":{"title":"YOUR GREATEST <em>cellular advantage<\/em>","text":"<p>Longevity Shots are powered by two of the most researched nutrients for longevity: Resveratrol and Nicotinamide Riboside (NR).<\/p><p>With 220 mg of Resveratrol and 100 mg of NR, our clinically-validated doses provide the best cellular support possible for healthy aging. <\/p>"}}},"block_order":["text_block_aEgn8V","text_block_gUamQp"],"settings":{"image":"shopify:\/\/shop_images\/happy_aging_0274_1_2.png"}},"key_points":{"type":"key-points","blocks":{"slide_item_JRRBDw":{"type":"slide_item","settings":{"slide_item_title":"Resveratrol","slide_item_eyebrow":"Sourced from: Fermentation-derived yeast","slide_item_text":"Resveratrol is a potent antioxidant that protects your cells from oxidative stress, helping slow down signs of aging. Using advanced fermentation methods, our high-purity resveratrol neutralizes free radicals, supporting firmer, more elastic skin. Resveratrol is also clinically proven to promote cellular repair and reduce inflammation, making it an essential part of your longevity routine."}},"slide_item_YYyUKp":{"type":"slide_item","settings":{"slide_item_title":"Nicotinamide Riboside","slide_item_eyebrow":"Sourced from: Lab-based fermentation process","slide_item_text":"Nicotinamide riboside (NR) is a next-generation form of vitamin B3 that increases your body’s production of NAD+—a key coenzyme for cellular energy and repair that naturally declines with age. By boosting NAD+ levels, NR revitalizes aging cells and optimizes cellular metabolism, helping you feel more energized and your skin look refreshed."}},"slide_item_bnUzna":{"type":"slide_item","settings":{"slide_item_title":"White Currant Extract","slide_item_eyebrow":"Sourced from: European white currants","slide_item_text":"White Currant Extract delivers powerful antioxidant protection, promoting skin firmness and deep detoxification at the cellular level. It shields your skin from oxidative damage and strengthens collagen, leaving it firmer, more elastic, and naturally radiant."}},"slide_item_7xwPAk":{"type":"slide_item","settings":{"slide_item_title":"Ceramides","slide_item_eyebrow":"Sourced from: Rice","slide_item_text":"Ceramides are essential for keeping your skin deeply hydrated and resilient. They are the building blocks of your skin’s moisture barrier, making up 40% of your skin’s outer lipid layer and helping maintain elasticity and prevent moisture loss. By replenishing natural ceramides, this ingredient supports a healthy, plump complexion."}},"slide_item_9UpUVW":{"type":"slide_item","settings":{"slide_item_title":"Blood Orange Extract","slide_item_eyebrow":"Sourced from: Mediterranean orchards","slide_item_text":"Harvested from nutrient-rich Mediterranean soil, our Blood Orange Extract is packed with vitamin C and flavonoids. Vitamin C is vital for collagen production, helping to brighten and firm your skin while protecting against environmental damage. This ingredient leaves your skin glowing and more resilient."}},"slide_item_gh44Cz":{"type":"slide_item","settings":{"slide_item_title":"Spinach Leaf Juice Powder","slide_item_eyebrow":"Sourced from: Organic spinach leaves","slide_item_text":"Brimming with essential vitamins A, C, and K, Spinach Leaf Juice Powder supports your body’s natural detoxification and cellular regeneration. Its antioxidants neutralize free radicals, helping your cells renew and protect against oxidative stress. Combined with Blood Orange Extract, this ingredient boosts cell vitality and skin repair."}},"slide_item_DgWLLk":{"type":"slide_item","settings":{"slide_item_title":"Grape Seed Extract","slide_item_eyebrow":"Sourced from: European grape seeds","slide_item_text":"Carefully sourced from European vineyards, our Grape Seed Extract is packed with polyphenols and flavonoids. This powerful ingredient improves skin elasticity, reduces hyperpigmentation, and promotes a smooth, even complexion. It also supports cardiovascular health and cellular rejuvenation by defending against oxidative damage."}},"slide_item_PdEJed":{"type":"slide_item","settings":{"slide_item_title":"Alcohol-Free Red Wine Powder","slide_item_eyebrow":"Sourced from: Sangiovese grapes from Tuscany, Italy","slide_item_text":"Derived from Tuscany’s finest Sangiovese grapes, our Alcohol-Free Red Wine Powder is rich in polyphenols and antioxidants. This powerful ingredient offers holistic protection for your skin, enhancing circulation and defending collagen from free radical damage. With regular use, it helps promote a radiant, revitalized complexion."}}},"block_order":["slide_item_JRRBDw","slide_item_YYyUKp","slide_item_bnUzna","slide_item_7xwPAk","slide_item_9UpUVW","slide_item_gh44Cz","slide_item_DgWLLk","slide_item_PdEJed"],"settings":{"title":"8 POWERFUL KEY INGREDIENTS <em>powered by<\/em>","text":"Our formula features a carefully curated blend of potent ingredients, each selected for its unique ability to support your healthy aging journey.","double_nutri_logo":"shopify:\/\/shop_images\/847871cd6e24ed21808059f4d2770096.png","mobile_select_label":"Select an ingredient"}},"video-carousel":{"type":"video-carousel","blocks":{"video_item_3RDbTa":{"type":"video-item","settings":{"video":"shopify:\/\/files\/videos\/UGC05.mp4","poster":"shopify:\/\/shop_images\/Sequence_01.00_00_18_34.Still001.png"}},"video_item_UcdHif":{"type":"video-item","settings":{"video":"shopify:\/\/files\/videos\/copy_B4813125-F91A-406C-A128-5717AF4193E3.MP4","poster":"shopify:\/\/shop_images\/Sequence_01.00_00_07_04.Still007.png"}},"video_item_kAkDGb":{"type":"video-item","settings":{"video":"shopify:\/\/files\/videos\/UGC07.mp4","poster":"shopify:\/\/shop_images\/Sequence_01.00_00_00_37.Still002.png"}},"video_item_UkC94T":{"type":"video-item","settings":{"video":"shopify:\/\/files\/videos\/AQOdxqRMVtueuYGJCwiVZldGaAHs9OGsiwErQzOV-eEM6-owFhlGSzQmcSRZ442Rm6gBnuBzXWdRieWlIBCN3NUM.mp4","poster":"shopify:\/\/shop_images\/Screenshot_2024-10-16_at_8.08.38_PM.png"}},"video_item_a98gir":{"type":"video-item","settings":{"video":"shopify:\/\/files\/videos\/copy_2E99F5A9-AF81-43B8-A1D5-FD39AB983734.MP4","poster":"shopify:\/\/shop_images\/Sequence_01.00_00_01_36.Still005.png"}},"video_item_tKFbLt":{"type":"video-item","settings":{"video":"shopify:\/\/files\/videos\/WhatsApp Video 2024-10-16 at 12.45.06.mp4","poster":"shopify:\/\/shop_images\/Screenshot_2024-10-16_at_8.09.51_PM.png"}},"video_item_8LNfjf":{"type":"video-item","settings":{"video":"shopify:\/\/files\/videos\/UGC04.mov","poster":"shopify:\/\/shop_images\/Sequence_01.00_00_14_54.Still004.png"}}},"block_order":["video_item_3RDbTa","video_item_UcdHif","video_item_kAkDGb","video_item_UkC94T","video_item_a98gir","video_item_tKFbLt","video_item_8LNfjf"],"settings":{"title":"VOICES <em>of vitality<\/em>"}},"wines":{"type":"wines","settings":{"title_section":"AGE LIKE <em>fine wine<\/em>","text_section":"Forget “a glass of wine”—elevate to an antioxidant celebration, without the alcohol. Each shot delivers 220 mg of 98% purity Resveratrol, equal to 43 bottles of red wine. Toast to vibrant health and longevity with every sip."}},"results_list_Nwodip":{"type":"results-list","blocks":{"result_item_aEgn8V":{"type":"result_item","settings":{"image":"shopify:\/\/shop_images\/cells_11zon.jpg","title":"Month One","text":"<p>Start with cellular detox to reveal clearer skin and a boost in natural energy. Improved elasticity adds a fresh bounce to your complexion.<\/p>"}},"result_item_gUamQp":{"type":"result_item","settings":{"image":"shopify:\/\/shop_images\/bubbles_11zon.jpg","title":"Month Two","text":"<p>See a visible reduction in fine lines and radiant, glowing skin. Stronger antioxidant defenses help protect against environmental stressors.<\/p>"}},"result_item_wneopd":{"type":"result_item","settings":{"image":"shopify:\/\/shop_images\/pour_11zon.jpg","title":"Month Three","text":"<p>Experience a healthier pace of aging, with deeply hydrated, firmer skin that feels renewed. Consistent use offers lasting support for for overall health and vitality.<\/p>"}}},"block_order":["result_item_aEgn8V","result_item_gUamQp","result_item_wneopd"],"settings":{"title":"RESULTS TODAY <em>and tomorrow<\/em>"}},"battle_chart_wSpdhi":{"type":"battle-chart","blocks":{"chart_item_aEgn8V":{"type":"chart_item","settings":{"title":"Contains the 2 most researched longevity supplements (Resveratrol + NR)","others_have":false}},"chart_item_wneopf":{"type":"chart_item","settings":{"title":"Liposomal Delivery","others_have":false}},"chart_item_wneopg":{"type":"chart_item","settings":{"title":"Shot format, delicious and easy to drink","others_have":false}},"chart_item_gUamQp":{"type":"chart_item","settings":{"title":"Co-founded and developed by\u2028a leading longevity doctor","others_have":false}},"chart_item_wneoph":{"type":"chart_item","settings":{"title":"Slow down biological aging","others_have":true}},"chart_item_wneopd":{"type":"chart_item","settings":{"title":"Enhances skin firmness and elasticity","others_have":false}},"chart_item_wneope":{"type":"chart_item","settings":{"title":"Includes Superfoods","others_have":false}}},"block_order":["chart_item_aEgn8V","chart_item_wneopf","chart_item_wneopg","chart_item_gUamQp","chart_item_wneoph","chart_item_wneopd","chart_item_wneope"],"settings":{"title":"LONGEVITY SHOT vs <em>other products<\/em>","image":"shopify:\/\/shop_images\/happy_aging_0274_2.jpg"}},"specialist":{"type":"specialist-fifty-fifty","settings":{"eyebrow":"Dr. Daniel Yadegar, MD","title":"A GUIDING <em>light<\/em>","text":"<p>In partnership with renowned longevity expert Dr. Daniel Yadegar, Happy Aging bridges the worlds of cutting-edge science and holistic wellness. Dr. Yadegar, a Harvard-trained physician with advanced fellowship training in age management and regenerative medicine, brings an unmatched depth of expertise to our mission.<br\/><\/p><p>At Happy Aging, Dr. Yadegar’s extensive knowledge and passion for longevity guide our development and innovation. Together, we are dedicated to revolutionizing the way women experience aging.<br\/><\/p>","video_url":"","image":"shopify:\/\/shop_images\/DSCF7257.JPG_1.jpg","video_overlay_title":"A passion for <em>Longevity<\/em>","video_overlay":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e250e26a39b34036918994eb427db595.mp4","video_overlay_poster":"shopify:\/\/shop_images\/specialist-poster_11zon.jpg"}},"faqs_9gMU6f":{"type":"faqs","blocks":{"faq_GG6MBM":{"type":"faq","settings":{"question":"What is the Longevity Shot made of?","answer":"<p>The Longevity Shot is crafted entirely from all-natural ingredients, with 80% of the ingredients being non-GMO. It is gluten-free, vegan, caffeine-free, soy-free, and dairy-free, with no synthetic ingredients, artificial sweeteners, preservatives, or artificial colors\/flavors. Each shot contains 18 calories per serving.<\/p>"}},"faq_4jy9V7":{"type":"faq","settings":{"question":"Does the Longevity Shot contain sugar or alcohol?","answer":"<p>The Longevity Shot contains 2.5 grams of natural sugar from apple and grape juice concentrate. It is also lightly sweetened with steviol glycosides, a natural sweetener derived from the Stevia rebaudiana plant that is sugar and calorie-free. It is alcohol-free.<\/p>"}},"faq_JiVH4C":{"type":"faq","settings":{"question":"Is the Longevity Shot safe for those with allergies or dietary restrictions?","answer":"<p>Yes, the Longevity Shot is free from common allergens like nuts, soy, dairy, and gluten, making it suitable for most women with dietary sensitivities. Additionally, it can fit into most keto diets.<\/p>"}},"faq_qmLMRa":{"type":"faq","settings":{"question":"Is the Longevity Shots tested on animals?","answer":"<p>No, the Longevity Shot is not tested on animals.<\/p>"}},"faq_mqta4H":{"type":"faq","settings":{"question":"Can I take the Longevity Shot if I’m pregnant or breastfeeding?","answer":"<p>While the Longevity Shot is made with natural ingredients, we always recommend that pregnant or breastfeeding women consult their healthcare provider to ensure it aligns with their unique health needs during this time.<\/p>"}},"faq_3phNHn":{"type":"faq","settings":{"question":"How should I take the Longevity Shot, and when is the best time?","answer":"<p>For optimal results, we recommend taking two shots per week, at any time of the day. This schedule helps maintain NAD+ levels and activate sirtuins—proteins vital for cellular health, DNA repair, and metabolic function. This intermittent dosing supports long-term vitality and overall longevity, slowing the aging process without overwhelming your body.<\/p>"}},"faq_iGM4zV":{"type":"faq","settings":{"question":"When will I see results from the Longevity Shot?","answer":"<p>The timing of results can vary depending on your body and lifestyle. Many women begin to notice positive changes in energy, skin health, and overall well-being within the first 30 days of regular use.<\/p>"}},"faq_LXacMF":{"type":"faq","settings":{"question":"How long should I continue taking the Longevity Shot?","answer":"<p>The long-term benefits of the Longevity Shot—such as cellular health support and slowing the aging process—are best experienced over time with consistent use. <\/p>"}},"faq_UiMWTG":{"type":"faq","settings":{"question":"Are there any side effects of interactions with medications?","answer":"<p>The natural ingredients in the Longevity Shot are generally well-tolerated, but everyone is unique. If you’re taking any prescription medications or have a medical condition, particularly autoimmune conditions, we encourage you to consult your healthcare provider before starting the Longevity Shot.<\/p>"}},"faq_RfTGdA":{"type":"faq","settings":{"question":"Is the Longevity Shot suitable for children or teenagers?","answer":"<p>The Longevity Shot is formulated with adults in mind. If you’re considering it for children or teenagers, we recommend speaking with a healthcare provider to ensure it’s appropriate for their needs.<\/p>"}},"faq_nQXECb":{"type":"faq","settings":{"question":"Is the Longevity Shot Kosher or Halal certified?","answer":"<p>No, the Longevity Shot is not currently Kosher or Halal certified.<\/p>"}}},"block_order":["faq_GG6MBM","faq_4jy9V7","faq_JiVH4C","faq_qmLMRa","faq_mqta4H","faq_3phNHn","faq_iGM4zV","faq_LXacMF","faq_UiMWTG","faq_RfTGdA","faq_nQXECb"],"settings":{"title":"Frequently Asked Questions","is_padding_top":"yes","is_background_default":"no","is_margin_bottom":"yes","callout_text":""}},"17320251521cecff4e":{"type":"apps","blocks":{"okendo_reviews_widget_nzzjDa":{"type":"shopify:\/\/apps\/okendo\/blocks\/reviews-widget\/bb689e69-ea70-4661-8fb7-ad24a2e23c29","settings":{"product":"longevity","widget_type":"combined_widget"}}},"block_order":["okendo_reviews_widget_nzzjDa"],"custom_css":["{margin-left: 10px; margin-right: 10px;}"],"settings":{"include_margins":true}},"featured_carousel_zDWaQQ":{"type":"featured-carousel","blocks":{"article_VHAQcG":{"type":"article","settings":{"article":"news\/the-biology-of-aging","text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>"}},"article_hpTmLQ":{"type":"article","settings":{"article":"news\/20-habits-for-longevity","text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>"}},"article_cWrnT3":{"type":"article","settings":{"article":"news\/harnessing-the-sun-for-healthy-aging","text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>"}},"article_ArCamx":{"type":"article","settings":{"article":"news\/20-habits-for-longevity","text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>"}}},"block_order":["article_VHAQcG","article_hpTmLQ","article_cWrnT3","article_ArCamx"],"disabled":true,"settings":{"title":"Featured Articles"}}},"order":["main","marquee_pMqq4Y","logo_list_V69zC4","benefits_TnXkPb","fifty_fifty_Sneidp","key_points","video-carousel","wines","results_list_Nwodip","battle_chart_wSpdhi","specialist","faqs_9gMU6f","17320251521cecff4e","featured_carousel_zDWaQQ"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_reviews_yRiyrR": {
+          "type": "custom_reviews",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "badge_text": "{{ product.metafields.happy_aging.title_tag.value }}"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "Liposomal Delivery",
+            "text_style": "uppercase",
+            "text_size": "text-xs",
+            "text_align": "text-left"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "frontrow_qeQ843": {
+          "type": "frontrow",
+          "settings": {}
+        },
+        "forms_inline_UteN6W": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "disabled": true,
+          "settings": {
+            "form_id": "333302",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        },
+        "kite_discount_free_gift_app_block_rxdmna": {
+          "type": "shopify://apps/kite-discount-free-gift/blocks/app-block/2c7302c4-455d-4078-a829-48563ba26089",
+          "settings": {}
+        },
+        "kite_discount_free_gift_app_block_free_gift_Lh3WmU": {
+          "type": "shopify://apps/kite-discount-free-gift/blocks/app-block-freeGift/2c7302c4-455d-4078-a829-48563ba26089",
+          "settings": {
+            "blockId": "block-id"
+          }
+        },
+        "buy_buttons_W9PKFR": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "default_info_sub_1": "Ships every month",
+            "default_info_sub_2": "Free shipping on all orders",
+            "default_info_sub_3": "Cancel your subscription anytime",
+            "default_info_sub_4": "Ships in 12 hours",
+            "default_info_one_1": "Free shipping on all orders",
+            "default_info_one_2": "Ships in 12 hours",
+            "product_content_text_default_kit": ""
+          }
+        },
+        "text_RB6DBe": {
+          "type": "text",
+          "settings": {
+            "text": "30 Day Money Back Guarantee",
+            "text_style": "bold",
+            "text_size": "text-xs",
+            "text_align": "text-center"
+          }
+        },
+        "text_h9imWD": {
+          "type": "text",
+          "settings": {
+            "text": "If you're unsatisfied with your shots, for any reason, we'll give you a full refund–no return necessary!",
+            "text_style": "body",
+            "text_size": "text-[10px]",
+            "text_align": "text-center"
+          }
+        },
+        "aside_content_TPcz4K": {
+          "type": "aside_content",
+          "settings": {
+            "title": "Ingredients",
+            "text": "<h2>KEY ingredients</h2><p>Resveratrol-enriched yeast, nicotinamide riboside chloride, White Versailles currant fruit extract, rice seed extract (contains ceramide), botanical blend (blood orange fruit extract, spinach leaf juice powder, grape seed extract, red wine powder)</p><h6>ADDITIONAL INGREDIENTS</h6><p>Water, apple juice concentrate, grape juice concentrate, glycerin, purple carrot juice concentrate, xanthan gum, citric acid, sunflower lecithin, gum acacia, steviol glycosides, pectin</p><p><a href=\"/products/longevity-shots#key-points\" title=\"All active ingredients\">Learn more about the active ingredients.</a></p>",
+            "image": "shopify://shop_images/SFP_LongevityShot.png"
+          }
+        },
+        "aside_content_rBPMby": {
+          "type": "aside_content",
+          "settings": {
+            "title": "How to use",
+            "text": "<h2>HOW to use</h2><p>Drink two shots shot per week—either straight from the bottle or over ice with sparkling water. Enjoy with or without food. Shake well before drinking.</p><h6>STORAGE</h6><p>Store at room temperature and away from direct sunlight to preserve potency. Consume within 18 months.</p><h6>A QUICK NOTE</h6><p>We recommend consulting your healthcare provider before adding any supplements to your routine, particularly if you have any health conditions or are taking medications.</p><p><a href=\"/products/longevity-shots#faqs\" title=\"FREQUENTLY <em>asked questions</em>\">Have more questions? See our FAQs.</a></p>"
+          }
+        },
+        "quantity_block_XPNgFV": {
+          "type": "quantity_block",
+          "settings": {
+            "image": "shopify://shop_images/1-month_1_deae0144-b2c7-4a81-a62a-56143de55c6f.png",
+            "qty": 1,
+            "onetime_price": 60,
+            "plan_id": "693008859456",
+            "title": "1 Month Supply",
+            "sub_title": "+ 1 Free Week",
+            "num_bottles": "10",
+            "badge": "",
+            "product_content_text": "",
+            "subs_info_1": "Ships every month",
+            "subs_info_2": "Free shipping on all orders",
+            "subs_info_3": "Cancel your subscription anytime",
+            "subs_info_4": "Ships in 12 hours",
+            "subs_info_5": "Free shipping on all orders",
+            "subs_info_6": "Ships in 12 hours"
+          }
+        },
+        "quantity_block_4r9Hy4": {
+          "type": "quantity_block",
+          "settings": {
+            "image": "shopify://shop_images/3-month_1_2778109b-4401-45a3-99d7-68b145edc100.png",
+            "qty": 3,
+            "onetime_price": 50,
+            "plan_id": "693008892224",
+            "title": "3 Month Supply",
+            "sub_title": "+ 3 Free Weeks",
+            "num_bottles": "30",
+            "badge": "Most Popular",
+            "product_content_text": "",
+            "subs_info_1": "Ships every 15 weeks",
+            "subs_info_2": "Free shipping on all orders",
+            "subs_info_3": "Cancel your subscription anytime",
+            "subs_info_4": "Ships in 12 hours",
+            "subs_info_5": "Free shipping on all orders",
+            "subs_info_6": "Ships in 12 hours"
+          }
+        },
+        "quantity_block_mtz7Ty": {
+          "type": "quantity_block",
+          "settings": {
+            "image": "shopify://shop_images/6-month_1_b89833f4-490e-4b32-b77f-a44ae4112e65.png",
+            "qty": 6,
+            "onetime_price": 42.5,
+            "plan_id": "693008924992",
+            "title": "6 Month Supply",
+            "sub_title": "+ 6 Free Weeks",
+            "num_bottles": "60",
+            "badge": "Best Deal",
+            "product_content_text": "",
+            "subs_info_1": "Ships every 30 weeks",
+            "subs_info_2": "Free shipping on all orders",
+            "subs_info_3": "Cancel your subscription anytime",
+            "subs_info_4": "Ships in 12 hours",
+            "subs_info_5": "Free shipping on all orders",
+            "subs_info_6": "Ships in 12 hours"
+          }
+        }
+      },
+      "block_order": [
+        "custom_reviews_yRiyrR",
+        "title",
+        "vendor",
+        "description",
+        "frontrow_qeQ843",
+        "forms_inline_UteN6W",
+        "kite_discount_free_gift_app_block_rxdmna",
+        "kite_discount_free_gift_app_block_free_gift_Lh3WmU",
+        "buy_buttons_W9PKFR",
+        "text_RB6DBe",
+        "text_h9imWD",
+        "aside_content_TPcz4K",
+        "aside_content_rBPMby",
+        "quantity_block_XPNgFV",
+        "quantity_block_4r9Hy4",
+        "quantity_block_mtz7Ty"
+      ],
+      "settings": {
+        "old_product": "longevity",
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "highlight_color": "#d0535b",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "1749155700222ac9df": {
+      "type": "apps",
+      "blocks": {
+        "tolstoy_shoppable_video_quiz_stories_block_aPbanC": {
+          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "80vae92u474hx"
+          }
+        }
+      },
+      "block_order": [
+        "tolstoy_shoppable_video_quiz_stories_block_aPbanC"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "marquee_pMqq4Y": {
+      "type": "marquee",
+      "blocks": {
+        "text_F9fHWN": {
+          "type": "text",
+          "settings": {
+            "text": "Physician-Formulated"
+          }
+        },
+        "text_z7tkeC": {
+          "type": "text",
+          "settings": {
+            "text": "Clinically-Validated Doses"
+          }
+        },
+        "text_8c4bkD": {
+          "type": "text",
+          "settings": {
+            "text": "Premium Ingredients"
+          }
+        },
+        "text_LhF6BY": {
+          "type": "text",
+          "settings": {
+            "text": "100% Natural"
+          }
+        },
+        "text_K6wAUe": {
+          "type": "text",
+          "settings": {
+            "text": "Vegan & Gluten-Free"
+          }
+        },
+        "text_fqxdgb": {
+          "type": "text",
+          "settings": {
+            "text": "No Added Sugars"
+          }
+        },
+        "text_gEbBxk": {
+          "type": "text",
+          "settings": {
+            "text": "Incredible Berry Taste"
+          }
+        }
+      },
+      "block_order": [
+        "text_F9fHWN",
+        "text_z7tkeC",
+        "text_8c4bkD",
+        "text_LhF6BY",
+        "text_K6wAUe",
+        "text_fqxdgb",
+        "text_gEbBxk"
+      ],
+      "settings": {}
+    },
+    "logo_list_V69zC4": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_item_zJ9YWc": {
+          "type": "logo_item",
+          "settings": {
+            "logo_img": "shopify://shop_images/vogue-logo-1.png"
+          }
+        },
+        "logo_item_RmbiRG": {
+          "type": "logo_item",
+          "settings": {
+            "logo_img": "shopify://shop_images/Marie_Claire_Magazine_logo_2.svg"
+          }
+        },
+        "logo_item_QiAziG": {
+          "type": "logo_item",
+          "settings": {
+            "logo_img": "shopify://shop_images/Logo_2.svg"
+          }
+        },
+        "logo_item_NeTxLt": {
+          "type": "logo_item",
+          "settings": {
+            "logo_img": "shopify://shop_images/Bustle_logo_2020.svg"
+          }
+        },
+        "logo_item_yCH9tJ": {
+          "type": "logo_item",
+          "settings": {
+            "logo_img": "shopify://shop_images/forbes-logo-6-1.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_item_zJ9YWc",
+        "logo_item_RmbiRG",
+        "logo_item_QiAziG",
+        "logo_item_NeTxLt",
+        "logo_item_yCH9tJ"
+      ],
+      "settings": {}
+    },
+    "benefits_TnXkPb": {
+      "type": "benefits",
+      "blocks": {
+        "benefit_item_aEgn8V": {
+          "type": "benefit-item",
+          "settings": {
+            "title": "Slow Down Biological Aging",
+            "text": "Protect your cells from oxidative stress caused by free radicals and promote a healthier pace of aging."
+          }
+        },
+        "benefit_item_gUamQp": {
+          "type": "benefit-item",
+          "settings": {
+            "title": "Improve Skin Elasticity & Radiance",
+            "text": "Facilitate cellular cleansing and provide antioxidant protection for a complexion that glows from the inside out."
+          }
+        },
+        "benefit_item_qbW6JR": {
+          "type": "benefit-item",
+          "settings": {
+            "title": "Enhance Mental Clarity & Cognition",
+            "text": "Support mitochondrial health and reduce oxidative stress for sharper focus and mental clarity."
+          }
+        },
+        "benefit_item_ndzfAW": {
+          "type": "benefit-item",
+          "settings": {
+            "title": "Boost Energy Levels",
+            "text": "Replenish NAD+ levels to fuel mitochondrial function and keep you vibrant and active throughout the day."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_item_aEgn8V",
+        "benefit_item_gUamQp",
+        "benefit_item_qbW6JR",
+        "benefit_item_ndzfAW"
+      ],
+      "settings": {
+        "title": "<p>4 MAIN BENEFITS <em>of our blend</em></p>",
+        "text": "Our Longevity Shot is thoughtfully designed to support your body’s natural ability to age beautifully. Here’s what a regular routine can do for you.",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/4552553829234937b9cf48e51b7741cb.mp4",
+        "video_poster": "shopify://shop_images/Rotation_Poster.jpg",
+        "show_border_top": true
+      }
+    },
+    "fifty_fifty_Sneidp": {
+      "type": "fifty-fifty",
+      "blocks": {
+        "text_block_aEgn8V": {
+          "type": "text_block",
+          "settings": {
+            "title": "4X MORE bioavailable**",
+            "text": "<p>We believe every nutrient should reach its full potential. Our Longevity Shot uses patented double Nutri® liposomal technology with micron-sized We believe every nutrient should reach its full potential. That’s why our Longevity Shot uses innovative, patented liposomal technology to maximize bioavailability. Tiny, protective bubbles— called liposomes—encapsulate key nutrients, ensuring they pass safely through your digestive system and are absorbed into your cells.</p><p><br/><em>**Clinical studies show that our patented liposomal encapsulation of resveratrol increases its bioavailability by 4 times compared to its free form. Explore the scientific evidence.particles and biphasic nutrition to optimize bioavailability.</em></p>"
+          }
+        },
+        "text_block_gUamQp": {
+          "type": "text_block",
+          "settings": {
+            "title": "YOUR GREATEST <em>cellular advantage</em>",
+            "text": "<p>Longevity Shots are powered by two of the most researched nutrients for longevity: Resveratrol and Nicotinamide Riboside (NR).</p><p>With 220 mg of Resveratrol and 100 mg of NR, our clinically-validated doses provide the best cellular support possible for healthy aging. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_aEgn8V",
+        "text_block_gUamQp"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/happy_aging_0274_1_2.png"
+      }
+    },
+    "key_points": {
+      "type": "key-points",
+      "blocks": {
+        "slide_item_JRRBDw": {
+          "type": "slide_item",
+          "settings": {
+            "slide_item_title": "Resveratrol",
+            "slide_item_eyebrow": "Sourced from: Fermentation-derived yeast",
+            "slide_item_text": "Resveratrol is a potent antioxidant that protects your cells from oxidative stress, helping slow down signs of aging. Using advanced fermentation methods, our high-purity resveratrol neutralizes free radicals, supporting firmer, more elastic skin. Resveratrol is also clinically proven to promote cellular repair and reduce inflammation, making it an essential part of your longevity routine."
+          }
+        },
+        "slide_item_YYyUKp": {
+          "type": "slide_item",
+          "settings": {
+            "slide_item_title": "Nicotinamide Riboside",
+            "slide_item_eyebrow": "Sourced from: Lab-based fermentation process",
+            "slide_item_text": "Nicotinamide riboside (NR) is a next-generation form of vitamin B3 that increases your body’s production of NAD+—a key coenzyme for cellular energy and repair that naturally declines with age. By boosting NAD+ levels, NR revitalizes aging cells and optimizes cellular metabolism, helping you feel more energized and your skin look refreshed."
+          }
+        },
+        "slide_item_bnUzna": {
+          "type": "slide_item",
+          "settings": {
+            "slide_item_title": "White Currant Extract",
+            "slide_item_eyebrow": "Sourced from: European white currants",
+            "slide_item_text": "White Currant Extract delivers powerful antioxidant protection, promoting skin firmness and deep detoxification at the cellular level. It shields your skin from oxidative damage and strengthens collagen, leaving it firmer, more elastic, and naturally radiant."
+          }
+        },
+        "slide_item_7xwPAk": {
+          "type": "slide_item",
+          "settings": {
+            "slide_item_title": "Ceramides",
+            "slide_item_eyebrow": "Sourced from: Rice",
+            "slide_item_text": "Ceramides are essential for keeping your skin deeply hydrated and resilient. They are the building blocks of your skin’s moisture barrier, making up 40% of your skin’s outer lipid layer and helping maintain elasticity and prevent moisture loss. By replenishing natural ceramides, this ingredient supports a healthy, plump complexion."
+          }
+        },
+        "slide_item_9UpUVW": {
+          "type": "slide_item",
+          "settings": {
+            "slide_item_title": "Blood Orange Extract",
+            "slide_item_eyebrow": "Sourced from: Mediterranean orchards",
+            "slide_item_text": "Harvested from nutrient-rich Mediterranean soil, our Blood Orange Extract is packed with vitamin C and flavonoids. Vitamin C is vital for collagen production, helping to brighten and firm your skin while protecting against environmental damage. This ingredient leaves your skin glowing and more resilient."
+          }
+        },
+        "slide_item_gh44Cz": {
+          "type": "slide_item",
+          "settings": {
+            "slide_item_title": "Spinach Leaf Juice Powder",
+            "slide_item_eyebrow": "Sourced from: Organic spinach leaves",
+            "slide_item_text": "Brimming with essential vitamins A, C, and K, Spinach Leaf Juice Powder supports your body’s natural detoxification and cellular regeneration. Its antioxidants neutralize free radicals, helping your cells renew and protect against oxidative stress. Combined with Blood Orange Extract, this ingredient boosts cell vitality and skin repair."
+          }
+        },
+        "slide_item_DgWLLk": {
+          "type": "slide_item",
+          "settings": {
+            "slide_item_title": "Grape Seed Extract",
+            "slide_item_eyebrow": "Sourced from: European grape seeds",
+            "slide_item_text": "Carefully sourced from European vineyards, our Grape Seed Extract is packed with polyphenols and flavonoids. This powerful ingredient improves skin elasticity, reduces hyperpigmentation, and promotes a smooth, even complexion. It also supports cardiovascular health and cellular rejuvenation by defending against oxidative damage."
+          }
+        },
+        "slide_item_PdEJed": {
+          "type": "slide_item",
+          "settings": {
+            "slide_item_title": "Alcohol-Free Red Wine Powder",
+            "slide_item_eyebrow": "Sourced from: Sangiovese grapes from Tuscany, Italy",
+            "slide_item_text": "Derived from Tuscany’s finest Sangiovese grapes, our Alcohol-Free Red Wine Powder is rich in polyphenols and antioxidants. This powerful ingredient offers holistic protection for your skin, enhancing circulation and defending collagen from free radical damage. With regular use, it helps promote a radiant, revitalized complexion."
+          }
+        }
+      },
+      "block_order": [
+        "slide_item_JRRBDw",
+        "slide_item_YYyUKp",
+        "slide_item_bnUzna",
+        "slide_item_7xwPAk",
+        "slide_item_9UpUVW",
+        "slide_item_gh44Cz",
+        "slide_item_DgWLLk",
+        "slide_item_PdEJed"
+      ],
+      "settings": {
+        "title": "8 POWERFUL KEY INGREDIENTS <em>powered by</em>",
+        "text": "Our formula features a carefully curated blend of potent ingredients, each selected for its unique ability to support your healthy aging journey.",
+        "double_nutri_logo": "shopify://shop_images/847871cd6e24ed21808059f4d2770096.png",
+        "mobile_select_label": "Select an ingredient"
+      }
+    },
+    "video-carousel": {
+      "type": "video-carousel",
+      "blocks": {
+        "video_item_3RDbTa": {
+          "type": "video-item",
+          "settings": {
+            "video": "shopify://files/videos/UGC05.mp4",
+            "poster": "shopify://shop_images/Sequence_01.00_00_18_34.Still001.png"
+          }
+        },
+        "video_item_UcdHif": {
+          "type": "video-item",
+          "settings": {
+            "video": "shopify://files/videos/copy_B4813125-F91A-406C-A128-5717AF4193E3.MP4",
+            "poster": "shopify://shop_images/Sequence_01.00_00_07_04.Still007.png"
+          }
+        },
+        "video_item_kAkDGb": {
+          "type": "video-item",
+          "settings": {
+            "video": "shopify://files/videos/UGC07.mp4",
+            "poster": "shopify://shop_images/Sequence_01.00_00_00_37.Still002.png"
+          }
+        },
+        "video_item_UkC94T": {
+          "type": "video-item",
+          "settings": {
+            "video": "shopify://files/videos/AQOdxqRMVtueuYGJCwiVZldGaAHs9OGsiwErQzOV-eEM6-owFhlGSzQmcSRZ442Rm6gBnuBzXWdRieWlIBCN3NUM.mp4",
+            "poster": "shopify://shop_images/Screenshot_2024-10-16_at_8.08.38_PM.png"
+          }
+        },
+        "video_item_a98gir": {
+          "type": "video-item",
+          "settings": {
+            "video": "shopify://files/videos/copy_2E99F5A9-AF81-43B8-A1D5-FD39AB983734.MP4",
+            "poster": "shopify://shop_images/Sequence_01.00_00_01_36.Still005.png"
+          }
+        },
+        "video_item_tKFbLt": {
+          "type": "video-item",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2024-10-16 at 12.45.06.mp4",
+            "poster": "shopify://shop_images/Screenshot_2024-10-16_at_8.09.51_PM.png"
+          }
+        },
+        "video_item_8LNfjf": {
+          "type": "video-item",
+          "settings": {
+            "video": "shopify://files/videos/UGC04.mov",
+            "poster": "shopify://shop_images/Sequence_01.00_00_14_54.Still004.png"
+          }
+        }
+      },
+      "block_order": [
+        "video_item_3RDbTa",
+        "video_item_UcdHif",
+        "video_item_kAkDGb",
+        "video_item_UkC94T",
+        "video_item_a98gir",
+        "video_item_tKFbLt",
+        "video_item_8LNfjf"
+      ],
+      "settings": {
+        "title": "VOICES <em>of vitality</em>"
+      }
+    },
+    "wines": {
+      "type": "wines",
+      "settings": {
+        "title_section": "AGE LIKE <em>fine wine</em>",
+        "text_section": "Forget “a glass of wine”—elevate to an antioxidant celebration, without the alcohol. Each shot delivers 220 mg of 98% purity Resveratrol, equal to 43 bottles of red wine. Toast to vibrant health and longevity with every sip."
+      }
+    },
+    "results_list_Nwodip": {
+      "type": "results-list",
+      "blocks": {
+        "result_item_aEgn8V": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify://shop_images/cells_11zon.jpg",
+            "title": "Month One",
+            "text": "<p>Start with cellular detox to reveal clearer skin and a boost in natural energy. Improved elasticity adds a fresh bounce to your complexion.</p>"
+          }
+        },
+        "result_item_gUamQp": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify://shop_images/bubbles_11zon.jpg",
+            "title": "Month Two",
+            "text": "<p>See a visible reduction in fine lines and radiant, glowing skin. Stronger antioxidant defenses help protect against environmental stressors.</p>"
+          }
+        },
+        "result_item_wneopd": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify://shop_images/pour_11zon.jpg",
+            "title": "Month Three",
+            "text": "<p>Experience a healthier pace of aging, with deeply hydrated, firmer skin that feels renewed. Consistent use offers lasting support for for overall health and vitality.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "result_item_aEgn8V",
+        "result_item_gUamQp",
+        "result_item_wneopd"
+      ],
+      "settings": {
+        "title": "RESULTS TODAY <em>and tomorrow</em>"
+      }
+    },
+    "battle_chart_wSpdhi": {
+      "type": "battle-chart",
+      "blocks": {
+        "chart_item_aEgn8V": {
+          "type": "chart_item",
+          "settings": {
+            "title": "Contains the 2 most researched longevity supplements (Resveratrol + NR)",
+            "others_have": false
+          }
+        },
+        "chart_item_wneopf": {
+          "type": "chart_item",
+          "settings": {
+            "title": "Liposomal Delivery",
+            "others_have": false
+          }
+        },
+        "chart_item_wneopg": {
+          "type": "chart_item",
+          "settings": {
+            "title": "Shot format, delicious and easy to drink",
+            "others_have": false
+          }
+        },
+        "chart_item_gUamQp": {
+          "type": "chart_item",
+          "settings": {
+            "title": "Co-founded and developed by a leading longevity doctor",
+            "others_have": false
+          }
+        },
+        "chart_item_wneoph": {
+          "type": "chart_item",
+          "settings": {
+            "title": "Slow down biological aging",
+            "others_have": true
+          }
+        },
+        "chart_item_wneopd": {
+          "type": "chart_item",
+          "settings": {
+            "title": "Enhances skin firmness and elasticity",
+            "others_have": false
+          }
+        },
+        "chart_item_wneope": {
+          "type": "chart_item",
+          "settings": {
+            "title": "Includes Superfoods",
+            "others_have": false
+          }
+        }
+      },
+      "block_order": [
+        "chart_item_aEgn8V",
+        "chart_item_wneopf",
+        "chart_item_wneopg",
+        "chart_item_gUamQp",
+        "chart_item_wneoph",
+        "chart_item_wneopd",
+        "chart_item_wneope"
+      ],
+      "settings": {
+        "title": "LONGEVITY SHOT vs <em>other products</em>",
+        "image": "shopify://shop_images/happy_aging_0274_2.jpg"
+      }
+    },
+    "specialist": {
+      "type": "specialist-fifty-fifty",
+      "settings": {
+        "eyebrow": "Dr. Daniel Yadegar, MD",
+        "title": "A GUIDING <em>light</em>",
+        "text": "<p>In partnership with renowned longevity expert Dr. Daniel Yadegar, Happy Aging bridges the worlds of cutting-edge science and holistic wellness. Dr. Yadegar, a Harvard-trained physician with advanced fellowship training in age management and regenerative medicine, brings an unmatched depth of expertise to our mission.<br/></p><p>At Happy Aging, Dr. Yadegar’s extensive knowledge and passion for longevity guide our development and innovation. Together, we are dedicated to revolutionizing the way women experience aging.<br/></p>",
+        "video_url": "",
+        "image": "shopify://shop_images/DSCF7257.JPG_1.jpg",
+        "video_overlay_title": "A passion for <em>Longevity</em>",
+        "video_overlay": "https://cdn.shopify.com/videos/c/o/v/e250e26a39b34036918994eb427db595.mp4",
+        "video_overlay_poster": "shopify://shop_images/specialist-poster_11zon.jpg"
+      }
+    },
+    "faqs_9gMU6f": {
+      "type": "faqs",
+      "blocks": {
+        "faq_GG6MBM": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the Longevity Shot made of?",
+            "answer": "<p>The Longevity Shot is crafted entirely from all-natural ingredients, with 80% of the ingredients being non-GMO. It is gluten-free, vegan, caffeine-free, soy-free, and dairy-free, with no synthetic ingredients, artificial sweeteners, preservatives, or artificial colors/flavors. Each shot contains 18 calories per serving.</p>"
+          }
+        },
+        "faq_4jy9V7": {
+          "type": "faq",
+          "settings": {
+            "question": "Does the Longevity Shot contain sugar or alcohol?",
+            "answer": "<p>The Longevity Shot contains 2.5 grams of natural sugar from apple and grape juice concentrate. It is also lightly sweetened with steviol glycosides, a natural sweetener derived from the Stevia rebaudiana plant that is sugar and calorie-free. It is alcohol-free.</p>"
+          }
+        },
+        "faq_JiVH4C": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the Longevity Shot safe for those with allergies or dietary restrictions?",
+            "answer": "<p>Yes, the Longevity Shot is free from common allergens like nuts, soy, dairy, and gluten, making it suitable for most women with dietary sensitivities. Additionally, it can fit into most keto diets.</p>"
+          }
+        },
+        "faq_qmLMRa": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the Longevity Shots tested on animals?",
+            "answer": "<p>No, the Longevity Shot is not tested on animals.</p>"
+          }
+        },
+        "faq_mqta4H": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I take the Longevity Shot if I’m pregnant or breastfeeding?",
+            "answer": "<p>While the Longevity Shot is made with natural ingredients, we always recommend that pregnant or breastfeeding women consult their healthcare provider to ensure it aligns with their unique health needs during this time.</p>"
+          }
+        },
+        "faq_3phNHn": {
+          "type": "faq",
+          "settings": {
+            "question": "How should I take the Longevity Shot, and when is the best time?",
+            "answer": "<p>For optimal results, we recommend taking two shots per week, at any time of the day. This schedule helps maintain NAD+ levels and activate sirtuins—proteins vital for cellular health, DNA repair, and metabolic function. This intermittent dosing supports long-term vitality and overall longevity, slowing the aging process without overwhelming your body.</p>"
+          }
+        },
+        "faq_iGM4zV": {
+          "type": "faq",
+          "settings": {
+            "question": "When will I see results from the Longevity Shot?",
+            "answer": "<p>The timing of results can vary depending on your body and lifestyle. Many women begin to notice positive changes in energy, skin health, and overall well-being within the first 30 days of regular use.</p>"
+          }
+        },
+        "faq_LXacMF": {
+          "type": "faq",
+          "settings": {
+            "question": "How long should I continue taking the Longevity Shot?",
+            "answer": "<p>The long-term benefits of the Longevity Shot—such as cellular health support and slowing the aging process—are best experienced over time with consistent use. </p>"
+          }
+        },
+        "faq_UiMWTG": {
+          "type": "faq",
+          "settings": {
+            "question": "Are there any side effects of interactions with medications?",
+            "answer": "<p>The natural ingredients in the Longevity Shot are generally well-tolerated, but everyone is unique. If you’re taking any prescription medications or have a medical condition, particularly autoimmune conditions, we encourage you to consult your healthcare provider before starting the Longevity Shot.</p>"
+          }
+        },
+        "faq_RfTGdA": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the Longevity Shot suitable for children or teenagers?",
+            "answer": "<p>The Longevity Shot is formulated with adults in mind. If you’re considering it for children or teenagers, we recommend speaking with a healthcare provider to ensure it’s appropriate for their needs.</p>"
+          }
+        },
+        "faq_nQXECb": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the Longevity Shot Kosher or Halal certified?",
+            "answer": "<p>No, the Longevity Shot is not currently Kosher or Halal certified.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_GG6MBM",
+        "faq_4jy9V7",
+        "faq_JiVH4C",
+        "faq_qmLMRa",
+        "faq_mqta4H",
+        "faq_3phNHn",
+        "faq_iGM4zV",
+        "faq_LXacMF",
+        "faq_UiMWTG",
+        "faq_RfTGdA",
+        "faq_nQXECb"
+      ],
+      "settings": {
+        "title": "Frequently Asked Questions",
+        "is_padding_top": "yes",
+        "is_background_default": "no",
+        "is_margin_bottom": "yes",
+        "callout_text": ""
+      }
+    },
+    "17320251521cecff4e": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_widget_nzzjDa": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "longevity",
+            "widget_type": "combined_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_nzzjDa"
+      ],
+      "custom_css": [
+        "{margin-left: 10px; margin-right: 10px;}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "featured_carousel_zDWaQQ": {
+      "type": "featured-carousel",
+      "blocks": {
+        "article_VHAQcG": {
+          "type": "article",
+          "settings": {
+            "article": "news/the-biology-of-aging",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+          }
+        },
+        "article_hpTmLQ": {
+          "type": "article",
+          "settings": {
+            "article": "news/20-habits-for-longevity",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+          }
+        },
+        "article_cWrnT3": {
+          "type": "article",
+          "settings": {
+            "article": "news/harnessing-the-sun-for-healthy-aging",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+          }
+        },
+        "article_ArCamx": {
+          "type": "article",
+          "settings": {
+            "article": "news/20-habits-for-longevity",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "article_VHAQcG",
+        "article_hpTmLQ",
+        "article_cWrnT3",
+        "article_ArCamx"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Featured Articles"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1749155700222ac9df",
+    "marquee_pMqq4Y",
+    "logo_list_V69zC4",
+    "benefits_TnXkPb",
+    "fifty_fifty_Sneidp",
+    "key_points",
+    "video-carousel",
+    "wines",
+    "results_list_Nwodip",
+    "battle_chart_wSpdhi",
+    "specialist",
+    "faqs_9gMU6f",
+    "17320251521cecff4e",
+    "featured_carousel_zDWaQQ"
+  ]
+}
