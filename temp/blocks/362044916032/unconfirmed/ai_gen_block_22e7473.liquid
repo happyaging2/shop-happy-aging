@@ -1,6 +1,377 @@
+{% doc %}
+  @prompt
+    image higlight 10x supeior absorption
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .absorption-highlight-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.padding }}px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .absorption-highlight__header-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .absorption-highlight__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: bold;
+    color: {{ block.settings.title_color }};
+    margin: 0;
+  }
+
+  .absorption-highlight__badge-{{ ai_gen_id }} {
+    background-color: {{ block.settings.badge_color }};
+    color: {{ block.settings.badge_text_color }};
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 15px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .absorption-highlight__content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .absorption-highlight__image-container-{{ ai_gen_id }} {
+    flex: 1;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .absorption-highlight__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  .absorption-highlight__placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+
+  .absorption-highlight__placeholder-{{ ai_gen_id }} svg {
+    width: 50%;
+    height: 50%;
+    opacity: 0.5;
+  }
+
+  .absorption-highlight__overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .absorption-highlight__comparison-{{ ai_gen_id }} {
+    display: flex;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .absorption-highlight__product-{{ ai_gen_id }},
+  .absorption-highlight__competitor-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  .absorption-highlight__label-{{ ai_gen_id }} {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .absorption-highlight__value-{{ ai_gen_id }} {
+    font-size: 24px;
+    font-weight: bold;
+    color: {{ block.settings.highlight_color }};
+  }
+
+  .absorption-highlight__competitor-value-{{ ai_gen_id }} {
+    font-size: 24px;
+    font-weight: bold;
+    color: {{ block.settings.competitor_color }};
+  }
+
+  .absorption-highlight__divider-{{ ai_gen_id }} {
+    width: 1px;
+    background-color: #ddd;
+    margin: 0 15px;
+  }
+
+  .absorption-highlight__text-{{ ai_gen_id }} {
+    flex: 1;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.5;
+  }
+
+  .absorption-highlight__text-{{ ai_gen_id }} p {
+    margin-top: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .absorption-highlight__content-{{ ai_gen_id }} {
+      flex-direction: column;
+    }
+    
+    .absorption-highlight__image-container-{{ ai_gen_id }},
+    .absorption-highlight__text-{{ ai_gen_id }} {
+      width: 100%;
+    }
+    
+    .absorption-highlight__comparison-{{ ai_gen_id }} {
+      padding: 8px 15px;
+    }
+    
+    .absorption-highlight__value-{{ ai_gen_id }},
+    .absorption-highlight__competitor-value-{{ ai_gen_id }} {
+      font-size: 20px;
+    }
+  }
+{% endstyle %}
+
+<div class="absorption-highlight-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="absorption-highlight__header-{{ ai_gen_id }}">
+    <h2 class="absorption-highlight__title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+    {% if block.settings.show_badge %}
+      <span class="absorption-highlight__badge-{{ ai_gen_id }}">{{ block.settings.badge_text }}</span>
+    {% endif %}
+  </div>
+  
+  <div class="absorption-highlight__content-{{ ai_gen_id }}">
+    <div class="absorption-highlight__image-container-{{ ai_gen_id }}">
+      {% if block.settings.image %}
+        <img 
+          src="{{ block.settings.image | image_url: width: 800 }}"
+          alt="{{ block.settings.image.alt | default: block.settings.title }}"
+          class="absorption-highlight__image-{{ ai_gen_id }}"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+          loading="lazy"
+        >
+      {% else %}
+        <div class="absorption-highlight__placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}<div class="absorption-highlight__overlay-{{ ai_gen_id }}">
+        <div class="absorption-highlight__comparison-{{ ai_gen_id }}">
+          <div class="absorption-highlight__product-{{ ai_gen_id }}">
+            <span class="absorption-highlight__label-{{ ai_gen_id }}">{{ block.settings.product_label }}</span>
+            <span class="absorption-highlight__value-{{ ai_gen_id }}">{{ block.settings.product_value }}</span>
+          </div>
+          
+          <div class="absorption-highlight__divider-{{ ai_gen_id }}"></div>
+          
+          <div class="absorption-highlight__competitor-{{ ai_gen_id }}">
+            <span class="absorption-highlight__label-{{ ai_gen_id }}">{{ block.settings.competitor_label }}</span>
+            <span class="absorption-highlight__competitor-value-{{ ai_gen_id }}">{{ block.settings.competitor_value }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="absorption-highlight__text-{{ ai_gen_id }}">
+      {{ block.settings.description }}
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "10X Absorption Highlight",
+  "tag": null,
+  "class": "absorption-highlight-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Superior Absorption Technology"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Our revolutionary technology absorbs 10 times more liquid than standard products. This means better performance, longer-lasting protection, and superior comfort for you.</p><p>The advanced fiber structure creates a more efficient absorption system that quickly locks away moisture and prevents leakage.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Absorption comparison image"
+    },
+    {
+      "type": "header",
+      "content": "Comparison Data"
+    },
+    {
+      "type": "text",
+      "id": "product_label",
+      "label": "Our product label",
+      "default": "Our Product"
+    },
+    {
+      "type": "text",
+      "id": "product_value",
+      "label": "Our product value",
+      "default": "10X"
+    },
+    {
+      "type": "text",
+      "id": "competitor_label",
+      "label": "Competitor label",
+      "default": "Competitors"
+    },
+    {
+      "type": "text",
+      "id": "competitor_value",
+      "label": "Competitor value",
+      "default": "1X"
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "10X SUPERIOR"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Our product value color",
+      "default": "#0066cc"
+    },
+    {
+      "type": "color",
+      "id": "competitor_color",
+      "label": "Competitor value color",
+      "default": "#999999"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Badge background color",
+      "default": "#0066cc"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "10X Absorption Highlight"
+    }
+  ]
+}
 {% endschema %}
