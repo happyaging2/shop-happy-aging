@@ -264,7 +264,7 @@
             "text_block_KQNbrM": {
               "type": "text-block",
               "settings": {
-                "text": "<p>A 2024 clinical study published in the European Journal of Nutrition demonstrated that liposomal vitamin C significantly increased absorption compared to standard vitamin C formulations <a href=\"https://link.springer.com/article/10.1007/s00394-024-03487-8\" target=\"_blank\" title=\"Purpura et al., 2024\">source: Purpura et al., 2024</a></p>",
+                "text": "<p>A representative analysis of a Happy Aging liposomal formula shows how we confirm particle quality after simulated digestion.</p><p>We measure the post-digestion particle size by DLS. Results are consistent across our entire line, verifying that the liposomes remain in the optimal nanometre range.<br/></p><p>Single TEM images look impressive, but they capture only a few liposomes. DLS scans the <em>whole</em> sample, proving that every batch meets the “spherical-particle” specification—not just a photogenic subset.</p>",
                 "text_color": "",
                 "text_weight": "normal",
                 "border-top": false,
@@ -294,194 +294,6 @@
         "top_spacing": 60,
         "bottom_spacing": 60,
         "use_top_border": true,
-        "use_bottom_border": false,
-        "full_width_mobile": false,
-        "top_spacing_mobile": 30,
-        "bottom_spacing_mobile": 50,
-        "use_top_border_mobile": false,
-        "use_bottom_border_mobile": false
-      }
-    },
-    "landing_section_kzcpRW": {
-      "type": "landing-section",
-      "blocks": {
-        "section_inner_NRhdjD": {
-          "type": "section-inner",
-          "settings": {
-            "desktop_grid_columns": "2",
-            "horizontal_alignment": "start",
-            "vertical_alignment": "start",
-            "desktop_grid_column_gap": 70,
-            "desktop_grid_row_gap": 70,
-            "top_spacing_desktop": 0,
-            "bottom_spacing_desktop": 0,
-            "left_spacing_desktop": 70,
-            "right_spacing_desktop": 70,
-            "mobile_grid_columns": "1",
-            "mobile_horizontal_alignment": "start",
-            "mobile_vertical_alignment": "start",
-            "mobile_grid_column_gap": 0,
-            "mobile_grid_row_gap": 40,
-            "top_spacing_mobile": 0,
-            "bottom_spacing_mobile": 0,
-            "left_spacing_mobile": 0,
-            "right_spacing_mobile": 0
-          },
-          "blocks": {
-            "heading_block_DwrTPQ": {
-              "type": "heading-block",
-              "settings": {
-                "subheading": "",
-                "text": "<p>How Liposomal Technology Works</p>",
-                "tag_select": "h2",
-                "text_color": "",
-                "max_width": 250,
-                "text_alignment_desktop": "left",
-                "text_alignment_mobile": "left"
-              },
-              "blocks": {}
-            },
-            "grid_list_nRe6ki": {
-              "type": "grid-list",
-              "settings": {
-                "desktop_grid_columns": "1",
-                "column_gap_desktop": 40,
-                "row_gap_desktop": 40,
-                "mobile_grid_columns": "1",
-                "column_gap_mobile": 30,
-                "row_gap_mobile": 30
-              },
-              "blocks": {
-                "highlight_text_item_PhPa8Y": {
-                  "type": "highlight-text-item",
-                  "settings": {
-                    "title": "<p>Intelligent Encapsulation</p>",
-                    "text": "<p>Liposomal absorption in humans has been extensively studied over numerous clinical trials. This form of absorption is a method of encapsulating drugs and other substances in liposomes, and then administering them to the body. The process has been clinically proven to be more efficient than other methods, with data showing that it increases the bioavailability and effectiveness of the encapsulated materials.<br/><br/></p>"
-                  },
-                  "blocks": {}
-                },
-                "highlight_text_item_Hb4cf8": {
-                  "type": "highlight-text-item",
-                  "settings": {
-                    "title": "<p>Targeted Delivery</p>",
-                    "text": "<p>Liposomes transport nutrients safely through the harsh environment of the digestive system, preventing degradation.</p>"
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "highlight_text_item_PhPa8Y",
-                "highlight_text_item_Hb4cf8"
-              ]
-            }
-          },
-          "block_order": [
-            "heading_block_DwrTPQ",
-            "grid_list_nRe6ki"
-          ]
-        },
-        "section_inner_JLd4pG": {
-          "type": "section-inner",
-          "settings": {
-            "desktop_grid_columns": "2",
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "center",
-            "desktop_grid_column_gap": 70,
-            "desktop_grid_row_gap": 70,
-            "top_spacing_desktop": 60,
-            "bottom_spacing_desktop": 0,
-            "left_spacing_desktop": 70,
-            "right_spacing_desktop": 70,
-            "mobile_grid_columns": "1",
-            "mobile_horizontal_alignment": "center",
-            "mobile_vertical_alignment": "start",
-            "mobile_grid_column_gap": 0,
-            "mobile_grid_row_gap": 40,
-            "top_spacing_mobile": 40,
-            "bottom_spacing_mobile": 0,
-            "left_spacing_mobile": 0,
-            "right_spacing_mobile": 0
-          },
-          "blocks": {
-            "highlight_image_item_EAUddw": {
-              "type": "highlight-image-item",
-              "settings": {
-                "image": "shopify://shop_images/20.svg",
-                "image_max_width_desktop": 300,
-                "image_max_width_mobile": 300,
-                "title": "<p>Superior Absorption</p>",
-                "title_size": 14,
-                "title_line_height": 20,
-                "title_color": "",
-                "text": "",
-                "text_alignment_desktop": "left",
-                "text_alignment_mobile": "center",
-                "flex_direction": "row",
-                "justify_content": "start",
-                "align_items": "start",
-                "row_gap": 30,
-                "column_gap": 20,
-                "flex_direction_mobile": "column",
-                "justify_content_mobile": "center",
-                "align_items_mobile": "center",
-                "row_gap_mobile": 20,
-                "column_gap_mobile": 20
-              },
-              "blocks": {}
-            },
-            "grid_list_Px3bzC": {
-              "type": "grid-list",
-              "settings": {
-                "desktop_grid_columns": "1",
-                "column_gap_desktop": 10,
-                "row_gap_desktop": 10,
-                "mobile_grid_columns": "1",
-                "column_gap_mobile": 10,
-                "row_gap_mobile": 10
-              },
-              "blocks": {
-                "text_block_ctXxQj": {
-                  "type": "text-block",
-                  "settings": {
-                    "text": "<p>When liposomes reach their destination, they naturally merge with cell membranes, releasing nutrients directly where they're needed. This biomimetic process results in up to 10 times higher absorption compared to conventional supplements.</p>",
-                    "text_color": "",
-                    "text_weight": "normal",
-                    "border-top": false,
-                    "max_width": 0,
-                    "desktop_font_size": 0,
-                    "desktop_line_height": 0,
-                    "top_spacing_desktop": 0,
-                    "text_alignment_desktop": "left",
-                    "mobile_font_size": 0,
-                    "mobile_line_height": 0,
-                    "top_spacing_mobile": 0,
-                    "text_alignment_mobile": "left"
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_block_ctXxQj"
-              ]
-            }
-          },
-          "block_order": [
-            "highlight_image_item_EAUddw",
-            "grid_list_Px3bzC"
-          ]
-        }
-      },
-      "block_order": [
-        "section_inner_NRhdjD",
-        "section_inner_JLd4pG"
-      ],
-      "settings": {
-        "background_color": "#f7f5eb",
-        "full_width": true,
-        "max_width": 0,
-        "top_spacing": 60,
-        "bottom_spacing": 60,
-        "use_top_border": false,
         "use_bottom_border": false,
         "full_width_mobile": false,
         "top_spacing_mobile": 30,
@@ -626,29 +438,33 @@
               },
               "blocks": {}
             },
-            "text_block_evidence": {
-              "type": "text-block",
+            "ai_gen_block_31a6895_PMcJqw": {
+              "type": "ai_gen_block_31a6895",
               "settings": {
-                "text": "<p>Our liposomal technology is backed by rigorous scientific research:</p><ul><li>Research published in Applied Sciences (2024) showed that liposomal encapsulation increased bioavailability of nutrients by up to 5 times compared to conventional delivery methods (Żmuda et al., 2024).</li><li>A 2022 randomized crossover study published in the Journal of the American Nutrition Association found that liposomal mineral absorption was significantly enhanced compared to non-liposomal formulations (Tinsley et al., 2022).</li><li>A 2023 pharmacokinetic analysis published in Pharmaceutics confirmed that liposomal encapsulation significantly improves overall bioavailability of vitamins and minerals (Ko et al., 2023).</li></ul>",
-                "text_color": "",
-                "text_weight": "normal",
-                "border-top": false,
-                "max_width": 540,
-                "desktop_font_size": 0,
-                "desktop_line_height": 0,
-                "top_spacing_desktop": 20,
-                "text_alignment_desktop": "left",
-                "mobile_font_size": 0,
-                "mobile_line_height": 0,
-                "top_spacing_mobile": 0,
-                "text_alignment_mobile": "left"
+                "tem_image": "shopify://shop_images/Liposome-Zoom-1024x576.jpg",
+                "image_border_radius": 20,
+                "title": "TEM Analysis Results",
+                "description": "TEM is a super-microscope that shoots a beam of electrons through an ultrathin sample—thinner than a human hair—to reveal structures ordinary microscopes can’t see.\n\nTEM images of Happy Aging’s liposomes prove that our active ingredients are tightly sealed inside each lipid sphere. \nThird-party tests show > 90 % encapsulation efficiency: about 10x higher than typical liposomal supplements.",
+                "title_size": 32,
+                "text_size": 16,
+                "title_color": "#333333",
+                "text_color": "#000000",
+                "show_accordion": false,
+                "accordion_title": "Learn More Technical Details",
+                "bullet_point_1": "Resolution of 0.15 nm achieved using 200 kV acceleration voltage with aberration correction.",
+                "bullet_point_2": "Lattice spacing measured at 0.24 nm, confirming the presence of our target crystalline phase.",
+                "bullet_point_3": "Particle size distribution analysis shows 85% of particles within 10-15 nm diameter range.",
+                "accordion_bg_color": "#f5f5f5",
+                "accordion_content_bg_color": "#ffffff",
+                "accordion_text_color": "#333333",
+                "accordion_border_color": "#e0e0e0"
               },
               "blocks": {}
             }
           },
           "block_order": [
             "heading_block_evidence",
-            "text_block_evidence"
+            "ai_gen_block_31a6895_PMcJqw"
           ]
         }
       },
@@ -672,72 +488,6 @@
     },
     "landing_section_difference": {
       "type": "landing-section",
-      "blocks": {
-        "section_inner_difference": {
-          "type": "section-inner",
-          "settings": {
-            "desktop_grid_columns": "1",
-            "horizontal_alignment": "start",
-            "vertical_alignment": "start",
-            "desktop_grid_column_gap": 0,
-            "desktop_grid_row_gap": 0,
-            "top_spacing_desktop": 0,
-            "bottom_spacing_desktop": 0,
-            "left_spacing_desktop": 70,
-            "right_spacing_desktop": 70,
-            "mobile_grid_columns": "1",
-            "mobile_horizontal_alignment": "start",
-            "mobile_vertical_alignment": "start",
-            "mobile_grid_column_gap": 0,
-            "mobile_grid_row_gap": 20,
-            "top_spacing_mobile": 0,
-            "bottom_spacing_mobile": 0,
-            "left_spacing_mobile": 0,
-            "right_spacing_mobile": 0
-          },
-          "blocks": {
-            "heading_block_difference": {
-              "type": "heading-block",
-              "settings": {
-                "subheading": "",
-                "text": "<p>The Happy Aging Difference</p>",
-                "tag_select": "h2",
-                "text_color": "",
-                "max_width": 350,
-                "text_alignment_desktop": "left",
-                "text_alignment_mobile": "left"
-              },
-              "blocks": {}
-            },
-            "text_block_difference": {
-              "type": "text-block",
-              "settings": {
-                "text": "<p>At Happy Aging, our liposomal technology represents our commitment to healthy longevity. Each product is developed with scientific precision to deliver:</p><ul><li><strong>Exceptional Purity</strong>: Pharmaceutical-grade ingredients in every formulation</li><li><strong>Optimized Potency</strong>: Clinically relevant dosages your body can actually absorb</li><li><strong>Noticeable Results</strong>: Benefits you can feel, not just believe in</li></ul><p>Experience the difference of Happy Aging's liposomal technology – where advanced science meets natural wellness to support your longevity journey.</p>",
-                "text_color": "",
-                "text_weight": "normal",
-                "border-top": false,
-                "max_width": 540,
-                "desktop_font_size": 0,
-                "desktop_line_height": 0,
-                "top_spacing_desktop": 20,
-                "text_alignment_desktop": "left",
-                "mobile_font_size": 0,
-                "mobile_line_height": 0,
-                "top_spacing_mobile": 0,
-                "text_alignment_mobile": "left"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "heading_block_difference",
-            "text_block_difference"
-          ]
-        }
-      },
-      "block_order": [
-        "section_inner_difference"
-      ],
       "settings": {
         "background_color": "",
         "full_width": true,
@@ -759,7 +509,6 @@
     "landing_intro_YmYtTx",
     "landing_anchors_zpKNb8",
     "landing_section_ff4cfp",
-    "landing_section_kzcpRW",
     "landing_section_benefits",
     "landing_section_evidence",
     "landing_section_difference"
