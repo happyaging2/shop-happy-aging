@@ -1,0 +1,103 @@
+document.addEventListener('DOMContentLoaded', function() {
+  // Função para adicionar a classe active ao carrinho
+  function activateCart() {
+    const cartDrawer = document.querySelector('cart-drawer');
+    if (cartDrawer) {
+      cartDrawer.classList.add('active');
+    }
+  }
+  
+  // Ativar o carrinho quando estiver na página do carrinho
+  if (window.location.pathname.includes('/cart')) {
+    activateCart();
+  }
+  
+  // Adicionar evento para o botão do carrinho
+  const cartButtons = document.querySelectorAll('a[href="/cart"], a[aria-controls="CartDrawer"]');
+  cartButtons.forEach(button => {
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      activateCart();
+    });
+  });
+  
+  // Adicionar método close ao elemento cart-drawer
+  customElements.define('cart-drawer', 
+    class CartDrawer extends HTMLElement {
+      constructor() {
+        super();
+        
+        // Adicionar método close
+        this.close = function() {
+          this.classList.remove('active');
+        };
+      }
+    }
+  );
+  
+  // Corrigir a visibilidade dos itens do carrinho na página principal
+  const mainCartItems = document.querySelector('#main-cart-items');
+  if (mainCartItems) {
+    const hiddenDivs = mainCartItems.querySelectorAll('.d-none');
+    hiddenDivs.forEach(div => {
+      div.classList.remove('d-none');
+    });
+  }
+});
+
+
+4. Adicionar referência ao script no layout/theme.liquid
+
+Localize a referência ao script cart.js:
+
+Plain Text
+
+
+<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+
+
+E adicione logo após:
+
+Plain Text
+
+
+<script src="{{ 'cart-fix.js' | asset_url }}" defer="defer"></script>
+
+
+5. Script opcional para adicionar ao final de snippets/cart-drawer.liquid
+
+HTML
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Adicionar classe active ao carrinho quando estiver na página do carrinho
+  const cartDrawer = document.querySelector('cart-drawer');
+  if (cartDrawer && window.location.pathname.includes('/cart')) {
+    cartDrawer.classList.add('active');
+  }
+  
+  // Adicionar evento para o botão do carrinho
+  const cartButtons = document.querySelectorAll('a[href="/cart"]');
+  cartButtons.forEach(button => {
+    button.addEventListener('click', function(event) {
+      if (cartDrawer) {
+        event.preventDefault();
+        cartDrawer.classList.add('active');
+      }
+    });
+  });
+  
+  // Adicionar evento para fechar o drawer
+  const closeButton = document.querySelector('button[onclick="this.closest(\'cart-drawer\').close()"]');
+  if (closeButton) {
+    closeButton.addEventListener('click', function() {
+      if (cartDrawer) {
+        cartDrawer.classList.remove('active');
+      }
+    });
+  }
+});
+</script>
+
+
