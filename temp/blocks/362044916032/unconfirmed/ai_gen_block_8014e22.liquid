@@ -1,6 +1,278 @@
+{% doc %}
+  @prompt
+    highlight text: Happy Aging’s liposomal formulas deliver nutrients up to 10× better absorbed than regular capsules, giving you superior quality and results you can feel
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .highlight-text-container-{{ ai_gen_id }} {
+    padding: {{ block.settings.padding }}px;
+    margin: {{ block.settings.margin }}px 0;
+    max-width: 100%;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};position: relative;
+    overflow: hidden;
+  }
+
+  .highlight-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.font_size }}px;
+    line-height: 1.5;
+    font-weight: {{ block.settings.font_weight }};
+    color: {{ block.settings.text_color }};
+    text-align: {{ block.settings.text_alignment }};
+    position: relative;
+    z-index: 2;
+  }
+
+  .highlight-text-{{ ai_gen_id }} strong {
+    color: {{ block.settings.accent_color }};
+    font-weight:700;
+  }
+
+  {% if block.settings.show_accent_mark %}
+    .highlight-accent-mark-{{ ai_gen_id }} {
+      position: absolute;
+      {% if block.settings.accent_mark_position == 'left' %}
+        left: 0;
+        top: 0;bottom: 0;
+        width: {{ block.settings.accent_mark_width }}px;
+      {% elsif block.settings.accent_mark_position == 'top' %}
+        top: 0;
+        left: 0;
+        right: 0;
+        height: {{ block.settings.accent_mark_width }}px;
+      {% endif %}
+      background-color: {{ block.settings.accent_mark_color }};
+      z-index: 1;
+    }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    .highlight-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size_mobile }}px;
+    }
+    .highlight-text-container-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="highlight-text-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.show_accent_mark %}
+    <div class="highlight-accent-mark-{{ ai_gen_id }}"></div>
+  {% endif %}
+  
+  <div class="highlight-text-{{ ai_gen_id }}">
+    {{ block.settings.highlight_text }}
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Highlight Text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "highlight_text",
+      "label": "Text to highlight",
+      "default": "<p>Happy Aging's liposomal formulas deliver nutrients up to <strong>10× better absorbed</strong> than regular capsules, giving you superior quality and results you can feel.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size (mobile)",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent text color",
+      "default": "#000f9f"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_mobile",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding (mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "margin",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Vertical margin",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#dddddd"
+    },
+    {
+      "type": "header",
+      "content": "Accent Mark"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_accent_mark",
+      "label": "Show accent mark",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "accent_mark_position",
+      "label": "Accent mark position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "accent_mark_width",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Accent mark width",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "accent_mark_color",
+      "label": "Accent mark color",
+      "default": "#000f9f"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Highlight Text"
+    }
+  ],
+  "tag": null
+}
 {% endschema %}
