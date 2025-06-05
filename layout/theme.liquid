@@ -471,12 +471,6 @@
         countrySelectorSearchCount: `{{ 'localization.country_results_count' | t: count: '[count]' }}`,
       };
 
-<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
-<!-- Adicione após os scripts existentes do carrinho -->
-<script src="{{ 'cart-fix-improved.js' | asset_url }}" defer="defer"></script>
-    </script>
-
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
