@@ -95,6 +95,36 @@
     "landing_section_PVxkVe": {
       "type": "landing-section",
       "blocks": {
+        "ai_gen_block_0808b95_qBTrjr": {
+          "type": "ai_gen_block_0808b95",
+          "settings": {
+            "heading": "",
+            "collection_1": "best-sellers",
+            "custom_title_1": "Best Sellers",
+            "custom_image_1": "shopify://shop_images/Hydro_Burn_-_Happy_Aging_-_Martha_Graeff_-_Skep360_-_Photo_by_Ton_Gomes_2025-10_f133ebbf-e23b-4278-b2e7-ff9c69317010.jpg",
+            "collection_2": "nad",
+            "custom_title_2": "NAD+",
+            "custom_image_2": "shopify://shop_images/bottle_HA.jpg",
+            "collection_3": "marine-collagen",
+            "custom_title_3": "Marine Collagen",
+            "custom_image_3": "shopify://shop_images/Happy_Aging_-_Skep360_Photo_by_Ton_Gomes_2025-_1_of_1___41.jpg",
+            "collection_4": "strength-recovery",
+            "custom_title_4": "Strength & Recovery",
+            "custom_image_4": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-23_1.jpg",
+            "collection_5": "",
+            "custom_title_5": "",
+            "circle_size": 80,
+            "gap": 15,
+            "border_width": 0,
+            "border_color": "#000000",
+            "circle_bg_color": "#f4f4f4",
+            "heading_size": 22,
+            "heading_color": "#000000",
+            "title_size": 14,
+            "title_color": "#000000"
+          },
+          "blocks": {}
+        },
         "section_inner_hNMCBm": {
           "type": "section-inner",
           "settings": {
@@ -131,45 +161,15 @@
                 "text_alignment_mobile": "center"
               },
               "blocks": {}
-            },
-            "ai_gen_block_0808b95_rQ3xrX": {
-              "type": "ai_gen_block_0808b95",
-              "settings": {
-                "heading": "",
-                "collection_1": "best-sellers",
-                "custom_title_1": "Best Sellers",
-                "custom_image_1": "shopify://shop_images/Hydro_Burn_-_Happy_Aging_-_Martha_Graeff_-_Skep360_-_Photo_by_Ton_Gomes_2025-10_f133ebbf-e23b-4278-b2e7-ff9c69317010.jpg",
-                "collection_2": "nad",
-                "custom_title_2": "NAD+",
-                "custom_image_2": "shopify://shop_images/bottle_HA.jpg",
-                "collection_3": "marine-collagen",
-                "custom_title_3": "Marine Collagen",
-                "custom_image_3": "shopify://shop_images/Happy_Aging_-_Skep360_Photo_by_Ton_Gomes_2025-_1_of_1___41.jpg",
-                "collection_4": "strength-recovery",
-                "custom_title_4": "Strength & Recovery",
-                "custom_image_4": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-23_1.jpg",
-                "collection_5": "",
-                "custom_title_5": "",
-                "circle_size": 80,
-                "gap": 15,
-                "border_width": 0,
-                "border_color": "#000000",
-                "circle_bg_color": "#f4f4f4",
-                "heading_size": 22,
-                "heading_color": "#000000",
-                "title_size": 14,
-                "title_color": "#000000"
-              },
-              "blocks": {}
             }
           },
           "block_order": [
-            "heading_block_dQUYVQ",
-            "ai_gen_block_0808b95_rQ3xrX"
+            "heading_block_dQUYVQ"
           ]
         }
       },
       "block_order": [
+        "ai_gen_block_0808b95_qBTrjr",
         "section_inner_hNMCBm"
       ],
       "settings": {
