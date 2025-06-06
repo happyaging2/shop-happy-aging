@@ -95,36 +95,6 @@
     "landing_section_PVxkVe": {
       "type": "landing-section",
       "blocks": {
-        "ai_gen_block_0808b95_qBTrjr": {
-          "type": "ai_gen_block_0808b95",
-          "settings": {
-            "heading": "",
-            "collection_1": "best-sellers",
-            "custom_title_1": "Best Sellers",
-            "custom_image_1": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-1.jpg",
-            "collection_2": "nad",
-            "custom_title_2": "NAD+",
-            "custom_image_2": "shopify://shop_images/cbdfab823e11d19e112596f70d22cfeb.jpg",
-            "collection_3": "marine-collagen",
-            "custom_title_3": "Marine Collagen",
-            "custom_image_3": "shopify://shop_images/Happy_Aging_-_Skep360_Photo_by_Ton_Gomes_2025-_1_of_1___41.jpg",
-            "collection_4": "strength-recovery",
-            "custom_title_4": "Strength & Recovery",
-            "custom_image_4": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-23_1.jpg",
-            "collection_5": "",
-            "custom_title_5": "",
-            "circle_size": 80,
-            "gap": 15,
-            "border_width": 0,
-            "border_color": "#000000",
-            "circle_bg_color": "#f4f4f4",
-            "heading_size": 22,
-            "heading_color": "#000000",
-            "title_size": 14,
-            "title_color": "#000000"
-          },
-          "blocks": {}
-        },
         "section_inner_hNMCBm": {
           "type": "section-inner",
           "settings": {
@@ -166,11 +136,47 @@
           "block_order": [
             "heading_block_dQUYVQ"
           ]
+        },
+        "ai_gen_block_c26abd2_wqRKMr": {
+          "type": "ai_gen_block_c26abd2",
+          "settings": {
+            "circle_size": 80,
+            "gap": 20,
+            "border_width": 0,
+            "border_color": "#000000",
+            "font_size": 14,
+            "font_weight": "500",
+            "text_color": "#000000",
+            "category_1_enabled": true,
+            "category_1_title": "Best Sellers",
+            "category_1_image": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-13.jpg",
+            "category_1_link": "shopify://collections/best-sellers",
+            "category_2_enabled": true,
+            "category_2_title": "NAD+",
+            "category_2_image": "shopify://shop_images/happy_aging_0274_1.jpg",
+            "category_2_link": "shopify://products/longevity-shots",
+            "category_3_enabled": true,
+            "category_3_title": "Marine Collagen",
+            "category_3_image": "shopify://shop_images/hi_res-f2-Poli-Alves_r1_pour-glow_ee80ee94-973b-4d69-954e-61b4540185aa.gif",
+            "category_3_link": "shopify://products/glow-shot",
+            "category_4_enabled": true,
+            "category_4_title": "Strength & Recovery",
+            "category_4_image": "shopify://shop_images/1748358707.jpg",
+            "category_4_link": "shopify://products/lean-muscle-formula",
+            "category_5_enabled": true,
+            "category_5_title": "Energy",
+            "category_5_image": "shopify://shop_images/jJpi7nhA.png",
+            "category_5_link": "shopify://products/hydroburn",
+            "category_6_enabled": false,
+            "category_6_title": "Category 6",
+            "category_6_link": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_0808b95_qBTrjr",
-        "section_inner_hNMCBm"
+        "section_inner_hNMCBm",
+        "ai_gen_block_c26abd2_wqRKMr"
       ],
       "settings": {
         "background_color": "",
