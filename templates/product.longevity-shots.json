@@ -595,7 +595,7 @@
             "feature_text_color": "#000000",
             "us_bg_color": "#f7f5eb",
             "us_text_color": "#000000",
-            "them_bg_color": "#ffffff",
+            "them_bg_color": "#f7f5eb",
             "them_text_color": "#000000",
             "check_color": "#008060",
             "x_color": "#D82C0D",
