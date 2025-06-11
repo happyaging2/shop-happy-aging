@@ -25,9 +25,9 @@
         "vendor": {
           "type": "text",
           "settings": {
-            "text": "Liposomal Delivery",
+            "text": "SLOW DOWN AGING",
             "text_style": "uppercase",
-            "text_size": "text-xs",
+            "text_size": "text-sm",
             "text_align": "text-left"
           }
         },
