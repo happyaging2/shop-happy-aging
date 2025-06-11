@@ -550,11 +550,25 @@
     "landing_section_WFDezh": {
       "type": "landing-section",
       "blocks": {
+        "heading_block_fTfUnt": {
+          "type": "heading-block",
+          "name": "Heading block",
+          "settings": {
+            "subheading": "",
+            "text": "<p>Why Choose Happy Aging <em>Longevity Shots?</em><br/><br/></p>",
+            "tag_select": "h2",
+            "text_color": "",
+            "desktop_font_size": 55,
+            "text_alignment_desktop": "center",
+            "text_alignment_mobile": "center"
+          },
+          "blocks": {}
+        },
         "ai_gen_block_2a68116_qQftD9": {
           "type": "ai_gen_block_2a68116",
           "settings": {
-            "heading": "Why Choose Happy Aging Longevity Shots?",
-            "subheading": "See how our premium longevity shots compare to other options on the market.",
+            "heading": "",
+            "subheading": "",
             "feature_header": "",
             "our_product_title": "Longevity Shots",
             "our_product_image": "shopify://shop_images/Design_sem_nome_2.png",
@@ -582,7 +596,7 @@
             "cell_height": 60,
             "cell_padding": 12,
             "section_padding": 50,
-            "heading_size": 28,
+            "heading_size": 50,
             "subheading_size": 16,
             "table_header_size": 16,
             "text_size": 14,
@@ -598,7 +612,7 @@
             "them_bg_color": "#f7f5eb",
             "them_text_color": "#000000",
             "check_color": "#008060",
-            "x_color": "#D82C0D",
+            "x_color": "#d82c0d",
             "highlight_color": "#000f9f",
             "button_color": "#000000",
             "button_text_color": "#ffffff",
@@ -608,6 +622,7 @@
         }
       },
       "block_order": [
+        "heading_block_fTfUnt",
         "ai_gen_block_2a68116_qQftD9"
       ],
       "name": "Landing Section",
