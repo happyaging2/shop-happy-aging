@@ -35,7 +35,8 @@
         "image_mobile": "shopify://shop_images/Hydro_Burn_-_Happy_Aging_-_Martha_Graeff_-_Skep360-_Photo_by_Ton_Gomes_2025-4_1.png",
         "video_url_desktop": "",
         "video_url_mobile": "",
-        "mobile_image_first": true
+        "mobile_image_first": true,
+        "banner_link": ""
       }
     },
     "hero_Nq9J7U": {
@@ -63,7 +64,8 @@
         "image_mobile": "shopify://shop_images/Imagem_do_WhatsApp_de_2025-06-12_a_s_12.19.27_35c77933.jpg",
         "video_url_desktop": "",
         "video_url_mobile": "",
-        "mobile_image_first": false
+        "mobile_image_first": true,
+        "banner_link": "shopify://collections/all"
       }
     },
     "hero_v2_tAjFKf": {
@@ -211,7 +213,8 @@
         "image_mobile": "shopify://shop_images/d55ac1a454b4cbd94c9152d7871bca60.png",
         "video_url_desktop": "",
         "video_url_mobile": "",
-        "mobile_image_first": true
+        "mobile_image_first": true,
+        "banner_link": ""
       }
     },
     "image_banner_v2_aREdiH": {
