@@ -3,60 +3,56 @@
   <div class="site-container w-full px-4 lg:pl-16">
     <!-- Carousel Wrapper -->
     <div class="carousel relative overflow-hidden">
-      <!-- Slides -->
+      <!-- Slides Track -->
       <div class="carousel-track flex transition-transform duration-300 ease-in-out">
         {% for block in section.blocks %}
-          <div class="carousel-slide flex-shrink-0 w-full relative">
-            {% if block.settings.banner_link != blank %}
-              <a href="{{ block.settings.banner_link }}" target="_self">
+          {% comment %} Wrap entire slide in anchor for clickable area {% endcomment %}
+          <a href="{{ block.settings.banner_link | default: '#' }}" target="_self" class="carousel-slide flex-shrink-0 w-full relative">
+            <!-- VIDEO Mobile -->
+            {% if block.settings.video_url_mobile != blank %}
+              <div class="lg:hidden absolute inset-0">
+                <site-video>
+                  <video
+                    {% unless block.settings.video_poster_mobile == blank %}poster="{{ block.settings.video_poster_mobile | image_url: width: 800 }}"{% endunless %}
+                    class="w-full h-full object-cover"
+                    loop autoplay muted playsinline
+                  >
+                    <source src="{{ block.settings.video_url_mobile }}" type="video/mp4">
+                  </video>
+                </site-video>
+              </div>
             {% endif %}
-
-            <!-- MEDIA -->
-            {% unless block.settings.video_url_mobile == blank %}
-              <div class="lg:hidden absolute inset-0">
-                <site-video>
-                  <video
-                    {% unless block.settings.video_poster_mobile == blank %}poster="{{ block.settings.video_poster_mobile | image_url: width: 1000 }}"{% endunless %}
-                    class="w-full h-full object-cover"
-                    loop autoplay muted playsinline
-                  >
-                    <source data-src="{{ block.settings.video_url_mobile }}" type="video/mp4">
-                  </video>
-                </site-video>
-              </div>
-            {% endunless %}
-            {% unless block.settings.video_url_desktop == blank %}
+            <!-- VIDEO Desktop -->
+            {% if block.settings.video_url_desktop != blank %}
               <div class="hidden lg:block absolute inset-0">
                 <site-video>
                   <video
-                    {% unless block.settings.video_poster_desktop == blank %}poster="{{ block.settings.video_poster_desktop | image_url: width: 1920 }}"{% endunless %}
+                    {% unless block.settings.video_poster_desktop == blank %}poster="{{ block.settings.video_poster_desktop | image_url: width: 1600 }}"{% endunless %}
                     class="w-full h-full object-cover"
                     loop autoplay muted playsinline
                   >
-                    <source data-src="{{ block.settings.video_url_desktop }}" type="video/mp4">
+                    <source src="{{ block.settings.video_url_desktop }}" type="video/mp4">
                   </video>
                 </site-video>
               </div>
-            {% endunless %}
-
-            {% unless block.settings.image_mobile == blank %}
+            {% endif %}
+            <!-- IMAGE Mobile -->
+            {% if block.settings.image_mobile != blank %}
               <div class="lg:hidden absolute inset-0">
-                {%- render 'image', image: block.settings.image_mobile, class: 'site-image w-full h-full object-cover', loading: 'eager' -%}
+                {%- render 'image', image: block.settings.image_mobile, class: 'w-full h-full object-cover', loading: 'eager' -%}
               </div>
-            {% endunless %}
-            {% unless block.settings.image_desktop == blank %}
+            {% endif %}
+            <!-- IMAGE Desktop -->
+            {% if block.settings.image_desktop != blank %}
               <div class="hidden lg:block absolute inset-0">
-                {%- render 'image', image: block.settings.image_desktop, class: 'site-image w-full h-full object-cover', loading: 'eager' -%}
+                {%- render 'image', image: block.settings.image_desktop, class: 'w-full h-full object-cover', loading: 'eager' -%}
               </div>
-            {% endunless %}
-            <!-- / MEDIA -->
-
-            {% if block.settings.banner_link != blank %}</a>{% endif %}
-          </div>
+            {% endif %}
+          </a>
         {% endfor %}
       </div>
 
-      <!-- Navigation Arrows (add JS/CSS separately) -->
+      <!-- Navigation Arrows -->
       <button class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20">‹</button>
       <button class="carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20">›</button>
     </div>
