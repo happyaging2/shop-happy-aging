@@ -20,14 +20,12 @@
         "@media screen and (max-width: 500px) {.hero-left-block {padding: 3rem; }}"
       ],
       "settings": {
-        "fifty_fifty": true,
+        "fifty_fifty": false,
         "bg_color": "#f7f5eb",
         "button_color": "black",
         "text_color": "black",
         "sub_heading": "NEW",
         "title": "<p>hydro <em>burn </em>™</p>",
-        "sup_word": "",
-        "title_words": "",
         "text": "<p>Burn more. Feel the energy.</p>",
         "cta_link": "shopify://products/hydroburn",
         "cta_text": "Shop Now",
@@ -53,17 +51,15 @@
         "text_color": "black",
         "sub_heading": "",
         "title": "",
-        "sup_word": "",
-        "title_words": "",
         "text": "",
         "cta_link": "shopify://collections/all",
         "cta_text": "",
         "image_desktop": "shopify://shop_images/Banner_01_GlowShots.png",
-        "image_mobile": "shopify://shop_images/Imagem_do_WhatsApp_de_2025-06-12_a_s_12.28.35_913b43bb.jpg",
+        "image_mobile": "shopify://shop_images/Banner_02_GlowShots_mobile.png",
         "video_url_desktop": "",
         "video_url_mobile": "",
         "mobile_image_first": false,
-        "banner_link": ""
+        "banner_link": "shopify://collections/all"
       }
     },
     "hero_v2_tAjFKf": {
@@ -196,14 +192,12 @@
       "type": "hero",
       "disabled": true,
       "settings": {
-        "fifty_fifty": true,
+        "fifty_fifty": false,
         "bg_color": "#f7f5eb",
         "button_color": "black",
         "text_color": "black",
         "sub_heading": "Doctor-Founded, Science-Driven",
         "title": "<p>AGE SLOWER </p><p><em>& live</em></p>",
-        "sup_word": "",
-        "title_words": "more,better,healthier,happier",
         "text": "",
         "cta_link": "shopify://collections/all",
         "cta_text": "Shop Our Shots",
