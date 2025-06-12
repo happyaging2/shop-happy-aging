@@ -52,7 +52,7 @@
 
         <style>
           .sup_word {
-            /* font-size control já definido no schema */
+            /* font-size defined in admin */
           }
         </style>
       {% endunless %}
@@ -74,47 +74,47 @@
     <!-- / TEXT -->
 
     <!-- MEDIA -->
-    {% assign link = section.settings.banner_link %}
-    {% if link != blank %}
+    {% assign banner_url = section.settings.banner_link %}
+    {% assign new_tab    = section.settings.banner_link_new_window %}
+    {% if banner_url != blank %}
       <a
-        href="{{ link }}"
-        {% if section.settings.banner_link_new_window %}target="_blank" rel="noopener"{% endif %}
-        class="relative block w-full h-full"
+        href="{{ banner_url }}"
+        class="block w-full h-full"
+        {% if new_tab %} target="_blank" rel="noopener"{% endif %}
       >
     {% endif %}
 
-    <div class="{% if section.settings.fifty_fifty == true %}{% if section.settings.mobile_image_first %}order-1{% else %}order-2{% endif %} lg:order-2 relative aspect-square lg:aspect-[unset]{% endif %}">
-      <!-- VIDEO -->
+    <div class="relative w-full h-full
+      {% if section.settings.fifty_fifty %}
+        {% if section.settings.mobile_image_first %}order-1{% else %}order-2{% endif %}
+        lg:order-2 aspect-square lg:aspect-[unset]
+      {% endif %}
+    ">
       {% unless section.settings.video_url_mobile == blank %}
-        <div class="lg:hidden">
+        <div class="absolute inset-0 lg:hidden">
           <site-video>
             <video
               {% unless section.settings.video_poster_mobile == blank %}
                 poster="{{ section.settings.video_poster_mobile | image_url: width: 1000 }}"
               {% endunless %}
-              class="absolute w-full h-full object-cover top-0 left-0"
-              loop
-              autoplay
-              muted
-              playsinline
+              class="w-full h-full object-cover"
+              loop autoplay muted playsinline
             >
               <source data-src="{{ section.settings.video_url_mobile }}" type="video/mp4">
             </video>
           </site-video>
         </div>
       {% endunless %}
+
       {% unless section.settings.video_url_desktop == blank %}
-        <div class="d-none lg:block">
+        <div class="absolute inset-0 hidden lg:block">
           <site-video>
             <video
               {% unless section.settings.video_poster_desktop == blank %}
                 poster="{{ section.settings.video_poster_desktop | image_url: width: 1920 }}"
               {% endunless %}
-              class="absolute w-full h-full object-cover top-0 left-0"
-              loop
-              autoplay
-              muted
-              playsinline
+              class="w-full h-full object-cover"
+              loop autoplay muted playsinline
             >
               <source data-src="{{ section.settings.video_url_desktop }}" type="video/mp4">
             </video>
@@ -122,20 +122,20 @@
         </div>
       {% endunless %}
 
-      <!-- IMAGE -->
       {% unless section.settings.image_mobile == blank %}
-        <div class="absolute top-0 left-0 w-full h-full lg:hidden">
+        <div class="absolute inset-0 lg:hidden">
           {%- render 'image', image: section.settings.image_mobile, class: 'site-image', loading: 'eager' -%}
         </div>
       {% endunless %}
+
       {% unless section.settings.image_desktop == blank %}
-        <div class="absolute top-0 left-0 w-full h-full d-none lg:block">
+        <div class="absolute inset-0 hidden lg:block">
           {%- render 'image', image: section.settings.image_desktop, class: 'site-image', loading: 'eager' -%}
         </div>
       {% endunless %}
     </div>
 
-    {% if link != blank %}
+    {% if banner_url != blank %}
       </a>
     {% endif %}
     <!-- / MEDIA -->
@@ -146,27 +146,12 @@
 {
   "name": "Hero",
   "tag": "section",
-  "presets": [
-    {
-      "name": "Hero"
-    }
-  ],
+  "presets": [{ "name": "Hero" }],
   "settings": [
+    { "type": "checkbox", "id": "fifty_fifty", "label": "Fifty Fifty" },
+    { "type": "color", "id": "bg_color", "label": "Background Color", "info": "Cor antes do carregamento" },
     {
-      "type": "checkbox",
-      "id": "fifty_fifty",
-      "label": "Fifty Fifty"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "info": "Esta cor aparece antes do carregamento da imagem/vídeo."
-    },
-    {
-      "type": "select",
-      "id": "button_color",
-      "label": "Button Color",
+      "type": "select", "id": "button_color", "label": "Button Color",
       "default": "black",
       "options": [
         { "value": "black", "label": "Black" },
@@ -174,97 +159,29 @@
       ]
     },
     {
-      "type": "select",
-      "id": "text_color",
-      "label": "Text Color",
+      "type": "select", "id": "text_color", "label": "Text Color",
       "default": "white",
       "options": [
         { "value": "white", "label": "White" },
         { "value": "black", "label": "Black" }
       ]
     },
-    {
-      "type": "text",
-      "id": "sub_heading",
-      "label": "Sub-Heading"
-    },
-    {
-      "type": "richtext",
-      "id": "title",
-      "label": "Title"
-    },
-    {
-      "type": "text",
-      "id": "sup_word",
-      "label": "Floating word",
-      "info": "Palavra elevada"
-    },
-    {
-      "type": "text",
-      "id": "title_words",
-      "label": "Title Words (vírgula-separado)"
-    },
-    {
-      "type": "richtext",
-      "id": "text",
-      "label": "Text"
-    },
-    {
-      "type": "url",
-      "id": "cta_link",
-      "label": "CTA Link"
-    },
-    {
-      "type": "text",
-      "id": "cta_text",
-      "label": "CTA Text"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_desktop",
-      "label": "Background Image Desktop"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_mobile",
-      "label": "Background Image Mobile"
-    },
-    {
-      "type": "text",
-      "id": "video_url_desktop",
-      "label": "Video URL Desktop (Mp4)"
-    },
-    {
-      "type": "text",
-      "id": "video_url_mobile",
-      "label": "Video URL Mobile (Mp4)"
-    },
-    {
-      "type": "image_picker",
-      "id": "video_poster_mobile",
-      "label": "Video Poster Mobile"
-    },
-    {
-      "type": "image_picker",
-      "id": "video_poster_desktop",
-      "label": "Video Poster Desktop"
-    },
-    {
-      "type": "checkbox",
-      "id": "mobile_image_first",
-      "label": "Show image before content on mobile"
-    },
-    {
-      "type": "url",
-      "id": "banner_link",
-      "label": "Banner Link (imagem/vídeo)"
-    },
-    {
-      "type": "checkbox",
-      "id": "banner_link_new_window",
-      "label": "Abrir em nova aba",
-      "default": true
-    }
+    { "type": "text", "id": "sub_heading", "label": "Sub-Heading" },
+    { "type": "richtext", "id": "title", "label": "Title" },
+    { "type": "text", "id": "sup_word", "label": "Floating word" },
+    { "type": "text", "id": "title_words", "label": "Title Words (vírgula-separado)" },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "url", "id": "cta_link", "label": "CTA Link" },
+    { "type": "text", "id": "cta_text", "label": "CTA Text" },
+    { "type": "image_picker", "id": "image_desktop", "label": "Background Image Desktop" },
+    { "type": "image_picker", "id": "image_mobile", "label": "Background Image Mobile" },
+    { "type": "text", "id": "video_url_desktop", "label": "Video URL Desktop (Mp4)" },
+    { "type": "text", "id": "video_url_mobile", "label": "Video URL Mobile (Mp4)" },
+    { "type": "image_picker", "id": "video_poster_mobile", "label": "Video Poster Mobile" },
+    { "type": "image_picker", "id": "video_poster_desktop", "label": "Video Poster Desktop" },
+    { "type": "checkbox", "id": "mobile_image_first", "label": "Show image before content on mobile" },
+    { "type": "url", "id": "banner_link", "label": "Banner Link (clicável)" },
+    { "type": "checkbox", "id": "banner_link_new_window", "label": "Abrir em nova aba", "default": true }
   ]
 }
 {% endschema %}
