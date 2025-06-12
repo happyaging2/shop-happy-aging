@@ -26,13 +26,16 @@
         "text_color": "black",
         "sub_heading": "NEW",
         "title": "<p>hydro <em>burn </em>™</p>",
+        "sup_word": "",
+        "title_words": "",
         "text": "<p>Burn more. Feel the energy.</p>",
         "cta_link": "shopify://products/hydroburn",
         "cta_text": "Shop Now",
+        "banner_link": "",
+        "banner_link_new_window": true,
         "video_url_desktop": "",
         "video_url_mobile": "",
-        "mobile_image_first": false,
-        "banner_link": ""
+        "mobile_image_first": false
       }
     },
     "hero_Nq9J7U": {
@@ -51,15 +54,18 @@
         "text_color": "black",
         "sub_heading": "",
         "title": "",
+        "sup_word": "",
+        "title_words": "",
         "text": "",
         "cta_link": "shopify://collections/all",
         "cta_text": "",
+        "banner_link": "shopify://collections/all",
+        "banner_link_new_window": false,
         "image_desktop": "shopify://shop_images/Banner_01_GlowShots.png",
         "image_mobile": "shopify://shop_images/Imagem_do_WhatsApp_de_2025-06-12_a_s_12.28.35_913b43bb.jpg",
         "video_url_desktop": "",
         "video_url_mobile": "",
-        "mobile_image_first": false,
-        "banner_link": "shopify://collections/all"
+        "mobile_image_first": false
       }
     },
     "hero_v2_tAjFKf": {
@@ -198,13 +204,16 @@
         "text_color": "black",
         "sub_heading": "Doctor-Founded, Science-Driven",
         "title": "<p>AGE SLOWER </p><p><em>& live</em></p>",
+        "sup_word": "",
+        "title_words": "",
         "text": "",
         "cta_link": "shopify://collections/all",
         "cta_text": "Shop Our Shots",
+        "banner_link": "",
+        "banner_link_new_window": true,
         "video_url_desktop": "",
         "video_url_mobile": "",
-        "mobile_image_first": false,
-        "banner_link": ""
+        "mobile_image_first": false
       }
     },
     "image_banner_v2_aREdiH": {
