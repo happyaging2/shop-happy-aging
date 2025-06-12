@@ -1,6 +1,635 @@
+{% doc %}
+  @prompt
+    Left side: three icons + labels — Exercise, Diet, NAD Boosters.
+    
+    Center: highlighted “NAD⁺” bubble.
+    
+    Around it: ten evenly spaced bubbles for each organ/system.
+    
+    Hover → short tooltip; click → full explanation (modal or accordion).
+    
+    Thin lines connect every bubble to the NAD⁺ center.
+    
+    Use existing theme fonts and colors; allow simple color overrides if needed.
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-nad-diagram-{{ ai_gen_id }} {
+    padding: 40px 20px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    font-family: var(--font-body-family);
+  }
+
+  .ai-nad-diagram__container-{{ ai_gen_id }} {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-nad-diagram__left-panel-{{ ai_gen_id }} {
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ai-nad-diagram__icon-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background-color: {{ block.settings.icon_background_color }};
+    border-radius: {{ block.settings.icon_border_radius }}px;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.icon_text_size }}px;
+    transition: transform 0.2s ease;
+  }
+
+  .ai-nad-diagram__icon-item-{{ ai_gen_id }}:hover {
+    transform: translateY(-2px);
+  }
+
+  .ai-nad-diagram__icon-{{ ai_gen_id }} {
+    width: 24px;
+    height: 24px;flex-shrink: 0;
+    color: {{ block.settings.icon_color }};
+  }
+
+  .ai-nad-diagram__center-panel-{{ ai_gen_id }} {
+    flex: 1;
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ai-nad-diagram__svg-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: 500px;
+  }
+
+  .ai-nad-diagram__svg-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-nad-diagram__center-bubble-{{ ai_gen_id }} {
+    fill: {{ block.settings.center_bubble_color }};
+    stroke: {{ block.settings.center_bubble_border }};
+    stroke-width: 3;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  }
+
+  .ai-nad-diagram__organ-bubble-{{ ai_gen_id }} {
+    fill: {{ block.settings.organ_bubble_color }};
+    stroke: {{ block.settings.organ_bubble_border }};
+    stroke-width: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .ai-nad-diagram__organ-bubble-{{ ai_gen_id }}:hover {
+    fill: {{ block.settings.organ_bubble_hover_color }};
+    stroke-width: 3;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+
+  .ai-nad-diagram__connection-line-{{ ai_gen_id }} {
+    stroke: {{ block.settings.connection_line_color }};
+    stroke-width: {{ block.settings.connection_line_width }};
+    opacity: {{ block.settings.connection_line_opacity | divided_by: 100.0 }};
+  }
+
+  .ai-nad-diagram__bubble-text-{{ ai_gen_id }} {
+    fill: {{ block.settings.bubble_text_color }};
+    font-family: var(--font-body-family);
+    font-size: 14px;
+    font-weight: 600;
+    text-anchor: middle;dominant-baseline: central;
+    pointer-events: none;
+  }
+
+  .ai-nad-diagram__center-text-{{ ai_gen_id }} {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .ai-nad-diagram__tooltip-{{ ai_gen_id }} {
+    position: absolute;
+    background-color: {{ block.settings.tooltip_background }};
+    color: {{ block.settings.tooltip_text_color }};
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 10;
+  }
+
+  .ai-nad-diagram__tooltip-{{ ai_gen_id }}.active {
+    opacity: 1;
+  }
+
+  .ai-nad-diagram__modal-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .ai-nad-diagram__modal-{{ ai_gen_id }}.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .ai-nad-diagram__modal-content-{{ ai_gen_id }} {
+    background-color: {{ block.settings.modal_background }};
+    color: {{ block.settings.modal_text_color }};
+    padding: 30px;
+    border-radius: {{ block.settings.modal_border_radius }}px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .ai-nad-diagram__modal-title-{{ ai_gen_id }} {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 16px;color: {{ block.settings.modal_title_color }};
+  }
+
+  .ai-nad-diagram__modal-description-{{ ai_gen_id }} {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;}
+
+  .ai-nad-diagram__modal-close-{{ ai_gen_id }} {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: {{ block.settings.modal_text_color }};opacity: 0.7;
+    transition: opacity 0.2s ease;
+  }
+
+  .ai-nad-diagram__modal-close-{{ ai_gen_id }}:hover {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-nad-diagram__container-{{ ai_gen_id }} {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .ai-nad-diagram__left-panel-{{ ai_gen_id }} {
+      flex: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .ai-nad-diagram__icon-item-{{ ai_gen_id }} {
+      flex-direction: column;
+      text-align: center;padding: 12px;
+      font-size: 12px;
+    }
+
+    .ai-nad-diagram__svg-container-{{ ai_gen_id }} {
+      height: 400px;
+    }
+
+    .ai-nad-diagram__bubble-text-{{ ai_gen_id }} {
+      font-size: 10px;
+    }
+
+    .ai-nad-diagram__center-text-{{ ai_gen_id }} {
+      font-size: 14px;
+    }
+  }
+{% endstyle %}<nad-diagram-{{ ai_gen_id }} class="ai-nad-diagram-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-nad-diagram__container-{{ ai_gen_id }}">
+    <div class="ai-nad-diagram__left-panel-{{ ai_gen_id }}">
+      <div class="ai-nad-diagram__icon-item-{{ ai_gen_id }}">
+        <svg class="ai-nad-diagram__icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg><span>{{ block.settings.exercise_label }}</span>
+      </div>
+      
+      <div class="ai-nad-diagram__icon-item-{{ ai_gen_id }}">
+        <svg class="ai-nad-diagram__icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+          <line x1="6" y1="1" x2="6" y2="4"/>
+          <line x1="10" y1="1" x2="10" y2="4"/>
+          <line x1="14" y1="1" x2="14" y2="4"/></svg>
+        <span>{{ block.settings.diet_label }}</span>
+      </div>
+      
+      <div class="ai-nad-diagram__icon-item-{{ ai_gen_id }}">
+        <svg class="ai-nad-diagram__icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="11" width="18" height="11" rx="2"ry="2"/>
+          <circle cx="12" cy="5" r="2"/>
+          <path d="M12 7v4"/>
+          <line x1="8" y1="16" x2="16" y2="16"/>
+        </svg>
+        <span>{{ block.settings.nad_boosters_label }}</span>
+      </div>
+    </div>
+
+    <div class="ai-nad-diagram__center-panel-{{ ai_gen_id }}">
+      <svg class="ai-nad-diagram__svg-{{ ai_gen_id }}" viewBox="0 0 400 400">
+        <defs>
+          <filter id="glow-{{ ai_gen_id }}">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        {% assign organs = "Brain,Heart,Liver,Kidneys,Muscles,Skin,Eyes,Lungs,Immune,Metabolism" | split: "," %}
+        {% assign descriptions = "Enhances cognitive function and memory|Supports cardiovascular health|Improves liver detoxification|Boosts kidney function|Increases muscle strength and endurance|Promotes healthy skin aging|Protects vision and eye health|Supports respiratory function|Strengthens immune response|Optimizes metabolic processes" | split: "|" %}
+        
+        {% for organ in organs %}
+          {% assign angle = forloop.index0 | times: 36 %}
+          {% assign radian = angle | times: 3.14159 | divided_by: 180 %}
+          {% assign x = 200 | plus: 120 | times: radian | cos %}
+          {% assign y = 200 | plus: 120 | times: radian | sin %}
+          
+          <line
+            class="ai-nad-diagram__connection-line-{{ ai_gen_id }}"
+            x1="200" 
+            y1="200" 
+            x2="{{ x }}" 
+            y2="{{ y }}"
+          />
+        {% endfor %}
+
+        {% for organ in organs %}
+          {% assign angle = forloop.index0 | times: 36 %}
+          {% assign radian = angle | times: 3.14159 | divided_by: 180 %}
+          {% assign x = 200 | plus: 120 | times: radian | cos %}
+          {% assign y = 200 | plus: 120 | times: radian | sin %}
+          
+          <circle 
+            class="ai-nad-diagram__organ-bubble-{{ ai_gen_id }}"
+            cx="{{ x }}" 
+            cy="{{ y }}" 
+            r="30"
+            data-organ="{{ organ }}"
+            data-description="{{ descriptions[forloop.index0] }}"
+            data-tooltip="{{ organ }} benefits"
+          />
+          
+          <text 
+            class="ai-nad-diagram__bubble-text-{{ ai_gen_id }}"
+            x="{{ x }}" 
+            y="{{ y }}">
+            {{ organ }}</text>
+        {% endfor %}
+
+        <circle 
+          class="ai-nad-diagram__center-bubble-{{ ai_gen_id }}"
+          cx="200" 
+          cy="200" 
+          r="40"
+          filter="url(#glow-{{ ai_gen_id }})"
+        />
+        <text 
+          class="ai-nad-diagram__bubble-text-{{ ai_gen_id }} ai-nad-diagram__center-text-{{ ai_gen_id }}"
+          x="200" 
+          y="200">
+          NAD⁺
+        </text>
+      </svg>
+
+      <div class="ai-nad-diagram__tooltip-{{ ai_gen_id }}"></div>
+    </div>
+  </div>
+
+  <div class="ai-nad-diagram__modal-{{ ai_gen_id }}">
+    <div class="ai-nad-diagram__modal-content-{{ ai_gen_id }}">
+      <button class="ai-nad-diagram__modal-close-{{ ai_gen_id }}" aria-label="Close modal">&times;</button>
+      <h3 class="ai-nad-diagram__modal-title-{{ ai_gen_id }}"></h3>
+      <p class="ai-nad-diagram__modal-description-{{ ai_gen_id }}"></p></div>
+  </div>
+</nad-diagram-{{ ai_gen_id }}><script>
+  (function() {
+    class NadDiagram{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.tooltip = null;
+        this.modal = null;
+        this.modalTitle = null;
+        this.modalDescription = null;
+        this.modalClose = null;
+      }
+
+      connectedCallback() {
+        this.tooltip = this.querySelector('.ai-nad-diagram__tooltip-{{ ai_gen_id }}');
+        this.modal = this.querySelector('.ai-nad-diagram__modal-{{ ai_gen_id }}');
+        this.modalTitle = this.querySelector('.ai-nad-diagram__modal-title-{{ ai_gen_id }}');
+        this.modalDescription = this.querySelector('.ai-nad-diagram__modal-description-{{ ai_gen_id }}');
+        this.modalClose = this.querySelector('.ai-nad-diagram__modal-close-{{ ai_gen_id }}');
+        
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        const organBubbles = this.querySelectorAll('.ai-nad-diagram__organ-bubble-{{ ai_gen_id }}');
+        organBubbles.forEach(bubble => {
+          bubble.addEventListener('mouseenter', (e) => this.showTooltip(e));
+          bubble.addEventListener('mouseleave', () => this.hideTooltip());
+          bubble.addEventListener('mousemove', (e) => this.updateTooltipPosition(e));bubble.addEventListener('click', (e) => this.showModal(e));
+        });
+
+        this.modalClose.addEventListener('click', () => this.hideModal());
+        this.modal.addEventListener('click', (e) => {
+          if (e.target === this.modal) {
+            this.hideModal();
+          }
+        });document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            this.hideModal();
+          }
+        });
+      }
+
+      showTooltip(event) {
+        const tooltipText = event.target.dataset.tooltip;
+        this.tooltip.textContent = tooltipText;
+        this.tooltip.classList.add('active');
+        this.updateTooltipPosition(event);
+      }
+
+      hideTooltip() {
+        this.tooltip.classList.remove('active');}
+
+      updateTooltipPosition(event) {
+        const rect = this.getBoundingClientRect();
+        const x = event.clientX - rect.left +10;
+        const y = event.clientY - rect.top - 10;
+        
+        this.tooltip.style.left = x + 'px';
+        this.tooltip.style.top = y + 'px';
+      }
+
+      showModal(event) {
+        const organ = event.target.dataset.organ;
+        const description = event.target.dataset.description;
+        
+        this.modalTitle.textContent = `NAD⁺ and ${organ}`;
+        this.modalDescription.textContent = description;
+        this.modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      hideModal() {
+        this.modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    customElements.define('nad-diagram-{{ ai_gen_id }}', NadDiagram{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "NAD⁺ Benefits Diagram",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left Panel Labels"
+    },
+    {
+      "type": "text",
+      "id": "exercise_label",
+      "label": "Exercise label",
+      "default": "Exercise"
+    },
+    {
+      "type": "text",
+      "id": "diet_label",
+      "label": "Diet label",
+      "default": "Diet"
+    },
+    {
+      "type": "text",
+      "id": "nad_boosters_label",
+      "label": "NAD Boosters label",
+      "default": "NAD Boosters"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#334fb4"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "Icon background color",
+      "default": "#f7f5eb"
+    },
+    {
+      "type": "color",
+      "id": "center_bubble_color",
+      "label": "NAD⁺ bubble color",
+      "default": "#334fb4"
+    },
+    {
+      "type": "color",
+      "id": "center_bubble_border",
+      "label": "NAD⁺ bubble border",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "organ_bubble_color",
+      "label": "Organ bubble color",
+      "default": "#e5dbcc"
+    },
+    {
+      "type": "color",
+      "id": "organ_bubble_border",
+      "label": "Organ bubble border",
+      "default": "#334fb4"
+    },
+    {
+      "type": "color",
+      "id": "organ_bubble_hover_color",
+      "label": "Organ bubble hover color",
+      "default": "#334fb4"
+    },
+    {
+      "type": "color",
+      "id": "bubble_text_color",
+      "label": "Bubble text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "connection_line_color",
+      "label": "Connection line color",
+      "default": "#334fb4"
+    },
+    {
+      "type": "header",
+      "content": "Connection Lines"
+    },
+    {
+      "type": "range",
+      "id": "connection_line_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Line width",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "connection_line_opacity",
+      "min": 10,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Line opacity",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Tooltip"
+    },
+    {
+      "type": "color",
+      "id": "tooltip_background",
+      "label": "Tooltip background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "tooltip_text_color",
+      "label": "Tooltip text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Modal"
+    },
+    {
+      "type": "color",
+      "id": "modal_background",
+      "label": "Modal background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "modal_text_color",
+      "label": "Modal text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "modal_title_color",
+      "label": "Modal title color",
+      "default": "#334fb4"
+    },
+    {
+      "type": "range",
+      "id": "modal_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Modal border radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Container border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "icon_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon item border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "icon_text_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon text size",
+      "default": 14
+    }
+  ],
+  "presets": [
+    {
+      "name": "NAD⁺ Benefits Diagram"
+    }
+  ]
+}
 {% endschema %}
