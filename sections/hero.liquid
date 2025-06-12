@@ -1,3 +1,4 @@
+{% comment %} Hero Section with clickable banner link {% endcomment %}
 <div
   class="{% if section.settings.fifty_fifty == false %}flex justify-center lg:justify-start items-center h-screen{% endif %} lg:h-[calc(100vh-96px)] lg:min-h-[600px] lg:min-h-[832px] relative w-full"
   {% unless section.settings.bg_color == blank %}
@@ -11,71 +12,51 @@
         <p class="sub-heading">{{ section.settings.sub_heading }}</p>
       {% endunless %}
 
+      {% unless section.settings.title == blank %}
+        <h2 class="heading heading-with-floating heading--1 lg:text-[90px] lg:w-[410px] lg:mb-2">
+          {%- capture words -%}
+            {% unless section.settings.title_words == blank %}
+              <span>
+                <words-changer data-words="{{ section.settings.title_words }}">
+                  {% assign first_word = section.settings.title_words | split: ',' | first %}
+                  <em class="target-js">{{ first_word }}</em>
+                </words-changer>
+              </span>
+            {% endunless %}
+          {%- endcapture -%}
 
-{% unless section.settings.title == blank %}
-  <h2 class="heading heading-with-floating heading--1 lg:text-[90px] lg:w-[410px] lg:mb-2">
-    
-    {%- capture words -%}
-      {% unless section.settings.title_words == blank %}
-        <span>
-          <words-changer data-words="{{ section.settings.title_words }}">
-            {% assign first_word = section.settings.title_words | split: ',' | first %}
-            <em class="target-js">{{ first_word }}</em>
-          </words-changer>
-        </span>
+          {%- liquid
+            assign supword = ''
+            if section.settings.sup_word != blank
+              assign supword = '<sup class="sup_word" style="vertical-align: sub;">' | append: section.settings.sup_word | append: '</sup>'
+            endif
+
+            assign closing_tags_raw = "</h1>|</h2>|</h3>|</h4>|</h5>|</h6>|</p>"
+            assign closing_tags = closing_tags_raw | split: "|"
+            assign used_tag = ''
+
+            for tag in closing_tags
+              if section.settings.title contains tag
+                assign used_tag = tag
+              endif
+            endfor
+
+            assign title_last = section.settings.title | split: used_tag | last
+            assign last_row = title_last | append: supword | append: words
+            assign original_block = title_last | append: used_tag
+            assign new_block = last_row | append: used_tag
+            assign title = section.settings.title | replace: original_block, new_block
+          -%}
+
+          {{ title }}
+        </h2>
+
+        <style>
+          .sup_word {
+            /* font-size: {{ section.settings.sup_size }}%; */
+          }
+        </style>
       {% endunless %}
-    {%- endcapture -%}
-
-    {%- liquid
-      assign supword = ''
-      if section.settings.sup_word != blank
-        assign supword = '<sup class="sup_word" style="vertical-align: sub;">' | append: section.settings.sup_word | append: '</sup>'
-      endif
-
-      comment
-        Define todas as possíveis tags de fechamento em uma lista separada
-      endcomment
-      assign closing_tags_raw = "</h1>|</h2>|</h3>|</h4>|</h5>|</h6>|</p>"
-      assign closing_tags = closing_tags_raw | split: "|"
-      assign used_tag = ''
-
-      for tag in closing_tags
-        if section.settings.title contains tag
-          assign used_tag = tag
-        endif
-      endfor
-
-      assign title_last = section.settings.title | split: used_tag | last
-      assign last_row = title_last | append: supword | append: words
-      assign original_block = title_last | append: used_tag
-      assign new_block = last_row | append: used_tag
-      assign title = section.settings.title | replace: original_block, new_block
-    -%}
-
-    {{ title }}
-
-  </h2>
-
-  <style>
-    .sup_word {
-      {% comment %}
-      font-size: {{ section.settings.sup_size }}%;
-      {% endcomment %}
-    }
-  </style>
-
-  {% comment %}
-    <i class="heading_floating_text">{{ section.settings.floating_text }}</i>
-    <style>
-      .heading-with-floating:after {
-        content: "{{ section.settings.floating_text | escape }}";
-      }
-    </style>
-  {% endcomment %}
-{% endunless %}
-
-
-      
 
       {% unless section.settings.text == blank %}
         <div class="paragraph paragraph--2 lg:max-w-[330px] mb-4 lg:mb-8">{{ section.settings.text }}</div>
@@ -93,6 +74,9 @@
     <!-- / TEXT -->
 
     <!-- MEDIA -->
+    {%- if section.settings.banner_link != blank -%}
+      <a href="{{ section.settings.banner_link }}" target="_blank" rel="noopener noreferrer">
+    {%- endif -%}
     <div class="{% if section.settings.fifty_fifty == true %}{% if section.settings.mobile_image_first %}order-1{% else %}order-2{% endif %} lg:order-2 relative aspect-square lg:aspect-[unset]{% endif %}">
       <!-- VIDEO -->
       {% unless section.settings.video_url_mobile == blank %}
@@ -146,6 +130,9 @@
       {% endunless %}
       <!-- / IMAGE -->
     </div>
+    {%- if section.settings.banner_link != blank -%}
+      </a>
+    {%- endif -%}
     <!-- / MEDIA -->
   </div>
 </div>
@@ -155,129 +142,28 @@
   "name": "Hero",
   "tag": "section",
   "presets": [
-    {
-      "name": "Hero"
-    }
+    { "name": "Hero" }
   ],
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "fifty_fifty",
-      "label": "Fifty Fifty"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "info": "This helps with initial load, should be the most dominant color in the background photo or video"
-    },
-    {
-      "type": "select",
-      "id": "button_color",
-      "label": "Button Color",
-      "default": "black",
-      "options": [
-        {
-          "value": "black",
-          "label": "Black"
-        },
-        {
-          "value": "cream",
-          "label": "Cream"
-        }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "white",
-      "options": [
-        {
-          "value": "white",
-          "label": "White"
-        },
-        {
-          "value": "black",
-          "label": "Black"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "id": "sub_heading",
-      "label": "Sub-Heading"
-    },
-    {
-      "type": "richtext",
-      "id": "title",
-      "label": "Title"
-    },
-    {
-      "type": "text",
-      "id": "sup_word",
-      "label": "Floating word",
-      
-      "info": "Top right word"
-    },
-    {
-      "type": "text",
-      "id": "title_words",
-      "label": "Title Words",
-      "info": "To cycle words, this field should be comma separated, e.g. Energy,Body,Soul"
-    },
-    {
-      "type": "richtext",
-      "id": "text",
-      "label": "Text"
-    },
-    {
-      "type": "url",
-      "id": "cta_link",
-      "label": "CTA Link"
-    },
-    {
-      "type": "text",
-      "id": "cta_text",
-      "label": "CTA Text"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_desktop",
-      "label": "Background Image Desktop"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_mobile",
-      "label": "Background Image Mobile"
-    },
-    {
-      "type": "text",
-      "id": "video_url_desktop",
-      "label": "Video URL Desktop (Mp4)"
-    },
-    {
-      "type": "text",
-      "id": "video_url_mobile",
-      "label": "Video URL Mobile (Mp4)"
-    },
-    {
-      "type": "image_picker",
-      "id": "video_poster_mobile",
-      "label": "Video Poster Mobile"
-    },
-    {
-      "type": "image_picker",
-      "id": "video_poster",
-      "label": "Video Poster Desktop"
-    },
-    {
-      "type": "checkbox",
-      "id": "mobile_image_first",
-      "label": "Show image before content on mobile",
-      "default": false,
-      "info": "When enabled, the image will appear before the content on mobile devices"
-    },
+    { "type": "checkbox", "id": "fifty_fifty", "label": "Fifty Fifty" },
+    { "type": "color", "id": "bg_color", "label": "Background Color", "info": "This helps with initial load, should be the most dominant color in the background photo or video" },
+    { "type": "select", "id": "button_color", "label": "Button Color", "default": "black", "options": [ { "value": "black", "label": "Black" }, { "value": "cream", "label": "Cream" } ] },
+    { "type": "select", "id": "text_color", "label": "Text Color", "default": "white", "options": [ { "value": "white", "label": "White" }, { "value": "black", "label": "Black" } ] },
+    { "type": "text", "id": "sub_heading", "label": "Sub-Heading" },
+    { "type": "richtext", "id": "title", "label": "Title" },
+    { "type": "text", "id": "sup_word", "label": "Floating word", "info": "Top right word" },
+    { "type": "text", "id": "title_words", "label": "Title Words", "info": "To cycle words, this field should be comma separated, e.g. Energy,Body,Soul" },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "url", "id": "cta_link", "label": "CTA Link" },
+    { "type": "text", "id": "cta_text", "label": "CTA Text" },
+    { "type": "image_picker", "id": "image_desktop", "label": "Background Image Desktop" },
+    { "type": "image_picker", "id": "image_mobile", "label": "Background Image Mobile" },
+    { "type": "text", "id": "video_url_desktop", "label": "Video URL Desktop (Mp4)" },
+    { "type": "text", "id": "video_url_mobile", "label": "Video URL Mobile (Mp4)" },
+    { "type": "image_picker", "id": "video_poster_mobile", "label": "Video Poster Mobile" },
+    { "type": "image_picker", "id": "video_poster", "label": "Video Poster Desktop" },
+    { "type": "checkbox", "id": "mobile_image_first", "label": "Show image before content on mobile", "default": false, "info": "When enabled, the image will appear before the content on mobile devices" },
+    { "type": "url", "id": "banner_link", "label": "Banner Link", "info": "URL para onde o usuário será direcionado ao clicar no banner" }
   ]
 }
 {% endschema %}
