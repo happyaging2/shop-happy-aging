@@ -1,6 +1,914 @@
+{% doc %}
+  @prompt
+    generate a interactive comparation board of products 
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-comparison-{{ ai_gen_id }} {
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: 40px 20px;
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-comparison-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .ai-comparison-title-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.title_size }}px;
+    margin: 0 0 10px;
+  }
+
+  .ai-comparison-subtitle-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    opacity: 0.8;
+    font-size: {{ block.settings.subtitle_size }}px;
+    margin: 0;
+  }
+
+  .ai-comparison-table-wrapper-{{ ai_gen_id }} {
+    overflow-x: auto;
+    border-radius: {{ block.settings.table_border_radius }}px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: {{ block.settings.table_background_color }};
+    min-width: 600px;
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} th,
+  .ai-comparison-table-{{ ai_gen_id }} td {
+    padding: 16px 12px;
+    text-align: center;
+    border-bottom: 1px solid {{ block.settings.border_color }};
+    vertical-align: middle;
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} th {
+    background-color: {{ block.settings.header_background_color }};
+    color: {{ block.settings.header_text_color }};
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} th:first-child {
+    text-align: left;
+    background-color: {{ block.settings.feature_column_background }};
+    color: {{ block.settings.feature_column_text_color }};
+    position: sticky;
+    left: 0;
+    z-index: 3;
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} td:first-child {
+    text-align: left;
+    font-weight: 500;
+    background-color: {{ block.settings.feature_column_background }};
+    color: {{ block.settings.feature_column_text_color }};
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+
+  .ai-product-cell-{{ ai_gen_id }} {
+    position: relative;
+  }
+
+  .ai-product-image-{{ ai_gen_id }} {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .ai-product-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-product-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-product-image-placeholder-{{ ai_gen_id }} svg {
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+  }
+
+  .ai-product-title-{{ ai_gen_id }} {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 5px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-product-price-{{ ai_gen_id }} {
+    font-size: 16px;
+    font-weight: 700;
+    color: {{ block.settings.price_color }};
+    margin: 0 0 10px;
+  }
+
+  .ai-product-button-{{ ai_gen_id }} {
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    padding: 8px 16px;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-product-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+  }
+
+  .ai-feature-value-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: 14px;
+  }
+
+  .ai-feature-check-{{ ai_gen_id }} {
+    color: {{ block.settings.check_color }};
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .ai-feature-cross-{{ ai_gen_id }} {
+    color: {{ block.settings.cross_color }};
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .ai-highlight-column-{{ ai_gen_id }} {
+    background-color: {{ block.settings.highlight_background }} !important;
+    position: relative;
+  }
+
+  .ai-highlight-column-{{ ai_gen_id }}::before {
+    content: '{{ block.settings.highlight_badge }}';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: {{ block.settings.highlight_badge_color }};
+    color: {{ block.settings.highlight_badge_text_color }};
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-product-comparison-{{ ai_gen_id }} {
+      padding: 20px 10px;
+    }
+
+    .ai-comparison-table-{{ ai_gen_id }} th,
+    .ai-comparison-table-{{ ai_gen_id }} td {
+      padding: 12px 8px;
+    }
+
+    .ai-product-image-{{ ai_gen_id }} {
+      width: 60px;
+      height: 60px;
+    }
+
+    .ai-product-title-{{ ai_gen_id }} {
+      font-size: 12px;
+    }
+
+    .ai-product-price-{{ ai_gen_id }} {
+      font-size: 14px;
+    }
+  }
+{% endstyle %}
+
+<product-comparison-{{ ai_gen_id }}
+  class="ai-product-comparison-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-comparison-header-{{ ai_gen_id }}">
+    {% if block.settings.title != blank %}
+      <h2 class="ai-comparison-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+    {% endif %}
+    {% if block.settings.subtitle != blank %}
+      <p class="ai-comparison-subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</p>
+    {% endif %}
+  </div>
+
+  <div class="ai-comparison-table-wrapper-{{ ai_gen_id }}">
+    <table class="ai-comparison-table-{{ ai_gen_id }}">
+      <thead>
+        <tr>
+          <th>Features</th>
+          {% for i in (1..4) %}
+            {% liquid
+              assign product_key = 'product_' | append: i
+              assign highlight_key = 'highlight_product_' | append: i
+              assign product = block.settings[product_key]
+              assign is_highlighted = block.settings[highlight_key]
+            %}
+            {% if product != blank %}
+              <th class="ai-product-cell-{{ ai_gen_id }} {% if is_highlighted %}ai-highlight-column-{{ ai_gen_id }}{% endif %}">
+                <div class="ai-product-image-{{ ai_gen_id }}">
+                  {% if product.featured_image %}
+                    <img
+                      src="{{ product.featured_image | image_url: width: 160 }}"
+                      alt="{{ product.featured_image.alt | escape }}"
+                      width="160"
+                      height="160"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    <div class="ai-product-image-placeholder-{{ ai_gen_id }}">
+                      {{ 'product-1' | placeholder_svg_tag }}
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="ai-product-title-{{ ai_gen_id }}">{{ product.title }}</div>
+                <div class="ai-product-price-{{ ai_gen_id }}">{{ product.price | money }}</div>
+                <a href="{{ product.url }}" class="ai-product-button-{{ ai_gen_id }}">
+                  {{ block.settings.button_text }}
+                </a>
+              </th>
+            {% endif %}
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% if block.settings.show_rating %}
+          <tr>
+            <td>Rating</td>
+            {% for i in (1..4) %}
+              {% liquid
+                assign product_key = 'product_' | append: i
+                assign rating_key = 'product_' | append: i | append: '_rating'
+                assign highlight_key = 'highlight_product_' | append: i
+                assign product = block.settings[product_key]
+                assign rating = block.settings[rating_key]
+                assign is_highlighted = block.settings[highlight_key]
+              %}
+              {% if product != blank %}
+                <td class="{% if is_highlighted %}ai-highlight-column-{{ ai_gen_id }}{% endif %}">
+                  <div class="ai-feature-value-{{ ai_gen_id }}">
+                    {% for star in (1..5) %}
+                      {% if star <= rating %}★{% else %}☆{% endif %}
+                    {% endfor %}
+                  </div>
+                </td>
+              {% endif %}
+            {% endfor %}
+          </tr>
+        {% endif %}
+
+        {% for j in (1..8) %}
+          {% liquid
+            assign feature_key = 'feature_' | append: j | append: '_name'
+            assign feature_name = block.settings[feature_key]
+          %}
+          {% if feature_name != blank %}
+            <tr>
+              <td>{{ feature_name }}</td>
+              {% for i in (1..4) %}
+                {% liquid
+                  assign product_key = 'product_' | append: i
+                  assign feature_value_key = 'feature_' | append: j | append: '_product_' | append: i
+                  assign highlight_key = 'highlight_product_' | append: i
+                  assign product = block.settings[product_key]
+                  assign feature_value = block.settings[feature_value_key]
+                  assign is_highlighted = block.settings[highlight_key]
+                %}
+                {% if product != blank %}
+                  <td class="{% if is_highlighted %}ai-highlight-column-{{ ai_gen_id }}{% endif %}">
+                    {% if feature_value == 'yes' %}
+                      <span class="ai-feature-check-{{ ai_gen_id }}">✓</span>
+                    {% elsif feature_value == 'no' %}
+                      <span class="ai-feature-cross-{{ ai_gen_id }}">✗</span>
+                    {% else %}
+                      <div class="ai-feature-value-{{ ai_gen_id }}">{{ feature_value }}</div>
+                    {% endif %}
+                  </td>
+                {% endif %}
+              {% endfor %}
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</product-comparison-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ProductComparison{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupInteractivity();
+      }
+
+      setupInteractivity() {
+        const table = this.querySelector('.ai-comparison-table-{{ ai_gen_id }}');
+        const headers = table.querySelectorAll('th:not(:first-child)');
+        
+        headers.forEach((header, index) => {
+          header.addEventListener('click', () => {
+            this.highlightColumn(index + 1);
+          });
+          
+          header.style.cursor = 'pointer';
+          header.setAttribute('title', 'Click to highlight this product');
+        });
+      }
+
+      highlightColumn(columnIndex) {
+        const table = this.querySelector('.ai-comparison-table-{{ ai_gen_id }}');
+        const rows = table.querySelectorAll('tr');
+        
+        rows.forEach(row => {
+          const cells = row.querySelectorAll('th, td');
+          cells.forEach((cell, index) => {
+            if (index === columnIndex) {
+              cell.style.backgroundColor = '{{ block.settings.highlight_background }}';
+              cell.style.transform = 'scale(1.02)';
+              cell.style.zIndex = '10';
+            } else if (index > 0) {
+              cell.style.backgroundColor = '';
+              cell.style.transform = '';
+              cell.style.zIndex = '';
+            }
+          });
+        });
+
+        setTimeout(() => {
+          rows.forEach(row => {
+            const cells = row.querySelectorAll('th, td');
+            cells.forEach(cell => {
+              cell.style.transform = '';
+              cell.style.zIndex = '';
+            });
+          });
+        }, 300);
+      }
+    }
+
+    customElements.define('product-comparison-{{ ai_gen_id }}', ProductComparison{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Product Comparison Board",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Compare Products"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Find the perfect product for your needs"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "View Product"
+    },
+    {
+      "type": "header",
+      "content": "Products"
+    },
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "Product 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "highlight_product_1",
+      "label": "Highlight product 1",
+      "default": false
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "Product 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "highlight_product_2",
+      "label": "Highlight product 2",
+      "default": true
+    },
+    {
+      "type": "product",
+      "id": "product_3",
+      "label": "Product 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "highlight_product_3",
+      "label": "Highlight product 3",
+      "default": false
+    },
+    {
+      "type": "product",
+      "id": "product_4",
+      "label": "Product 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "highlight_product_4",
+      "label": "Highlight product 4",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Rating"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show rating row",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "product_1_rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Product 1 rating",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "product_2_rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Product 2 rating",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "product_3_rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Product 3 rating",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "product_4_rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Product 4 rating",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Features"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_name",
+      "label": "Feature 1 name",
+      "default": "Material"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_product_1",
+      "label": "Feature 1 - Product 1",
+      "default": "Cotton"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_product_2",
+      "label": "Feature 1 - Product 2",
+      "default": "Polyester"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_product_3",
+      "label": "Feature 1 - Product 3",
+      "default": "Silk"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_product_4",
+      "label": "Feature 1 - Product 4",
+      "default": "Wool"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_name",
+      "label": "Feature 2 name",
+      "default": "Waterproof"
+    },
+    {
+      "type": "select",
+      "id": "feature_2_product_1",
+      "label": "Feature 2 - Product 1",
+      "options": [
+        {"value": "yes", "label": "Yes"},
+        {"value": "no", "label": "No"},
+        {"value": "custom", "label": "Custom text"}
+      ],
+      "default": "no"
+    },
+    {
+      "type": "select",
+      "id": "feature_2_product_2",
+      "label": "Feature 2 - Product 2",
+      "options": [
+        {"value": "yes", "label": "Yes"},
+        {"value": "no", "label": "No"},
+        {"value": "custom", "label": "Custom text"}
+      ],
+      "default": "yes"
+    },
+    {
+      "type": "select",
+      "id": "feature_2_product_3",
+      "label": "Feature 2 - Product 3",
+      "options": [
+        {"value": "yes", "label": "Yes"},
+        {"value": "no", "label": "No"},
+        {"value": "custom", "label": "Custom text"}
+      ],
+      "default": "no"
+    },
+    {
+      "type": "select",
+      "id": "feature_2_product_4",
+      "label": "Feature 2 - Product 4",
+      "options": [
+        {"value": "yes", "label": "Yes"},
+        {"value": "no", "label": "No"},
+        {"value": "custom", "label": "Custom text"}
+      ],
+      "default": "yes"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_name",
+      "label": "Feature 3 name",
+      "default": "Weight"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_product_1",
+      "label": "Feature 3 - Product 1",
+      "default": "200g"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_product_2",
+      "label": "Feature 3 - Product 2",
+      "default": "150g"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_product_3",
+      "label": "Feature 3 - Product 3",
+      "default": "100g"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_product_4",
+      "label": "Feature 3 - Product 4",
+      "default": "250g"
+    },
+    {
+      "type": "text",
+      "id": "feature_4_name",
+      "label": "Feature 4 name"
+    },
+    {
+      "type": "text",
+      "id": "feature_4_product_1",
+      "label": "Feature 4 - Product 1"
+    },
+    {
+      "type": "text",
+      "id": "feature_4_product_2",
+      "label": "Feature 4 - Product 2"
+    },
+    {
+      "type": "text",
+      "id": "feature_4_product_3",
+      "label": "Feature 4 - Product 3"
+    },
+    {
+      "type": "text",
+      "id": "feature_4_product_4",
+      "label": "Feature 4 - Product 4"
+    },
+    {
+      "type": "text",
+      "id": "feature_5_name",
+      "label": "Feature 5 name"
+    },
+    {
+      "type": "text",
+      "id": "feature_5_product_1",
+      "label": "Feature 5 - Product 1"
+    },
+    {
+      "type": "text",
+      "id": "feature_5_product_2",
+      "label": "Feature 5 - Product 2"
+    },
+    {
+      "type": "text",
+      "id": "feature_5_product_3",
+      "label": "Feature 5 - Product 3"
+    },
+    {
+      "type": "text",
+      "id": "feature_5_product_4",
+      "label": "Feature 5 - Product 4"
+    },
+    {
+      "type": "text",
+      "id": "feature_6_name",
+      "label": "Feature 6 name"
+    },
+    {
+      "type": "text",
+      "id": "feature_6_product_1",
+      "label": "Feature 6 - Product 1"
+    },
+    {
+      "type": "text",
+      "id": "feature_6_product_2",
+      "label": "Feature 6 - Product 2"
+    },
+    {
+      "type": "text",
+      "id": "feature_6_product_3",
+      "label": "Feature 6 - Product 3"
+    },
+    {
+      "type": "text",
+      "id": "feature_6_product_4",
+      "label": "Feature 6 - Product 4"
+    },
+    {
+      "type": "text",
+      "id": "feature_7_name",
+      "label": "Feature 7 name"
+    },
+    {
+      "type": "text",
+      "id": "feature_7_product_1",
+      "label": "Feature 7 - Product 1"
+    },
+    {
+      "type": "text",
+      "id": "feature_7_product_2",
+      "label": "Feature 7 - Product 2"
+    },
+    {
+      "type": "text",
+      "id": "feature_7_product_3",
+      "label": "Feature 7 - Product 3"
+    },
+    {
+      "type": "text",
+      "id": "feature_7_product_4",
+      "label": "Feature 7 - Product 4"
+    },
+    {
+      "type": "text",
+      "id": "feature_8_name",
+      "label": "Feature 8 name"
+    },
+    {
+      "type": "text",
+      "id": "feature_8_product_1",
+      "label": "Feature 8 - Product 1"
+    },
+    {
+      "type": "text",
+      "id": "feature_8_product_2",
+      "label": "Feature 8 - Product 2"
+    },
+    {
+      "type": "text",
+      "id": "feature_8_product_3",
+      "label": "Feature 8 - Product 3"
+    },
+    {
+      "type": "text",
+      "id": "feature_8_product_4",
+      "label": "Feature 8 - Product 4"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "table_background_color",
+      "label": "Table background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "header_background_color",
+      "label": "Header background color",
+      "default": "#f8f9fa"
+    },
+    {
+      "type": "color",
+      "id": "header_text_color",
+      "label": "Header text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "feature_column_background",
+      "label": "Feature column background",
+      "default": "#f8f9fa"
+    },
+    {
+      "type": "color",
+      "id": "feature_column_text_color",
+      "label": "Feature column text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e9ecef"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price color",
+      "default": "#28a745"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#007bff"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover color",
+      "default": "#0056b3"
+    },
+    {
+      "type": "color",
+      "id": "check_color",
+      "label": "Check mark color",
+      "default": "#28a745"
+    },
+    {
+      "type": "color",
+      "id": "cross_color",
+      "label": "Cross mark color",
+      "default": "#dc3545"
+    },
+    {
+      "type": "color",
+      "id": "highlight_background",
+      "label": "Highlight background color",
+      "default": "#fff3cd"
+    },
+    {
+      "type": "text",
+      "id": "highlight_badge",
+      "label": "Highlight badge text",
+      "default": "Popular"
+    },
+    {
+      "type": "color",
+      "id": "highlight_badge_color",
+      "label": "Highlight badge color",
+      "default": "#ffc107"
+    },
+    {
+      "type": "color",
+      "id": "highlight_badge_text_color",
+      "label": "Highlight badge text color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "table_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Table border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Comparison Board"
+    }
+  ]
+}
 {% endschema %}
