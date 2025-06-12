@@ -30,26 +30,15 @@
         "title_words": "",
         "text": "<p>Burn more. Feel the energy.</p>",
         "cta_link": "shopify://products/hydroburn",
-        "cta_text": "Shop Now"
+        "cta_text": "Shop Now",
+        "video_url_desktop": "",
+        "video_url_mobile": "",
+        "mobile_image_first": false,
+        "banner_link": ""
       }
     },
     "hero_Nq9J7U": {
       "type": "hero",
-      "blocks": {
-        "banner_XNagtk": {
-          "type": "banner",
-          "settings": {
-            "image_desktop": "shopify://shop_images/Banner_01_GlowShots.png",
-            "image_mobile": "shopify://shop_images/Imagem_do_WhatsApp_de_2025-06-12_a_s_12.28.35_913b43bb.jpg",
-            "video_url_desktop": "",
-            "video_url_mobile": "",
-            "banner_link": "shopify://collections/all"
-          }
-        }
-      },
-      "block_order": [
-        "banner_XNagtk"
-      ],
       "custom_css": [
         "@media screen and (max-width: 768px) {.seu-container {padding-bottom: 20px; }}",
         ".hero-left-block p.sub-heading {font-weight: bold;}",
@@ -68,7 +57,13 @@
         "title_words": "",
         "text": "",
         "cta_link": "shopify://collections/all",
-        "cta_text": ""
+        "cta_text": "",
+        "image_desktop": "shopify://shop_images/Banner_01_GlowShots.png",
+        "image_mobile": "shopify://shop_images/Imagem_do_WhatsApp_de_2025-06-12_a_s_12.28.35_913b43bb.jpg",
+        "video_url_desktop": "",
+        "video_url_mobile": "",
+        "mobile_image_first": false,
+        "banner_link": ""
       }
     },
     "hero_v2_tAjFKf": {
@@ -211,7 +206,11 @@
         "title_words": "more,better,healthier,happier",
         "text": "",
         "cta_link": "shopify://collections/all",
-        "cta_text": "Shop Our Shots"
+        "cta_text": "Shop Our Shots",
+        "video_url_desktop": "",
+        "video_url_mobile": "",
+        "mobile_image_first": false,
+        "banner_link": ""
       }
     },
     "image_banner_v2_aREdiH": {
