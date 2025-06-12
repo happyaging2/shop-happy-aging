@@ -11,75 +11,56 @@
         <p class="sub-heading">{{ section.settings.sub_heading }}</p>
       {% endunless %}
 
+      {% unless section.settings.title == blank %}
+        <h2 class="heading heading-with-floating heading--1 lg:text-[90px] lg:w-[410px] lg:mb-2">
+          {%- capture words -%}
+            {% unless section.settings.title_words == blank %}
+              <span>
+                <words-changer data-words="{{ section.settings.title_words }}">
+                  {% assign first_word = section.settings.title_words | split: ',' | first %}
+                  <em class="target-js">{{ first_word }}</em>
+                </words-changer>
+              </span>
+            {% endunless %}
+          {%- endcapture -%}
 
-{% unless section.settings.title == blank %}
-  <h2 class="heading heading-with-floating heading--1 lg:text-[90px] lg:w-[410px] lg:mb-2">
-    
-    {%- capture words -%}
-      {% unless section.settings.title_words == blank %}
-        <span>
-          <words-changer data-words="{{ section.settings.title_words }}">
-            {% assign first_word = section.settings.title_words | split: ',' | first %}
-            <em class="target-js">{{ first_word }}</em>
-          </words-changer>
-        </span>
+          {%- liquid
+            assign supword = ''
+            if section.settings.sup_word != blank
+              assign supword = '<sup class="sup_word" style="vertical-align: sub;">' | append: section.settings.sup_word | append: '</sup>'
+            endif
+
+            assign closing_tags_raw = "</h1>|</h2>|</h3>|</h4>|</h5>|</h6>|</p>"
+            assign closing_tags = closing_tags_raw | split: "|"
+            assign used_tag = ''
+
+            for tag in closing_tags
+              if section.settings.title contains tag
+                assign used_tag = tag
+              endif
+            endfor
+
+            assign title_last = section.settings.title | split: used_tag | last
+            assign last_row = title_last | append: supword | append: words
+            assign original_block = title_last | append: used_tag
+            assign new_block = last_row | append: used_tag
+            assign title = section.settings.title | replace: original_block, new_block
+          -%}
+
+          {{ title }}
+        </h2>
+
+        <style>
+          .sup_word {
+            /* font-size control já definido no schema */
+          }
+        </style>
       {% endunless %}
-    {%- endcapture -%}
-
-    {%- liquid
-      assign supword = ''
-      if section.settings.sup_word != blank
-        assign supword = '<sup class="sup_word" style="vertical-align: sub;">' | append: section.settings.sup_word | append: '</sup>'
-      endif
-
-      comment
-        Define todas as possíveis tags de fechamento em uma lista separada
-      endcomment
-      assign closing_tags_raw = "</h1>|</h2>|</h3>|</h4>|</h5>|</h6>|</p>"
-      assign closing_tags = closing_tags_raw | split: "|"
-      assign used_tag = ''
-
-      for tag in closing_tags
-        if section.settings.title contains tag
-          assign used_tag = tag
-        endif
-      endfor
-
-      assign title_last = section.settings.title | split: used_tag | last
-      assign last_row = title_last | append: supword | append: words
-      assign original_block = title_last | append: used_tag
-      assign new_block = last_row | append: used_tag
-      assign title = section.settings.title | replace: original_block, new_block
-    -%}
-
-    {{ title }}
-
-  </h2>
-
-  <style>
-    .sup_word {
-      {% comment %}
-      font-size: {{ section.settings.sup_size }}%;
-      {% endcomment %}
-    }
-  </style>
-
-  {% comment %}
-    <i class="heading_floating_text">{{ section.settings.floating_text }}</i>
-    <style>
-      .heading-with-floating:after {
-        content: "{{ section.settings.floating_text | escape }}";
-      }
-    </style>
-  {% endcomment %}
-{% endunless %}
-
-
-      
 
       {% unless section.settings.text == blank %}
         <div class="paragraph paragraph--2 lg:max-w-[330px] mb-4 lg:mb-8">{{ section.settings.text }}</div>
       {% endunless %}
+
       {% unless section.settings.cta_link == blank or section.settings.cta_text == blank %}
         <a
           class="button mx-auto lg:mx-0 {% if section.settings.button_color == 'cream' %}button--cream{% else %}button--black{% endif %}"
@@ -93,6 +74,15 @@
     <!-- / TEXT -->
 
     <!-- MEDIA -->
+    {% assign link = section.settings.banner_link %}
+    {% if link != blank %}
+      <a
+        href="{{ link }}"
+        {% if section.settings.banner_link_new_window %}target="_blank" rel="noopener"{% endif %}
+        class="relative block w-full h-full"
+      >
+    {% endif %}
+
     <div class="{% if section.settings.fifty_fifty == true %}{% if section.settings.mobile_image_first %}order-1{% else %}order-2{% endif %} lg:order-2 relative aspect-square lg:aspect-[unset]{% endif %}">
       <!-- VIDEO -->
       {% unless section.settings.video_url_mobile == blank %}
@@ -131,7 +121,6 @@
           </site-video>
         </div>
       {% endunless %}
-      <!-- / VIDEO -->
 
       <!-- IMAGE -->
       {% unless section.settings.image_mobile == blank %}
@@ -144,8 +133,11 @@
           {%- render 'image', image: section.settings.image_desktop, class: 'site-image', loading: 'eager' -%}
         </div>
       {% endunless %}
-      <!-- / IMAGE -->
     </div>
+
+    {% if link != blank %}
+      </a>
+    {% endif %}
     <!-- / MEDIA -->
   </div>
 </div>
@@ -169,7 +161,7 @@
       "type": "color",
       "id": "bg_color",
       "label": "Background Color",
-      "info": "This helps with initial load, should be the most dominant color in the background photo or video"
+      "info": "Esta cor aparece antes do carregamento da imagem/vídeo."
     },
     {
       "type": "select",
@@ -177,14 +169,8 @@
       "label": "Button Color",
       "default": "black",
       "options": [
-        {
-          "value": "black",
-          "label": "Black"
-        },
-        {
-          "value": "cream",
-          "label": "Cream"
-        }
+        { "value": "black", "label": "Black" },
+        { "value": "cream", "label": "Cream" }
       ]
     },
     {
@@ -193,14 +179,8 @@
       "label": "Text Color",
       "default": "white",
       "options": [
-        {
-          "value": "white",
-          "label": "White"
-        },
-        {
-          "value": "black",
-          "label": "Black"
-        }
+        { "value": "white", "label": "White" },
+        { "value": "black", "label": "Black" }
       ]
     },
     {
@@ -217,14 +197,12 @@
       "type": "text",
       "id": "sup_word",
       "label": "Floating word",
-      
-      "info": "Top right word"
+      "info": "Palavra elevada"
     },
     {
       "type": "text",
       "id": "title_words",
-      "label": "Title Words",
-      "info": "To cycle words, this field should be comma separated, e.g. Energy,Body,Soul"
+      "label": "Title Words (vírgula-separado)"
     },
     {
       "type": "richtext",
@@ -268,16 +246,25 @@
     },
     {
       "type": "image_picker",
-      "id": "video_poster",
+      "id": "video_poster_desktop",
       "label": "Video Poster Desktop"
     },
     {
       "type": "checkbox",
       "id": "mobile_image_first",
-      "label": "Show image before content on mobile",
-      "default": false,
-      "info": "When enabled, the image will appear before the content on mobile devices"
+      "label": "Show image before content on mobile"
     },
+    {
+      "type": "url",
+      "id": "banner_link",
+      "label": "Banner Link (imagem/vídeo)"
+    },
+    {
+      "type": "checkbox",
+      "id": "banner_link_new_window",
+      "label": "Abrir em nova aba",
+      "default": true
+    }
   ]
 }
-{% endschema %} 
+{% endschema %}
