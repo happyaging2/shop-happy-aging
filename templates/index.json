@@ -48,22 +48,22 @@
         "@media screen and (max-width: 500px) {.hero-left-block {padding: 3rem; }}"
       ],
       "settings": {
-        "fifty_fifty": true,
+        "fifty_fifty": false,
         "bg_color": "#f7f5eb",
         "button_color": "black",
         "text_color": "black",
-        "sub_heading": "NEW",
-        "title": "<p><em>Lean Muscle </em>Formula</p>",
+        "sub_heading": "",
+        "title": "",
         "sup_word": "",
         "title_words": "",
-        "text": "<p>The only vegan protein with 5g of creatine</p>",
-        "cta_link": "shopify://products/lean-muscle-formula",
-        "cta_text": "Shop Now",
-        "image_desktop": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-27.png",
-        "image_mobile": "shopify://shop_images/Martha_Graeff_for_Happy_Aging_-_Whey_Protein_-_Skep360_-_Photo_by_Ton_Gomes_2024-27.png",
+        "text": "",
+        "cta_link": "shopify://collections/all",
+        "cta_text": "",
+        "image_desktop": "shopify://shop_images/Banner_01_GlowShots.png",
+        "image_mobile": "shopify://shop_images/Imagem_do_WhatsApp_de_2025-06-12_a_s_12.28.35_303b6eaa.jpg",
         "video_url_desktop": "",
         "video_url_mobile": "",
-        "mobile_image_first": true
+        "mobile_image_first": false
       }
     },
     "hero_v2_tAjFKf": {
