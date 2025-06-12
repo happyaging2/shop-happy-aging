@@ -6,7 +6,9 @@
 >
   <div class="{% if section.settings.fifty_fifty == true %}d-grid lg:grid-cols-2 h-full{% else %}px-4 lg:pl-16 site-container w-full{% endif %} fifty-selector">
     <!-- TEXT -->
-    <div class="hero-left-block d-grid gap-4 relative w-full content-center text-center lg:text-start z-10 {% if section.settings.text_color == 'white' %}text-white{% else %}text-black{% endif %} {% if section.settings.fifty_fifty == true %}py-16 lg:py-0 {% if section.settings.mobile_image_first %}order-2{% else %}order-1{% endif %} lg:order-1 lg:pl-8 min-[1440px]:pl-[calc((100vw-1440px+64px+128px)/2)]{% endif %}">
+    <div class="hero-left-block d-grid gap-4 relative w-full content-center text-center lg:text-start z-10
+                {% if section.settings.text_color == 'white' %}text-white{% else %}text-black{% endif %}
+                {% if section.settings.fifty_fifty == true %}py-16 lg:py-0 {% if section.settings.mobile_image_first %}order-2{% else %}order-1{% endif %} lg:order-1 lg:pl-8 min-[1440px]:pl-[calc((100vw-1440px+64px+128px)/2)]{% endif %}">
       {% unless section.settings.sub_heading == blank %}
         <p class="sub-heading">{{ section.settings.sub_heading }}</p>
       {% endunless %}
@@ -52,7 +54,7 @@
 
         <style>
           .sup_word {
-            /* font-size defined in admin */
+            /* font-size definido via setting */
           }
         </style>
       {% endunless %}
@@ -90,49 +92,64 @@
         lg:order-2 aspect-square lg:aspect-[unset]
       {% endif %}
     ">
-      {% unless section.settings.video_url_mobile == blank %}
+      {%- comment -%} Banner Image Mobile OR Hero Image Mobile {%- endcomment -%}
+      {% if section.settings.banner_image_mobile != blank or section.settings.image_mobile != blank %}
         <div class="absolute inset-0 lg:hidden">
-          <site-video>
-            <video
-              {% unless section.settings.video_poster_mobile == blank %}
-                poster="{{ section.settings.video_poster_mobile | image_url: width: 1000 }}"
-              {% endunless %}
-              class="w-full h-full object-cover"
-              loop autoplay muted playsinline
-            >
-              <source data-src="{{ section.settings.video_url_mobile }}" type="video/mp4">
-            </video>
-          </site-video>
+          {%- if section.settings.banner_image_mobile != blank -%}
+            {%- render 'image', image: section.settings.banner_image_mobile, class: 'site-image', loading: 'eager' -%}
+          {%- else -%}
+            {%- render 'image', image: section.settings.image_mobile, class: 'site-image', loading: 'eager' -%}
+          {%- endif -%}
         </div>
-      {% endunless %}
+      {% endif %}
 
-      {% unless section.settings.video_url_desktop == blank %}
+      {%- comment -%} Banner Image Desktop OR Hero Image Desktop {%- endcomment -%}
+      {% if section.settings.banner_image_desktop != blank or section.settings.image_desktop != blank %}
         <div class="absolute inset-0 hidden lg:block">
-          <site-video>
-            <video
-              {% unless section.settings.video_poster_desktop == blank %}
-                poster="{{ section.settings.video_poster_desktop | image_url: width: 1920 }}"
-              {% endunless %}
-              class="w-full h-full object-cover"
-              loop autoplay muted playsinline
-            >
-              <source data-src="{{ section.settings.video_url_desktop }}" type="video/mp4">
-            </video>
-          </site-video>
+          {%- if section.settings.banner_image_desktop != blank -%}
+            {%- render 'image', image: section.settings.banner_image_desktop, class: 'site-image', loading: 'eager' -%}
+          {%- else -%}
+            {%- render 'image', image: section.settings.image_desktop, class: 'site-image', loading: 'eager' -%}
+          {%- endif -%}
         </div>
-      {% endunless %}
+      {% endif %}
 
-      {% unless section.settings.image_mobile == blank %}
-        <div class="absolute inset-0 lg:hidden">
-          {%- render 'image', image: section.settings.image_mobile, class: 'site-image', loading: 'eager' -%}
-        </div>
-      {% endunless %}
+      {%- comment -%} Vídeo fallback – só se não tiver banner_image nem image {% endcomment -%}
+      {% if section.settings.image_mobile == blank and section.settings.banner_image_mobile == blank %}
+        {% unless section.settings.video_url_mobile == blank %}
+          <div class="absolute inset-0 lg:hidden">
+            <site-video>
+              <video
+                {% unless section.settings.video_poster_mobile == blank %}
+                  poster="{{ section.settings.video_poster_mobile | image_url: width: 1000 }}"
+                {% endunless %}
+                class="w-full h-full object-cover"
+                loop autoplay muted playsinline
+              >
+                <source data-src="{{ section.settings.video_url_mobile }}" type="video/mp4">
+              </video>
+            </site-video>
+          </div>
+        {% endunless %}
+      {% endif %}
 
-      {% unless section.settings.image_desktop == blank %}
-        <div class="absolute inset-0 hidden lg:block">
-          {%- render 'image', image: section.settings.image_desktop, class: 'site-image', loading: 'eager' -%}
-        </div>
-      {% endunless %}
+      {% if section.settings.image_desktop == blank and section.settings.banner_image_desktop == blank %}
+        {% unless section.settings.video_url_desktop == blank %}
+          <div class="absolute inset-0 hidden lg:block">
+            <site-video>
+              <video
+                {% unless section.settings.video_poster_desktop == blank %}
+                  poster="{{ section.settings.video_poster_desktop | image_url: width: 1920 }}"
+                {% endunless %}
+                class="w-full h-full object-cover"
+                loop autoplay muted playsinline
+              >
+                <source data-src="{{ section.settings.video_url_desktop }}" type="video/mp4">
+              </video>
+            </site-video>
+          </div>
+        {% endunless %}
+      {% endif %}
     </div>
 
     {% if banner_url != blank %}
@@ -166,22 +183,25 @@
         { "value": "black", "label": "Black" }
       ]
     },
-    { "type": "text", "id": "sub_heading", "label": "Sub-Heading" },
-    { "type": "richtext", "id": "title", "label": "Title" },
-    { "type": "text", "id": "sup_word", "label": "Floating word" },
-    { "type": "text", "id": "title_words", "label": "Title Words (vírgula-separado)" },
-    { "type": "richtext", "id": "text", "label": "Text" },
-    { "type": "url", "id": "cta_link", "label": "CTA Link" },
-    { "type": "text", "id": "cta_text", "label": "CTA Text" },
-    { "type": "image_picker", "id": "image_desktop", "label": "Background Image Desktop" },
-    { "type": "image_picker", "id": "image_mobile", "label": "Background Image Mobile" },
-    { "type": "text", "id": "video_url_desktop", "label": "Video URL Desktop (Mp4)" },
-    { "type": "text", "id": "video_url_mobile", "label": "Video URL Mobile (Mp4)" },
-    { "type": "image_picker", "id": "video_poster_mobile", "label": "Video Poster Mobile" },
-    { "type": "image_picker", "id": "video_poster_desktop", "label": "Video Poster Desktop" },
-    { "type": "checkbox", "id": "mobile_image_first", "label": "Show image before content on mobile" },
-    { "type": "url", "id": "banner_link", "label": "Banner Link (clicável)" },
-    { "type": "checkbox", "id": "banner_link_new_window", "label": "Abrir em nova aba", "default": true }
+    { "type": "text",      "id": "sub_heading",                "label": "Sub-Heading" },
+    { "type": "richtext",  "id": "title",                      "label": "Title" },
+    { "type": "text",      "id": "sup_word",                   "label": "Floating word" },
+    { "type": "text",      "id": "title_words",                "label": "Title Words (vírgula-separado)" },
+    { "type": "richtext",  "id": "text",                       "label": "Text" },
+    { "type": "url",       "id": "cta_link",                   "label": "CTA Link" },
+    { "type": "text",      "id": "cta_text",                   "label": "CTA Text" },
+    { "type": "image_picker","id": "image_desktop",            "label": "Background Image Desktop" },
+    { "type": "image_picker","id": "image_mobile",             "label": "Background Image Mobile" },
+    { "type": "text",      "id": "video_url_desktop",          "label": "Video URL Desktop (Mp4)" },
+    { "type": "text",      "id": "video_url_mobile",           "label": "Video URL Mobile (Mp4)" },
+    { "type": "image_picker","id": "video_poster_mobile",      "label": "Video Poster Mobile" },
+    { "type": "image_picker","id": "video_poster_desktop",     "label": "Video Poster Desktop" },
+    { "type": "checkbox",  "id": "mobile_image_first",         "label": "Show image before content on mobile" },
+
+    { "type": "image_picker","id": "banner_image_desktop",   "label": "Banner Image Desktop" },
+    { "type": "image_picker","id": "banner_image_mobile",    "label": "Banner Image Mobile" },
+    { "type": "url",          "id": "banner_link",           "label": "Banner Link (clicável)" },
+    { "type": "checkbox",     "id": "banner_link_new_window","label": "Abrir em nova aba", "default": true }
   ]
 }
 {% endschema %}
