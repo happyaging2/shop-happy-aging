@@ -705,7 +705,7 @@
         "section_inner_gGdAUQ"
       ],
       "custom_css": [
-        ".text-block ul li {list-style: inside; padding: 10px;}"
+        ".text-block ul li {list-style: inside; padding: 5px;}"
       ],
       "name": "Landing Section",
       "settings": {
@@ -824,7 +824,7 @@
                       "name": "Heading block",
                       "settings": {
                         "subheading": "",
-                        "text": "<p>One</p>",
+                        "text": "<p><em>One</em></p>",
                         "tag_select": "h2",
                         "text_color": "",
                         "desktop_font_size": 0,
@@ -888,7 +888,7 @@
                       "name": "Heading block",
                       "settings": {
                         "subheading": "",
-                        "text": "<p>400 mg</p>",
+                        "text": "<p><em>400 mg</em></p>",
                         "tag_select": "h2",
                         "text_color": "",
                         "text_alignment_desktop": "left",
@@ -950,7 +950,7 @@
                       "name": "Heading block",
                       "settings": {
                         "subheading": "",
-                        "text": "<p>Clean</p>",
+                        "text": "<p><em>Clean</em></p>",
                         "tag_select": "h2",
                         "text_color": "",
                         "text_alignment_desktop": "left",
@@ -1013,7 +1013,7 @@
                       "name": "Heading block",
                       "settings": {
                         "subheading": "",
-                        "text": "<p>Quick</p>",
+                        "text": "<p><em>Quick</em></p>",
                         "tag_select": "h2",
                         "text_color": "",
                         "text_alignment_desktop": "left",
@@ -1077,7 +1077,7 @@
                       "name": "Heading block",
                       "settings": {
                         "subheading": "",
-                        "text": "<p>Science</p>",
+                        "text": "<p><em>Science</em></p>",
                         "tag_select": "h2",
                         "text_color": "",
                         "text_alignment_desktop": "left",
@@ -1920,7 +1920,7 @@
       ],
       "name": "Results List",
       "settings": {
-        "title": "YOUR NMN JOURNEY : <em>Vitality Milestones</em>"
+        "title": "YOUR NMN JOURNEY : v<em>itality m ilestones</em>"
       }
     },
     "landing_section_nqCRrp": {
@@ -2054,13 +2054,13 @@
                         "hover_background_color": "#333333",
                         "hover_text_color": "#ffffff",
                         "hover_border_color": "#333333",
-                        "font_size": 28,
+                        "font_size": 32,
                         "font_weight": "400",
                         "width_type": "custom",
                         "custom_width": 55,
                         "min_width": 0,
                         "alignment": "left",
-                        "padding_vertical": 10,
+                        "padding_vertical": 12,
                         "padding_horizontal": 32,
                         "border_width": 1,
                         "border_radius": 0,
