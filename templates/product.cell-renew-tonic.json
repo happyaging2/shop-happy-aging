@@ -616,6 +616,7 @@
                     "text_weight": "normal",
                     "border-top": false,
                     "text_alignment_desktop": "left",
+                    "mobile_font_size": 0,
                     "text_alignment_mobile": "left"
                   },
                   "blocks": {}
@@ -714,7 +715,8 @@
         "section_inner_gGdAUQ"
       ],
       "custom_css": [
-        ".text-block ul li {list-style: inside; padding: 5px;}"
+        ".text-block ul li {list-style: inside; padding: 5px;}",
+        "@media screen and (max-width: 540px) {h2 {font-size: 36px; }}"
       ],
       "name": "Landing Section",
       "settings": {
@@ -1152,7 +1154,8 @@
         "section_inner_jMigaK"
       ],
       "custom_css": [
-        ".text-block.border-t {border-color: #707070 !important;}"
+        ".text-block.border-t {border-color: #707070 !important;}",
+        "@media screen and (max-width: 540px) {.heading-block p em {font-size: 40px !important; }}"
       ],
       "name": "Landing Section",
       "settings": {
@@ -1184,7 +1187,7 @@
         "text_GcHhgp": {
           "type": "text",
           "settings": {
-            "text": "<h3>Clinically proven NMN raised blood NAD⁺ by up to 60% in eight weeks</h3>",
+            "text": "<h3><em>Clinically proven NMN raised blood NAD⁺ by up to 60% in eight weeks</em></h3>",
             "text_style": "heading",
             "has_border": false,
             "center_mobile": false
@@ -1321,7 +1324,7 @@
       "custom_css": [
         "div.leading-5.border-b {border-color: #d7d7d7; padding-bottom: 5px; margin-bottom: 5px;}",
         "div.leading-5 h3 {font-size: 28px;}",
-        "@media screen and (min-width: 1300px) {img {padding-right: 70px; }}"
+        "@media screen and (min-width: 1300px) {img {padding-right: 70px; border-bottom: 1px solid!important; }}"
       ],
       "settings": {
         "title": "",
@@ -1480,7 +1483,7 @@
                       "type": "text-block",
                       "name": "Text block",
                       "settings": {
-                        "text": "<h3> </h3>",
+                        "text": "<h3> Every cell contains a NAD⁺ battery that drives energy, repair and longevity. </h3>",
                         "text_color": "",
                         "text_weight": "normal",
                         "border-top": false,
@@ -1518,7 +1521,7 @@
                         "link": "",
                         "alignment": "flex-start",
                         "icon_width": 45,
-                        "icon_width_mobile": 50,
+                        "icon_width_mobile": 45,
                         "icon_padding": 8,
                         "padding_top": 4,
                         "padding_bottom": 4,
