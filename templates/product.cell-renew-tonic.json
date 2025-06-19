@@ -563,6 +563,7 @@
           "type": "section-inner",
           "name": "Grid (wrapper)",
           "settings": {
+            "desktop_max_width": 1500,
             "desktop_grid_columns": "2",
             "horizontal_alignment": "start",
             "vertical_alignment": "start",
