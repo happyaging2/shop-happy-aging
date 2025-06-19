@@ -189,7 +189,7 @@
         "@media screen and (max-width: 500px) {.grid-product-title {display: flex; align-items: center; gap: 15px; } span.main-tag-product {display: flex; margin-top: 0; }}"
       ],
       "settings": {
-        "old_product": "cell-renew-tonic-test-only",
+        "old_product": "nmn-cell-renew-tonic",
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "highlight_color": "#de4845",
