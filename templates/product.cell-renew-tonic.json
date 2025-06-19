@@ -1320,7 +1320,7 @@
         "image_height_desk": "fit",
         "image_mob": "shopify://shop_images/8d4290a49df89b3618f30e5773e68ad442b8ab1e.jpg",
         "image_height_mob": "adapt",
-        "width": "full",
+        "width": "container",
         "width_mobile": "full",
         "image_first": false,
         "image_first_mob": false,
@@ -2494,57 +2494,134 @@
         "faq_1": {
           "type": "faq",
           "settings": {
-            "question": "What makes Happy Aging Vegan Protein + Creatine different from other protein powders?",
-            "answer": "<p>Happy Aging is the only vegan protein powder made with 5 organic ingredients that includes a full clinical dose of micronized creatine, 5 grams per serving. It combines 20 grams of clean, plant-based protein with science-backed ingredients to support strength, cognitive function, and longevity. All that with no added sugar, no stevia, and no fillers.</p>"
+            "question": "1. What exactly is Cell Renew Tonic?",
+            "answer": "<p>Cell Renew Tonic is a citrus-flavored liquid NMN supplement designed to help women feel sharper, stronger, and more energized at any age. It works at the cellular level to boost NAD⁺, your body’s natural fuel for energy, repair, and resilience. Just one teaspoon a day helps reset your energy, balance your hormones, and support graceful, empowered aging.</p>"
           }
         },
         "faq_2": {
           "type": "faq",
           "settings": {
-            "question": "Is this product suitable for women?",
-            "answer": "<p>Yes, absolutely. This formula was created with wellness focused women in mind. The ingredients support strength, muscle recovery, brain clarity, and heart health, which are especially relevant for women who want to age with energy, balance, and confidence.</p>"
+            "question": "2. Who is this product for?",
+            "answer": "<p>This formula is made for women over 35 who want more energy, better focus, and smoother hormone balance without caffeine, sugar, or unnecessary pills. Whether you're juggling career, family, workouts, or perimenopause, this is your foundational wellness ritual.<br/><br/></p>"
           }
         },
         "faq_3": {
           "type": "faq",
           "settings": {
-            "question": "Can I use this protein powder every day?",
-            "answer": "<p>Yes. It is designed to be a daily wellness ritual. With clean organic ingredients and a gut friendly formulation, you can enjoy it every day after your workout or as part of your morning routine.</p>"
+            "question": "3. Why is NAD⁺ important for my body?",
+            "answer": "<p>NAD⁺ is a molecule found in every cell. It powers essential functions like energy production, DNA repair, hormone regulation, and mental clarity. As we age, NAD⁺ levels can drop by up to 50 percent by age 40. Cell Renew helps restore those levels using NMN, a direct NAD⁺ precursor.<br/><br/></p>"
           }
         },
-        "faq_4": {
+        "faq_dfmbmf": {
           "type": "faq",
           "settings": {
-            "question": "Does the product contain sugar or artificial sweeteners?",
-            "answer": "<p>No. It is sweetened only with monk fruit, a natural zero calorie sweetener that is easy on digestion and does not spike blood sugar. There is no added sugar, no stevia, and no artificial sweeteners in this formula.</p>"
+            "question": "4. What makes Cell Renew Tonic different from capsules or powders?",
+            "answer": "<p>It delivers up to 10 times better absorption with advanced liposomal delivery</p><p>It comes in liquid form for faster action and no digestive discomfort</p><p>Each teaspoon contains 444 mg of NMN in a clinically aligned dose </p><p>It is designed specifically for women’s metabolism and hormone rhythms </p><p>It uses a clean label formula that is vegan, non-GMO, sugar-free, caffeine-free, and gut-friendly </p><p>It is backed by scientific studies and third-party tested<br/><br/></p>"
           }
         },
-        "faq_DDDgNz": {
+        "faq_6UkLU3": {
           "type": "faq",
           "settings": {
-            "question": "Is the creatine vegan and safe for daily use?",
-            "answer": "<p>Yes. We use pure vegan micronized creatine, the most researched and effective form. It is safe for daily use and has been shown to support both physical performance and brain health when taken consistently.</p>"
+            "question": "5. When will I start noticing results?",
+            "answer": "<p>Week 1: Brighter mornings, less mental fog<br/> By Day 30: More sustained energy, emotional stability, and improved focus<br/> By Day 60: Increased stamina, faster recovery, and better hormone balance<br/> After 90 Days: Greater resilience, deeper cellular vitality, and lasting mental clarity<br/> Results may vary depending on your baseline NAD⁺ levels, lifestyle, and consistency.</p>"
           }
         },
-        "faq_HYaLwd": {
+        "faq_LWdF6e": {
           "type": "faq",
           "settings": {
-            "question": "Will this protein powder make me feel bloated?",
-            "answer": "<p>No. Our formula does not contain gums, sugar alcohols, dairy, soy, or gluten, which are common causes of digestive discomfort. Most people find it smooth, light, and easy to digest.</p>"
+            "question": "6. How do I take it?",
+            "answer": "<p>Take one teaspoon (6 ml) every morning. You can take it straight or mix it into water, juice, or a smoothie. Shake the bottle before each use. One bottle lasts 30 days.</p>"
           }
         },
-        "faq_Jt6UAg": {
+        "faq_aEfQyb": {
           "type": "faq",
           "settings": {
-            "question": "Is this protein powder third party tested?",
-            "answer": "<p>Yes. Happy Aging Vegan Protein with Creatine is made in a GMP certified facility in the United States and is third party tested to ensure purity, potency, and quality.</p>"
+            "question": "7. Do I need to take it with food?",
+            "answer": "<p>No. The liposomal delivery system is gentle on the stomach and designed for optimal absorption with or without food.</p>"
           }
         },
-        "faq_pU9Exc": {
+        "faq_WqnYjM": {
           "type": "faq",
           "settings": {
-            "question": "How should I use it?",
-            "answer": "<p>Mix one scoop with cold water, almond milk, or your favorite smoothie. Use it after your workout or as a clean source of daily energy. </p>"
+            "question": "8. Is it safe for daily use?",
+            "answer": "<p>Yes. The 444 mg dose is within clinically tested safe ranges. The formula is free from common allergens and stimulants. It is designed to work with your biology.</p>"
+          }
+        },
+        "faq_Eb44T8": {
+          "type": "faq",
+          "settings": {
+            "question": "9. Can I take it with other supplements or medications?",
+            "answer": "<p>In most cases, yes. Cell Renew pairs well with most vitamins, adaptogens, and hormone-supportive supplements. If you are taking prescription medications, hormone therapy, or managing a medical condition, consult your healthcare provider before use.</p>"
+          }
+        },
+        "faq_YaakAD": {
+          "type": "faq",
+          "settings": {
+            "question": "10. Can I take it if I’m pregnant or breastfeeding?",
+            "answer": "<p>If you are pregnant, planning to become pregnant, or breastfeeding, speak with your doctor before using Cell Renew Tonic.</p>"
+          }
+        },
+        "faq_3CWMLC": {
+          "type": "faq",
+          "settings": {
+            "question": "11. What if I miss a day?",
+            "answer": "<p>Just resume the next day. While consistency brings the best results, missing a day now and then will not interfere with your progress.</p>"
+          }
+        },
+        "faq_d6qTBa": {
+          "type": "faq",
+          "settings": {
+            "question": "12. What happens if I stop taking it?",
+            "answer": "<p>Your NAD⁺ levels may gradually decline again, and benefits like energy, focus, or hormonal balance may fade. For long-term support, we recommend using Cell Renew consistently.</p>"
+          }
+        },
+        "faq_ynT9nx": {
+          "type": "faq",
+          "settings": {
+            "question": "13. Are there any side effects?",
+            "answer": "<p>Most users experience no side effects. In rare cases, some may feel mild detox-like symptoms in the first few days such as slight headache or fatigue as NAD⁺ pathways reactivate. These typically resolve quickly.</p>"
+          }
+        },
+        "faq_y8B9H8": {
+          "type": "faq",
+          "settings": {
+            "question": "14. What’s in it?",
+            "answer": "<p>Ingredients per 6 ml serving:<br/> NMN (Nicotinamide Mononucleotide) 444 mg<br/> Purified water<br/> Vegetable glycerin<br/> Non-GMO sunflower lecithin<br/> Natural citrus flavor<br/> Potassium sorbate<br/> Stevia<br/> Free from sugar, caffeine, gluten, dairy, soy, synthetic additives, and GMOs</p>"
+          }
+        },
+        "faq_mjT3ae": {
+          "type": "faq",
+          "settings": {
+            "question": "15. Is it vegan and non-GMO?",
+            "answer": "<p>Yes. Cell Renew is 100 percent vegan and non-GMO. It is made with clean-label ingredients and third-party tested for purity and potency.</p>"
+          }
+        },
+        "faq_dQMyfY": {
+          "type": "faq",
+          "settings": {
+            "question": "16. Is the product FDA-approved?",
+            "answer": "<p>As with all dietary supplements in the United States, Cell Renew is not evaluated by the FDA. However, it is manufactured in certified facilities that follow GMP guidelines, and the ingredients are backed by clinical research.</p>"
+          }
+        },
+        "faq_hgWKNQ": {
+          "type": "faq",
+          "settings": {
+            "question": "17. What’s your return policy?",
+            "answer": "<p>We offer a 30-day money-back guarantee. If you are not satisfied with your results, contact our support team. Your first order also includes free shipping.</p>"
+          }
+        },
+        "faq_hATLcE": {
+          "type": "faq",
+          "settings": {
+            "question": "18. How should I store the bottle?",
+            "answer": "<p>Store it in a cool, dry place away from sunlight. Refrigeration after opening is optional and can help preserve freshness.</p>"
+          }
+        },
+        "faq_LAfBXQ": {
+          "type": "faq",
+          "settings": {
+            "question": "19. How long should I take Cell Renew?",
+            "answer": "<p>Cell Renew is designed for long-term use. The benefits are cumulative. We recommend using it for at least 60 to 90 days to allow your NAD⁺ levels to stabilize and your results to build over time.</p>"
           }
         }
       },
@@ -2552,11 +2629,22 @@
         "faq_1",
         "faq_2",
         "faq_3",
-        "faq_4",
-        "faq_DDDgNz",
-        "faq_HYaLwd",
-        "faq_Jt6UAg",
-        "faq_pU9Exc"
+        "faq_dfmbmf",
+        "faq_6UkLU3",
+        "faq_LWdF6e",
+        "faq_aEfQyb",
+        "faq_WqnYjM",
+        "faq_Eb44T8",
+        "faq_YaakAD",
+        "faq_3CWMLC",
+        "faq_d6qTBa",
+        "faq_ynT9nx",
+        "faq_y8B9H8",
+        "faq_mjT3ae",
+        "faq_dQMyfY",
+        "faq_hgWKNQ",
+        "faq_hATLcE",
+        "faq_LAfBXQ"
       ],
       "custom_css": [
         "#faqs {border-top: 1px solid;}"
