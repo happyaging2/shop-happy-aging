@@ -1865,7 +1865,7 @@
       "name": "Landing Section",
       "settings": {
         "background_color": "",
-        "full_width": false,
+        "full_width": true,
         "max_width": 0,
         "top_spacing": 70,
         "bottom_spacing": 70,
