@@ -1302,7 +1302,7 @@
             "font_size": 32,
             "font_weight": "400",
             "width_type": "custom",
-            "custom_width": 50,
+            "custom_width": 55,
             "min_width": 0,
             "alignment": "left",
             "padding_vertical": 10,
