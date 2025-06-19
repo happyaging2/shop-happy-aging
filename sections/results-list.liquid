@@ -15,7 +15,10 @@
 
       {%- comment -%} Mobile (slide) {%- endcomment -%}
       <site-carousel
-        data-config='{"slidesPerView": 1.2, "loop": false, "spaceBetween": 20}'
+        data-config='{"slidesPerView": 1.2, "loop": false, "spaceBetween": 20, "navigation": {
+      "nextEl": ".swiper-button-next",
+      "prevEl": ".swiper-button-prev"
+    }}'
         id="{{ section.id }}-mobile"
         class="block lg:hidden w-full relative"
         data-id="{{ section.id }}-mobile"
@@ -43,8 +46,8 @@
         </div>
 
 <div class="customNavSlider">
-        <div class="swiper-button-prev"></div>
-<div class="swiper-button-next"></div>
+  <div class="swiper-button-prev" id="{{ section.id }}-prev"></div>
+  <div class="swiper-button-next" id="{{ section.id }}-next"></div>
 </div>
 
 
