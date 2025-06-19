@@ -1,6 +1,277 @@
-{% schema %}
-  {
-    "name": "Block name",
-    "settings": []
+{% doc %}
+  @prompt
+    icon block with image upload, align options (left, center, right), width option, etc.
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-icon-block-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: {{ block.settings.alignment }};
+    width: 100%;
+    padding: {{ block.settings.padding_top }}px 0 {{ block.settings.padding_bottom }}px;
   }
+
+  .ai-icon-wrapper-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: {{ block.settings.icon_width }}px;
+    height: {{ block.settings.icon_width }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.icon_padding }}px;
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+  }
+
+  .ai-icon-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .ai-icon-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-icon-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.5;
+  }
+
+  {% if block.settings.link != blank %}
+    .ai-icon-link-{{ ai_gen_id }} {
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .ai-icon-link-{{ ai_gen_id }}:hover {
+      transform: scale({{ block.settings.hover_scale }});
+    }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    .ai-icon-wrapper-{{ ai_gen_id }} {
+      width: {{ block.settings.icon_width_mobile }}px;
+      height: {{ block.settings.icon_width_mobile }}px;
+    }
+
+    .ai-icon-block-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_top_mobile }}px 0 {{ block.settings.padding_bottom_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-icon-block-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.link != blank %}
+    <a href="{{ block.settings.link }}" class="ai-icon-link-{{ ai_gen_id }}" aria-label="{{ block.settings.alt_text | default: 'Icon link' }}">
+  {% endif %}
+  
+  <div class="ai-icon-wrapper-{{ ai_gen_id }}">
+    {% if block.settings.icon_image %}
+      <img
+        src="{{ block.settings.icon_image | image_url: width: 400 }}"
+        alt="{{ block.settings.alt_text | escape }}"
+        class="ai-icon-image-{{ ai_gen_id }}"
+        loading="lazy"
+        width="{{ block.settings.icon_width }}"
+        height="{{ block.settings.icon_width }}"
+      >
+    {% else %}
+      <div class="ai-icon-placeholder-{{ ai_gen_id }}">
+        {{ 'image' | placeholder_svg_tag }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if block.settings.link != blank %}
+    </a>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Icon Block",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_image",
+      "label": "Icon image"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Alt text",
+      "info": "Describe the icon for screen readers"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "icon_width",
+      "min": 20,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Icon width",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "icon_width_mobile",
+      "min": 20,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Icon width (mobile)",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "icon_padding",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon padding",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Top spacing (mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom spacing (mobile)",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "hover_scale",
+      "min": 1.0,
+      "max": 1.2,
+      "step": 0.1,
+      "label": "Hover scale",
+      "default": 1.1,
+      "info": "Only applies when link is added"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon Block"
+    }
+  ],
+  "tag": null
+}
 {% endschema %}
