@@ -2272,8 +2272,8 @@
       ],
       "custom_css": [
         "div .relative {/*border-bottom: 20px solid red;*/ padding-bottom: 19rem;}",
-        "@media screen and (max-width: 500px) {div .relative {/*border-bottom: 20px solid red;*/ padding-bottom: 0; }}",
-        ".heading {font-size: 40px;}"
+        "@media screen and (max-width: 500px) {div .relative {/*border-bottom: 20px solid red;*/ padding-bottom: 0; } .heading {font-size: 40px;} }",
+        ".heading {font-size: 50px;}"
       ],
       "settings": {
         "show_border_top": true,
