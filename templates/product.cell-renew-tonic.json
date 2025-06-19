@@ -1859,6 +1859,7 @@
       "settings": {
         "background_color": "",
         "full_width": true,
+        "max_width": 1500,
         "top_spacing": 70,
         "bottom_spacing": 70,
         "use_top_border": true,
