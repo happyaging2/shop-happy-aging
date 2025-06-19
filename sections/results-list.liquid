@@ -23,6 +23,8 @@
         class="block lg:hidden w-full relative"
         data-id="{{ section.id }}-mobile"
       >
+    <div class="flexSwiper">
+      
         <div class="swiper w-full">
           <div class="swiper-wrapper">
             {% for block in section.blocks %}
@@ -45,14 +47,16 @@
           </div>
         </div>
 
-<div class="customNavSlider">
-  <div class="swiper-button-prev" id="{{ section.id }}-prev"></div>
-  <div class="swiper-button-next" id="{{ section.id }}-next"></div>
-</div>
-
-
+        <div class="customNavSlider">
+          <div class="swiper-button-prev" id="{{ section.id }}-prev"></div>
+          <div class="swiper-button-next" id="{{ section.id }}-next"></div>
+        </div>
+      
+    </div>
         
       </site-carousel>
+
+      
 
       {%- comment -%} Desktop (grade) {%- endcomment -%}
       <div class="d-grid md:grid-cols-3 lg:grid-cols-[unset] lg:grid-flow-col lg:auto-cols-fr gap-3 items-start md:px-0 hide-on-mobile">
