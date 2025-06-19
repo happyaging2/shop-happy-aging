@@ -175,7 +175,7 @@
                   {{ block.settings.text_align }}
                 {%- endcapture -%}
                 <div
-                  class="product__text inline-richtext tracking-wide {{ text_style }}"
+                  class="product__text inline-richtext tracking-wide {{ text_style }} {{ block.settings.customclass }}"
                   {{ block.shopify_attributes }}
                 >
                   <div class="inline-flex {% if block.settings.text_align == 'text-center' %}max-w-[300px]{%- endif -%}">{{- block.settings.text -}}</div>
@@ -190,6 +190,16 @@
                       </h2>
                     </a>
                   </div>
+
+              {% unless section.settings.title_label == blank %}
+                    <span
+                      class="title-label d-none lg:flex uppercase leading-none px-1.5 lg:px-2 text-[10px] h-5 lg:h-6 items-center text-cream tracking-wider relative mt-3 md:mt-0 md:-top-2.5 md:ml-4"
+                      style="background: ; color:#202020; place-self: anchor-center;"
+                    >
+                      {{- section.settings.title_label -}}
+                    </span>
+                  {% endunless %}
+              
                   {% unless block.settings.badge_text == blank %}
                     <span
                       class="main-tag-product d-none lg:flex uppercase leading-none px-1.5 lg:px-2 text-[10px] h-5 lg:h-6 items-center text-cream tracking-wider relative mt-3 md:mt-0 md:-top-2.5 md:ml-4"
@@ -553,7 +563,12 @@
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
-                {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id -%}
+                {% if block.settings.tonic %}
+                  {%- render 'buy-buttons-tonic', block: block, product: product, product_form_id: product_form_id, section_id: section.id, tonic: true -%}
+                {% else %}
+                    {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, tonic: true -%}
+                {% endif %}
+              
               {%- when 'complementary' -%}
                 <product-recommendations
                   class="complementary-products quick-add-hidden{% if block.settings.make_collapsible_row %} is-accordion{% endif %}{% if block.settings.enable_quick_add %} complementary-products-contains-quick-add{% endif %}"
@@ -778,6 +793,103 @@
                 {% render 'frontrow' %}
               {%- when 'spacing' -%}
                 {% render 'vertical-spacing', section: section, block: block %}
+              
+              {%- when 'icon_text_list' -%}
+
+    
+                {% assign s = block.settings %}
+
+<style>
+  .icon-text-block {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .icon-text-desktop {
+    display: block;
+  }
+
+  .icon-text-mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .icon-text-desktop {
+      display: none;
+    }
+
+    .icon-text-mobile {
+      display: block;
+    }
+  }
+</style>
+
+<!-- Desktop -->
+<div
+  class="icon-text-desktop"
+  style="
+    text-align: {{ s.alignment_desktop }};
+    margin-top: {{ s.margin_top_desktop }}px;
+    margin-bottom: {{ s.margin_bottom_desktop }}px;
+  "
+>
+  {% for i in (1..5) %}
+{% assign icon_key = "icon_" | append: i %}
+{% assign icon = s[icon_key] %}
+
+{% assign text_key = "text_" | append: i %}
+{% assign text = s[text_key] %}
+
+    {% if icon != blank or text != blank %}
+      <div class="icon-text-block">
+        {% if icon %}
+          <img
+            src="{{ icon | img_url: '100x' }}"
+            alt="Ícone {{ i }}"
+            style="width: {{ s.icon_size_desktop }}px;"
+          >
+        {% endif %}
+        <span style="font-size: {{ s.text_size_desktop }}px;">{{ text }}</span>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<!-- Mobile -->
+<div
+  class="icon-text-mobile"
+  style="
+    text-align: {{ s.alignment_mobile }};
+    margin-top: {{ s.margin_top_mobile }}px;
+    margin-bottom: {{ s.margin_bottom_mobile }}px;
+  "
+>
+  {% for i in (1..5) %}
+{% assign icon_key = "icon_" | append: i %}
+{% assign icon = s[icon_key] %}
+
+{% assign text_key = "text_" | append: i %}
+{% assign text = s[text_key] %}
+
+    {% if icon != blank or text != blank %}
+      <div class="icon-text-block">
+        {% if icon %}
+          <img
+            src="{{ icon | img_url: '100x' }}"
+            alt="Ícone {{ i }}"
+            style="width: {{ s.icon_size_mobile }}px;"
+          >
+        {% endif %}
+        <span style="font-size: {{ s.text_size_mobile }}px;">{{ text }}</span>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+
+          
               {%- when 'shipping' -%}
                 <div class="flex items-center justify-center gap-3 pb-5">
                   <svg
@@ -904,6 +1016,12 @@
           "id": "text",
           "default": "t:sections.main-product.blocks.text.settings.text.default",
           "label": "t:sections.main-product.blocks.text.settings.text.label"
+        },
+        {
+          "type": "text",
+          "id": "customclass",
+          "default": "yourcustomclass",
+          "label": "Custom class"
         },
         {
           "type": "select",
@@ -1308,6 +1426,13 @@
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
         },
         {
+          "type": "checkbox",
+          "id": "tonic",
+          "default": false,
+          "label": "Is Tonic?",
+          "info": "Enable for tonic products"
+        },
+        {
           "type": "header",
           "content": "Default one-time / subscription info",
           "info": "These will be used if no quantity block is added."
@@ -1365,6 +1490,162 @@
       "name": "t:sections.main-product.blocks.description.name",
       "limit": 1
     },
+
+ {
+  "type": "icon_text_list",
+  "name": "Lista com ícones",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon_1",
+      "label": "Ícone 1"
+    },
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Texto 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_2",
+      "label": "Ícone 2"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Texto 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_3",
+      "label": "Ícone 3"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Texto 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_4",
+      "label": "Ícone 4"
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Texto 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_5",
+      "label": "Ícone 5"
+    },
+    {
+      "type": "text",
+      "id": "text_5",
+      "label": "Texto 5"
+    },
+    {
+      "type": "range",
+      "id": "text_size_desktop",
+      "label": "Tamanho do texto (px) - desktop",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "label": "Tamanho do texto (px) - mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "label": "Tamanho do ícone (px) - desktop",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Tamanho do ícone (px) - mobile",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "alignment_desktop",
+      "label": "Alinhamento (desktop)",
+      "options": [
+        { "value": "left", "label": "Esquerda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Direita" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "alignment_mobile",
+      "label": "Alinhamento (mobile)",
+      "options": [
+        { "value": "left", "label": "Esquerda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Direita" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "margin_top_desktop",
+      "label": "Margem superior (px) - desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_desktop",
+      "label": "Margem inferior (px) - desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "margin_top_mobile",
+      "label": "Margem superior (px) - mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mobile",
+      "label": "Margem inferior (px) - mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    }
+  ]
+}
+
+,
+
+
+    
     {
       "type": "share",
       "name": "t:sections.main-product.blocks.share.name",
@@ -2595,6 +2876,11 @@
       "id": "highlight_color",
       "label": "Highlight color",
       "default": "#d0535b"
+    },
+    {
+      "type": "richtext",
+      "id": "title_label",
+      "label": "Title label"
     },
     {
       "type": "header",
