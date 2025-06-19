@@ -1859,6 +1859,9 @@
         "section_inner_W3tNRM",
         "section_inner_KGEFVa"
       ],
+      "custom_css": [
+        ".text-block {xborder-bottom: 1px solid #f90;}"
+      ],
       "name": "Landing Section",
       "settings": {
         "background_color": "",
