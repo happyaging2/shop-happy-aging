@@ -1324,7 +1324,8 @@
       "custom_css": [
         "div.leading-5.border-b {border-color: #d7d7d7; padding-bottom: 5px; margin-bottom: 5px;}",
         "div.leading-5 h3 {font-size: 28px;}",
-        "@media screen and (min-width: 1300px) {img {padding-right: 70px; border-bottom: 1px solid!important; }}"
+        "@media screen and (min-width: 1300px) {img {padding-right: 70px; }}",
+        "@media screen and (max-width: 540px) {img {border-bottom: 1px solid !important; }}"
       ],
       "settings": {
         "title": "",
