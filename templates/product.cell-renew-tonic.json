@@ -130,7 +130,7 @@
         "text_RB6DBe": {
           "type": "text",
           "settings": {
-            "text": "30 Day Money Back Guarantee",
+            "text": "<strong>30 Day Money Back Guarantee</strong>",
             "customclass": "moneybacktext",
             "text_style": "body",
             "text_size": "text-xs",
