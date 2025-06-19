@@ -1806,7 +1806,7 @@
                             "padding_top": 4,
                             "padding_bottom": 4,
                             "padding_top_mobile": 16,
-                            "padding_bottom_mobile": 16,
+                            "padding_bottom_mobile": 4,
                             "background_color": "rgba(0,0,0,0)",
                             "border_radius": 8,
                             "border_width": 0,
@@ -1865,7 +1865,7 @@
       "name": "Landing Section",
       "settings": {
         "background_color": "",
-        "full_width": true,
+        "full_width": false,
         "max_width": 0,
         "top_spacing": 70,
         "bottom_spacing": 70,
