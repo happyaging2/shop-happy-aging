@@ -12,24 +12,66 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_liquid_mxftaL": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n\n.showMobile{\n  display:none;\n}\n.showDesktop{\n  display:block;\n}\n\n@media screen and (max-width:540px){\n  .showMobile{\n  display:block;\n}\n.showDesktop{\n  display:none;\n}\n}\n\nspan.oke-sr-label-text {\n    color: #707070!important;\n}\n\n.oke-sr-count {\n    color: #707070!important;\n    text-transform: uppercase;\n}  \n\ncadence-selector.cadence-selector, .quantity-grid-mobile {\n    padding: 10px;\n    border: 1px solid #d7d7d7;\n}\n\n.radio-option.active, .quantity-grid-mobile .radio-option.active {\n    border: 2px solid #9caf88 !important;\n    border-color: #9caf88 !important;\n}\n#product-form-template--24636152283456__main > subscription-widget > cadence-selector > div {\n  border-color: #9caf88 !important;\n}\n\ncadence-selector .value-props, .quantity-grid-mobile .value-props{\n    display: flex!important;\n    flex-direction: column;\n}\n\ncadence-selector .value-props .value-prop:nth-child(2),\ncadence-selector .value-props .value-prop:nth-child(4){\n    border: 1px solid red;\n    display:none;\n}\n\n.value-prop {\n    color: #707070;\n}\n\ncadence-selector.cadence-selector .radio-option.active .radio-dot {\n    background: #9caf88 !important;\n}\n\ncadence-selector.cadence-selector .radio-option.active .radio-circle {\n    border-color: #9caf88 !important;\n}\n\ncadence-selector.cadence-selector .option-details {\n    border:2px solid red;\n    display:none!important;\n}\n\np.option-label-text {\n    color:#1e1e1e;\n    font-size:14px;\n}\n\n.truemed-entry-box {\n    display: none!important;\n}\n\n.moneyinfo{\n  color:#707070;\n  font-size:10px;\n  margin-top:-10px!important;\n}\n\n.moneyback{\n  color:#1e1e1e;\n}\n\n.icon-text-block span {\n    color: #1e1e1e;\n}\n\n.quantity-grid-mobile .option-details {display: none;}\n\n\n@media screen and (max-width:540px){\n    cadence-selector.cadence-selector .radio-option {\n        max-width: 50%;\n    }\n    \n    cadence-selector.cadence-selector .radio-option p{\n        font-size: 10px!important;\n    }\n    \n    .quantity-grid-mobile .radio-option:nth-child(2) .value-props.js-mobile-value-props {\n        display: none!important;\n        border: 1px solid red!important;\n    }\n    \n    .quantity-grid-mobile .radio-option:nth-child(2) button.radio-option__button {\n        padding-bottom:0!important;\n        margin-bottom:0!important;\n        /*border: 1px solid red!important;*/\n    }\n\nspan.main-tag-product {\n    text-align: center;\n        padding: 3px;\n        height: auto;\n}\n\n.value-props.js-mobile-value-props \n.value-prop:nth-child(even) {\n    display:none;\n}\n\np.save-text.js-subscription-save {\n\n    right: 5rem!important;\n    font-size: 10px;\n    background: #9CAF88;\n    padding: 5px;\n\n}\n\n}\n\n@media screen and (min-width:500px){\n    .cadence-selector .radio-option {\n        margin-bottom: 10px;\n    }\n}\n\np.save-text.js-subscription-save {\n    position: absolute;\n    right: 6%;\n    font-size: 10px;\n    background: #9CAF88;\n    padding: 5px;\n    color: #000000bf;\n}\n\n\n</style>"
+          }
+        },
+        "okendo_star_rating_XckRMV": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "lean-muscle-formula"
+          }
+        },
         "custom_reviews_yRiyrR": {
           "type": "custom_reviews",
+          "disabled": true,
           "settings": {}
         },
         "title": {
           "type": "title",
           "settings": {
-            "badge_text": ""
+            "badge_text": "{{ product.metafields.happy_aging.title_tag.value }}"
           }
         },
-        "price": {
-          "type": "price",
+        "custom_liquid_xUN8aT": {
+          "type": "custom_liquid",
           "settings": {
-            "tag": ""
+            "custom_liquid": "<span style=\"\" class=\"uppercase showMobile\">{{ section.settings.title_label }}</span>"
+          }
+        },
+        "icon_text_list_xhFzwP": {
+          "type": "icon_text_list",
+          "settings": {
+            "icon_1": "shopify://shop_images/2.png",
+            "text_1": "Up to 60% higher NAD⁺ in eight weeks",
+            "icon_2": "shopify://shop_images/f98c9ebfb71a7aa1c29079dec5b0c806.png",
+            "text_2": "10x better absorption with liposomal delivery",
+            "icon_3": "shopify://shop_images/b374441d400e61cacad12d09ae15f131.png",
+            "text_3": " Supports hormonal balance & graceful aging",
+            "icon_4": "shopify://shop_images/3b272b1e5472cc6ba103c20751115124.png",
+            "text_4": "Vegan • sugar-free • gut-friendly • non-GMO",
+            "icon_5": "shopify://shop_images/ef2c6725c952b0369c8c54637b11dbd3.png",
+            "text_5": "Crash-free energy & all-day mental clarity",
+            "text_size_desktop": 14,
+            "text_size_mobile": 12,
+            "icon_size_desktop": 16,
+            "icon_size_mobile": 16,
+            "alignment_desktop": "left",
+            "alignment_mobile": "left",
+            "margin_top_desktop": 20,
+            "margin_bottom_desktop": 20,
+            "margin_top_mobile": 20,
+            "margin_bottom_mobile": 20
           }
         },
         "description": {
           "type": "description",
+          "settings": {}
+        },
+        "frontrow_WcpwRH": {
+          "type": "frontrow",
           "settings": {}
         },
         "buy_buttons_W9PKFR": {
@@ -37,39 +79,125 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
+            "tonic": true,
             "default_info_sub_1": "Ships every month",
             "default_info_sub_2": "Free shipping on all orders",
             "default_info_sub_3": "Cancel your subscription anytime",
             "default_info_sub_4": "Ships in 12 hours",
-            "default_info_one_1": "Free shipping on all orders",
+            "default_info_one_1": "Free shipping in 12 hours",
             "default_info_one_2": "Ships in 12 hours",
             "product_content_text_default_kit": ""
           }
         },
-        "tolstoy_shoppable_video_quiz_stories_block_x6tPhU": {
-          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/stories-block/06fa8282-42ff-403e-b67c-1936776aed11",
+        "quantity_block_XPNgFV": {
+          "type": "quantity_block",
           "settings": {
-            "publishId": "publishId"
+            "qty": 1,
+            "onetime_price": 98,
+            "plan_id": "693146779968",
+            "title": "30-day supply",
+            "sub_title": "",
+            "num_bottles": "30",
+            "badge": "",
+            "product_content_text": "20 servings",
+            "subs_info_1": "Free shipping in 12 hours",
+            "subs_info_2": "Free shipping on all orders",
+            "subs_info_3": "Cancel your subscription anytime",
+            "subs_info_4": "Ships in 12 hours",
+            "subs_info_5": "",
+            "subs_info_6": "Ships in 12 hours"
           }
+        },
+        "quantity_block_hxax3a": {
+          "type": "quantity_block",
+          "settings": {
+            "qty": 2,
+            "onetime_price": 98,
+            "plan_id": "693146812736",
+            "title": "60-day supply",
+            "sub_title": "",
+            "num_bottles": "",
+            "badge": "",
+            "product_content_text": "",
+            "subs_info_1": "Free shipping in 12 hours",
+            "subs_info_2": "Free shipping on all orders",
+            "subs_info_3": "Cancel your subscription anytime",
+            "subs_info_4": "Ships in 12 hours",
+            "subs_info_5": "Free shipping on all orders",
+            "subs_info_6": "Ships in 12 hours"
+          }
+        },
+        "text_RB6DBe": {
+          "type": "text",
+          "settings": {
+            "text": "30 Day Money Back Guarantee",
+            "customclass": "moneybacktext",
+            "text_style": "body",
+            "text_size": "text-xs",
+            "text_align": "text-left"
+          }
+        },
+        "text_h9imWD": {
+          "type": "text",
+          "settings": {
+            "text": "If you're unsatisfied with your shots, for any reason, we'll give you a full refund–no return necessary!",
+            "customclass": "moneyinfo",
+            "text_style": "body",
+            "text_size": "text-[10px]",
+            "text_align": "text-left"
+          }
+        },
+        "aside_content_TPcz4K": {
+          "type": "aside_content",
+          "settings": {
+            "title": "Ingredients",
+            "text": "<h6><strong>Organic Pea Protein, Organic cocoa Powder, Organic Monk Fruit, Organic Pumpkin Seed Powder, Organic Chia Seed, Organic Natural Vanilla Flavor</strong></h6>",
+            "image": "shopify://shop_images/5_Organic_Ingredients_2.png"
+          }
+        },
+        "aside_content_rBPMby": {
+          "type": "aside_content",
+          "settings": {
+            "title": "How to use",
+            "text": "<p><strong>How to Use</strong></p><p>Mix one scoop (36g) to 8-12 oz, per day with water, almond milk, or your favorite smoothie.</p><p>Ideal after workouts or anytime you need a clean, plant-based energy boost</p><p><strong>Organic, Powerful, and Purposeful</strong></p><p>At Happy Aging, we don’t just make supplements. We create wellness rituals that support your energy, focus, and long-term strength. It’s not about perfection. It’s about progress that feels real.</p><p>This is your daily strength ritual, crafted with real ingredients and backed by science. It gives your body exactly what it needs, and nothing it doesn’t.</p><p><strong>Make It a Ritual</strong></p><p>Subscribe and save with every order.</p><p>Be the first to explore our latest wellness innovations and exclusive formulas.</p><p><strong> Product Details</strong></p><ul><li>Format: Powder (20 servings)</li><li>Sweetener: Monk Fruit</li><li>Free from: Dairy, soy, gluten, and artificial additives</li><li>Certified Organic and Non-GMO</li><li>Made in the USA in a GMP-certified facility</li></ul>"
+          }
+        },
+        "essential_upsell_app_block_XLXFkq": {
+          "type": "shopify://apps/essential-upsell/blocks/app-block/50627fd9-24fd-4250-8614-accc12826d80",
+          "settings": {}
         }
       },
       "block_order": [
+        "custom_liquid_mxftaL",
+        "okendo_star_rating_XckRMV",
         "custom_reviews_yRiyrR",
         "title",
-        "price",
+        "custom_liquid_xUN8aT",
+        "icon_text_list_xhFzwP",
         "description",
+        "frontrow_WcpwRH",
         "buy_buttons_W9PKFR",
-        "tolstoy_shoppable_video_quiz_stories_block_x6tPhU"
+        "quantity_block_XPNgFV",
+        "quantity_block_hxax3a",
+        "text_RB6DBe",
+        "text_h9imWD",
+        "aside_content_TPcz4K",
+        "aside_content_rBPMby",
+        "essential_upsell_app_block_XLXFkq"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 500px) {.grid-product-title {display: flex; align-items: center; gap: 15px; } span.main-tag-product {display: flex; margin-top: 0; }}"
       ],
       "settings": {
-        "old_product": "",
+        "old_product": "cell-renew-tonic-test-only",
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "highlight_color": "#d0535b",
+        "highlight_color": "#de4845",
+        "title_label": "<p>Liposomal NMN</p>",
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "cover",
-        "gallery_layout": "thumbnail_slider",
+        "gallery_layout": "thumbnail",
         "media_position": "left",
         "image_zoom": "none",
         "mobile_thumbnails": "show",
@@ -79,49 +207,291 @@
         "padding_bottom": 12
       }
     },
+    "landing_section_GdHXgh": {
+      "type": "landing-section",
+      "blocks": {
+        "section_inner_WBhNK7": {
+          "type": "section-inner",
+          "name": "Grid (wrapper)",
+          "settings": {
+            "desktop_max_width": 0,
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 30,
+            "right_spacing_desktop": 30,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "highlight_image_item_BLJ8i3": {
+              "type": "highlight-image-item",
+              "name": "Highlight image item",
+              "settings": {
+                "image": "shopify://shop_images/fdf4275fb2df14ddddecdd116bc7a720fe753d64.png",
+                "title": "",
+                "title_size": 30,
+                "title_line_height": 42,
+                "title_color": "",
+                "text": "",
+                "text_alignment_desktop": "left",
+                "text_alignment_mobile": "center",
+                "flex_direction": "row",
+                "justify_content": "start",
+                "align_items": "start",
+                "row_gap": 20,
+                "column_gap": 20,
+                "flex_direction_mobile": "column",
+                "justify_content_mobile": "center",
+                "align_items_mobile": "center",
+                "row_gap_mobile": 20,
+                "column_gap_mobile": 20
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "highlight_image_item_BLJ8i3"
+          ]
+        },
+        "section_inner_YmreYw": {
+          "type": "section-inner",
+          "settings": {
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "center",
+            "vertical_alignment": "center",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 30,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 30,
+            "right_spacing_desktop": 30,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "grid_list_Pf4yHh": {
+              "type": "grid-list",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 0,
+                "row_gap_desktop": 0,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 0,
+                "row_gap_mobile": 0
+              },
+              "blocks": {
+                "highlight_image_item_6wWHKq": {
+                  "type": "highlight-image-item",
+                  "settings": {
+                    "image_max_width_desktop": 0,
+                    "title": "",
+                    "title_size": 30,
+                    "title_line_height": 42,
+                    "title_color": "",
+                    "text": "",
+                    "text_alignment_desktop": "left",
+                    "text_alignment_mobile": "center",
+                    "flex_direction": "row",
+                    "justify_content": "start",
+                    "align_items": "start",
+                    "row_gap": 20,
+                    "column_gap": 20,
+                    "flex_direction_mobile": "column",
+                    "justify_content_mobile": "center",
+                    "align_items_mobile": "center",
+                    "row_gap_mobile": 20,
+                    "column_gap_mobile": 20
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "highlight_image_item_6wWHKq"
+              ]
+            },
+            "section_inner_qAQ6QY": {
+              "type": "section-inner",
+              "settings": {
+                "desktop_grid_columns": "2",
+                "horizontal_alignment": "start",
+                "vertical_alignment": "start",
+                "desktop_grid_column_gap": 0,
+                "desktop_grid_row_gap": 0,
+                "top_spacing_desktop": 0,
+                "bottom_spacing_desktop": 30,
+                "left_spacing_desktop": 0,
+                "right_spacing_desktop": 0,
+                "mobile_grid_columns": "1",
+                "mobile_horizontal_alignment": "start",
+                "mobile_vertical_alignment": "start",
+                "mobile_grid_column_gap": 0,
+                "mobile_grid_row_gap": 0,
+                "top_spacing_mobile": 0,
+                "bottom_spacing_mobile": 30,
+                "left_spacing_mobile": 20,
+                "right_spacing_mobile": 20
+              },
+              "blocks": {
+                "grid_list_aTxT4k": {
+                  "type": "grid-list",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 40,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 30,
+                    "row_gap_mobile": 30
+                  },
+                  "blocks": {
+                    "heading_block_gbkbFr": {
+                      "type": "heading-block",
+                      "settings": {
+                        "subheading": "",
+                        "text": "<p>FIRST liquid liposomal NMN.</p>",
+                        "tag_select": "h2",
+                        "text_color": "",
+                        "desktop_font_size": 50,
+                        "text_alignment_desktop": "left",
+                        "top_spacing_mobile": 20,
+                        "lr_spacing_mobile": 0,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_block_gbkbFr"
+                  ]
+                },
+                "grid_list_UKGRj3": {
+                  "type": "grid-list",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 25,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 30,
+                    "row_gap_mobile": 40
+                  },
+                  "blocks": {
+                    "text_block_BdfahW": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "settings": {
+                        "text": "<h2>Before the mirror reflects it, your cells already know.</h2>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": false,
+                        "max_width": 0,
+                        "desktop_font_size": 36,
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_EJp8ft": {
+                      "type": "text-block",
+                      "settings": {
+                        "text": "<p>What matters isn't how much you take but how well your body absorbs it.<strong> Cell Renew Tonic by Happy Aging</strong> is formulated for up to 10x better absorption, delivering the right dose with ease and without discomfort.</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": false,
+                        "max_width": 0,
+                        "desktop_font_size": 16,
+                        "text_alignment_desktop": "left",
+                        "mobile_font_size": 16,
+                        "top_spacing_mobile": 20,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_block_BdfahW",
+                    "text_block_EJp8ft"
+                  ]
+                }
+              },
+              "block_order": [
+                "grid_list_aTxT4k",
+                "grid_list_UKGRj3"
+              ]
+            }
+          },
+          "block_order": [
+            "grid_list_Pf4yHh",
+            "section_inner_qAQ6QY"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_WBhNK7",
+        "section_inner_YmreYw"
+      ],
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "top_spacing": 0,
+        "bottom_spacing": 50,
+        "use_top_border": false,
+        "use_bottom_border": false,
+        "full_width_mobile": true,
+        "top_spacing_mobile": 0,
+        "bottom_spacing_mobile": 0,
+        "use_top_border_mobile": false,
+        "use_bottom_border_mobile": false
+      }
+    },
     "marquee_pMqq4Y": {
       "type": "marquee",
       "blocks": {
         "text_F9fHWN": {
           "type": "text",
           "settings": {
-            "text": "Physician-Formulated"
+            "text": "Clinically-Validated Doses"
           }
         },
         "text_z7tkeC": {
           "type": "text",
           "settings": {
-            "text": "Clinically-Validated Doses"
+            "text": "Premium Ingredients"
           }
         },
         "text_8c4bkD": {
           "type": "text",
           "settings": {
-            "text": "Premium Ingredients"
+            "text": "100% Natural"
           }
         },
         "text_LhF6BY": {
           "type": "text",
           "settings": {
-            "text": "100% Natural"
-          }
-        },
-        "text_K6wAUe": {
-          "type": "text",
-          "settings": {
             "text": "Vegan & Gluten-Free"
           }
         },
-        "text_fqxdgb": {
+        "text_qkCpGH": {
           "type": "text",
           "settings": {
             "text": "No Added Sugars"
-          }
-        },
-        "text_gEbBxk": {
-          "type": "text",
-          "settings": {
-            "text": "Incredible Berry Taste"
           }
         }
       },
@@ -130,474 +500,2088 @@
         "text_z7tkeC",
         "text_8c4bkD",
         "text_LhF6BY",
-        "text_K6wAUe",
-        "text_fqxdgb",
-        "text_gEbBxk"
+        "text_qkCpGH"
       ],
       "settings": {}
     },
-    "benefits_TnXkPb": {
-      "type": "benefits",
-      "disabled": true,
+    "landing_section_KWgCJm": {
+      "type": "landing-section",
+      "blocks": {
+        "section_inner_yArRpj": {
+          "type": "section-inner",
+          "name": "Grid (wrapper)",
+          "settings": {
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 20,
+            "left_spacing_desktop": 265,
+            "right_spacing_desktop": 265,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 35,
+            "bottom_spacing_mobile": 20,
+            "left_spacing_mobile": 20,
+            "right_spacing_mobile": 20
+          },
+          "blocks": {
+            "heading_block_GUQqVg": {
+              "type": "heading-block",
+              "name": "Heading block",
+              "settings": {
+                "subheading": "",
+                "text": "<h1>FEEL IT <em>first shifts</em></h1>",
+                "tag_select": "h2",
+                "text_color": "",
+                "desktop_font_size": 50,
+                "text_alignment_desktop": "left",
+                "mobile_font_size": 50,
+                "text_alignment_mobile": "left"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_block_GUQqVg"
+          ]
+        },
+        "section_inner_gGdAUQ": {
+          "type": "section-inner",
+          "name": "Grid (wrapper)",
+          "settings": {
+            "desktop_grid_columns": "2",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 20,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 265,
+            "right_spacing_desktop": 265,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 35,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 20,
+            "right_spacing_mobile": 20
+          },
+          "blocks": {
+            "grid_list_XVQaRQ": {
+              "type": "grid-list",
+              "name": "Grid (simple)",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 40,
+                "row_gap_desktop": 15,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 30,
+                "row_gap_mobile": 30
+              },
+              "blocks": {
+                "image_block_wixqxw": {
+                  "type": "image-block",
+                  "name": "Image block",
+                  "settings": {
+                    "image": "shopify://shop_images/49b28d26857357b14189ec1556aaa502ffec106a.jpg",
+                    "different_mobile_image": false,
+                    "show_on_mobile": true,
+                    "show_on_desktop": true
+                  },
+                  "blocks": {}
+                },
+                "text_block_bLNe3B": {
+                  "type": "text-block",
+                  "name": "Text block",
+                  "settings": {
+                    "text": "<h2>Everyday win</h2>",
+                    "text_color": "",
+                    "text_weight": "normal",
+                    "border-top": false,
+                    "text_alignment_desktop": "left",
+                    "text_alignment_mobile": "left"
+                  },
+                  "blocks": {}
+                },
+                "text_block_DzQCiF": {
+                  "type": "text-block",
+                  "name": "Text block",
+                  "settings": {
+                    "text": "<ul><li>Morning lift off, refreshed before coffee</li><li>Calm drive all day, no highs or crashes</li><li>Cycle friendly balance, mood and weight on track</li><li>Workout carry over, less burn and quick bounce back</li><li>Evening unwind, smooth shift to good sleep</li></ul>",
+                    "text_color": "",
+                    "text_weight": "normal",
+                    "border-top": false,
+                    "desktop_font_size": 16,
+                    "text_alignment_desktop": "left",
+                    "mobile_font_size": 16,
+                    "text_alignment_mobile": "left"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "image_block_wixqxw",
+                "text_block_bLNe3B",
+                "text_block_DzQCiF"
+              ]
+            },
+            "grid_list_dUcrMP": {
+              "type": "grid-list",
+              "name": "Grid (simple)",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 40,
+                "row_gap_desktop": 15,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 30,
+                "row_gap_mobile": 30
+              },
+              "blocks": {
+                "image_block_J6fg7p": {
+                  "type": "image-block",
+                  "name": "Image block",
+                  "settings": {
+                    "image": "shopify://shop_images/466309ad186a94160c69b0c6aaf062134d6e8116.jpg",
+                    "different_mobile_image": false,
+                    "show_on_mobile": true,
+                    "show_on_desktop": true
+                  },
+                  "blocks": {}
+                },
+                "text_block_GRJ9tN": {
+                  "type": "text-block",
+                  "name": "Text block",
+                  "settings": {
+                    "text": "<h2>Why it happens</h2>",
+                    "text_color": "",
+                    "text_weight": "normal",
+                    "border-top": false,
+                    "desktop_font_size": 0,
+                    "text_alignment_desktop": "left",
+                    "mobile_font_size": 48,
+                    "text_alignment_mobile": "left"
+                  },
+                  "blocks": {}
+                },
+                "text_block_YDUF8E": {
+                  "type": "text-block",
+                  "name": "Text block",
+                  "settings": {
+                    "text": "<ul><li>Morning lift off, refreshed before coffee</li><li>Calm drive all day, no highs or crashes</li><li>Cycle friendly balance, mood and weight on track</li><li>Workout carry over, less burn and quick bounce back</li><li>Evening unwind, smooth shift to good sleep</li></ul>",
+                    "text_color": "",
+                    "text_weight": "normal",
+                    "border-top": false,
+                    "desktop_font_size": 16,
+                    "text_alignment_desktop": "left",
+                    "mobile_font_size": 16,
+                    "text_alignment_mobile": "left"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "image_block_J6fg7p",
+                "text_block_GRJ9tN",
+                "text_block_YDUF8E"
+              ]
+            }
+          },
+          "block_order": [
+            "grid_list_XVQaRQ",
+            "grid_list_dUcrMP"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_yArRpj",
+        "section_inner_gGdAUQ"
+      ],
+      "custom_css": [
+        ".text-block ul li {list-style: inside; padding: 10px;}"
+      ],
+      "name": "Landing Section",
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "top_spacing": 70,
+        "bottom_spacing": 70,
+        "use_top_border": false,
+        "use_bottom_border": false,
+        "full_width_mobile": true,
+        "top_spacing_mobile": 0,
+        "bottom_spacing_mobile": 0,
+        "use_top_border_mobile": false,
+        "use_bottom_border_mobile": false
+      }
+    },
+    "landing_section_ExiDxD": {
+      "type": "landing-section",
+      "blocks": {
+        "section_inner_jMigaK": {
+          "type": "section-inner",
+          "name": "Grid (wrapper)",
+          "settings": {
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 50,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 35,
+            "left_spacing_mobile": 20,
+            "right_spacing_mobile": 20
+          },
+          "blocks": {
+            "grid_list_GratK3": {
+              "type": "grid-list",
+              "name": "Grid (simple)",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 40,
+                "row_gap_desktop": 40,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 30,
+                "row_gap_mobile": 30
+              },
+              "blocks": {
+                "heading_block_pKVY9k": {
+                  "type": "heading-block",
+                  "name": "Heading block",
+                  "settings": {
+                    "subheading": "",
+                    "text": "<p>WHY HAPPY AGING <em>is your advantage</em></p>",
+                    "tag_select": "h2",
+                    "text_color": "",
+                    "letter_spacing": 0,
+                    "desktop_line_height": 0,
+                    "top_spacing_desktop": 0,
+                    "text_alignment_desktop": "center",
+                    "mobile_font_size": 48,
+                    "text_alignment_mobile": "left"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "heading_block_pKVY9k"
+              ]
+            },
+            "section_inner_HpigUY": {
+              "type": "section-inner",
+              "name": "Grid (wrapper)",
+              "settings": {
+                "desktop_grid_columns": "5",
+                "horizontal_alignment": "start",
+                "vertical_alignment": "start",
+                "desktop_grid_column_gap": 30,
+                "desktop_grid_row_gap": 0,
+                "top_spacing_desktop": 0,
+                "bottom_spacing_desktop": 0,
+                "left_spacing_desktop": 70,
+                "right_spacing_desktop": 70,
+                "mobile_grid_columns": "2",
+                "mobile_horizontal_alignment": "start",
+                "mobile_vertical_alignment": "start",
+                "mobile_grid_column_gap": 20,
+                "mobile_grid_row_gap": 50,
+                "top_spacing_mobile": 35,
+                "bottom_spacing_mobile": 0,
+                "left_spacing_mobile": 0,
+                "right_spacing_mobile": 0
+              },
+              "blocks": {
+                "grid_list_9tFUGK": {
+                  "type": "grid-list",
+                  "name": "Grid (simple)",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 0,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 30,
+                    "row_gap_mobile": 0
+                  },
+                  "blocks": {
+                    "heading_block_ptKwtR": {
+                      "type": "heading-block",
+                      "name": "Heading block",
+                      "settings": {
+                        "subheading": "",
+                        "text": "<p>One</p>",
+                        "tag_select": "h2",
+                        "text_color": "",
+                        "desktop_font_size": 0,
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_pGC8Tw": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "disabled": true,
+                      "settings": {
+                        "text": "<p>One</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": false,
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_hNGj3F": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "settings": {
+                        "text": "<p>ritual solves energy dips, hormone swings and supplement overload</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": true,
+                        "desktop_font_size": 16,
+                        "top_spacing_desktop": 20,
+                        "text_alignment_desktop": "left",
+                        "mobile_font_size": 16,
+                        "top_spacing_mobile": 20,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_block_ptKwtR",
+                    "text_block_pGC8Tw",
+                    "text_block_hNGj3F"
+                  ]
+                },
+                "grid_list_Q4hBYK": {
+                  "type": "grid-list",
+                  "name": "Grid (simple)",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 0,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 30,
+                    "row_gap_mobile": 0
+                  },
+                  "blocks": {
+                    "heading_block_AkQakG": {
+                      "type": "heading-block",
+                      "name": "Heading block",
+                      "settings": {
+                        "subheading": "",
+                        "text": "<p>400 mg</p>",
+                        "tag_select": "h2",
+                        "text_color": "",
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_AA8Px4": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "disabled": true,
+                      "settings": {
+                        "text": "<p>One</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": false,
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_Gya3pg": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "settings": {
+                        "text": "<p>NMN in liposomal form powers mitochondria without caffeine spikes</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": true,
+                        "desktop_font_size": 16,
+                        "top_spacing_desktop": 20,
+                        "text_alignment_desktop": "left",
+                        "top_spacing_mobile": 20,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_block_AkQakG",
+                    "text_block_AA8Px4",
+                    "text_block_Gya3pg"
+                  ]
+                },
+                "grid_list_RJCRew": {
+                  "type": "grid-list",
+                  "name": "Grid (simple)",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 0,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 30,
+                    "row_gap_mobile": 0
+                  },
+                  "blocks": {
+                    "heading_block_iHzN3H": {
+                      "type": "heading-block",
+                      "name": "Heading block",
+                      "settings": {
+                        "subheading": "",
+                        "text": "<p>Clean</p>",
+                        "tag_select": "h2",
+                        "text_color": "",
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_fyhwdJ": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "disabled": true,
+                      "settings": {
+                        "text": "<p>One</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": false,
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_LUiRbt": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "settings": {
+                        "text": "<p>label, sugar free and third party tested for peace of mind</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": true,
+                        "desktop_font_size": 16,
+                        "top_spacing_desktop": 20,
+                        "text_alignment_desktop": "left",
+                        "mobile_font_size": 16,
+                        "top_spacing_mobile": 20,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_block_iHzN3H",
+                    "text_block_fyhwdJ",
+                    "text_block_LUiRbt"
+                  ]
+                },
+                "grid_list_BwzMKy": {
+                  "type": "grid-list",
+                  "name": "Grid (simple)",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 0,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 30,
+                    "row_gap_mobile": 0
+                  },
+                  "blocks": {
+                    "heading_block_q7taLp": {
+                      "type": "heading-block",
+                      "name": "Heading block",
+                      "settings": {
+                        "subheading": "",
+                        "text": "<p>Quick</p>",
+                        "tag_select": "h2",
+                        "text_color": "",
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_EBgipz": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "disabled": true,
+                      "settings": {
+                        "text": "<p>One</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": false,
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_FeLFaV": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "settings": {
+                        "text": "<p>sip format fits the busiest mornings</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": true,
+                        "desktop_font_size": 16,
+                        "top_spacing_desktop": 20,
+                        "text_alignment_desktop": "left",
+                        "mobile_font_size": 16,
+                        "mobile_line_height": 0,
+                        "top_spacing_mobile": 20,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_block_q7taLp",
+                    "text_block_EBgipz",
+                    "text_block_FeLFaV"
+                  ]
+                },
+                "grid_list_9eVrbX": {
+                  "type": "grid-list",
+                  "name": "Grid (simple)",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 0,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 30,
+                    "row_gap_mobile": 0
+                  },
+                  "blocks": {
+                    "heading_block_yfYHVF": {
+                      "type": "heading-block",
+                      "name": "Heading block",
+                      "settings": {
+                        "subheading": "",
+                        "text": "<p>Science</p>",
+                        "tag_select": "h2",
+                        "text_color": "",
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_hgW3DR": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "disabled": true,
+                      "settings": {
+                        "text": "<p>One</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": false,
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_YpUc8B": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "settings": {
+                        "text": "<p>backed results and full transparency build lifelong trust</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": true,
+                        "desktop_font_size": 16,
+                        "top_spacing_desktop": 20,
+                        "text_alignment_desktop": "left",
+                        "mobile_font_size": 16,
+                        "top_spacing_mobile": 20,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_block_yfYHVF",
+                    "text_block_hgW3DR",
+                    "text_block_YpUc8B"
+                  ]
+                }
+              },
+              "block_order": [
+                "grid_list_9tFUGK",
+                "grid_list_Q4hBYK",
+                "grid_list_RJCRew",
+                "grid_list_BwzMKy",
+                "grid_list_9eVrbX"
+              ]
+            }
+          },
+          "block_order": [
+            "grid_list_GratK3",
+            "section_inner_HpigUY"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_jMigaK"
+      ],
+      "custom_css": [
+        ".text-block.border-t {border-color: #707070 !important;}"
+      ],
+      "name": "Landing Section",
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "top_spacing": 70,
+        "bottom_spacing": 70,
+        "use_top_border": true,
+        "use_bottom_border": false,
+        "full_width_mobile": true,
+        "top_spacing_mobile": 70,
+        "bottom_spacing_mobile": 0,
+        "use_top_border_mobile": false,
+        "use_bottom_border_mobile": false
+      }
+    },
+    "image_with_text_blocks_gAjTfr": {
+      "type": "image-with-text-blocks",
+      "blocks": {
+        "text_nLEfLV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>BUILD TO PERFORM, Designed to fit you</p>",
+            "text_style": "heading",
+            "has_border": false,
+            "center_mobile": false
+          }
+        },
+        "text_GcHhgp": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Clinically proven NMN raised blood NAD⁺ by up to 60% in eight weeks</h3>",
+            "text_style": "heading",
+            "has_border": false,
+            "center_mobile": false
+          }
+        },
+        "spacing_EbYH8e": {
+          "type": "spacing",
+          "disabled": true,
+          "settings": {
+            "spacing_desktop": 50,
+            "spacing_mobile": 0,
+            "fill_all_desktop": false
+          }
+        },
+        "spacing_A7Nw66": {
+          "type": "spacing",
+          "settings": {
+            "spacing_desktop": 20,
+            "spacing_mobile": 40,
+            "fill_all_desktop": false
+          }
+        },
+        "text_QghNzh": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Sharper mental clarity and reduced brain fog</h3>",
+            "text_style": "body",
+            "has_border": true,
+            "center_mobile": false
+          }
+        },
+        "text_BFqHcM": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Deeper all day cellular energy from higher NAD⁺</h3>",
+            "text_style": "body",
+            "has_border": true,
+            "center_mobile": false
+          }
+        },
+        "text_FHXk9x": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Greater physical endurance after sixty days </h3>",
+            "text_style": "body",
+            "has_border": true,
+            "center_mobile": false
+          }
+        },
+        "text_AaQap9": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Improved insulin sensitivity and hormone balance in women</h3>",
+            "text_style": "body",
+            "has_border": true,
+            "center_mobile": false
+          }
+        },
+        "text_Ucicgf": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Improved insulin sensitivity and hormone balance in women</h3>",
+            "text_style": "body",
+            "has_border": true,
+            "center_mobile": false
+          }
+        },
+        "text_fAHjYt": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Biological age held steady in sixty days </h3>",
+            "text_style": "body",
+            "has_border": true,
+            "center_mobile": false
+          }
+        },
+        "text_dtFzJp": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Fruity, easy taste for daily use</h3>",
+            "text_style": "body",
+            "has_border": false,
+            "center_mobile": false
+          }
+        },
+        "spacing_GFqXPi": {
+          "type": "spacing",
+          "settings": {
+            "spacing_desktop": 20,
+            "spacing_mobile": 20,
+            "fill_all_desktop": false
+          }
+        },
+        "button_iKqTjh": {
+          "type": "button",
+          "settings": {
+            "button_text": "Buy Now",
+            "button_link": "#",
+            "background_color": "#000000",
+            "text_color": "#ffffff",
+            "border_color": "#000000",
+            "hover_background_color": "#333333",
+            "hover_text_color": "#ffffff",
+            "hover_border_color": "#333333",
+            "font_size": 32,
+            "font_weight": "400",
+            "width_type": "custom",
+            "custom_width": 50,
+            "min_width": 0,
+            "alignment": "left",
+            "padding_vertical": 10,
+            "padding_horizontal": 32,
+            "border_width": 1,
+            "border_radius": 0,
+            "mobile_full_width": true
+          }
+        }
+      },
+      "block_order": [
+        "text_nLEfLV",
+        "text_GcHhgp",
+        "spacing_EbYH8e",
+        "spacing_A7Nw66",
+        "text_QghNzh",
+        "text_BFqHcM",
+        "text_FHXk9x",
+        "text_AaQap9",
+        "text_Ucicgf",
+        "text_fAHjYt",
+        "text_dtFzJp",
+        "spacing_GFqXPi",
+        "button_iKqTjh"
+      ],
+      "custom_css": [
+        "div.leading-5.border-b {border-color: #d7d7d7; padding-bottom: 5px; margin-bottom: 5px;}",
+        "div.leading-5 h3 {font-size: 28px;}"
+      ],
       "settings": {
         "title": "",
         "text": "",
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/4552553829234937b9cf48e51b7741cb.mp4",
-        "show_border_top": true
+        "image_desk": "shopify://shop_images/8d4290a49df89b3618f30e5773e68ad442b8ab1e.jpg",
+        "image_height_desk": "fit",
+        "image_mob": "shopify://shop_images/8d4290a49df89b3618f30e5773e68ad442b8ab1e.jpg",
+        "image_height_mob": "adapt",
+        "width": "full",
+        "width_mobile": "full",
+        "image_first": false,
+        "image_first_mob": false,
+        "image_large": false,
+        "show_border": false,
+        "show_border_top": true,
+        "hide_border_mobile": false,
+        "remove_py_content": false,
+        "small_content": false,
+        "wrap_image_mobile": false,
+        "wrap_content_mobile": true,
+        "spacing_desktop": "lg:py-0",
+        "spacing_mobile": "py-0"
       }
     },
-    "fifty_fifty_Sneidp": {
-      "type": "fifty-fifty",
+    "landing_section_3RqYFU": {
+      "type": "landing-section",
       "blocks": {
-        "text_block_aEgn8V": {
-          "type": "text_block",
+        "section_inner_W3tNRM": {
+          "type": "section-inner",
+          "name": "Grid (wrapper)",
           "settings": {
-            "title": "THE POWER OF <em>epigenetics</em>",
-            "text": "<p>Every choice you make—from what you eat to how you move and manage stress—shapes how you age and how your DNA is expressed. Tracking your biological age offers powerful insights into how these daily decisions affect your health over time.</p>"
+            "desktop_grid_columns": "1",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 20,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "heading_block_g9fQLV": {
+              "type": "heading-block",
+              "name": "Heading block",
+              "settings": {
+                "subheading": "",
+                "text": "<p>HOW NMN WORKS <em>for your cells</em></p>",
+                "tag_select": "h2",
+                "text_color": "",
+                "desktop_font_size": 50,
+                "text_alignment_desktop": "left",
+                "mobile_font_size": 50,
+                "text_alignment_mobile": "left"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_block_g9fQLV"
+          ]
+        },
+        "section_inner_KGEFVa": {
+          "type": "section-inner",
+          "name": "Grid (wrapper)",
+          "settings": {
+            "desktop_grid_columns": "3",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 0,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 0,
+            "bottom_spacing_desktop": 0,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 35,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "section_inner_einebR": {
+              "type": "section-inner",
+              "name": "Grid (wrapper)",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "horizontal_alignment": "start",
+                "vertical_alignment": "start",
+                "desktop_grid_column_gap": 0,
+                "desktop_grid_row_gap": 20,
+                "top_spacing_desktop": 0,
+                "bottom_spacing_desktop": 0,
+                "left_spacing_desktop": 0,
+                "right_spacing_desktop": 50,
+                "mobile_grid_columns": "1",
+                "mobile_horizontal_alignment": "start",
+                "mobile_vertical_alignment": "start",
+                "mobile_grid_column_gap": 0,
+                "mobile_grid_row_gap": 0,
+                "top_spacing_mobile": 0,
+                "bottom_spacing_mobile": 0,
+                "left_spacing_mobile": 0,
+                "right_spacing_mobile": 0
+              },
+              "blocks": {
+                "grid_list_LdfKtp": {
+                  "type": "grid-list",
+                  "name": "Grid (simple)",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 0,
+                    "row_gap_desktop": 0,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 0,
+                    "row_gap_mobile": 0
+                  },
+                  "blocks": {
+                    "ai_gen_block_e8307fc_mtrpJh": {
+                      "type": "ai_gen_block_e8307fc",
+                      "name": "Icon Block",
+                      "settings": {
+                        "icon_image": "shopify://shop_images/icon_7.png",
+                        "alt_text": "",
+                        "link": "",
+                        "alignment": "flex-start",
+                        "icon_width": 45,
+                        "icon_width_mobile": 45,
+                        "icon_padding": 8,
+                        "padding_top": 4,
+                        "padding_bottom": 4,
+                        "padding_top_mobile": 16,
+                        "padding_bottom_mobile": 16,
+                        "background_color": "rgba(0,0,0,0)",
+                        "border_radius": 8,
+                        "border_width": 0,
+                        "border_color": "#e0e0e0",
+                        "hover_scale": 1.1
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_EBcM9m": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "settings": {
+                        "text": "<h3>Every cell contains a NAD⁺ battery that drives energy, repair and longevity.</h3>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": false,
+                        "desktop_font_size": 16,
+                        "text_alignment_desktop": "left",
+                        "mobile_font_size": 16,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "ai_gen_block_e8307fc_mtrpJh",
+                    "text_block_EBcM9m"
+                  ]
+                },
+                "grid_list_eDGmxC": {
+                  "type": "grid-list",
+                  "name": "Grid (simple)",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 0,
+                    "row_gap_desktop": 0,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 0,
+                    "row_gap_mobile": 0
+                  },
+                  "blocks": {
+                    "ai_gen_block_e8307fc_MD8FaW": {
+                      "type": "ai_gen_block_e8307fc",
+                      "name": "Icon Block",
+                      "settings": {
+                        "icon_image": "shopify://shop_images/Icons_2.png",
+                        "alt_text": "",
+                        "link": "",
+                        "alignment": "flex-start",
+                        "icon_width": 45,
+                        "icon_width_mobile": 50,
+                        "icon_padding": 8,
+                        "padding_top": 4,
+                        "padding_bottom": 4,
+                        "padding_top_mobile": 16,
+                        "padding_bottom_mobile": 16,
+                        "background_color": "rgba(0,0,0,0)",
+                        "border_radius": 8,
+                        "border_width": 0,
+                        "border_color": "#e0e0e0",
+                        "hover_scale": 1.1
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_yVAyLD": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "settings": {
+                        "text": "<h3>Every cell contains a NAD⁺ battery that drives energy, repair and longevity.</h3>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": false,
+                        "desktop_font_size": 16,
+                        "text_alignment_desktop": "left",
+                        "mobile_font_size": 16,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "ai_gen_block_e8307fc_MD8FaW",
+                    "text_block_yVAyLD"
+                  ]
+                },
+                "grid_list_Wy3bat": {
+                  "type": "grid-list",
+                  "name": "Grid (simple)",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 0,
+                    "row_gap_desktop": 0,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 0,
+                    "row_gap_mobile": 0
+                  },
+                  "blocks": {
+                    "ai_gen_block_e8307fc_qkywbz": {
+                      "type": "ai_gen_block_e8307fc",
+                      "name": "Icon Block",
+                      "settings": {
+                        "icon_image": "shopify://shop_images/Component_4.png",
+                        "alt_text": "",
+                        "link": "",
+                        "alignment": "flex-start",
+                        "icon_width": 45,
+                        "icon_width_mobile": 45,
+                        "icon_padding": 8,
+                        "padding_top": 4,
+                        "padding_bottom": 4,
+                        "padding_top_mobile": 16,
+                        "padding_bottom_mobile": 16,
+                        "background_color": "rgba(0,0,0,0)",
+                        "border_radius": 8,
+                        "border_width": 0,
+                        "border_color": "#e0e0e0",
+                        "hover_scale": 1.1
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_yWLTLg": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "settings": {
+                        "text": "<h3>Every cell contains a NAD⁺ battery that drives energy, repair and longevity.</h3>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": false,
+                        "desktop_font_size": 16,
+                        "text_alignment_desktop": "left",
+                        "mobile_font_size": 16,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "ai_gen_block_e8307fc_qkywbz",
+                    "text_block_yWLTLg"
+                  ]
+                }
+              },
+              "block_order": [
+                "grid_list_LdfKtp",
+                "grid_list_eDGmxC",
+                "grid_list_Wy3bat"
+              ]
+            },
+            "section_inner_MQ4cBF": {
+              "type": "section-inner",
+              "name": "Grid (wrapper)",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "horizontal_alignment": "center",
+                "vertical_alignment": "center",
+                "desktop_grid_column_gap": 0,
+                "desktop_grid_row_gap": 0,
+                "top_spacing_desktop": 0,
+                "bottom_spacing_desktop": 0,
+                "left_spacing_desktop": 0,
+                "right_spacing_desktop": 0,
+                "mobile_max_width": 0,
+                "mobile_grid_columns": "1",
+                "mobile_horizontal_alignment": "start",
+                "mobile_vertical_alignment": "start",
+                "mobile_grid_column_gap": 0,
+                "mobile_grid_row_gap": 0,
+                "top_spacing_mobile": 25,
+                "bottom_spacing_mobile": 20,
+                "left_spacing_mobile": 0,
+                "right_spacing_mobile": 0
+              },
+              "blocks": {
+                "highlight_image_item_QweEBC": {
+                  "type": "highlight-image-item",
+                  "name": "Highlight image item",
+                  "settings": {
+                    "image": "shopify://shop_images/MNM.png",
+                    "image_max_width_mobile": 10000,
+                    "title": "",
+                    "title_size": 30,
+                    "title_line_height": 42,
+                    "title_color": "",
+                    "text": "",
+                    "text_alignment_desktop": "left",
+                    "text_alignment_mobile": "center",
+                    "flex_direction": "row",
+                    "justify_content": "start",
+                    "align_items": "start",
+                    "row_gap": 20,
+                    "column_gap": 20,
+                    "flex_direction_mobile": "column",
+                    "justify_content_mobile": "center",
+                    "align_items_mobile": "center",
+                    "row_gap_mobile": 20,
+                    "column_gap_mobile": 20
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "highlight_image_item_QweEBC"
+              ]
+            },
+            "section_inner_bAxLpg": {
+              "type": "section-inner",
+              "name": "Grid (wrapper)",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "horizontal_alignment": "start",
+                "vertical_alignment": "start",
+                "desktop_grid_column_gap": 0,
+                "desktop_grid_row_gap": 0,
+                "top_spacing_desktop": 0,
+                "bottom_spacing_desktop": 0,
+                "left_spacing_desktop": 50,
+                "right_spacing_desktop": 0,
+                "mobile_grid_columns": "1",
+                "mobile_horizontal_alignment": "start",
+                "mobile_vertical_alignment": "start",
+                "mobile_grid_column_gap": 0,
+                "mobile_grid_row_gap": 0,
+                "top_spacing_mobile": 0,
+                "bottom_spacing_mobile": 0,
+                "left_spacing_mobile": 0,
+                "right_spacing_mobile": 0
+              },
+              "blocks": {
+                "section_inner_ApnLBe": {
+                  "type": "section-inner",
+                  "name": "Grid (wrapper)",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "horizontal_alignment": "start",
+                    "vertical_alignment": "start",
+                    "desktop_grid_column_gap": 0,
+                    "desktop_grid_row_gap": 20,
+                    "top_spacing_desktop": 0,
+                    "bottom_spacing_desktop": 0,
+                    "left_spacing_desktop": 0,
+                    "right_spacing_desktop": 50,
+                    "mobile_grid_columns": "1",
+                    "mobile_horizontal_alignment": "start",
+                    "mobile_vertical_alignment": "start",
+                    "mobile_grid_column_gap": 0,
+                    "mobile_grid_row_gap": 0,
+                    "top_spacing_mobile": 0,
+                    "bottom_spacing_mobile": 0,
+                    "left_spacing_mobile": 0,
+                    "right_spacing_mobile": 0
+                  },
+                  "blocks": {
+                    "grid_list_pqk4a3": {
+                      "type": "grid-list",
+                      "name": "Grid (simple)",
+                      "settings": {
+                        "desktop_grid_columns": "1",
+                        "column_gap_desktop": 0,
+                        "row_gap_desktop": 0,
+                        "mobile_grid_columns": "1",
+                        "column_gap_mobile": 0,
+                        "row_gap_mobile": 0
+                      },
+                      "blocks": {
+                        "ai_gen_block_e8307fc_E3iDrC": {
+                          "type": "ai_gen_block_e8307fc",
+                          "name": "Icon Block",
+                          "settings": {
+                            "icon_image": "shopify://shop_images/Icons_3.png",
+                            "alt_text": "",
+                            "link": "",
+                            "alignment": "flex-end",
+                            "icon_width": 45,
+                            "icon_width_mobile": 45,
+                            "icon_padding": 8,
+                            "padding_top": 4,
+                            "padding_bottom": 4,
+                            "padding_top_mobile": 16,
+                            "padding_bottom_mobile": 16,
+                            "background_color": "rgba(0,0,0,0)",
+                            "border_radius": 8,
+                            "border_width": 0,
+                            "border_color": "#e0e0e0",
+                            "hover_scale": 1.1
+                          },
+                          "blocks": {}
+                        },
+                        "text_block_GMeQRr": {
+                          "type": "text-block",
+                          "name": "Text block",
+                          "settings": {
+                            "text": "<h3>Every cell contains a NAD⁺ battery that drives energy, repair and longevity.</h3>",
+                            "text_color": "",
+                            "text_weight": "normal",
+                            "border-top": false,
+                            "desktop_font_size": 16,
+                            "text_alignment_desktop": "right",
+                            "mobile_font_size": 16,
+                            "text_alignment_mobile": "left"
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "ai_gen_block_e8307fc_E3iDrC",
+                        "text_block_GMeQRr"
+                      ]
+                    },
+                    "grid_list_TyYWRe": {
+                      "type": "grid-list",
+                      "name": "Grid (simple)",
+                      "settings": {
+                        "desktop_grid_columns": "1",
+                        "column_gap_desktop": 0,
+                        "row_gap_desktop": 0,
+                        "mobile_grid_columns": "1",
+                        "column_gap_mobile": 0,
+                        "row_gap_mobile": 0
+                      },
+                      "blocks": {
+                        "ai_gen_block_e8307fc_NtbyeH": {
+                          "type": "ai_gen_block_e8307fc",
+                          "name": "Icon Block",
+                          "settings": {
+                            "icon_image": "shopify://shop_images/Icons_4.png",
+                            "alt_text": "",
+                            "link": "",
+                            "alignment": "flex-end",
+                            "icon_width": 45,
+                            "icon_width_mobile": 45,
+                            "icon_padding": 8,
+                            "padding_top": 4,
+                            "padding_bottom": 4,
+                            "padding_top_mobile": 16,
+                            "padding_bottom_mobile": 16,
+                            "background_color": "rgba(0,0,0,0)",
+                            "border_radius": 8,
+                            "border_width": 0,
+                            "border_color": "#e0e0e0",
+                            "hover_scale": 1.1
+                          },
+                          "blocks": {}
+                        },
+                        "text_block_gbe6Vy": {
+                          "type": "text-block",
+                          "name": "Text block",
+                          "settings": {
+                            "text": "<h3>Every cell contains a NAD⁺ battery that drives energy, repair and longevity.</h3>",
+                            "text_color": "",
+                            "text_weight": "normal",
+                            "border-top": false,
+                            "desktop_font_size": 16,
+                            "text_alignment_desktop": "right",
+                            "mobile_font_size": 16,
+                            "text_alignment_mobile": "left"
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "ai_gen_block_e8307fc_NtbyeH",
+                        "text_block_gbe6Vy"
+                      ]
+                    }
+                  },
+                  "block_order": [
+                    "grid_list_pqk4a3",
+                    "grid_list_TyYWRe"
+                  ]
+                }
+              },
+              "block_order": [
+                "section_inner_ApnLBe"
+              ]
+            }
+          },
+          "block_order": [
+            "section_inner_einebR",
+            "section_inner_MQ4cBF",
+            "section_inner_bAxLpg"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_W3tNRM",
+        "section_inner_KGEFVa"
+      ],
+      "name": "Landing Section",
+      "settings": {
+        "background_color": "",
+        "full_width": true,
+        "top_spacing": 70,
+        "bottom_spacing": 70,
+        "use_top_border": true,
+        "use_bottom_border": false,
+        "full_width_mobile": false,
+        "top_spacing_mobile": 35,
+        "bottom_spacing_mobile": 0,
+        "use_top_border_mobile": false,
+        "use_bottom_border_mobile": false
+      }
+    },
+    "results_list_LqxNh4": {
+      "type": "results-list",
+      "blocks": {
+        "result_item_zqgCJN": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify://shop_images/body_cell_in_pinkish_color.png",
+            "title": "DAY 1",
+            "text": "<p>Cellular activation starts, NAD⁺ pathways switch on</p>"
+          }
+        },
+        "result_item_B9jKrw": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify://shop_images/Badge_1.png",
+            "title": "DAY 7",
+            "text": "<p>Brighter mornings, lighter fatigue, clearer mind</p>"
+          }
+        },
+        "result_item_KtxBQ9": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify://shop_images/Badge_2.png",
+            "title": "DAY 30",
+            "text": "<p>Balanced energy, steadier mood, sharper focus</p>"
+          }
+        },
+        "result_item_rqhTek": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify://shop_images/Badge_3.png",
+            "title": "DAY 60",
+            "text": "<p>Noticeable resilience, faster recovery, lasting strength</p>"
+          }
+        },
+        "result_item_9ia4b9": {
+          "type": "result_item",
+          "settings": {
+            "image": "shopify://shop_images/Badge_4.png",
+            "title": "DAY 90",
+            "text": "<p>Plus consolidated vitality, sustainable clarity, empowered aging</p>"
           }
         }
       },
       "block_order": [
-        "text_block_aEgn8V"
+        "result_item_zqgCJN",
+        "result_item_B9jKrw",
+        "result_item_KtxBQ9",
+        "result_item_rqhTek",
+        "result_item_9ia4b9"
       ],
+      "custom_css": [
+        "h3.heading {border-bottom: 1px solid; border-top: none; padding-top: 0;}",
+        "h2.heading {font-size: 50px !important;}",
+        ".text-xs.leading-5 p {transition-duration: 0.3s; font-size: 22px; font-family: var(--font-heading-family); opacity: 0;}",
+        ".d-grid .d-grid:hover .text-xs.leading-5 p {opacity: 1;}",
+        "@media screen and (max-width: 500px) {.text-xs.leading-5 p {opacity: 1 !important; font-family: var(--font-heading-family); font-size: 24px; }}"
+      ],
+      "name": "Results List",
       "settings": {
-        "image": "shopify://shop_images/ha-ff_11zon.jpg"
+        "title": "YOUR NMN JOURNEY : <em>Vitality Milestones</em>"
       }
     },
-    "key_points": {
-      "type": "key-points",
+    "landing_section_nqCRrp": {
+      "type": "landing-section",
       "blocks": {
-        "slide_item_JRRBDw": {
-          "type": "slide_item",
+        "section_inner_jaGitq": {
+          "type": "section-inner",
           "settings": {
-            "slide_item_title": "OMICmAge",
-            "slide_item_eyebrow": "Developed With Harvard University",
-            "slide_item_text": "The OMICmAge algorithm, developed with Harvard University, offers the most advanced way to understand your biological age. It analyzes proteins, metabolites, and clinical biomarkers to provide a precise picture of how your body is aging. More than just measuring age, OMICmAge reveals the factors influencing your aging process."
+            "desktop_grid_columns": "2",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 50,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 70,
+            "bottom_spacing_desktop": 70,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "grid_list_8NRiw8": {
+              "type": "grid-list",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 40,
+                "row_gap_desktop": 40,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 30,
+                "row_gap_mobile": 30
+              },
+              "blocks": {
+                "image_block_4rVcUP": {
+                  "type": "image-block",
+                  "settings": {
+                    "image": "shopify://shop_images/renew-tonic-page.png",
+                    "different_mobile_image": false,
+                    "show_on_mobile": true,
+                    "show_on_desktop": true
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "image_block_4rVcUP"
+              ]
+            },
+            "section_inner_edEAQq": {
+              "type": "section-inner",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "horizontal_alignment": "start",
+                "vertical_alignment": "flex-between",
+                "desktop_grid_column_gap": 0,
+                "desktop_grid_row_gap": 0,
+                "top_spacing_desktop": 0,
+                "bottom_spacing_desktop": 0,
+                "left_spacing_desktop": 0,
+                "right_spacing_desktop": 70,
+                "mobile_grid_columns": "1",
+                "mobile_horizontal_alignment": "start",
+                "mobile_vertical_alignment": "center",
+                "mobile_grid_column_gap": 0,
+                "mobile_grid_row_gap": 50,
+                "top_spacing_mobile": 20,
+                "bottom_spacing_mobile": 20,
+                "left_spacing_mobile": 0,
+                "right_spacing_mobile": 0
+              },
+              "blocks": {
+                "grid_list_39DAGw": {
+                  "type": "grid-list",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 20,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 30,
+                    "row_gap_mobile": 15
+                  },
+                  "blocks": {
+                    "heading_block_h8V6Bc": {
+                      "type": "heading-block",
+                      "settings": {
+                        "subheading": "",
+                        "text": "<h2>TAKE BACK <em>your energy</em></h2><h4>Clinically proven NMN raised blood NAD⁺ by up to 60% in eight weeks</h4>",
+                        "tag_select": "h1",
+                        "text_color": "",
+                        "desktop_font_size": 0,
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_3Rzw4W": {
+                      "type": "text-block",
+                      "name": "Text block",
+                      "settings": {
+                        "text": "<p>A single teaspoon delivers 400 mg NMN in liposomal form, giving your body up to 10x more usable NMN than standard capsules. Expect faster uptake, real energy, sharper focus in the first week.</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": false,
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "ai_gen_block_ab0bec8_dRmymN": {
+                      "type": "ai_gen_block_ab0bec8",
+                      "settings": {
+                        "desktop_spacing": 15,
+                        "mobile_spacing": 10
+                      },
+                      "blocks": {}
+                    },
+                    "ai_gen_block_3608cf6_FRaWaP": {
+                      "type": "ai_gen_block_3608cf6",
+                      "settings": {
+                        "button_text": "Buy Now",
+                        "button_link": "#",
+                        "background_color": "#000000",
+                        "text_color": "#ffffff",
+                        "border_color": "#000000",
+                        "hover_background_color": "#333333",
+                        "hover_text_color": "#ffffff",
+                        "hover_border_color": "#333333",
+                        "font_size": 28,
+                        "font_weight": "400",
+                        "width_type": "custom",
+                        "custom_width": 55,
+                        "min_width": 0,
+                        "alignment": "left",
+                        "padding_vertical": 10,
+                        "padding_horizontal": 32,
+                        "border_width": 1,
+                        "border_radius": 0,
+                        "mobile_full_width": true
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_block_h8V6Bc",
+                    "text_block_3Rzw4W",
+                    "ai_gen_block_ab0bec8_dRmymN",
+                    "ai_gen_block_3608cf6_FRaWaP"
+                  ]
+                },
+                "grid_list_eF7r7e": {
+                  "type": "grid-list",
+                  "disabled": true,
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 0,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 0,
+                    "row_gap_mobile": 15
+                  },
+                  "blocks": {
+                    "text_block_EnVxEh": {
+                      "type": "text-block",
+                      "settings": {
+                        "text": "<p>HOW TO MAKE <br/><br/>Mix one scoop per day with water, almond milk, or your favorite smoothie.</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": true,
+                        "top_spacing_desktop": 10,
+                        "text_alignment_desktop": "left",
+                        "top_spacing_mobile": 10,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "heading_block_wAMPBM": {
+                      "type": "heading-block",
+                      "disabled": true,
+                      "settings": {
+                        "subheading": "",
+                        "text": "",
+                        "tag_select": "h2",
+                        "text_color": "",
+                        "desktop_line_height": 0,
+                        "top_spacing_desktop": 40,
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_JCM36W": {
+                      "type": "text-block",
+                      "disabled": true,
+                      "settings": {
+                        "text": "<p>WHEN TO USE<br/><br/>Ideal after workouts or anytime you need a clean, plant-based energy boost</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": true,
+                        "desktop_line_height": 0,
+                        "top_spacing_desktop": 10,
+                        "text_alignment_desktop": "left",
+                        "top_spacing_mobile": 10,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "ai_gen_block_89db828_8PtqA6": {
+                      "type": "ai_gen_block_89db828",
+                      "settings": {
+                        "button_text": "Buy Now",
+                        "sold_out_text": "Sold Out",
+                        "show_icon": false,
+                        "alignment": "flex-start",
+                        "min_width": 200,
+                        "padding_vertical": 14,
+                        "padding_horizontal": 24,
+                        "border_radius": 0,
+                        "border_width": 0,
+                        "font_size": 16,
+                        "font_weight": "400",
+                        "icon_size": 20,
+                        "button_color": "#000000",
+                        "button_text_color": "#ffffff",
+                        "button_hover_color": "#333333",
+                        "button_hover_text_color": "#ffffff",
+                        "border_color": "#000000",
+                        "border_hover_color": "#333333"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_block_EnVxEh",
+                    "heading_block_wAMPBM",
+                    "text_block_JCM36W",
+                    "ai_gen_block_89db828_8PtqA6"
+                  ]
+                }
+              },
+              "block_order": [
+                "grid_list_39DAGw",
+                "grid_list_eF7r7e"
+              ]
+            }
+          },
+          "block_order": [
+            "grid_list_8NRiw8",
+            "section_inner_edEAQq"
+          ]
+        }
+      },
+      "block_order": [
+        "section_inner_jaGitq"
+      ],
+      "custom_css": [
+        ".heading-block h2 {font-size: 50px;}",
+        ".heading-block h4 {font-size: 24px;}"
+      ],
+      "settings": {
+        "background_color": "#f7f5eb",
+        "full_width": true,
+        "top_spacing": 0,
+        "bottom_spacing": 0,
+        "use_top_border": false,
+        "use_bottom_border": false,
+        "full_width_mobile": false,
+        "top_spacing_mobile": 20,
+        "bottom_spacing_mobile": 20,
+        "use_top_border_mobile": true,
+        "use_bottom_border_mobile": false
+      }
+    },
+    "image_banner_azPmDb": {
+      "type": "image-banner",
+      "custom_css": [
+        "@media screen and (min-width: 500px) {.banner {display: none; } .banner__media {display: none !important; }}",
+        ".banner__media {margin-top: 3rem;}",
+        ".banner__content {display: none;}"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Image_1_25cfa711-72b7-4e6e-bf19-1ad9661486aa.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "timeline_section_hBBi6r": {
+      "type": "timeline-section",
+      "blocks": {
+        "title_ERxH8J": {
+          "type": "title",
+          "settings": {
+            "title": "<p>HOIW <em>to use</em></p>"
           }
         },
-        "slide_item_YYyUKp": {
-          "type": "slide_item",
+        "step_zxLdV4": {
+          "type": "step",
           "settings": {
-            "slide_item_title": "SYMPHONYAge",
-            "slide_item_eyebrow": "Developed With Yale University",
-            "slide_item_text": "Developed by Yale University, the SYMPHONYAge algorithm reveals how eleven key organ systems—like the brain, liver, heart, and immune system—are aging, both independently and together. This perspective highlights areas where lifestyle interventions can make the most impact."
+            "number": "",
+            "step_title": "SHAKE THE BOTTLE",
+            "step_text": ""
           }
         },
-        "slide_item_bnUzna": {
-          "type": "slide_item",
+        "step_QnBzQa": {
+          "type": "step",
           "settings": {
-            "slide_item_title": "DunedinPACE",
-            "slide_item_eyebrow": "Developed by the Dunedin Study",
-            "slide_item_text": "Discover how quickly or slowly your body is aging with the DunedinPACE algorithm, which compares your rate of aging to a standard calendar year. Based on the renowned ongoing Dunedin Multidisciplinary Health and Development Study, this 3rd generation technology provides the clearest way to track the effectiveness of lifestyle changes over time."
+            "number": "",
+            "step_title": "TAKE ONE TEASPOON (6 ML)",
+            "step_text": "every morning,  straight or mixed into water, juice or a smoothie."
           }
         }
       },
       "block_order": [
-        "slide_item_JRRBDw",
-        "slide_item_YYyUKp",
-        "slide_item_bnUzna"
+        "title_ERxH8J",
+        "step_zxLdV4",
+        "step_QnBzQa"
+      ],
+      "custom_css": [
+        "div .relative {/*border-bottom: 20px solid red;*/ padding-bottom: 19rem;}",
+        "@media screen and (max-width: 500px) {div .relative {/*border-bottom: 20px solid red;*/ padding-bottom: 0; }}",
+        ".heading {font-size: 50px;}"
       ],
       "settings": {
-        "title": "3 WAYS TO MEASURE YOUR AGE <em>powered by</em>",
-        "text": "Gain a comprehensive view of your aging journey with the three most advanced aging outputs—all included in your personalized report. From cellular health to organ systems and your overall pace of aging, these measurements offer deep insights into how your body is aging for a holistic perspective.",
-        "double_nutri_logo": "shopify://shop_images/TruDiagnostic_logo_black_small_4a677c51-4c89-4724-9487-573947436e36.png",
-        "mobile_select_label": "Select an ingredient"
+        "show_border_top": true,
+        "first_image": "shopify://shop_images/htu-product-1.png",
+        "second_image": "shopify://shop_images/htu-product-2.png"
       }
     },
-    "video-carousel": {
-      "type": "video-carousel",
-      "blocks": {
-        "video_item_jz4rN6": {
-          "type": "video-item",
-          "settings": {
-            "video": "shopify://files/videos/WhatsApp Video 2024-10-16 at 12.45.06.mp4"
-          }
-        },
-        "video_item_AbLBg6": {
-          "type": "video-item",
-          "settings": {
-            "video": "shopify://files/videos/AQOdxqRMVtueuYGJCwiVZldGaAHs9OGsiwErQzOV-eEM6-owFhlGSzQmcSRZ442Rm6gBnuBzXWdRieWlIBCN3NUM.mp4"
-          }
-        },
-        "video_item_3RDbTa": {
-          "type": "video-item",
-          "settings": {
-            "video": "shopify://files/videos/AQOJmoSAq5XFNBeFAYsPlB6JNcIk5j5LEeTgWdvuY7fEWuDJG8Ev3kaiZX_1nYfZjTkM3MGgOTxhXc_v714mm-0D.mp4"
-          }
-        },
-        "video_item_8LNfjf": {
-          "type": "video-item",
-          "settings": {
-            "video": "shopify://files/videos/AQNd2Wj2TAzLB6FENYbsjDbN1id2GwEoVCW41JF8oUwq9NOSKjmAnMbZfTVvKAInNGQby0Hwk0xUxN7IpTArhkSP.mp4"
-          }
-        },
-        "video_item_z3qJEc": {
-          "type": "video-item",
-          "settings": {
-            "video": "shopify://files/videos/AQOaiUlR6nvUap3q4YojpuyVJmQEZnMZ6Iv4NNmPPZ6oPvs8gtsXUKQv1r73Zp3eh9fSfeha-xeSHOvYY8RDFk8k.mp4"
-          }
-        },
-        "video_item_U8Nhi6": {
-          "type": "video-item",
-          "settings": {
-            "video": "shopify://files/videos/AQOaiUlR6nvUap3q4YojpuyVJmQEZnMZ6Iv4NNmPPZ6oPvs8gtsXUKQv1r73Zp3eh9fSfeha-xeSHOvYY8RDFk8k_e1dfd71f-248e-497d-a8f5-f4e367ad034e.mp4"
-          }
-        },
-        "video_item_mYXr9N": {
-          "type": "video-item",
-          "settings": {
-            "video": "shopify://files/videos/AQN7RkxLSOIEM6Mf1SI8RvYjaDry0XoXMSI_hWMal3wXFttuXmn2cZoalKV_z6rENxe7RErVPPwjPTl252Kp51yx.mp4"
-          }
-        },
-        "video_item_kZsK2y": {
-          "type": "video-item",
-          "settings": {
-            "video": "shopify://files/videos/AQPCUjxcZaRNkg5F8lgMK5IqdCpPk9aMRiyFy1sPcxSk2U36D04QiBpfRnvPOK1swk6xoKiPoIzxYWcSlJnijnDH.mp4"
-          }
-        }
-      },
-      "block_order": [
-        "video_item_jz4rN6",
-        "video_item_AbLBg6",
-        "video_item_3RDbTa",
-        "video_item_8LNfjf",
-        "video_item_z3qJEc",
-        "video_item_U8Nhi6",
-        "video_item_mYXr9N",
-        "video_item_kZsK2y"
+    "image_banner_D6TgTi": {
+      "type": "image-banner",
+      "custom_css": [
+        "@media screen and (min-width: 500px) {.banner {display: none; } .banner__media {display: none !important; }}",
+        ".banner__media {margin-top: 3rem;}",
+        ".banner__content {display: none;}"
       ],
+      "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "title": "VOICES <em>of vitality</em>"
+        "image": "shopify://shop_images/htu-product-1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "wines": {
       "type": "wines",
       "disabled": true,
       "settings": {
-        "title_section": "AGE LIKE fine wine",
-        "text_section": "Forget “a glass of wine a day”—elevate to a daily antioxidant celebration. Each shot delivers 220 mg of 98% purity resveratrol, equal to the benefits of 43 bottles of red wine, without the alcohol. Toast to vibrant health and longevity with every sip."
+        "title_section": "AGE LIKE <em>fine wine</em>",
+        "text_section": "Forget “a glass of wine”—elevate to an antioxidant celebration, without the alcohol. Each shot delivers 220 mg of 98% purity Resveratrol, equal to 43 bottles of red wine. Toast to vibrant health and longevity with every sip."
       }
     },
-    "results_list_Nwodip": {
-      "type": "results-list",
+    "landing_section_qAbkWE": {
+      "type": "landing-section",
       "blocks": {
-        "result_item_aEgn8V": {
-          "type": "result_item",
+        "section_inner_tcDKaG": {
+          "type": "section-inner",
           "settings": {
-            "image": "shopify://shop_images/cells_11zon.jpg",
-            "title": "Test",
-            "text": "<p>Complete a simple at-home blood draw.</p>"
-          }
-        },
-        "result_item_gUamQp": {
-          "type": "result_item",
-          "settings": {
-            "image": "shopify://shop_images/bubbles_11zon.jpg",
-            "title": "Return",
-            "text": "<p>Send your sample in the provided mailer.</p>"
-          }
-        },
-        "result_item_wneopd": {
-          "type": "result_item",
-          "settings": {
-            "image": "shopify://shop_images/pour_11zon.jpg",
-            "title": "Analyze",
-            "text": "<p>Receive your in-depth, personalized report.</p>"
-          }
-        },
-        "result_item_Y73BJq": {
-          "type": "result_item",
-          "settings": {
-            "title": "Optimize",
-            "text": "<p>Use your insights to make meaningful changes.</p>"
-          }
+            "desktop_grid_columns": "2",
+            "horizontal_alignment": "start",
+            "vertical_alignment": "start",
+            "desktop_grid_column_gap": 50,
+            "desktop_grid_row_gap": 0,
+            "top_spacing_desktop": 70,
+            "bottom_spacing_desktop": 70,
+            "left_spacing_desktop": 70,
+            "right_spacing_desktop": 70,
+            "mobile_grid_columns": "1",
+            "mobile_horizontal_alignment": "start",
+            "mobile_vertical_alignment": "start",
+            "mobile_grid_column_gap": 0,
+            "mobile_grid_row_gap": 0,
+            "top_spacing_mobile": 0,
+            "bottom_spacing_mobile": 0,
+            "left_spacing_mobile": 0,
+            "right_spacing_mobile": 0
+          },
+          "blocks": {
+            "grid_list_xwWhF9": {
+              "type": "grid-list",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "column_gap_desktop": 40,
+                "row_gap_desktop": 40,
+                "mobile_grid_columns": "1",
+                "column_gap_mobile": 30,
+                "row_gap_mobile": 30
+              },
+              "blocks": {
+                "image_block_UQdmmD": {
+                  "type": "image-block",
+                  "settings": {
+                    "image": "shopify://shop_images/ChatGPT_Image_Apr_29_2025_09_08_14_PM.png",
+                    "different_mobile_image": false,
+                    "show_on_mobile": true,
+                    "show_on_desktop": true
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "image_block_UQdmmD"
+              ]
+            },
+            "section_inner_ziMpcL": {
+              "type": "section-inner",
+              "settings": {
+                "desktop_grid_columns": "1",
+                "horizontal_alignment": "start",
+                "vertical_alignment": "flex-between",
+                "desktop_grid_column_gap": 0,
+                "desktop_grid_row_gap": 0,
+                "top_spacing_desktop": 0,
+                "bottom_spacing_desktop": 0,
+                "left_spacing_desktop": 0,
+                "right_spacing_desktop": 70,
+                "mobile_grid_columns": "1",
+                "mobile_horizontal_alignment": "start",
+                "mobile_vertical_alignment": "center",
+                "mobile_grid_column_gap": 0,
+                "mobile_grid_row_gap": 50,
+                "top_spacing_mobile": 20,
+                "bottom_spacing_mobile": 20,
+                "left_spacing_mobile": 0,
+                "right_spacing_mobile": 0
+              },
+              "blocks": {
+                "grid_list_BWJghP": {
+                  "type": "grid-list",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 40,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 30,
+                    "row_gap_mobile": 30
+                  },
+                  "blocks": {
+                    "heading_block_4fV3EH": {
+                      "type": "heading-block",
+                      "settings": {
+                        "subheading": "",
+                        "text": "<p>HOW TO USE</p>",
+                        "tag_select": "h2",
+                        "text_color": "",
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "heading_block_4fV3EH"
+                  ]
+                },
+                "grid_list_DGEiFe": {
+                  "type": "grid-list",
+                  "settings": {
+                    "desktop_grid_columns": "1",
+                    "column_gap_desktop": 40,
+                    "row_gap_desktop": 0,
+                    "mobile_grid_columns": "1",
+                    "column_gap_mobile": 0,
+                    "row_gap_mobile": 15
+                  },
+                  "blocks": {
+                    "text_block_hf8TQj": {
+                      "type": "text-block",
+                      "settings": {
+                        "text": "<p>HOW TO MAKE <br/><br/>Mix one scoop per day with water, almond milk, or your favorite smoothie.</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": true,
+                        "top_spacing_desktop": 10,
+                        "text_alignment_desktop": "left",
+                        "top_spacing_mobile": 10,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "heading_block_VctgjK": {
+                      "type": "heading-block",
+                      "settings": {
+                        "subheading": "",
+                        "text": "",
+                        "tag_select": "h2",
+                        "text_color": "",
+                        "desktop_line_height": 0,
+                        "top_spacing_desktop": 40,
+                        "text_alignment_desktop": "left",
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    },
+                    "text_block_VAgnt7": {
+                      "type": "text-block",
+                      "settings": {
+                        "text": "<p>WHEN TO USE<br/><br/>Ideal after workouts or anytime you need a clean, plant-based energy boost</p>",
+                        "text_color": "",
+                        "text_weight": "normal",
+                        "border-top": true,
+                        "desktop_line_height": 0,
+                        "top_spacing_desktop": 10,
+                        "text_alignment_desktop": "left",
+                        "top_spacing_mobile": 10,
+                        "text_alignment_mobile": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_block_hf8TQj",
+                    "heading_block_VctgjK",
+                    "text_block_VAgnt7"
+                  ]
+                }
+              },
+              "block_order": [
+                "grid_list_BWJghP",
+                "grid_list_DGEiFe"
+              ]
+            }
+          },
+          "block_order": [
+            "grid_list_xwWhF9",
+            "section_inner_ziMpcL"
+          ]
         }
       },
       "block_order": [
-        "result_item_aEgn8V",
-        "result_item_gUamQp",
-        "result_item_wneopd",
-        "result_item_Y73BJq"
+        "section_inner_tcDKaG"
       ],
+      "disabled": true,
       "settings": {
-        "title": "HOW IT <em>works</em>"
-      }
-    },
-    "battle_chart_wSpdhi": {
-      "type": "battle-chart",
-      "blocks": {
-        "chart_item_aEgn8V": {
-          "type": "chart_item",
-          "settings": {
-            "title": "Developed by Harvard & Yale",
-            "others_have": false
-          }
-        },
-        "chart_item_wneopd": {
-          "type": "chart_item",
-          "settings": {
-            "title": "17+ aging insights",
-            "others_have": false
-          }
-        },
-        "chart_item_xMWLKG": {
-          "type": "chart_item",
-          "settings": {
-            "title": "Measures speed of aging",
-            "others_have": true
-          }
-        },
-        "chart_item_3VHTGw": {
-          "type": "chart_item",
-          "settings": {
-            "title": "Assesses key organ health",
-            "others_have": false
-          }
-        },
-        "chart_item_wneopf": {
-          "type": "chart_item",
-          "settings": {
-            "title": "Analyzes 950K+ biomarkers",
-            "others_have": false
-          }
-        },
-        "chart_item_wneope": {
-          "type": "chart_item",
-          "settings": {
-            "title": "High accuracy (99%+)",
-            "others_have": false
-          }
-        },
-        "chart_item_wneoph": {
-          "type": "chart_item",
-          "settings": {
-            "title": "Simple at-home blood test",
-            "others_have": true
-          }
-        }
-      },
-      "block_order": [
-        "chart_item_aEgn8V",
-        "chart_item_wneopd",
-        "chart_item_xMWLKG",
-        "chart_item_3VHTGw",
-        "chart_item_wneopf",
-        "chart_item_wneope",
-        "chart_item_wneoph"
-      ],
-      "settings": {
-        "title": "HAPPY AGING vs <em>other tests</em>",
-        "image": "shopify://shop_images/battle-chart_11zon.jpg"
-      }
-    },
-    "specialist": {
-      "type": "specialist-fifty-fifty",
-      "settings": {
-        "eyebrow": "Dr. Daniel Yadegar, MD",
-        "title": "A guiding<em> light</em>",
-        "text": "<p>Co-founded by renowned longevity expert Dr. Daniel Yadegar, Happy Aging bridges the worlds of cutting-edge science and holistic wellness. A Harvard-trained physician with advanced fellowship training in age management and regenerative medicine, Dr. Yadegar brings an unmatched depth of expertise to our mission.</p><p>Dr. Yadegar’s extensive knowledge and passion for longevity guide our development and innovation. Together, we are dedicated to revolutionizing the way we experience aging.</p>",
-        "video_url": "",
-        "image": "shopify://shop_images/specialist-image_11zon.jpg",
-        "video_overlay_title": "A passion for <em>Longevity</em>",
-        "video_overlay": "https://cdn.shopify.com/videos/c/o/v/e250e26a39b34036918994eb427db595.mp4",
-        "video_overlay_poster": "shopify://shop_images/specialist-poster_11zon.jpg"
+        "background_color": "#e5dbcc",
+        "full_width": true,
+        "top_spacing": 0,
+        "bottom_spacing": 0,
+        "use_top_border": false,
+        "use_bottom_border": false,
+        "full_width_mobile": false,
+        "top_spacing_mobile": 20,
+        "bottom_spacing_mobile": 20,
+        "use_top_border_mobile": true,
+        "use_bottom_border_mobile": false
       }
     },
     "faqs_9gMU6f": {
       "type": "faqs",
       "blocks": {
-        "faq_GG6MBM": {
+        "faq_1": {
           "type": "faq",
           "settings": {
-            "question": "What is the Longevity Shot made of?",
-            "answer": "<p>The Longevity Shot is crafted entirely from all-natural ingredients, with 80% of the ingredients being non-GMO. It is gluten-free, vegan, caffeine-free, soy-free, and dairy-free, with no synthetic ingredients, artificial sweeteners, preservatives, or artificial colors/flavors. Each shot contains 18 calories per serving.</p>"
+            "question": "What makes Happy Aging Vegan Protein + Creatine different from other protein powders?",
+            "answer": "<p>Happy Aging is the only vegan protein powder made with 5 organic ingredients that includes a full clinical dose of micronized creatine, 5 grams per serving. It combines 20 grams of clean, plant-based protein with science-backed ingredients to support strength, cognitive function, and longevity. All that with no added sugar, no stevia, and no fillers.</p>"
           }
         },
-        "faq_4jy9V7": {
+        "faq_2": {
           "type": "faq",
           "settings": {
-            "question": "Does the Longevity Shot contain sugar or alcohol?",
-            "answer": "<p>The Longevity Shot contains 2.5 grams of natural sugar from apple and grape juice concentrate. It is also lightly sweetened with steviol glycosides, a natural sweetener derived from the Stevia rebaudiana plant that is sugar and calorie-free. It is alcohol-free.</p>"
+            "question": "Is this product suitable for women?",
+            "answer": "<p>Yes, absolutely. This formula was created with wellness focused women in mind. The ingredients support strength, muscle recovery, brain clarity, and heart health, which are especially relevant for women who want to age with energy, balance, and confidence.</p>"
           }
         },
-        "faq_JiVH4C": {
+        "faq_3": {
           "type": "faq",
           "settings": {
-            "question": "Is the Longevity Shot safe for those with allergies or dietary restrictions?",
-            "answer": "<p>Yes, the Longevity Shot is free from common allergens like nuts, soy, dairy, and gluten, making it suitable for most women with dietary sensitivities. Additionally, it can fit into most keto diets.</p>"
+            "question": "Can I use this protein powder every day?",
+            "answer": "<p>Yes. It is designed to be a daily wellness ritual. With clean organic ingredients and a gut friendly formulation, you can enjoy it every day after your workout or as part of your morning routine.</p>"
           }
         },
-        "faq_qmLMRa": {
+        "faq_4": {
           "type": "faq",
           "settings": {
-            "question": "Is the Longevity Shots tested on animals?",
-            "answer": "<p>No, the Longevity Shot is not tested on animals.</p>"
+            "question": "Does the product contain sugar or artificial sweeteners?",
+            "answer": "<p>No. It is sweetened only with monk fruit, a natural zero calorie sweetener that is easy on digestion and does not spike blood sugar. There is no added sugar, no stevia, and no artificial sweeteners in this formula.</p>"
           }
         },
-        "faq_mqta4H": {
+        "faq_DDDgNz": {
           "type": "faq",
           "settings": {
-            "question": "Can I take the Longevity Shot if I’m pregnant or breastfeeding?",
-            "answer": "<p>While the Longevity Shot is made with natural ingredients, we always recommend that pregnant or breastfeeding women consult their healthcare provider to ensure it aligns with their unique health needs during this time.</p>"
+            "question": "Is the creatine vegan and safe for daily use?",
+            "answer": "<p>Yes. We use pure vegan micronized creatine, the most researched and effective form. It is safe for daily use and has been shown to support both physical performance and brain health when taken consistently.</p>"
           }
         },
-        "faq_3phNHn": {
+        "faq_HYaLwd": {
           "type": "faq",
           "settings": {
-            "question": "How should I take the Longevity Shot, and when is the best time?",
-            "answer": "<p>For optimal results, we recommend taking two shots per week, at any time of the day. This schedule helps maintain NAD+ levels and activate sirtuins—proteins vital for cellular health, DNA repair, and metabolic function. This intermittent dosing supports long-term vitality and overall longevity, slowing the aging process without overwhelming your body.</p>"
+            "question": "Will this protein powder make me feel bloated?",
+            "answer": "<p>No. Our formula does not contain gums, sugar alcohols, dairy, soy, or gluten, which are common causes of digestive discomfort. Most people find it smooth, light, and easy to digest.</p>"
           }
         },
-        "faq_iGM4zV": {
+        "faq_Jt6UAg": {
           "type": "faq",
           "settings": {
-            "question": "When will I see results from the Longevity Shot?",
-            "answer": "<p>The timing of results can vary depending on your body and lifestyle. Many women begin to notice positive changes in energy, skin health, and overall well-being within the first 30 days of regular use.</p>"
+            "question": "Is this protein powder third party tested?",
+            "answer": "<p>Yes. Happy Aging Vegan Protein with Creatine is made in a GMP certified facility in the United States and is third party tested to ensure purity, potency, and quality.</p>"
           }
         },
-        "faq_LXacMF": {
+        "faq_pU9Exc": {
           "type": "faq",
           "settings": {
-            "question": "How long should I continue taking the Longevity Shot?",
-            "answer": "<p>The long-term benefits of the Longevity Shot—such as cellular health support and slowing the aging process—are best experienced over time with consistent use. </p>"
-          }
-        },
-        "faq_UiMWTG": {
-          "type": "faq",
-          "settings": {
-            "question": "Are there any side effects of interactions with medications?",
-            "answer": "<p>The natural ingredients in the Longevity Shot are generally well-tolerated, but everyone is unique. If you’re taking any prescription medications or have a medical condition, particularly autoimmune conditions, we encourage you to consult your healthcare provider before starting the Longevity Shot.</p>"
-          }
-        },
-        "faq_RfTGdA": {
-          "type": "faq",
-          "settings": {
-            "question": "Is the Longevity Shot suitable for children or teenagers?",
-            "answer": "<p>The Longevity Shot is formulated with adults in mind. If you’re considering it for children or teenagers, we recommend speaking with a healthcare provider to ensure it’s appropriate for their needs.</p>"
-          }
-        },
-        "faq_nQXECb": {
-          "type": "faq",
-          "settings": {
-            "question": "Is the Longevity Shot Kosher or Halal certified?",
-            "answer": "<p>No, the Longevity Shot is not currently Kosher or Halal certified.</p>"
+            "question": "How should I use it?",
+            "answer": "<p>Mix one scoop with cold water, almond milk, or your favorite smoothie. Use it after your workout or as a clean source of daily energy. </p>"
           }
         }
       },
       "block_order": [
-        "faq_GG6MBM",
-        "faq_4jy9V7",
-        "faq_JiVH4C",
-        "faq_qmLMRa",
-        "faq_mqta4H",
-        "faq_3phNHn",
-        "faq_iGM4zV",
-        "faq_LXacMF",
-        "faq_UiMWTG",
-        "faq_RfTGdA",
-        "faq_nQXECb"
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_DDDgNz",
+        "faq_HYaLwd",
+        "faq_Jt6UAg",
+        "faq_pU9Exc"
+      ],
+      "custom_css": [
+        "#faqs {border-top: 1px solid;}"
       ],
       "settings": {
         "title": "Frequently Asked Questions",
         "is_padding_top": "yes",
         "is_background_default": "no",
         "is_margin_bottom": "yes",
-        "callout_text": ""
+        "callout_text": "<p>Still Have Questions?<br/>Our team is here to help! Reach out to us at <a href=\"mailto:hello@happyaging.com\">hello@happyaging.com</a> for personalized support.</p>"
       }
     },
-    "17320251521cecff4e": {
+    "17401711251af96b37": {
       "type": "apps",
       "blocks": {
-        "okendo_reviews_widget_nzzjDa": {
+        "okendo_reviews_widget_zJJy9k": {
           "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
           "settings": {
-            "product": "longevity",
-            "widget_type": "combined_widget"
+            "product": "{{ product }}",
+            "widget_type": "reviews_widget"
           }
         }
       },
       "block_order": [
-        "okendo_reviews_widget_nzzjDa"
-      ],
-      "custom_css": [
-        "{margin-left: 10px; margin-right: 10px;}"
-      ],
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "featured_carousel_zDWaQQ": {
-      "type": "featured-carousel",
-      "blocks": {
-        "article_VHAQcG": {
-          "type": "article",
-          "settings": {
-            "article": "news/the-biology-of-aging",
-            "text": ""
-          }
-        },
-        "article_hpTmLQ": {
-          "type": "article",
-          "settings": {
-            "article": "news/20-habits-for-longevity",
-            "text": ""
-          }
-        },
-        "article_cWrnT3": {
-          "type": "article",
-          "settings": {
-            "article": "news/harnessing-the-sun-for-healthy-aging",
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "article_VHAQcG",
-        "article_hpTmLQ",
-        "article_cWrnT3"
-      ],
-      "settings": {
-        "title": "Featured Here"
-      }
-    },
-    "1730907688d0976b28": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "173392222547dfca8d": {
-      "type": "apps",
-      "blocks": {
-        "klaviyo_email_marketing_sms_form_embed_block_GzJq83": {
-          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
-          "settings": {
-            "formId": ""
-          }
-        }
-      },
-      "block_order": [
-        "klaviyo_email_marketing_sms_form_embed_block_GzJq83"
-      ],
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "1746537885a1c5a387": {
-      "type": "apps",
-      "blocks": {
-        "rebuy_personalization_engine_rebuy_widget_C6FcwP": {
-          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
-          "settings": {
-            "enabled": true,
-            "id": "212952",
-            "product_id_enabled": true,
-            "collection_id_enabled": false
-          }
-        }
-      },
-      "block_order": [
-        "rebuy_personalization_engine_rebuy_widget_C6FcwP"
+        "okendo_reviews_widget_zJJy9k"
       ],
       "settings": {
         "include_margins": true
@@ -606,20 +2590,20 @@
   },
   "order": [
     "main",
+    "landing_section_GdHXgh",
     "marquee_pMqq4Y",
-    "benefits_TnXkPb",
-    "fifty_fifty_Sneidp",
-    "key_points",
-    "video-carousel",
+    "landing_section_KWgCJm",
+    "landing_section_ExiDxD",
+    "image_with_text_blocks_gAjTfr",
+    "landing_section_3RqYFU",
+    "results_list_LqxNh4",
+    "landing_section_nqCRrp",
+    "image_banner_azPmDb",
+    "timeline_section_hBBi6r",
+    "image_banner_D6TgTi",
     "wines",
-    "results_list_Nwodip",
-    "battle_chart_wSpdhi",
-    "specialist",
+    "landing_section_qAbkWE",
     "faqs_9gMU6f",
-    "17320251521cecff4e",
-    "featured_carousel_zDWaQQ",
-    "1730907688d0976b28",
-    "173392222547dfca8d",
-    "1746537885a1c5a387"
+    "17401711251af96b37"
   ]
 }
