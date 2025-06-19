@@ -455,7 +455,7 @@
         "top_spacing": 0,
         "bottom_spacing": 50,
         "use_top_border": false,
-        "use_bottom_border": false,
+        "use_bottom_border": true,
         "full_width_mobile": true,
         "top_spacing_mobile": 0,
         "bottom_spacing_mobile": 0,
@@ -503,6 +503,9 @@
         "text_8c4bkD",
         "text_LhF6BY",
         "text_qkCpGH"
+      ],
+      "custom_css": [
+        "site-marqueex {border-top: 1px solid;}"
       ],
       "settings": {}
     },
