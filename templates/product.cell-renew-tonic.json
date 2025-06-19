@@ -2031,7 +2031,7 @@
                       "type": "heading-block",
                       "settings": {
                         "subheading": "",
-                        "text": "<h2>TAKE BACK <em>your energy</em></h2><h4>Clinically proven NMN raised blood NAD⁺ by up to 60% in eight weeks</h4>",
+                        "text": "<h2>TAKE BACK <em>your energy</em></h2><h4><em>Clinically proven NMN raised blood NAD⁺ by up to 60% in eight weeks</em></h4>",
                         "tag_select": "h1",
                         "text_color": "",
                         "desktop_font_size": 0,
@@ -2273,7 +2273,7 @@
       "custom_css": [
         "div .relative {/*border-bottom: 20px solid red;*/ padding-bottom: 19rem;}",
         "@media screen and (max-width: 500px) {div .relative {/*border-bottom: 20px solid red;*/ padding-bottom: 0; }}",
-        ".heading {font-size: 50px;}"
+        ".heading {font-size: 40px;}"
       ],
       "settings": {
         "show_border_top": true,
