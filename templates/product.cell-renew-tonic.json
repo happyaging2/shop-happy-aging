@@ -1712,7 +1712,7 @@
                     "top_spacing_desktop": 0,
                     "bottom_spacing_desktop": 0,
                     "left_spacing_desktop": 0,
-                    "right_spacing_desktop": 50,
+                    "right_spacing_desktop": 0,
                     "mobile_grid_columns": "1",
                     "mobile_horizontal_alignment": "start",
                     "mobile_vertical_alignment": "start",
