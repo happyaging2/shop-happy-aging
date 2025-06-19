@@ -280,7 +280,7 @@
             "mobile_grid_columns": "1",
             "mobile_horizontal_alignment": "start",
             "mobile_vertical_alignment": "start",
-            "mobile_grid_column_gap": 0,
+            "mobile_grid_column_gap": 2,
             "mobile_grid_row_gap": 0,
             "top_spacing_mobile": 0,
             "bottom_spacing_mobile": 0,
@@ -389,8 +389,8 @@
                     "column_gap_desktop": 40,
                     "row_gap_desktop": 25,
                     "mobile_grid_columns": "1",
-                    "column_gap_mobile": 30,
-                    "row_gap_mobile": 40
+                    "column_gap_mobile": 1,
+                    "row_gap_mobile": 1
                   },
                   "blocks": {
                     "text_block_BdfahW": {
