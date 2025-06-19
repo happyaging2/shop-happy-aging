@@ -284,8 +284,8 @@
             "mobile_grid_row_gap": 0,
             "top_spacing_mobile": 0,
             "bottom_spacing_mobile": 0,
-            "left_spacing_mobile": 0,
-            "right_spacing_mobile": 0
+            "left_spacing_mobile": 20,
+            "right_spacing_mobile": 20
           },
           "blocks": {
             "grid_list_Pf4yHh": {
@@ -447,7 +447,9 @@
         "section_inner_WBhNK7",
         "section_inner_YmreYw"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".site-container {padding-left: 0; padding-right: 0;}"
+      ],
       "settings": {
         "background_color": "",
         "full_width": false,
