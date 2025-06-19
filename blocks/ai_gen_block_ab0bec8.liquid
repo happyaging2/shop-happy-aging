@@ -1,6 +1,66 @@
-{% schema %}
-  {
-    "name": "Block name",
-    "settings": []
+{% doc %}
+  @prompt
+    spacing block with desktop and mobile options
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-spacing-block-{{ ai_gen_id }} {
+    width: 100%;
+    height: {{ block.settings.desktop_spacing }}px;
   }
+
+  @media screen and (max-width: 749px) {
+    .ai-spacing-block-{{ ai_gen_id }} {
+      height: {{ block.settings.mobile_spacing }}px;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="ai-spacing-block-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+></div>
+
+{% schema %}
+{
+  "name": "Spacing Block",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Desktop Spacing"
+    },
+    {
+      "type": "range",
+      "id": "desktop_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop spacing",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Mobile Spacing"
+    },
+    {
+      "type": "range",
+      "id": "mobile_spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile spacing",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Spacing Block"
+    }
+  ],
+  "tag": null
+}
 {% endschema %}
