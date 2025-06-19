@@ -565,7 +565,7 @@
           "settings": {
             "desktop_max_width": 1500,
             "desktop_grid_columns": "2",
-            "horizontal_alignment": "start",
+            "horizontal_alignment": "center",
             "vertical_alignment": "start",
             "desktop_grid_column_gap": 20,
             "desktop_grid_row_gap": 0,
