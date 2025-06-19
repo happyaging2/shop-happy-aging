@@ -449,7 +449,7 @@
       ],
       "settings": {
         "background_color": "",
-        "full_width": true,
+        "full_width": false,
         "top_spacing": 0,
         "bottom_spacing": 50,
         "use_top_border": false,
