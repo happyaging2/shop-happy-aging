@@ -419,7 +419,7 @@
                         "desktop_font_size": 16,
                         "text_alignment_desktop": "left",
                         "mobile_font_size": 16,
-                        "top_spacing_mobile": 20,
+                        "top_spacing_mobile": 10,
                         "text_alignment_mobile": "left"
                       },
                       "blocks": {}
