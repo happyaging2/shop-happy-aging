@@ -1480,7 +1480,7 @@
                       "type": "text-block",
                       "name": "Text block",
                       "settings": {
-                        "text": "<h3>Every cell contains a NAD⁺ battery that drives energy, repair and longevity.</h3>",
+                        "text": "<h3> </h3>",
                         "text_color": "",
                         "text_weight": "normal",
                         "border-top": false,
