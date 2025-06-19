@@ -1,10 +1,57 @@
+<style>
+  @media screen and (max-width:500px){ 
+    .hide-on-mobile{
+      display:none!important;
+    }
+  }
+</style>
+
 <div class="py-12 pb-6 lg:py-20 border-t">
   <div class="site-container">
     <div class="md:px-4">
       {% unless section.settings.title == blank %}
         <h2 class="heading heading--1 mb-6 em-newline">{{ section.settings.title }}</h2>
       {% endunless %}
-      <div class="d-grid md:grid-cols-3 lg:grid-cols-[unset] lg:grid-flow-col lg:auto-cols-fr gap-3 items-start md:px-0">
+
+      {%- comment -%} Mobile (slide) {%- endcomment -%}
+      <site-carousel
+        data-config='{"slidesPerView": 1.2, "loop": false, "spaceBetween": 20}'
+        id="{{ section.id }}-mobile"
+        class="block lg:hidden w-full relative"
+        data-id="{{ section.id }}-mobile"
+      >
+        <div class="swiper w-full">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="swiper-slide h-auto">
+                <div class="d-grid gap-4 md:gap-4 mb-4 md:mb-0">
+                  <div class="aspect-square relative bg-beige">
+                    {% unless block.settings.image == blank %}
+                      <img class="absolute top-0 left-0 w-full h-full object-cover object-center" src="{{ block.settings.image | image_url: width: 1000 }}" width="auto" height="auto" loading="lazy">
+                    {% endunless %}
+                  </div>
+                  {% unless block.settings.title == blank %}
+                    <h3 class="heading heading--5 uppercase border-t border-black pt-4 lg:pt-3">{{ block.settings.title }}</h3>
+                  {% endunless %}
+                  {% unless block.settings.text == blank %}
+                    <div class="text-xs leading-5">{{ block.settings.text }}</div>
+                  {% endunless %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+<!--
+        <div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+-->
+
+        
+      </site-carousel>
+
+      {%- comment -%} Desktop (grade) {%- endcomment -%}
+      <div class="d-grid md:grid-cols-3 lg:grid-cols-[unset] lg:grid-flow-col lg:auto-cols-fr gap-3 items-start md:px-0 hide-on-mobile">
         {% for block in section.blocks %}
           <div class="d-grid gap-4 md:gap-4 mb-4 md:mb-0">
             <div class="aspect-square relative bg-beige">
@@ -24,6 +71,10 @@
     </div>
   </div>
 </div>
+
+
+
+
 
 {% schema %}
 {
