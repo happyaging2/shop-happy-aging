@@ -788,6 +788,7 @@
                     "tag_select": "h2",
                     "text_color": "",
                     "letter_spacing": 0,
+                    "desktop_font_size": 50,
                     "desktop_line_height": 0,
                     "top_spacing_desktop": 0,
                     "text_alignment_desktop": "center",
@@ -1945,7 +1946,7 @@
       ],
       "name": "Results List",
       "settings": {
-        "title": "YOUR NMN JOURNEY : v<em>itality m ilestones</em>"
+        "title": "YOUR NMN JOURNEY : v<em>itality milestones</em>"
       }
     },
     "landing_section_nqCRrp": {
