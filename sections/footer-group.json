@@ -11,34 +11,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "custom_liquid_GQKcRh": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "custom_css": [
-        ".gradient {display: none;}"
-      ],
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<style>\n\n\n\n@media screen and (min-width:541px){\n    \n    .py-10.lg\\:py-0.lg\\:mt-0.lg\\:mb-20:nth-child(4){\n        border:1px solid #1600fb00!important;\n\n        \n    }\n    .timeline-title .heading:after{\n        display:none;\n    }\n    .py-10.lg\\:py-0.lg\\:mt-0.lg\\:mb-20:nth-child(3){\n        border:1px solid #ff000000!important;\n        margin-top:-4%;\n    }\n    \n    .py-10.lg\\:py-0.lg\\:mt-0.lg\\:mb-20:nth-child(4){\n        margin-top:-10%;\n    }\n    \n    .py-10.lg\\:py-0.lg\\:mt-0.lg\\:mb-20:nth-child(3):after{\n        content: \"\";\n        position: absolute;\n        width:50px;\n        height: 1px;\n        opacity: .4;\n        background: #000;\n        transform: rotate(90deg);\n        left: 47%;\n        margin-top: -7%;\n    }\n    \n    .py-10.lg\\:py-0.lg\\:mt-0.lg\\:mb-20:nth-child(4):after{\n        content: \"\";\n        position: absolute;\n        width:50px;\n        height: 1px;\n        opacity: .4;\n        background: #000;\n        transform: rotate(90deg);\n        left: 47%;\n        margin-top: 30px;\n    }\n\n}\n\n\n\n\n@media screen and (max-width:540px){\n    \n    .py-10.lg\\:py-0.lg\\:mt-0.lg\\:mb-20:nth-child(4){\n        border:1px solid #1600fb00!important;\n        \n    }\n    .timeline-title .heading:after{\n        display:none;\n    }\n    .py-10.lg\\:py-0.lg\\:mt-0.lg\\:mb-20:nth-child(3){\n        border:1px solid #ff000000!important;\n        margin-top:-4%;\n    }\n    \n    .py-10.lg\\:py-0.lg\\:mt-0.lg\\:mb-20:nth-child(4){\n        margin-top:-10%;\n    }\n    \n    .py-10.lg\\:py-0.lg\\:mt-0.lg\\:mb-20:nth-child(3):after{\n        content: \"\";\n        position: absolute;\n        width:50px;\n        height: 1px;\n        opacity: .4;\n        background: #000;\n        transform: rotate(90deg);\n        left: 44%;\n        margin-top: -3px;\n    }\n    \n    .py-10.lg\\:py-0.lg\\:mt-0.lg\\:mb-20:nth-child(4):after{\n        content: \"\";\n        position: absolute;\n        width:50px;\n        height: 1px;\n        opacity: .4;\n        background: #000;\n        transform: rotate(90deg);\n        left: 44%;\n        margin-top: 30px;\n    }\n\n}\n\nsection#shopify-section-template--24670584504640__timeline_section_hBBi6r \n.d-none.lg\\:block.absolute.top-\\[380px\\].lg\\:left-\\[32px\\].xl\\:left-\\[0\\] {\n    margin-top: -15%;\n}\n\n\n.flexSwiper {\n    display: flex;\n    flex-direction: column;\n}\n\n.customNavSlider{\n    width: 100%;\n    display:flex;\n    flex-direction: row;\n    justify-content: center;\n    margin-top: 8%;\n    gap: 5%;\n}\n\n.customNavSlider .swiper-button-prev, .customNavSlider .swiper-button-next {\n    position:initial;\n}\n\n.customNavSlider \n.swiper-button-next:after, .customNavSlider  .swiper-button-prev:after{\n    font-size: 20px;\n    color:#000;\n}\n</style>",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "custom_liquid_C4giah": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "custom_css": [
-        ".gradient {display: none;}"
-      ],
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<style>\n\n@media screen and (min-width:1280px) and (max-width:1502px){\n        \n    .landing-section__container.site-containerx {\n        padding: 0 4%!important;\n    }\n    \n        .landing-section__container.site-container img{\n        /*padding: 0 4%!important;*/\n            \n    }\n    \n    div#shopify-block-AcW5lTmdheUN3NUMxb__highlight_image_item_BLJ8i3 img{\n        width:1210px!important;\n    }\n    \n    div#shopify-block-AdXorcjN2aE9Mc1pIa__section_inner_WBhNK7 {\n        display: flex!important;\n        justify-content: center!important;\n    }\n    \n    div#shopify-block-AM0t5UkljY0dKTndnY__section_inner_YmreYw {\n        display: flex;\n        justify-content: center;\n    }\n    \n    div#shopify-block-AM0t5UkljY0dKTndnY__section_inner_YmreYw\n    div#shopify-block-ANXZPc3k1MU9kdWljM__section_inner_qAQ6QY {\n        width:1210px!important;\n    }\n    \n    body:before {\n        content: \"\";\n        width: 1px;\n        height: 100vh;\n        left: 114px;\n        position: fixed;\n        background: #f90;\n        z-index: 999999999999;\n    }\n    \n    div#shopify-block-ANEZyMld3dVA2ejN0a__section_inner_jMigaK {\n        padding: 0 45px!important;\n    }\n    \n    .content-block.w-full.lg\\:max-w-\\[440px\\].flex.flex-col.justify-center.h-full.lg\\:mx-auto.lg\\:px-0 {\n        margin-left: 32px;\n    }\n    \n    section#shopify-section-template--24670584504640__landing_section_3RqYFU > .landing-section__container {\n        padding-left:45px;\n        padding-right:45px;\n    }\n    \n    \n    div#shopify-block-Ac21iNHVYOTN2K0d3S__section_inner_ApnLBe .text-block:after{\n        right:8%;\n    }\n    \n    div#shopify-block-AS0FSd0N0NWxERUR6S__section_inner_jaGitq {\n        padding: 70px 115px!important;\n    }\n    \n    img.header__heading-logo {\n        width: 225px;\n    }\n    \n    section#shopify-section-template--24670584504640__timeline_section_hBBi6r img {\n        max-width: 300px;\n    }\n    \n    .relative.px-8.lg\\:px-6.lg\\:pt-\\[70px\\].text-center.text-sm.max-w-\\[1074px\\].m-auto {\n        max-width: 1210px;\n    }\n    \n    a.ai-button-az0gvdnrjdznnwwfkuaigenblock3608cf6frawap, a.ai-button-buttonikqtjh {\n        width: auto;\n        padding: 10px 60px;\n    }\n\n}\n</style>",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "footer": {
       "type": "footer",
       "settings": {
@@ -52,8 +24,6 @@
     }
   },
   "order": [
-    "custom_liquid_GQKcRh",
-    "custom_liquid_C4giah",
     "footer"
   ]
 }
