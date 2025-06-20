@@ -13,6 +13,7 @@
   "sections": {
     "custom_liquid_GQKcRh": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [
         ".gradient {display: none;}"
       ],
@@ -26,6 +27,7 @@
     },
     "custom_liquid_C4giah": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [
         ".gradient {display: none;}"
       ],
