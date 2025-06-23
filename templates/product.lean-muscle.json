@@ -33,6 +33,7 @@
           "type": "text",
           "settings": {
             "text": "STRENGTH THAT FUELS LONGEVITY",
+            "customclass": "yourcustomclass",
             "text_style": "uppercase",
             "text_size": "text-xs",
             "text_align": "text-left"
@@ -57,6 +58,7 @@
           "type": "text",
           "settings": {
             "text": "SELECT YOUR FLAVOR",
+            "customclass": "yourcustomclass",
             "text_style": "uppercase",
             "text_size": "text-xs",
             "text_align": "text-left"
@@ -78,7 +80,8 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
-            "default_info_sub_1": "Ships every month",
+            "tonic": false,
+            "default_info_sub_1": "Ships every 20 days",
             "default_info_sub_2": "Free shipping on all orders",
             "default_info_sub_3": "Cancel your subscription anytime",
             "default_info_sub_4": "Ships in 12 hours",
@@ -129,6 +132,7 @@
           "type": "text",
           "settings": {
             "text": "30 Day Money Back Guarantee",
+            "customclass": "yourcustomclass",
             "text_style": "bold",
             "text_size": "text-xs",
             "text_align": "text-center"
@@ -138,6 +142,7 @@
           "type": "text",
           "settings": {
             "text": "If you're unsatisfied with your shots, for any reason, we'll give you a full refund–no return necessary!",
+            "customclass": "yourcustomclass",
             "text_style": "body",
             "text_size": "text-[10px]",
             "text_align": "text-center"
@@ -190,6 +195,7 @@
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "highlight_color": "#de4845",
+        "title_label": "",
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "cover",
